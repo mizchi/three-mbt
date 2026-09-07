@@ -1,0 +1,11 @@
+import {
+  "mizchi/three",
+}
+
+supported_targets = "js"
+
+pkgtype(kind: "executable")
+
+options(
+  link: { "js": { "exports": [ "world_position" ], "format": "esm" } },
+)

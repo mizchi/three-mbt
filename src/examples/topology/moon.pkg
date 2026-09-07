@@ -1,0 +1,24 @@
+import {
+  "mizchi/three",
+  "moonbitlang/async/js_async",
+}
+
+supported_targets = "js"
+
+pkgtype(kind: "executable")
+
+options(
+  link: {
+    "js": {
+      "exports": [
+        "render_edit",
+        "export_edit",
+        "render_connectivity",
+        "export_connectivity",
+        "render_bevel",
+        "export_bevel",
+      ],
+      "format": "esm",
+    },
+  },
+)

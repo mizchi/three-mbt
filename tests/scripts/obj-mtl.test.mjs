@@ -1,0 +1,24 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import * as T from 'three';
+import {OBJLoader} from 'three/addons/loaders/OBJLoader.js';
+import {MTLLoader} from 'three/addons/loaders/MTLLoader.js';
+import {oBJMTLExporter,texturePaths} from '../../js/obj-mtl.js';
+test('OBJ/MTL groups retain separate materials and require explicit texture paths',()=>{
+ const geometry=new T.BoxGeometry();geometry.clearGroups();geometry.addGroup(0,18,0);geometry.addGroup(18,18,1);
+ const red=new T.MeshPhongMaterial({color:0xff0000}),green=new T.MeshPhongMaterial({color:0x00ff00});
+ red.name=green.name='Original';const mesh=new T.Mesh(geometry,[red,green]);mesh.position.x=3;
+ const exporter=oBJMTLExporter(),paths=texturePaths();const result=exporter.export(mesh,'part.mtl',paths);
+ assert.match(result.obj,/usemtl material_0/);assert.match(result.obj,/usemtl material_1/);
+ const restored=new OBJLoader().setMaterials(new MTLLoader().parse(result.mtl,'')).parse(result.obj);
+ assert.equal(restored.children.length,2);
+ assert.ok(Math.abs(restored.children[0].material.color.r-1)<1e-12);assert.ok(Math.abs(restored.children[1].material.color.g-1)<1e-12);
+ assert.equal(new T.Box3().setFromObject(restored).min.x,2.5);
+ assert.equal(red.name,'Original');assert.equal(geometry.groups.length,2);
+ const texture=new T.Texture();red.map=texture;
+ assert.throws(()=>exporter.export(mesh,'part.mtl',paths),/Texture path missing/);
+ paths[texture.uuid]='images/albedo.png';texture.repeat.set(2,3);
+ const textured=exporter.export(mesh,'part.mtl',paths);
+ assert.match(textured.mtl,/map_Kd -s 2 3 1 -o 0 0 0 images\/albedo.png/);
+ assert.deepEqual(textured.texturePaths,['images/albedo.png']);
+});

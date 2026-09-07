@@ -1,0 +1,29 @@
+import {
+  "mizchi/three",
+  "moonbitlang/async/js_async",
+}
+
+supported_targets = "js"
+
+pkgtype(kind: "executable")
+
+options(
+  link: {
+    "js": {
+      "exports": [
+        "render_part",
+        "export_part",
+        "svg_profile",
+        "render_flow",
+        "selection_demo",
+        "close_selection",
+        "load_modeling_asset",
+        "bake_comparison",
+        "orbit_editing_demo",
+        "orbit_editing_target",
+        "stop_editing_keys",
+      ],
+      "format": "esm",
+    },
+  },
+)

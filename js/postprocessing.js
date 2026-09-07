@@ -1,0 +1,11 @@
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutlinePass } from 'three/addons/postprocessing/OutlinePass.js';
+export const effectComposer = renderer => new EffectComposer(renderer);
+export const composerWithTarget = (renderer, target) => new EffectComposer(renderer, target);
+export const renderPass = (scene, camera) => new RenderPass(scene, camera);
+export const outputPass = () => new OutputPass();
+export const unrealBloomPass = (resolution, strength, radius, threshold) => new UnrealBloomPass(resolution, strength, radius, threshold);
+export const outlinePass = (resolution, scene, camera) => new OutlinePass(resolution, scene, camera);

@@ -1,0 +1,27 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import * as T from 'three';
+import {sceneUtils} from '../../js/scene-tools.js';
+test('batch expansion rebases indices and preserves live instances after deletion and compaction',()=>{
+  const box=new T.BoxGeometry(),material=new T.MeshBasicMaterial({color:0xffffff});
+  const batch=new T.BatchedMesh(6,150,200,material);
+  const removed=batch.addGeometry(box),geometry=batch.addGeometry(box);
+  const deleted=batch.addInstance(removed),hidden=batch.addInstance(geometry),visible=batch.addInstance(geometry);
+  batch.deleteInstance(deleted);batch.deleteGeometry(removed);
+  batch.setVisibleAt(hidden,false);batch.setColorAt(visible,new T.Color(0,1,0));
+  batch.setMatrixAt(visible,new T.Matrix4().makeTranslation(3,0,0));
+  batch.position.y=2;batch.castShadow=true;batch.optimize();
+  const expanded=sceneUtils().meshesFromBatch(batch,false);
+  assert.equal(expanded.children.length,2);assert.equal(expanded.children[0].visible,false);
+  const mesh=expanded.children[1];
+  assert.equal(mesh.geometry.attributes.position.count,24);
+  assert.equal(mesh.geometry.index.count,36);
+  assert.ok(Array.from(mesh.geometry.index.array).every(index=>index>=0&&index<24));
+  assert.equal(mesh.material.color.g,1);assert.equal(mesh.material.color.r,0);
+  assert.equal(mesh.castShadow,true);
+  assert.deepEqual(mesh.getWorldPosition(new T.Vector3()).toArray(),[3,2,0]);
+  assert.equal(sceneUtils().meshesFromBatch(batch,true).children.length,1);
+  assert.equal(batch.instanceCount,2);assert.equal(material.color.r,1);
+  mesh.geometry.attributes.position.setX(0,999);
+  assert.ok(batch.geometry.attributes.position.getX(0)<2);
+});

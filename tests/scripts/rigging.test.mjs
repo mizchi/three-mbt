@@ -1,0 +1,27 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import * as T from 'three';
+import {cCDIKSolver,iKChain,iKLink,retargetOptions,skeletonUtils} from '../../js/rigging.js';
+test('IK reaches a target and retargeting transfers a bone rotation',()=>{
+ const root=new T.Bone(),tip=new T.Bone(),target=new T.Bone();
+ tip.position.x=1;target.position.y=1;root.add(tip);
+ const mesh=new T.SkinnedMesh(new T.BufferGeometry(),new T.MeshBasicMaterial());
+ mesh.add(root,target);mesh.bind(new T.Skeleton([root,tip,target]));mesh.updateMatrixWorld(true);
+ const solver=cCDIKSolver(mesh,[iKChain(2,1,[iKLink(0)])]);solver.update();
+ assert.ok(tip.getWorldPosition(new T.Vector3()).distanceTo(target.getWorldPosition(new T.Vector3()))<1e-5);
+ const sourceBone=new T.Bone(),targetBone=new T.Bone();sourceBone.name=targetBone.name='hip';
+ const source=new T.Skeleton([sourceBone]),dest=new T.Skeleton([targetBone]);
+ sourceBone.rotation.z=0.5;sourceBone.updateMatrixWorld(true);
+ const options=retargetOptions();options.names.hip='hip';
+ skeletonUtils().retarget(dest,source,options);
+ assert.ok(Math.abs(targetBone.rotation.z-0.5)<1e-6);
+ assert.equal(options.preserveBoneMatrix,true);
+ const rig=new T.SkinnedMesh(new T.BufferGeometry(),new T.MeshBasicMaterial());
+ rig.add(targetBone);rig.bind(dest);rig.updateMatrixWorld(true);
+ const clip=new T.AnimationClip('walk',1,[new T.VectorKeyframeTrack('.bones[hip].position',[0,1],[0,0,0,2,0,0])]);
+ options.fps=3;
+ const converted=skeletonUtils().retargetClip(rig,source,clip,options);
+ assert.equal(converted.name,'walk');assert.ok(converted.tracks.length>0);
+ const positions=converted.tracks.find(track=>track.name.endsWith('.position'));
+ assert.ok(positions.values.at(-3)>1.9);
+});
