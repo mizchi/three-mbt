@@ -257,21 +257,185 @@ let position = child.get_world_position(@three.Vector3(0, 0, 0))
 
 A runnable example is available in [`examples/viewer/src/scene_graph`](examples/viewer/src/scene_graph).
 
+### Vector arithmetic
+
+These operators and scalar helpers are available in the development version;
+the published `0.1.1` package does not include them yet.
+
+`Vector2`, `Vector3`, and `Vector4` support `+`, `-`, unary `-`, and
+component-wise `*` and `/`. Each operation returns a fresh vector and preserves
+both operands, including live references obtained from scene nodes.
+
+```moonbit
+let position = @three.Vector3(1, 2, 3)
+let velocity = @three.Vector3(4, 0, -2)
+let next = position + velocity.scaled(0.5) // (3, 2, 2)
+let midpoint = (position + next).divided_by(2)
+let reverse = -velocity
+let stretched = position * @three.Vector3(2, 1, 0.5)
+```
+
+MoonBit's `Mul` and `Div` traits require both operands to have the same type.
+Use `v.scaled(s)` and `v.divided_by(s)` for scalar arithmetic; `v * s` and `s * v`
+are not supported. `a * b` is a component-wise product; use `a.dot(b)` for the dot
+product and `a.clone().cross(b)` for a non-mutating Vector3 cross product.
+
+Existing three.js methods keep their mutation behavior: `a.add(b)` modifies
+`a`, while `a + b` does not. Assign a calculated position explicitly:
+
+```moonbit
+let next = mesh.position() + velocity.scaled(dt)
+mesh.position().copy(next) |> ignore
+```
+
+For `let mut p = mesh.position()`, `p += offset` rebinds `p` to a new vector;
+it does not move the mesh. Operations allocate a vector for each result. Use
+native methods such as `add_scaled_vector` to reuse storage in hot loops.
+
+### Cascade configuration
+
+The development version also adds `Unit`-returning configuration methods for
+`Object3D` and its concrete subclasses. MoonBit's cascade syntax is `..`, not
+`::`: each call operates on the same receiver, and the expression returns that
+receiver with its concrete type intact. The receiver expression is evaluated
+once. Existing `Unit` setters, including material setters, work with this syntax
+too.
+
+```moonbit
+let scene = @three.Scene()
+let material = @three.MeshStandardMaterial(0xad207b, roughness=0.7)
+  ..set_transparent(true)
+  ..set_opacity(0.8)
+let mesh = @three.Mesh(
+  @three.BoxGeometry(1, 2, 3).as_buffer_geometry(),
+  material.as_material(),
+)
+  ..set_name("box")
+  ..set_position(@three.Vector3(0, 1, 0) + @three.Vector3(1, 0, 0))
+  ..set_rotation_xyz(0, 0.5, 0)
+  ..set_uniform_scale(0.5)
+  ..set_cast_shadow(true)
+  ..add_to(scene.as_object3d())
+// mesh is still a Mesh, and scene already contains it.
+```
+
+| Purpose | Cascade methods |
+| --- | --- |
+| Local position | `set_position(Vector3)`, `set_position_xyz(x, y, z)` |
+| Local rotation | `set_rotation(Euler)`, `set_rotation_xyz(x, y, z)`, `set_quaternion(Quaternion)` |
+| Local scale | `set_scale(Vector3)`, `set_scale_xyz(x, y, z)`, `set_uniform_scale(s)` |
+| Parenting | `add_child(Object3D)`, `add_children(FixedArray[Object3D])`, `add_to(Object3D)`, `remove_child(Object3D)` |
+
+Transform setters copy values into the existing position, rotation, quaternion,
+and scale objects; they never replace those live references or retain the input
+objects. Rotation angles are radians. `set_rotation_xyz` retains the current
+Euler order, while `set_rotation(Euler)` copies the input order. Quaternion
+updates use native Euler synchronization without implicit normalization.
+
+These methods apply immediately to three.js objects. Parenting retains native
+reparenting and event behavior; removing a child does not dispose it. Matrix
+updates follow three.js settings, including `matrixAutoUpdate = false`.
+Configuration introduces no separate builder state.
+
+Use `..` for `Unit` methods and `.` for methods returning a value. For example,
+the existing `add()` still returns the native parent object; `add_child()`
+performs that operation with a `Unit` result for use in a cascade. Assign the
+cascade result, return it, or use `|> ignore` when configuring an existing local
+variable as a standalone statement.
+
+### Building scene hierarchies
+
+Use constructors and `..` setters to retain concrete types. Convert to
+`Object3D` at child-list boundaries, where meshes, groups, and other node types
+need a common type. No additional package is required.
+
+```moonbit
+let geometry = @three.BoxGeometry(1, 2, 1).as_buffer_geometry()
+let material = @three.MeshStandardMaterial(0xad207b, roughness=0.85)
+let body = @three.Mesh(geometry, material.as_material())
+  ..set_name("body")
+  ..set_position_xyz(0, 1, 0)
+let head = @three.Group()
+  ..set_name("head")
+  ..add_children([
+    @three.Mesh(
+      @three.SphereGeometry(0.5, 8, 6).as_buffer_geometry(),
+      material.as_material(),
+    )..set_position_xyz(0, 2.5, 0).as_object3d(),
+  ])
+let model = @three.Group()
+  ..set_name("character")
+  ..add_children([body.as_object3d(), head.as_object3d()])
+let scene = @three.Scene()..add_children([model.as_object3d()])
+// body is a Mesh; head and model are Groups; scene is a Scene.
+```
+
+Create and configure parts before attaching them. For procedural parts built in
+loops, use `parent.add_child(part.as_object3d())` or `parent.add_children([...])`
+to keep attachment explicit. Children retain insertion order; an empty list is
+a no-op. These operations execute immediately on native three.js objects.
+
+Meshes share the geometry and material references passed to their constructors.
+In this example, changing `material` affects both meshes. Dispose each shared
+resource once, after all its users are finished. Adding an existing child moves
+it from its previous parent; it does not clone the child:
+
+```moonbit
+let other = @three.Group()..add_children([body.as_object3d()])
+// model now contains only head; other contains the original body.
+```
+
+Use `..` for object configuration. Reserve `|>` for a sequence of value
+transformations and `<|` for a long final argument when it helps readability;
+neither is needed to wrap an ordinary constructor call.
+
+### Scoped resource cleanup with `defer`
+
+When all users of a resource finish within one scope, register cleanup beside
+its allocation. Register it once per owned resource, even when several meshes
+share that resource:
+
+```moonbit
+fn render_pair(renderer : @three.WebGLRenderer, camera : @three.Camera) -> Unit {
+  let geometry = @three.BoxGeometry(1, 1, 1).as_buffer_geometry()
+  defer geometry.dispose()
+  let material = @three.MeshStandardMaterial(0xad207b).as_material()
+  defer material.dispose()
+  let left = @three.Mesh(geometry, material)..set_position_xyz(-1, 0, 0)
+  let right = @three.Mesh(geometry, material)..set_position_xyz(1, 0, 0)
+  let scene = @three.Scene()
+    ..add_children([left.as_object3d(), right.as_object3d()])
+  renderer.render(scene, camera)
+  // Scope exit disposes each resource once, after both meshes have been used.
+}
+```
+
+`defer` also works in an async function that waits for an operation such as GLB
+export to finish. Keep cleanup in the scope that owns the resource's full
+lifetime. A factory returning a model or viewer transfers that responsibility
+to its caller: deferring cleanup inside the factory would dispose the resources
+as it returns. Browser viewers that outlive their creation call therefore keep
+an explicit `dispose` operation for teardown.
+
+`defer` schedules cleanup; it does not track shared references. Do not also
+traverse meshes to dispose the same geometry or material. Either the owning
+scope or the longer-lived owner should perform that cleanup.
+
 ### Call syntax and reference semantics
 
 Frequently used inherited operations can be called directly on concrete types:
 
 ```moonbit
 let geometry = @three.BoxGeometry(1, 1, 1)
+defer geometry.dispose()
 let material = @three.MeshStandardMaterial(
   0xaaaaaa, roughness=0.85, metalness=0, flat_shading=true,
 )
+defer material.dispose()
 let mesh = @three.Mesh(geometry.as_buffer_geometry(), material.as_material())
 mesh.position().set(0, 1, 0) |> ignore
 mesh.set_cast_shadow(true)
 material.set_opacity(0.8)
-geometry.dispose()
-material.dispose()
 ```
 
 `MeshStandardMaterial` and `MeshPhysicalMaterial` use named optional `roughness`,
@@ -1909,6 +2073,12 @@ that resolves `@mizchi/three-mbt/constructors`, `@mizchi/three-mbt/loaders`,
 They specify argument types, return types, and JavaScript mappings used to generate `src/*_generated.mbt`.
 Additional class types and `js/core-factories.js` are also generated.
 Enum / Option conversions, asynchronous operations, and Renderer option handling live in separate handwritten `.mbt` files.
+
+[`bindings/dsl.mjs`](bindings/dsl.mjs) defines the cascade configuration layer.
+Each entry explicitly declares arguments, a `Unit` result, native operations,
+and documentation. `cascade: true` makes it available on concrete subclasses
+through the inheritance generator. Add configuration operations there without
+changing the original three.js method contracts.
 
 ```sh
 just generate   # Regenerate FFI bindings and update the public interface

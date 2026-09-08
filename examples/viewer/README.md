@@ -45,6 +45,18 @@ MoonBit workspace builds emit example ESM modules under
 `_build/js/release/build/mizchi/three-viewer/<package>/<package>.js`.
 The library's source directory contains no example packages.
 
+The rabbit uses native `Group` and `Mesh` constructors, `..` setters, and
+`add_children([...])` to assemble its parts. Ear coordinates use non-mutating
+vector arithmetic. The shared `part` and `ellipsoid_node` helpers return
+unattached `Mesh` values; conversion to `Object3D` happens at attachment.
+`add_part` and `ellipsoid` are convenience helpers for attaching to an existing
+parent, used by the mouse example.
+
+`part` creates a material but shares its input geometry without cloning it.
+`ellipsoid_node` creates both resources. Each model supplies dedicated resources
+for every mesh, allowing `parts.dispose` to release them. That helper does not
+deduplicate shared resources or detach the model from its parent.
+
 To use the rabbit inside another workspace example, import
 `"mizchi/three-viewer/rabbit"` and `"mizchi/three-viewer/parts"` in `moon.pkg`:
 
@@ -55,3 +67,13 @@ scene.add(model) |> ignore
 scene.remove(model) |> ignore
 @parts.dispose(model)
 ```
+
+For a model used entirely within one function, register `defer @parts.dispose(model)`
+after creation. This also applies to an async function that waits for GLB export;
+`export_model` in `src/mouse/viewer.mbt` already follows this pattern. If the model
+is attached to a longer-lived scene, detach it before the deferred disposal runs.
+For resources shared across meshes, register one `defer resource.dispose()` per
+owned geometry or material instead of combining it with `parts.dispose`.
+
+The interactive viewer returns from its creation function before rendering ends,
+so its resources are released by `dispose(viewer)` during browser teardown.

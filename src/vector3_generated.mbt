@@ -491,3 +491,46 @@ pub extern "js" fn Vector3::set_from_color(
 ///|
 pub extern "js" fn Vector3::random_direction(self : Vector3) -> Vector3 =
   #| (self) => self.randomDirection()
+
+///|
+/// Returns a fresh vector; leaves the receiver unchanged. Numeric behavior follows three.js.
+pub extern "js" fn Vector3::scaled(self : Vector3, scalar : Double) -> Vector3 =
+  #| (self, scalar) => self.clone().multiplyScalar(scalar)
+
+///|
+/// Returns a fresh vector; leaves the receiver unchanged. Numeric behavior follows three.js.
+pub extern "js" fn Vector3::divided_by(
+  self : Vector3,
+  scalar : Double,
+) -> Vector3 =
+  #| (self, scalar) => self.clone().divideScalar(scalar)
+
+///|
+/// Returns a fresh vector without changing either operand. Binary operations are component-wise.
+pub impl Add for Vector3 with fn add(self : Vector3, other : Vector3) -> Vector3 {
+  self.clone().add(other)
+}
+
+///|
+/// Returns a fresh vector without changing either operand. Binary operations are component-wise.
+pub impl Sub for Vector3 with fn sub(self : Vector3, other : Vector3) -> Vector3 {
+  self.clone().sub(other)
+}
+
+///|
+/// Returns a fresh vector without changing either operand. Binary operations are component-wise.
+pub impl Mul for Vector3 with fn mul(self : Vector3, other : Vector3) -> Vector3 {
+  self.clone().multiply(other)
+}
+
+///|
+/// Returns a fresh vector without changing either operand. Binary operations are component-wise.
+pub impl Div for Vector3 with fn div(self : Vector3, other : Vector3) -> Vector3 {
+  self.clone().divide(other)
+}
+
+///|
+/// Returns a fresh vector without changing either operand. Binary operations are component-wise.
+pub impl Neg for Vector3 with fn neg(self : Vector3) -> Vector3 {
+  self.clone().negate()
+}

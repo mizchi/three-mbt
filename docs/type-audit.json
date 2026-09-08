@@ -30483,7 +30483,9 @@
           "runtimePresent": null,
           "status": "mapped",
           "bindings": [
-            "position"
+            "position",
+            "set_position",
+            "set_position_xyz"
           ]
         },
         {
@@ -30500,7 +30502,9 @@
           "runtimePresent": null,
           "status": "mapped",
           "bindings": [
-            "rotation"
+            "rotation",
+            "set_rotation",
+            "set_rotation_xyz"
           ]
         },
         {
@@ -30517,7 +30521,8 @@
           "runtimePresent": null,
           "status": "mapped",
           "bindings": [
-            "quaternion"
+            "quaternion",
+            "set_quaternion"
           ]
         },
         {
@@ -30534,7 +30539,10 @@
           "runtimePresent": null,
           "status": "mapped",
           "bindings": [
-            "scale"
+            "scale",
+            "set_scale",
+            "set_scale_xyz",
+            "set_uniform_scale"
           ]
         },
         {
@@ -31311,7 +31319,9 @@
           "runtimePresent": null,
           "status": "mapped",
           "bindings": [
-            "add"
+            "add",
+            "add_child",
+            "add_children"
           ]
         },
         {
@@ -31328,7 +31338,8 @@
           "runtimePresent": null,
           "status": "mapped",
           "bindings": [
-            "remove"
+            "remove",
+            "remove_child"
           ]
         },
         {
@@ -48988,7 +48999,9 @@
           "runtimePresent": true,
           "status": "mapped",
           "bindings": [
-            "clone"
+            "clone",
+            "scaled",
+            "divided_by"
           ]
         },
         {
@@ -49158,7 +49171,8 @@
           "runtimePresent": true,
           "status": "mapped",
           "bindings": [
-            "multiply_scalar"
+            "multiply_scalar",
+            "scaled"
           ]
         },
         {
@@ -49192,7 +49206,8 @@
           "runtimePresent": true,
           "status": "mapped",
           "bindings": [
-            "divide_scalar"
+            "divide_scalar",
+            "divided_by"
           ]
         },
         {
@@ -49967,7 +49982,9 @@
           "runtimePresent": true,
           "status": "mapped",
           "bindings": [
-            "clone"
+            "clone",
+            "scaled",
+            "divided_by"
           ]
         },
         {
@@ -50137,7 +50154,8 @@
           "runtimePresent": true,
           "status": "mapped",
           "bindings": [
-            "multiply_scalar"
+            "multiply_scalar",
+            "scaled"
           ]
         },
         {
@@ -50341,7 +50359,8 @@
           "runtimePresent": true,
           "status": "mapped",
           "bindings": [
-            "divide_scalar"
+            "divide_scalar",
+            "divided_by"
           ]
         },
         {
@@ -51390,7 +51409,9 @@
           "runtimePresent": true,
           "status": "mapped",
           "bindings": [
-            "clone"
+            "clone",
+            "scaled",
+            "divided_by"
           ]
         },
         {
@@ -51560,7 +51581,8 @@
           "runtimePresent": true,
           "status": "mapped",
           "bindings": [
-            "multiply_scalar"
+            "multiply_scalar",
+            "scaled"
           ]
         },
         {
@@ -51611,7 +51633,8 @@
           "runtimePresent": true,
           "status": "mapped",
           "bindings": [
-            "divide_scalar"
+            "divide_scalar",
+            "divided_by"
           ]
         },
         {

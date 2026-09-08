@@ -1,6 +1,26 @@
-// Public call syntax only: runtime forwarding and return types stay unchanged.
+// Convenience APIs preserve native methods; value arithmetic clones its receiver.
 export function extendErgonomics(bindings) {
   const types = new Map(bindings.map(binding => [binding.type, binding]));
+  for (const type of ['Vector2', 'Vector3', 'Vector4']) {
+    const binding = types.get(type);
+    if (!binding.methods.some(method => method.name === 'same_reference')) {
+      binding.methods.push({ name: 'same_reference', args: `other : ${type}`, returns: 'Bool', expression: 'self === other' });
+    }
+    binding.operators = [
+      { trait: 'Add', method: 'add', target: 'add' },
+      { trait: 'Sub', method: 'sub', target: 'sub' },
+      { trait: 'Mul', method: 'mul', target: 'multiply' },
+      { trait: 'Div', method: 'div', target: 'divide' },
+      { trait: 'Neg', method: 'neg', target: 'negate', unary: true },
+    ];
+    for (const [name, js] of [['scaled', 'multiplyScalar'], ['divided_by', 'divideScalar']]) {
+      binding.methods.push({
+        name, args: 'scalar : Double', returns: type, js,
+        expression: `self.clone().${js}(scalar)`,
+        doc: 'Returns a fresh vector; leaves the receiver unchanged. Numeric behavior follows three.js.',
+      });
+    }
+  }
   for (const type of ['MeshStandardMaterial', 'MeshPhysicalMaterial']) {
     Object.assign(types.get(type).factory, {
       args: 'color : Int, roughness : Double, metalness : Double, flat_shading : Bool',
@@ -56,7 +76,7 @@ export function extendErgonomics(bindings) {
       if (!parent) continue;
       extend(parent);
       for (const method of parent.methods) {
-        if (!(allowed.get(base)?.has(method.name) || method.inheritedFrom) || names.has(method.name)) continue;
+        if (!(allowed.get(base)?.has(method.name) || method.inheritedFrom || method.cascade) || names.has(method.name)) continue;
         binding.methods.push({ ...method, inheritedFrom: method.inheritedFrom ?? base });
         names.add(method.name);
       }

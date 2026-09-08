@@ -228,3 +228,90 @@ pub extern "js" fn Group::traverse_visible(
   callback : (Object3D) -> Unit,
 ) -> Unit =
   #| (self, callback) => self.traverseVisible(callback)
+
+///|
+/// Copies coordinates into the live position vector; does not retain the input vector.
+pub extern "js" fn Group::set_position(
+  self : Group,
+  position : Vector3,
+) -> Unit =
+  #| (self, position) => { self.position.copy(position); }
+
+///|
+/// Sets local position coordinates while preserving the live position reference.
+pub extern "js" fn Group::set_position_xyz(
+  self : Group,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> Unit =
+  #| (self, x, y, z) => { self.position.set(x, y, z); }
+
+///|
+/// Copies Euler angles and order; native quaternion synchronization is preserved.
+pub extern "js" fn Group::set_rotation(self : Group, rotation : Euler) -> Unit =
+  #| (self, rotation) => { self.rotation.copy(rotation); }
+
+///|
+/// Sets local Euler angles in radians, retaining the current Euler order.
+pub extern "js" fn Group::set_rotation_xyz(
+  self : Group,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> Unit =
+  #| (self, x, y, z) => { self.rotation.set(x, y, z); }
+
+///|
+/// Copies quaternion components; native Euler synchronization is preserved. Does not normalize.
+pub extern "js" fn Group::set_quaternion(
+  self : Group,
+  quaternion : Quaternion,
+) -> Unit =
+  #| (self, quaternion) => { self.quaternion.copy(quaternion); }
+
+///|
+/// Copies local scale components into the existing live scale vector.
+pub extern "js" fn Group::set_scale(self : Group, scale : Vector3) -> Unit =
+  #| (self, scale) => { self.scale.copy(scale); }
+
+///|
+/// Sets the three local scale components.
+pub extern "js" fn Group::set_scale_xyz(
+  self : Group,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> Unit =
+  #| (self, x, y, z) => { self.scale.set(x, y, z); }
+
+///|
+/// Sets all local scale components to the supplied value.
+pub extern "js" fn Group::set_uniform_scale(
+  self : Group,
+  scale : Double,
+) -> Unit =
+  #| (self, scale) => { self.scale.setScalar(scale); }
+
+///|
+/// Adds a child using native reparenting and event behavior.
+pub extern "js" fn Group::add_child(self : Group, child : Object3D) -> Unit =
+  #| (self, child) => { self.add(child); }
+
+///|
+/// Adds children in order using native reparenting and event behavior. An empty list is a no-op.
+pub extern "js" fn Group::add_children(
+  self : Group,
+  children : FixedArray[Object3D],
+) -> Unit =
+  #| (self, children) => { if (children.length > 0) { self.add(...children); }; }
+
+///|
+/// Adds this object to the parent, retaining this object as the cascade receiver.
+pub extern "js" fn Group::add_to(self : Group, parent : Object3D) -> Unit =
+  #| (self, parent) => { parent.add(self); }
+
+///|
+/// Removes a child using native event behavior. Does not dispose resources.
+pub extern "js" fn Group::remove_child(self : Group, child : Object3D) -> Unit =
+  #| (self, child) => { self.remove(child); }

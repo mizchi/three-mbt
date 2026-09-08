@@ -75,6 +75,9 @@ pub suberror SerializationError {
 pub type AmbientLight
 pub fn AmbientLight::AmbientLight(Int, Double) -> Self
 pub fn AmbientLight::add(Self, Object3D) -> Object3D
+pub fn AmbientLight::add_child(Self, Object3D) -> Unit
+pub fn AmbientLight::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn AmbientLight::add_to(Self, Object3D) -> Unit
 pub fn AmbientLight::apply_matrix4(Self, Matrix4) -> Unit
 pub fn AmbientLight::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn AmbientLight::as_light(Self) -> Light
@@ -97,6 +100,7 @@ pub fn AmbientLight::position(Self) -> Vector3
 pub fn AmbientLight::quaternion(Self) -> Quaternion
 pub fn AmbientLight::receive_shadow(Self) -> Bool
 pub fn AmbientLight::remove(Self, Object3D) -> Object3D
+pub fn AmbientLight::remove_child(Self, Object3D) -> Unit
 pub fn AmbientLight::remove_from_parent(Self) -> Object3D
 pub fn AmbientLight::rotate_x(Self, Double) -> Object3D
 pub fn AmbientLight::rotate_y(Self, Double) -> Object3D
@@ -105,7 +109,15 @@ pub fn AmbientLight::rotation(Self) -> Euler
 pub fn AmbientLight::scale(Self) -> Vector3
 pub fn AmbientLight::set_cast_shadow(Self, Bool) -> Unit
 pub fn AmbientLight::set_name(Self, String) -> Unit
+pub fn AmbientLight::set_position(Self, Vector3) -> Unit
+pub fn AmbientLight::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn AmbientLight::set_quaternion(Self, Quaternion) -> Unit
 pub fn AmbientLight::set_receive_shadow(Self, Bool) -> Unit
+pub fn AmbientLight::set_rotation(Self, Euler) -> Unit
+pub fn AmbientLight::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn AmbientLight::set_scale(Self, Vector3) -> Unit
+pub fn AmbientLight::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn AmbientLight::set_uniform_scale(Self, Double) -> Unit
 pub fn AmbientLight::set_visible(Self, Bool) -> Unit
 pub fn AmbientLight::translate_x(Self, Double) -> Object3D
 pub fn AmbientLight::translate_y(Self, Double) -> Object3D
@@ -264,6 +276,9 @@ pub fn ArcCurve::update_arc_lengths(Self) -> Unit
 pub type ArrayCamera
 pub fn ArrayCamera::ArrayCamera(FixedArray[PerspectiveCamera]) -> Self
 pub fn ArrayCamera::add(Self, Object3D) -> Object3D
+pub fn ArrayCamera::add_child(Self, Object3D) -> Unit
+pub fn ArrayCamera::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn ArrayCamera::add_to(Self, Object3D) -> Unit
 pub fn ArrayCamera::apply_matrix4(Self, Matrix4) -> Unit
 pub fn ArrayCamera::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn ArrayCamera::as_camera(Self) -> Camera
@@ -290,6 +305,7 @@ pub fn ArrayCamera::position(Self) -> Vector3
 pub fn ArrayCamera::quaternion(Self) -> Quaternion
 pub fn ArrayCamera::receive_shadow(Self) -> Bool
 pub fn ArrayCamera::remove(Self, Object3D) -> Object3D
+pub fn ArrayCamera::remove_child(Self, Object3D) -> Unit
 pub fn ArrayCamera::remove_from_parent(Self) -> Object3D
 pub fn ArrayCamera::rotate_x(Self, Double) -> Object3D
 pub fn ArrayCamera::rotate_y(Self, Double) -> Object3D
@@ -299,7 +315,15 @@ pub fn ArrayCamera::scale(Self) -> Vector3
 pub fn ArrayCamera::set_cameras(Self, FixedArray[PerspectiveCamera]) -> Unit
 pub fn ArrayCamera::set_cast_shadow(Self, Bool) -> Unit
 pub fn ArrayCamera::set_name(Self, String) -> Unit
+pub fn ArrayCamera::set_position(Self, Vector3) -> Unit
+pub fn ArrayCamera::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn ArrayCamera::set_quaternion(Self, Quaternion) -> Unit
 pub fn ArrayCamera::set_receive_shadow(Self, Bool) -> Unit
+pub fn ArrayCamera::set_rotation(Self, Euler) -> Unit
+pub fn ArrayCamera::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn ArrayCamera::set_scale(Self, Vector3) -> Unit
+pub fn ArrayCamera::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn ArrayCamera::set_uniform_scale(Self, Double) -> Unit
 pub fn ArrayCamera::set_visible(Self, Bool) -> Unit
 pub fn ArrayCamera::translate_x(Self, Double) -> Object3D
 pub fn ArrayCamera::translate_y(Self, Double) -> Object3D
@@ -318,6 +342,9 @@ pub fn ArrayCamera::world_to_local(Self, Vector3) -> Vector3
 pub type ArrowHelper
 pub fn ArrowHelper::ArrowHelper(Vector3, Vector3, Double, Int) -> Self
 pub fn ArrowHelper::add(Self, Object3D) -> Object3D
+pub fn ArrowHelper::add_child(Self, Object3D) -> Unit
+pub fn ArrowHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn ArrowHelper::add_to(Self, Object3D) -> Unit
 pub fn ArrowHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn ArrowHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn ArrowHelper::as_object3d(Self) -> Object3D
@@ -340,6 +367,7 @@ pub fn ArrowHelper::position(Self) -> Vector3
 pub fn ArrowHelper::quaternion(Self) -> Quaternion
 pub fn ArrowHelper::receive_shadow(Self) -> Bool
 pub fn ArrowHelper::remove(Self, Object3D) -> Object3D
+pub fn ArrowHelper::remove_child(Self, Object3D) -> Unit
 pub fn ArrowHelper::remove_from_parent(Self) -> Object3D
 pub fn ArrowHelper::rotate_x(Self, Double) -> Object3D
 pub fn ArrowHelper::rotate_y(Self, Double) -> Object3D
@@ -351,7 +379,15 @@ pub fn ArrowHelper::set_color(Self, Color) -> Unit
 pub fn ArrowHelper::set_direction(Self, Vector3) -> Unit
 pub fn ArrowHelper::set_length(Self, Double, Double, Double) -> Unit
 pub fn ArrowHelper::set_name(Self, String) -> Unit
+pub fn ArrowHelper::set_position(Self, Vector3) -> Unit
+pub fn ArrowHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn ArrowHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn ArrowHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn ArrowHelper::set_rotation(Self, Euler) -> Unit
+pub fn ArrowHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn ArrowHelper::set_scale(Self, Vector3) -> Unit
+pub fn ArrowHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn ArrowHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn ArrowHelper::set_visible(Self, Bool) -> Unit
 pub fn ArrowHelper::translate_x(Self, Double) -> Object3D
 pub fn ArrowHelper::translate_y(Self, Double) -> Object3D
@@ -375,6 +411,9 @@ pub(all) enum AttributeGPUType {
 pub type AxesHelper
 pub fn AxesHelper::AxesHelper(Double) -> Self
 pub fn AxesHelper::add(Self, Object3D) -> Object3D
+pub fn AxesHelper::add_child(Self, Object3D) -> Unit
+pub fn AxesHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn AxesHelper::add_to(Self, Object3D) -> Unit
 pub fn AxesHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn AxesHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn AxesHelper::as_object3d(Self) -> Object3D
@@ -397,6 +436,7 @@ pub fn AxesHelper::position(Self) -> Vector3
 pub fn AxesHelper::quaternion(Self) -> Quaternion
 pub fn AxesHelper::receive_shadow(Self) -> Bool
 pub fn AxesHelper::remove(Self, Object3D) -> Object3D
+pub fn AxesHelper::remove_child(Self, Object3D) -> Unit
 pub fn AxesHelper::remove_from_parent(Self) -> Object3D
 pub fn AxesHelper::rotate_x(Self, Double) -> Object3D
 pub fn AxesHelper::rotate_y(Self, Double) -> Object3D
@@ -405,7 +445,15 @@ pub fn AxesHelper::rotation(Self) -> Euler
 pub fn AxesHelper::scale(Self) -> Vector3
 pub fn AxesHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn AxesHelper::set_name(Self, String) -> Unit
+pub fn AxesHelper::set_position(Self, Vector3) -> Unit
+pub fn AxesHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn AxesHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn AxesHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn AxesHelper::set_rotation(Self, Euler) -> Unit
+pub fn AxesHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn AxesHelper::set_scale(Self, Vector3) -> Unit
+pub fn AxesHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn AxesHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn AxesHelper::set_visible(Self, Bool) -> Unit
 pub fn AxesHelper::translate_x(Self, Double) -> Object3D
 pub fn AxesHelper::translate_y(Self, Double) -> Object3D
@@ -457,8 +505,11 @@ pub type BatchedInstanceId
 pub type BatchedMesh
 pub fn BatchedMesh::BatchedMesh(Int, Int, Int, Material) -> Self
 pub fn BatchedMesh::add(Self, Object3D) -> Object3D
+pub fn BatchedMesh::add_child(Self, Object3D) -> Unit
+pub fn BatchedMesh::add_children(Self, FixedArray[Object3D]) -> Unit
 pub fn BatchedMesh::add_geometry(Self, BufferGeometry) -> BatchedGeometryId
 pub fn BatchedMesh::add_instance(Self, BatchedGeometryId) -> BatchedInstanceId
+pub fn BatchedMesh::add_to(Self, Object3D) -> Unit
 pub fn BatchedMesh::apply_matrix4(Self, Matrix4) -> Unit
 pub fn BatchedMesh::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn BatchedMesh::as_mesh(Self) -> Mesh
@@ -500,6 +551,7 @@ pub fn BatchedMesh::position(Self) -> Vector3
 pub fn BatchedMesh::quaternion(Self) -> Quaternion
 pub fn BatchedMesh::receive_shadow(Self) -> Bool
 pub fn BatchedMesh::remove(Self, Object3D) -> Object3D
+pub fn BatchedMesh::remove_child(Self, Object3D) -> Unit
 pub fn BatchedMesh::remove_from_parent(Self) -> Object3D
 pub fn BatchedMesh::rotate_x(Self, Double) -> Object3D
 pub fn BatchedMesh::rotate_y(Self, Double) -> Object3D
@@ -515,9 +567,17 @@ pub fn BatchedMesh::set_instance_count(Self, Int) -> Unit raise ModelingError
 pub fn BatchedMesh::set_matrix_at(Self, BatchedInstanceId, Matrix4) -> Self
 pub fn BatchedMesh::set_name(Self, String) -> Unit
 pub fn BatchedMesh::set_per_object_frustum_culled(Self, Bool) -> Unit
+pub fn BatchedMesh::set_position(Self, Vector3) -> Unit
+pub fn BatchedMesh::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn BatchedMesh::set_quaternion(Self, Quaternion) -> Unit
 pub fn BatchedMesh::set_receive_shadow(Self, Bool) -> Unit
 pub fn BatchedMesh::set_rgba_at(Self, BatchedInstanceId, Vector4) -> Self
+pub fn BatchedMesh::set_rotation(Self, Euler) -> Unit
+pub fn BatchedMesh::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn BatchedMesh::set_scale(Self, Vector3) -> Unit
+pub fn BatchedMesh::set_scale_xyz(Self, Double, Double, Double) -> Unit
 pub fn BatchedMesh::set_sort_objects(Self, Bool) -> Unit
+pub fn BatchedMesh::set_uniform_scale(Self, Double) -> Unit
 pub fn BatchedMesh::set_visible(Self, Bool) -> Unit
 pub fn BatchedMesh::set_visible_at(Self, BatchedInstanceId, Bool) -> Self
 pub fn BatchedMesh::sort_objects(Self) -> Bool
@@ -594,6 +654,9 @@ pub fn BokehPass::uniforms(Self) -> Uniforms
 pub type Bone
 pub fn Bone::Bone() -> Self
 pub fn Bone::add(Self, Object3D) -> Object3D
+pub fn Bone::add_child(Self, Object3D) -> Unit
+pub fn Bone::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn Bone::add_to(Self, Object3D) -> Unit
 pub fn Bone::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Bone::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn Bone::as_object3d(Self) -> Object3D
@@ -615,6 +678,7 @@ pub fn Bone::position(Self) -> Vector3
 pub fn Bone::quaternion(Self) -> Quaternion
 pub fn Bone::receive_shadow(Self) -> Bool
 pub fn Bone::remove(Self, Object3D) -> Object3D
+pub fn Bone::remove_child(Self, Object3D) -> Unit
 pub fn Bone::remove_from_parent(Self) -> Object3D
 pub fn Bone::rotate_x(Self, Double) -> Object3D
 pub fn Bone::rotate_y(Self, Double) -> Object3D
@@ -623,7 +687,15 @@ pub fn Bone::rotation(Self) -> Euler
 pub fn Bone::scale(Self) -> Vector3
 pub fn Bone::set_cast_shadow(Self, Bool) -> Unit
 pub fn Bone::set_name(Self, String) -> Unit
+pub fn Bone::set_position(Self, Vector3) -> Unit
+pub fn Bone::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Bone::set_quaternion(Self, Quaternion) -> Unit
 pub fn Bone::set_receive_shadow(Self, Bool) -> Unit
+pub fn Bone::set_rotation(Self, Euler) -> Unit
+pub fn Bone::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Bone::set_scale(Self, Vector3) -> Unit
+pub fn Bone::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Bone::set_uniform_scale(Self, Double) -> Unit
 pub fn Bone::set_visible(Self, Bool) -> Unit
 pub fn Bone::translate_x(Self, Double) -> Object3D
 pub fn Bone::translate_y(Self, Double) -> Object3D
@@ -717,6 +789,9 @@ pub fn Box3::union(Self, Self) -> Self
 pub type Box3Helper
 pub fn Box3Helper::Box3Helper(Box3, Int) -> Self
 pub fn Box3Helper::add(Self, Object3D) -> Object3D
+pub fn Box3Helper::add_child(Self, Object3D) -> Unit
+pub fn Box3Helper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn Box3Helper::add_to(Self, Object3D) -> Unit
 pub fn Box3Helper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Box3Helper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn Box3Helper::as_object3d(Self) -> Object3D
@@ -739,6 +814,7 @@ pub fn Box3Helper::position(Self) -> Vector3
 pub fn Box3Helper::quaternion(Self) -> Quaternion
 pub fn Box3Helper::receive_shadow(Self) -> Bool
 pub fn Box3Helper::remove(Self, Object3D) -> Object3D
+pub fn Box3Helper::remove_child(Self, Object3D) -> Unit
 pub fn Box3Helper::remove_from_parent(Self) -> Object3D
 pub fn Box3Helper::rotate_x(Self, Double) -> Object3D
 pub fn Box3Helper::rotate_y(Self, Double) -> Object3D
@@ -747,7 +823,15 @@ pub fn Box3Helper::rotation(Self) -> Euler
 pub fn Box3Helper::scale(Self) -> Vector3
 pub fn Box3Helper::set_cast_shadow(Self, Bool) -> Unit
 pub fn Box3Helper::set_name(Self, String) -> Unit
+pub fn Box3Helper::set_position(Self, Vector3) -> Unit
+pub fn Box3Helper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Box3Helper::set_quaternion(Self, Quaternion) -> Unit
 pub fn Box3Helper::set_receive_shadow(Self, Bool) -> Unit
+pub fn Box3Helper::set_rotation(Self, Euler) -> Unit
+pub fn Box3Helper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Box3Helper::set_scale(Self, Vector3) -> Unit
+pub fn Box3Helper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Box3Helper::set_uniform_scale(Self, Double) -> Unit
 pub fn Box3Helper::set_visible(Self, Bool) -> Unit
 pub fn Box3Helper::translate_x(Self, Double) -> Object3D
 pub fn Box3Helper::translate_y(Self, Double) -> Object3D
@@ -794,6 +878,9 @@ pub fn BoxGeometry::translate(Self, Double, Double, Double) -> BufferGeometry
 pub type BoxHelper
 pub fn BoxHelper::BoxHelper(Object3D, Int) -> Self
 pub fn BoxHelper::add(Self, Object3D) -> Object3D
+pub fn BoxHelper::add_child(Self, Object3D) -> Unit
+pub fn BoxHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn BoxHelper::add_to(Self, Object3D) -> Unit
 pub fn BoxHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn BoxHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn BoxHelper::as_object3d(Self) -> Object3D
@@ -816,6 +903,7 @@ pub fn BoxHelper::position(Self) -> Vector3
 pub fn BoxHelper::quaternion(Self) -> Quaternion
 pub fn BoxHelper::receive_shadow(Self) -> Bool
 pub fn BoxHelper::remove(Self, Object3D) -> Object3D
+pub fn BoxHelper::remove_child(Self, Object3D) -> Unit
 pub fn BoxHelper::remove_from_parent(Self) -> Object3D
 pub fn BoxHelper::rotate_x(Self, Double) -> Object3D
 pub fn BoxHelper::rotate_y(Self, Double) -> Object3D
@@ -824,7 +912,15 @@ pub fn BoxHelper::rotation(Self) -> Euler
 pub fn BoxHelper::scale(Self) -> Vector3
 pub fn BoxHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn BoxHelper::set_name(Self, String) -> Unit
+pub fn BoxHelper::set_position(Self, Vector3) -> Unit
+pub fn BoxHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn BoxHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn BoxHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn BoxHelper::set_rotation(Self, Euler) -> Unit
+pub fn BoxHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn BoxHelper::set_scale(Self, Vector3) -> Unit
+pub fn BoxHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn BoxHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn BoxHelper::set_visible(Self, Bool) -> Unit
 pub fn BoxHelper::translate_x(Self, Double) -> Object3D
 pub fn BoxHelper::translate_y(Self, Double) -> Object3D
@@ -950,6 +1046,9 @@ pub(all) enum BufferUsage {
 #external
 pub type CCDIKHelper
 pub fn CCDIKHelper::add(Self, Object3D) -> Object3D
+pub fn CCDIKHelper::add_child(Self, Object3D) -> Unit
+pub fn CCDIKHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn CCDIKHelper::add_to(Self, Object3D) -> Unit
 pub fn CCDIKHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn CCDIKHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn CCDIKHelper::as_object3d(Self) -> Object3D
@@ -972,6 +1071,7 @@ pub fn CCDIKHelper::position(Self) -> Vector3
 pub fn CCDIKHelper::quaternion(Self) -> Quaternion
 pub fn CCDIKHelper::receive_shadow(Self) -> Bool
 pub fn CCDIKHelper::remove(Self, Object3D) -> Object3D
+pub fn CCDIKHelper::remove_child(Self, Object3D) -> Unit
 pub fn CCDIKHelper::remove_from_parent(Self) -> Object3D
 pub fn CCDIKHelper::rotate_x(Self, Double) -> Object3D
 pub fn CCDIKHelper::rotate_y(Self, Double) -> Object3D
@@ -980,7 +1080,15 @@ pub fn CCDIKHelper::rotation(Self) -> Euler
 pub fn CCDIKHelper::scale(Self) -> Vector3
 pub fn CCDIKHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn CCDIKHelper::set_name(Self, String) -> Unit
+pub fn CCDIKHelper::set_position(Self, Vector3) -> Unit
+pub fn CCDIKHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn CCDIKHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn CCDIKHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn CCDIKHelper::set_rotation(Self, Euler) -> Unit
+pub fn CCDIKHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn CCDIKHelper::set_scale(Self, Vector3) -> Unit
+pub fn CCDIKHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn CCDIKHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn CCDIKHelper::set_visible(Self, Bool) -> Unit
 pub fn CCDIKHelper::translate_x(Self, Double) -> Object3D
 pub fn CCDIKHelper::translate_y(Self, Double) -> Object3D
@@ -1022,6 +1130,9 @@ pub fn CSG::weld_tolerance(Self) -> Double
 #external
 pub type Camera
 pub fn Camera::add(Self, Object3D) -> Object3D
+pub fn Camera::add_child(Self, Object3D) -> Unit
+pub fn Camera::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn Camera::add_to(Self, Object3D) -> Unit
 pub fn Camera::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Camera::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn Camera::as_object3d(Self) -> Object3D
@@ -1051,6 +1162,7 @@ pub fn Camera::projection_matrix_inverse(Self) -> Matrix4
 pub fn Camera::quaternion(Self) -> Quaternion
 pub fn Camera::receive_shadow(Self) -> Bool
 pub fn Camera::remove(Self, Object3D) -> Object3D
+pub fn Camera::remove_child(Self, Object3D) -> Unit
 pub fn Camera::remove_from_parent(Self) -> Object3D
 pub fn Camera::reversed_depth(Self) -> Bool
 pub fn Camera::rotate_x(Self, Double) -> Object3D
@@ -1061,7 +1173,15 @@ pub fn Camera::scale(Self) -> Vector3
 pub fn Camera::set_cast_shadow(Self, Bool) -> Unit
 pub fn Camera::set_coordinate_system(Self, CoordinateSystem) -> Unit
 pub fn Camera::set_name(Self, String) -> Unit
+pub fn Camera::set_position(Self, Vector3) -> Unit
+pub fn Camera::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Camera::set_quaternion(Self, Quaternion) -> Unit
 pub fn Camera::set_receive_shadow(Self, Bool) -> Unit
+pub fn Camera::set_rotation(Self, Euler) -> Unit
+pub fn Camera::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Camera::set_scale(Self, Vector3) -> Unit
+pub fn Camera::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Camera::set_uniform_scale(Self, Double) -> Unit
 pub fn Camera::set_viewport(Self, Vector4?) -> Unit
 pub fn Camera::set_visible(Self, Bool) -> Unit
 pub fn Camera::translate_x(Self, Double) -> Object3D
@@ -1082,6 +1202,9 @@ pub fn Camera::world_to_local(Self, Vector3) -> Vector3
 pub type CameraHelper
 pub fn CameraHelper::CameraHelper(Camera) -> Self
 pub fn CameraHelper::add(Self, Object3D) -> Object3D
+pub fn CameraHelper::add_child(Self, Object3D) -> Unit
+pub fn CameraHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn CameraHelper::add_to(Self, Object3D) -> Unit
 pub fn CameraHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn CameraHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn CameraHelper::as_object3d(Self) -> Object3D
@@ -1104,6 +1227,7 @@ pub fn CameraHelper::position(Self) -> Vector3
 pub fn CameraHelper::quaternion(Self) -> Quaternion
 pub fn CameraHelper::receive_shadow(Self) -> Bool
 pub fn CameraHelper::remove(Self, Object3D) -> Object3D
+pub fn CameraHelper::remove_child(Self, Object3D) -> Unit
 pub fn CameraHelper::remove_from_parent(Self) -> Object3D
 pub fn CameraHelper::rotate_x(Self, Double) -> Object3D
 pub fn CameraHelper::rotate_y(Self, Double) -> Object3D
@@ -1112,7 +1236,15 @@ pub fn CameraHelper::rotation(Self) -> Euler
 pub fn CameraHelper::scale(Self) -> Vector3
 pub fn CameraHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn CameraHelper::set_name(Self, String) -> Unit
+pub fn CameraHelper::set_position(Self, Vector3) -> Unit
+pub fn CameraHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn CameraHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn CameraHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn CameraHelper::set_rotation(Self, Euler) -> Unit
+pub fn CameraHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn CameraHelper::set_scale(Self, Vector3) -> Unit
+pub fn CameraHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn CameraHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn CameraHelper::set_visible(Self, Bool) -> Unit
 pub fn CameraHelper::translate_x(Self, Double) -> Object3D
 pub fn CameraHelper::translate_y(Self, Double) -> Object3D
@@ -1407,6 +1539,9 @@ pub(all) enum CoordinateSystem {
 pub type CubeCamera
 pub fn CubeCamera::CubeCamera(Double, Double, WebGLCubeRenderTarget) -> Self
 pub fn CubeCamera::add(Self, Object3D) -> Object3D
+pub fn CubeCamera::add_child(Self, Object3D) -> Unit
+pub fn CubeCamera::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn CubeCamera::add_to(Self, Object3D) -> Unit
 pub fn CubeCamera::apply_matrix4(Self, Matrix4) -> Unit
 pub fn CubeCamera::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn CubeCamera::as_object3d(Self) -> Object3D
@@ -1428,6 +1563,7 @@ pub fn CubeCamera::position(Self) -> Vector3
 pub fn CubeCamera::quaternion(Self) -> Quaternion
 pub fn CubeCamera::receive_shadow(Self) -> Bool
 pub fn CubeCamera::remove(Self, Object3D) -> Object3D
+pub fn CubeCamera::remove_child(Self, Object3D) -> Unit
 pub fn CubeCamera::remove_from_parent(Self) -> Object3D
 pub fn CubeCamera::rotate_x(Self, Double) -> Object3D
 pub fn CubeCamera::rotate_y(Self, Double) -> Object3D
@@ -1436,7 +1572,15 @@ pub fn CubeCamera::rotation(Self) -> Euler
 pub fn CubeCamera::scale(Self) -> Vector3
 pub fn CubeCamera::set_cast_shadow(Self, Bool) -> Unit
 pub fn CubeCamera::set_name(Self, String) -> Unit
+pub fn CubeCamera::set_position(Self, Vector3) -> Unit
+pub fn CubeCamera::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn CubeCamera::set_quaternion(Self, Quaternion) -> Unit
 pub fn CubeCamera::set_receive_shadow(Self, Bool) -> Unit
+pub fn CubeCamera::set_rotation(Self, Euler) -> Unit
+pub fn CubeCamera::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn CubeCamera::set_scale(Self, Vector3) -> Unit
+pub fn CubeCamera::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn CubeCamera::set_uniform_scale(Self, Double) -> Unit
 pub fn CubeCamera::set_visible(Self, Bool) -> Unit
 pub fn CubeCamera::translate_x(Self, Double) -> Object3D
 pub fn CubeCamera::translate_y(Self, Double) -> Object3D
@@ -1798,6 +1942,9 @@ pub fn DepthTexture::as_texture(Self) -> Texture
 pub type DirectionalLight
 pub fn DirectionalLight::DirectionalLight(Int, Double) -> Self
 pub fn DirectionalLight::add(Self, Object3D) -> Object3D
+pub fn DirectionalLight::add_child(Self, Object3D) -> Unit
+pub fn DirectionalLight::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn DirectionalLight::add_to(Self, Object3D) -> Unit
 pub fn DirectionalLight::apply_matrix4(Self, Matrix4) -> Unit
 pub fn DirectionalLight::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn DirectionalLight::as_light(Self) -> Light
@@ -1821,6 +1968,7 @@ pub fn DirectionalLight::position(Self) -> Vector3
 pub fn DirectionalLight::quaternion(Self) -> Quaternion
 pub fn DirectionalLight::receive_shadow(Self) -> Bool
 pub fn DirectionalLight::remove(Self, Object3D) -> Object3D
+pub fn DirectionalLight::remove_child(Self, Object3D) -> Unit
 pub fn DirectionalLight::remove_from_parent(Self) -> Object3D
 pub fn DirectionalLight::rotate_x(Self, Double) -> Object3D
 pub fn DirectionalLight::rotate_y(Self, Double) -> Object3D
@@ -1829,7 +1977,15 @@ pub fn DirectionalLight::rotation(Self) -> Euler
 pub fn DirectionalLight::scale(Self) -> Vector3
 pub fn DirectionalLight::set_cast_shadow(Self, Bool) -> Unit
 pub fn DirectionalLight::set_name(Self, String) -> Unit
+pub fn DirectionalLight::set_position(Self, Vector3) -> Unit
+pub fn DirectionalLight::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn DirectionalLight::set_quaternion(Self, Quaternion) -> Unit
 pub fn DirectionalLight::set_receive_shadow(Self, Bool) -> Unit
+pub fn DirectionalLight::set_rotation(Self, Euler) -> Unit
+pub fn DirectionalLight::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn DirectionalLight::set_scale(Self, Vector3) -> Unit
+pub fn DirectionalLight::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn DirectionalLight::set_uniform_scale(Self, Double) -> Unit
 pub fn DirectionalLight::set_visible(Self, Bool) -> Unit
 pub fn DirectionalLight::shadow(Self) -> LightShadow
 pub fn DirectionalLight::target(Self) -> Object3D
@@ -1850,6 +2006,9 @@ pub fn DirectionalLight::world_to_local(Self, Vector3) -> Vector3
 pub type DirectionalLightHelper
 pub fn DirectionalLightHelper::DirectionalLightHelper(DirectionalLight, Double) -> Self
 pub fn DirectionalLightHelper::add(Self, Object3D) -> Object3D
+pub fn DirectionalLightHelper::add_child(Self, Object3D) -> Unit
+pub fn DirectionalLightHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn DirectionalLightHelper::add_to(Self, Object3D) -> Unit
 pub fn DirectionalLightHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn DirectionalLightHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn DirectionalLightHelper::as_object3d(Self) -> Object3D
@@ -1872,6 +2031,7 @@ pub fn DirectionalLightHelper::position(Self) -> Vector3
 pub fn DirectionalLightHelper::quaternion(Self) -> Quaternion
 pub fn DirectionalLightHelper::receive_shadow(Self) -> Bool
 pub fn DirectionalLightHelper::remove(Self, Object3D) -> Object3D
+pub fn DirectionalLightHelper::remove_child(Self, Object3D) -> Unit
 pub fn DirectionalLightHelper::remove_from_parent(Self) -> Object3D
 pub fn DirectionalLightHelper::rotate_x(Self, Double) -> Object3D
 pub fn DirectionalLightHelper::rotate_y(Self, Double) -> Object3D
@@ -1880,7 +2040,15 @@ pub fn DirectionalLightHelper::rotation(Self) -> Euler
 pub fn DirectionalLightHelper::scale(Self) -> Vector3
 pub fn DirectionalLightHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn DirectionalLightHelper::set_name(Self, String) -> Unit
+pub fn DirectionalLightHelper::set_position(Self, Vector3) -> Unit
+pub fn DirectionalLightHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn DirectionalLightHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn DirectionalLightHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn DirectionalLightHelper::set_rotation(Self, Euler) -> Unit
+pub fn DirectionalLightHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn DirectionalLightHelper::set_scale(Self, Vector3) -> Unit
+pub fn DirectionalLightHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn DirectionalLightHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn DirectionalLightHelper::set_visible(Self, Bool) -> Unit
 pub fn DirectionalLightHelper::translate_x(Self, Double) -> Object3D
 pub fn DirectionalLightHelper::translate_y(Self, Double) -> Object3D
@@ -2398,6 +2566,9 @@ pub fn GeometryGroup::start(Self) -> Int
 pub type GridHelper
 pub fn GridHelper::GridHelper(Double, Int) -> Self
 pub fn GridHelper::add(Self, Object3D) -> Object3D
+pub fn GridHelper::add_child(Self, Object3D) -> Unit
+pub fn GridHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn GridHelper::add_to(Self, Object3D) -> Unit
 pub fn GridHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn GridHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn GridHelper::as_object3d(Self) -> Object3D
@@ -2420,6 +2591,7 @@ pub fn GridHelper::position(Self) -> Vector3
 pub fn GridHelper::quaternion(Self) -> Quaternion
 pub fn GridHelper::receive_shadow(Self) -> Bool
 pub fn GridHelper::remove(Self, Object3D) -> Object3D
+pub fn GridHelper::remove_child(Self, Object3D) -> Unit
 pub fn GridHelper::remove_from_parent(Self) -> Object3D
 pub fn GridHelper::rotate_x(Self, Double) -> Object3D
 pub fn GridHelper::rotate_y(Self, Double) -> Object3D
@@ -2428,7 +2600,15 @@ pub fn GridHelper::rotation(Self) -> Euler
 pub fn GridHelper::scale(Self) -> Vector3
 pub fn GridHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn GridHelper::set_name(Self, String) -> Unit
+pub fn GridHelper::set_position(Self, Vector3) -> Unit
+pub fn GridHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn GridHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn GridHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn GridHelper::set_rotation(Self, Euler) -> Unit
+pub fn GridHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn GridHelper::set_scale(Self, Vector3) -> Unit
+pub fn GridHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn GridHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn GridHelper::set_visible(Self, Bool) -> Unit
 pub fn GridHelper::translate_x(Self, Double) -> Object3D
 pub fn GridHelper::translate_y(Self, Double) -> Object3D
@@ -2447,6 +2627,9 @@ pub fn GridHelper::world_to_local(Self, Vector3) -> Vector3
 pub type Group
 pub fn Group::Group() -> Self
 pub fn Group::add(Self, Object3D) -> Object3D
+pub fn Group::add_child(Self, Object3D) -> Unit
+pub fn Group::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn Group::add_to(Self, Object3D) -> Unit
 pub fn Group::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Group::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn Group::as_object3d(Self) -> Object3D
@@ -2468,6 +2651,7 @@ pub fn Group::position(Self) -> Vector3
 pub fn Group::quaternion(Self) -> Quaternion
 pub fn Group::receive_shadow(Self) -> Bool
 pub fn Group::remove(Self, Object3D) -> Object3D
+pub fn Group::remove_child(Self, Object3D) -> Unit
 pub fn Group::remove_from_parent(Self) -> Object3D
 pub fn Group::rotate_x(Self, Double) -> Object3D
 pub fn Group::rotate_y(Self, Double) -> Object3D
@@ -2476,7 +2660,15 @@ pub fn Group::rotation(Self) -> Euler
 pub fn Group::scale(Self) -> Vector3
 pub fn Group::set_cast_shadow(Self, Bool) -> Unit
 pub fn Group::set_name(Self, String) -> Unit
+pub fn Group::set_position(Self, Vector3) -> Unit
+pub fn Group::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Group::set_quaternion(Self, Quaternion) -> Unit
 pub fn Group::set_receive_shadow(Self, Bool) -> Unit
+pub fn Group::set_rotation(Self, Euler) -> Unit
+pub fn Group::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Group::set_scale(Self, Vector3) -> Unit
+pub fn Group::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Group::set_uniform_scale(Self, Double) -> Unit
 pub fn Group::set_visible(Self, Bool) -> Unit
 pub fn Group::translate_x(Self, Double) -> Object3D
 pub fn Group::translate_y(Self, Double) -> Object3D
@@ -2512,6 +2704,9 @@ pub fn HDRLoader::set_with_credentials(Self, Bool) -> Self
 pub type HemisphereLight
 pub fn HemisphereLight::HemisphereLight(Int, Int, Double) -> Self
 pub fn HemisphereLight::add(Self, Object3D) -> Object3D
+pub fn HemisphereLight::add_child(Self, Object3D) -> Unit
+pub fn HemisphereLight::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn HemisphereLight::add_to(Self, Object3D) -> Unit
 pub fn HemisphereLight::apply_matrix4(Self, Matrix4) -> Unit
 pub fn HemisphereLight::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn HemisphereLight::as_light(Self) -> Light
@@ -2535,6 +2730,7 @@ pub fn HemisphereLight::position(Self) -> Vector3
 pub fn HemisphereLight::quaternion(Self) -> Quaternion
 pub fn HemisphereLight::receive_shadow(Self) -> Bool
 pub fn HemisphereLight::remove(Self, Object3D) -> Object3D
+pub fn HemisphereLight::remove_child(Self, Object3D) -> Unit
 pub fn HemisphereLight::remove_from_parent(Self) -> Object3D
 pub fn HemisphereLight::rotate_x(Self, Double) -> Object3D
 pub fn HemisphereLight::rotate_y(Self, Double) -> Object3D
@@ -2543,7 +2739,15 @@ pub fn HemisphereLight::rotation(Self) -> Euler
 pub fn HemisphereLight::scale(Self) -> Vector3
 pub fn HemisphereLight::set_cast_shadow(Self, Bool) -> Unit
 pub fn HemisphereLight::set_name(Self, String) -> Unit
+pub fn HemisphereLight::set_position(Self, Vector3) -> Unit
+pub fn HemisphereLight::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn HemisphereLight::set_quaternion(Self, Quaternion) -> Unit
 pub fn HemisphereLight::set_receive_shadow(Self, Bool) -> Unit
+pub fn HemisphereLight::set_rotation(Self, Euler) -> Unit
+pub fn HemisphereLight::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn HemisphereLight::set_scale(Self, Vector3) -> Unit
+pub fn HemisphereLight::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn HemisphereLight::set_uniform_scale(Self, Double) -> Unit
 pub fn HemisphereLight::set_visible(Self, Bool) -> Unit
 pub fn HemisphereLight::translate_x(Self, Double) -> Object3D
 pub fn HemisphereLight::translate_y(Self, Double) -> Object3D
@@ -2562,6 +2766,9 @@ pub fn HemisphereLight::world_to_local(Self, Vector3) -> Vector3
 pub type HemisphereLightHelper
 pub fn HemisphereLightHelper::HemisphereLightHelper(HemisphereLight, Double) -> Self
 pub fn HemisphereLightHelper::add(Self, Object3D) -> Object3D
+pub fn HemisphereLightHelper::add_child(Self, Object3D) -> Unit
+pub fn HemisphereLightHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn HemisphereLightHelper::add_to(Self, Object3D) -> Unit
 pub fn HemisphereLightHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn HemisphereLightHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn HemisphereLightHelper::as_object3d(Self) -> Object3D
@@ -2584,6 +2791,7 @@ pub fn HemisphereLightHelper::position(Self) -> Vector3
 pub fn HemisphereLightHelper::quaternion(Self) -> Quaternion
 pub fn HemisphereLightHelper::receive_shadow(Self) -> Bool
 pub fn HemisphereLightHelper::remove(Self, Object3D) -> Object3D
+pub fn HemisphereLightHelper::remove_child(Self, Object3D) -> Unit
 pub fn HemisphereLightHelper::remove_from_parent(Self) -> Object3D
 pub fn HemisphereLightHelper::rotate_x(Self, Double) -> Object3D
 pub fn HemisphereLightHelper::rotate_y(Self, Double) -> Object3D
@@ -2592,7 +2800,15 @@ pub fn HemisphereLightHelper::rotation(Self) -> Euler
 pub fn HemisphereLightHelper::scale(Self) -> Vector3
 pub fn HemisphereLightHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn HemisphereLightHelper::set_name(Self, String) -> Unit
+pub fn HemisphereLightHelper::set_position(Self, Vector3) -> Unit
+pub fn HemisphereLightHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn HemisphereLightHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn HemisphereLightHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn HemisphereLightHelper::set_rotation(Self, Euler) -> Unit
+pub fn HemisphereLightHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn HemisphereLightHelper::set_scale(Self, Vector3) -> Unit
+pub fn HemisphereLightHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn HemisphereLightHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn HemisphereLightHelper::set_visible(Self, Bool) -> Unit
 pub fn HemisphereLightHelper::translate_x(Self, Double) -> Object3D
 pub fn HemisphereLightHelper::translate_y(Self, Double) -> Object3D
@@ -2731,6 +2947,9 @@ pub fn InstancedInterleavedBuffer::set_mesh_per_attribute(Self, Int) -> Unit
 pub type InstancedMesh
 pub fn InstancedMesh::InstancedMesh(BufferGeometry, Material, Int) -> Self
 pub fn InstancedMesh::add(Self, Object3D) -> Object3D
+pub fn InstancedMesh::add_child(Self, Object3D) -> Unit
+pub fn InstancedMesh::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn InstancedMesh::add_to(Self, Object3D) -> Unit
 pub fn InstancedMesh::apply_matrix4(Self, Matrix4) -> Unit
 pub fn InstancedMesh::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn InstancedMesh::as_mesh(Self) -> Mesh
@@ -2761,6 +2980,7 @@ pub fn InstancedMesh::position(Self) -> Vector3
 pub fn InstancedMesh::quaternion(Self) -> Quaternion
 pub fn InstancedMesh::receive_shadow(Self) -> Bool
 pub fn InstancedMesh::remove(Self, Object3D) -> Object3D
+pub fn InstancedMesh::remove_child(Self, Object3D) -> Unit
 pub fn InstancedMesh::remove_from_parent(Self) -> Object3D
 pub fn InstancedMesh::rotate_x(Self, Double) -> Object3D
 pub fn InstancedMesh::rotate_y(Self, Double) -> Object3D
@@ -2773,7 +2993,15 @@ pub fn InstancedMesh::set_count(Self, Int) -> Unit
 pub fn InstancedMesh::set_matrix_at(Self, Int, Matrix4) -> Unit
 pub fn InstancedMesh::set_morph_at(Self, Int, Mesh) -> Unit
 pub fn InstancedMesh::set_name(Self, String) -> Unit
+pub fn InstancedMesh::set_position(Self, Vector3) -> Unit
+pub fn InstancedMesh::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn InstancedMesh::set_quaternion(Self, Quaternion) -> Unit
 pub fn InstancedMesh::set_receive_shadow(Self, Bool) -> Unit
+pub fn InstancedMesh::set_rotation(Self, Euler) -> Unit
+pub fn InstancedMesh::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn InstancedMesh::set_scale(Self, Vector3) -> Unit
+pub fn InstancedMesh::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn InstancedMesh::set_uniform_scale(Self, Double) -> Unit
 pub fn InstancedMesh::set_visible(Self, Bool) -> Unit
 pub fn InstancedMesh::translate_x(Self, Double) -> Object3D
 pub fn InstancedMesh::translate_y(Self, Double) -> Object3D
@@ -2938,7 +3166,10 @@ pub fn KeyframeTrack::value_type_name(Self) -> String
 pub type LOD
 pub fn LOD::LOD() -> Self
 pub fn LOD::add(Self, Object3D) -> Object3D
+pub fn LOD::add_child(Self, Object3D) -> Unit
+pub fn LOD::add_children(Self, FixedArray[Object3D]) -> Unit
 pub fn LOD::add_level(Self, Object3D, Double, Double) -> Self
+pub fn LOD::add_to(Self, Object3D) -> Unit
 pub fn LOD::apply_matrix4(Self, Matrix4) -> Unit
 pub fn LOD::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn LOD::as_object3d(Self) -> Object3D
@@ -2964,6 +3195,7 @@ pub fn LOD::position(Self) -> Vector3
 pub fn LOD::quaternion(Self) -> Quaternion
 pub fn LOD::receive_shadow(Self) -> Bool
 pub fn LOD::remove(Self, Object3D) -> Object3D
+pub fn LOD::remove_child(Self, Object3D) -> Unit
 pub fn LOD::remove_from_parent(Self) -> Object3D
 pub fn LOD::remove_level(Self, Double) -> Bool
 pub fn LOD::rotate_x(Self, Double) -> Object3D
@@ -2974,7 +3206,15 @@ pub fn LOD::scale(Self) -> Vector3
 pub fn LOD::set_auto_update(Self, Bool) -> Unit
 pub fn LOD::set_cast_shadow(Self, Bool) -> Unit
 pub fn LOD::set_name(Self, String) -> Unit
+pub fn LOD::set_position(Self, Vector3) -> Unit
+pub fn LOD::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn LOD::set_quaternion(Self, Quaternion) -> Unit
 pub fn LOD::set_receive_shadow(Self, Bool) -> Unit
+pub fn LOD::set_rotation(Self, Euler) -> Unit
+pub fn LOD::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn LOD::set_scale(Self, Vector3) -> Unit
+pub fn LOD::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn LOD::set_uniform_scale(Self, Double) -> Unit
 pub fn LOD::set_visible(Self, Bool) -> Unit
 pub fn LOD::translate_x(Self, Double) -> Object3D
 pub fn LOD::translate_y(Self, Double) -> Object3D
@@ -3039,6 +3279,9 @@ pub fn Layers::toggle(Self, Int) -> Unit
 #external
 pub type Light
 pub fn Light::add(Self, Object3D) -> Object3D
+pub fn Light::add_child(Self, Object3D) -> Unit
+pub fn Light::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn Light::add_to(Self, Object3D) -> Unit
 pub fn Light::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Light::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn Light::as_object3d(Self) -> Object3D
@@ -3064,6 +3307,7 @@ pub fn Light::position(Self) -> Vector3
 pub fn Light::quaternion(Self) -> Quaternion
 pub fn Light::receive_shadow(Self) -> Bool
 pub fn Light::remove(Self, Object3D) -> Object3D
+pub fn Light::remove_child(Self, Object3D) -> Unit
 pub fn Light::remove_from_parent(Self) -> Object3D
 pub fn Light::rotate_x(Self, Double) -> Object3D
 pub fn Light::rotate_y(Self, Double) -> Object3D
@@ -3073,7 +3317,15 @@ pub fn Light::scale(Self) -> Vector3
 pub fn Light::set_cast_shadow(Self, Bool) -> Unit
 pub fn Light::set_intensity(Self, Double) -> Unit
 pub fn Light::set_name(Self, String) -> Unit
+pub fn Light::set_position(Self, Vector3) -> Unit
+pub fn Light::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Light::set_quaternion(Self, Quaternion) -> Unit
 pub fn Light::set_receive_shadow(Self, Bool) -> Unit
+pub fn Light::set_rotation(Self, Euler) -> Unit
+pub fn Light::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Light::set_scale(Self, Vector3) -> Unit
+pub fn Light::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Light::set_uniform_scale(Self, Double) -> Unit
 pub fn Light::set_visible(Self, Bool) -> Unit
 pub fn Light::translate_x(Self, Double) -> Object3D
 pub fn Light::translate_y(Self, Double) -> Object3D
@@ -3092,6 +3344,9 @@ pub fn Light::world_to_local(Self, Vector3) -> Vector3
 pub type LightProbe
 pub fn LightProbe::LightProbe(SphericalHarmonics3, Double) -> Self
 pub fn LightProbe::add(Self, Object3D) -> Object3D
+pub fn LightProbe::add_child(Self, Object3D) -> Unit
+pub fn LightProbe::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn LightProbe::add_to(Self, Object3D) -> Unit
 pub fn LightProbe::apply_matrix4(Self, Matrix4) -> Unit
 pub fn LightProbe::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn LightProbe::as_light(Self) -> Light
@@ -3115,6 +3370,7 @@ pub fn LightProbe::position(Self) -> Vector3
 pub fn LightProbe::quaternion(Self) -> Quaternion
 pub fn LightProbe::receive_shadow(Self) -> Bool
 pub fn LightProbe::remove(Self, Object3D) -> Object3D
+pub fn LightProbe::remove_child(Self, Object3D) -> Unit
 pub fn LightProbe::remove_from_parent(Self) -> Object3D
 pub fn LightProbe::rotate_x(Self, Double) -> Object3D
 pub fn LightProbe::rotate_y(Self, Double) -> Object3D
@@ -3123,8 +3379,16 @@ pub fn LightProbe::rotation(Self) -> Euler
 pub fn LightProbe::scale(Self) -> Vector3
 pub fn LightProbe::set_cast_shadow(Self, Bool) -> Unit
 pub fn LightProbe::set_name(Self, String) -> Unit
+pub fn LightProbe::set_position(Self, Vector3) -> Unit
+pub fn LightProbe::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn LightProbe::set_quaternion(Self, Quaternion) -> Unit
 pub fn LightProbe::set_receive_shadow(Self, Bool) -> Unit
+pub fn LightProbe::set_rotation(Self, Euler) -> Unit
+pub fn LightProbe::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn LightProbe::set_scale(Self, Vector3) -> Unit
+pub fn LightProbe::set_scale_xyz(Self, Double, Double, Double) -> Unit
 pub fn LightProbe::set_sh(Self, SphericalHarmonics3) -> Unit
+pub fn LightProbe::set_uniform_scale(Self, Double) -> Unit
 pub fn LightProbe::set_visible(Self, Bool) -> Unit
 pub fn LightProbe::sh(Self) -> SphericalHarmonics3
 pub fn LightProbe::translate_x(Self, Double) -> Object3D
@@ -3174,6 +3438,9 @@ pub fn LightShadow::update_matrices(Self, Light) -> Unit
 pub type Line
 pub fn Line::Line(BufferGeometry, Material) -> Self
 pub fn Line::add(Self, Object3D) -> Object3D
+pub fn Line::add_child(Self, Object3D) -> Unit
+pub fn Line::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn Line::add_to(Self, Object3D) -> Unit
 pub fn Line::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Line::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn Line::as_object3d(Self) -> Object3D
@@ -3197,6 +3464,7 @@ pub fn Line::position(Self) -> Vector3
 pub fn Line::quaternion(Self) -> Quaternion
 pub fn Line::receive_shadow(Self) -> Bool
 pub fn Line::remove(Self, Object3D) -> Object3D
+pub fn Line::remove_child(Self, Object3D) -> Unit
 pub fn Line::remove_from_parent(Self) -> Object3D
 pub fn Line::rotate_x(Self, Double) -> Object3D
 pub fn Line::rotate_y(Self, Double) -> Object3D
@@ -3205,7 +3473,15 @@ pub fn Line::rotation(Self) -> Euler
 pub fn Line::scale(Self) -> Vector3
 pub fn Line::set_cast_shadow(Self, Bool) -> Unit
 pub fn Line::set_name(Self, String) -> Unit
+pub fn Line::set_position(Self, Vector3) -> Unit
+pub fn Line::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Line::set_quaternion(Self, Quaternion) -> Unit
 pub fn Line::set_receive_shadow(Self, Bool) -> Unit
+pub fn Line::set_rotation(Self, Euler) -> Unit
+pub fn Line::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Line::set_scale(Self, Vector3) -> Unit
+pub fn Line::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Line::set_uniform_scale(Self, Double) -> Unit
 pub fn Line::set_visible(Self, Bool) -> Unit
 pub fn Line::translate_x(Self, Double) -> Object3D
 pub fn Line::translate_y(Self, Double) -> Object3D
@@ -3224,6 +3500,9 @@ pub fn Line::world_to_local(Self, Vector3) -> Vector3
 pub type Line2
 pub fn Line2::Line2(LineGeometry, LineMaterial) -> Self
 pub fn Line2::add(Self, Object3D) -> Object3D
+pub fn Line2::add_child(Self, Object3D) -> Unit
+pub fn Line2::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn Line2::add_to(Self, Object3D) -> Unit
 pub fn Line2::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Line2::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn Line2::as_object3d(Self) -> Object3D
@@ -3246,6 +3525,7 @@ pub fn Line2::position(Self) -> Vector3
 pub fn Line2::quaternion(Self) -> Quaternion
 pub fn Line2::receive_shadow(Self) -> Bool
 pub fn Line2::remove(Self, Object3D) -> Object3D
+pub fn Line2::remove_child(Self, Object3D) -> Unit
 pub fn Line2::remove_from_parent(Self) -> Object3D
 pub fn Line2::rotate_x(Self, Double) -> Object3D
 pub fn Line2::rotate_y(Self, Double) -> Object3D
@@ -3254,7 +3534,15 @@ pub fn Line2::rotation(Self) -> Euler
 pub fn Line2::scale(Self) -> Vector3
 pub fn Line2::set_cast_shadow(Self, Bool) -> Unit
 pub fn Line2::set_name(Self, String) -> Unit
+pub fn Line2::set_position(Self, Vector3) -> Unit
+pub fn Line2::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Line2::set_quaternion(Self, Quaternion) -> Unit
 pub fn Line2::set_receive_shadow(Self, Bool) -> Unit
+pub fn Line2::set_rotation(Self, Euler) -> Unit
+pub fn Line2::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Line2::set_scale(Self, Vector3) -> Unit
+pub fn Line2::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Line2::set_uniform_scale(Self, Double) -> Unit
 pub fn Line2::set_visible(Self, Bool) -> Unit
 pub fn Line2::translate_x(Self, Double) -> Object3D
 pub fn Line2::translate_y(Self, Double) -> Object3D
@@ -3417,6 +3705,9 @@ pub fn LineGeometry::translate(Self, Double, Double, Double) -> BufferGeometry
 pub type LineLoop
 pub fn LineLoop::LineLoop(BufferGeometry, Material) -> Self
 pub fn LineLoop::add(Self, Object3D) -> Object3D
+pub fn LineLoop::add_child(Self, Object3D) -> Unit
+pub fn LineLoop::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn LineLoop::add_to(Self, Object3D) -> Unit
 pub fn LineLoop::apply_matrix4(Self, Matrix4) -> Unit
 pub fn LineLoop::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn LineLoop::as_line(Self) -> Line
@@ -3439,6 +3730,7 @@ pub fn LineLoop::position(Self) -> Vector3
 pub fn LineLoop::quaternion(Self) -> Quaternion
 pub fn LineLoop::receive_shadow(Self) -> Bool
 pub fn LineLoop::remove(Self, Object3D) -> Object3D
+pub fn LineLoop::remove_child(Self, Object3D) -> Unit
 pub fn LineLoop::remove_from_parent(Self) -> Object3D
 pub fn LineLoop::rotate_x(Self, Double) -> Object3D
 pub fn LineLoop::rotate_y(Self, Double) -> Object3D
@@ -3447,7 +3739,15 @@ pub fn LineLoop::rotation(Self) -> Euler
 pub fn LineLoop::scale(Self) -> Vector3
 pub fn LineLoop::set_cast_shadow(Self, Bool) -> Unit
 pub fn LineLoop::set_name(Self, String) -> Unit
+pub fn LineLoop::set_position(Self, Vector3) -> Unit
+pub fn LineLoop::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn LineLoop::set_quaternion(Self, Quaternion) -> Unit
 pub fn LineLoop::set_receive_shadow(Self, Bool) -> Unit
+pub fn LineLoop::set_rotation(Self, Euler) -> Unit
+pub fn LineLoop::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn LineLoop::set_scale(Self, Vector3) -> Unit
+pub fn LineLoop::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn LineLoop::set_uniform_scale(Self, Double) -> Unit
 pub fn LineLoop::set_visible(Self, Bool) -> Unit
 pub fn LineLoop::translate_x(Self, Double) -> Object3D
 pub fn LineLoop::translate_y(Self, Double) -> Object3D
@@ -3504,6 +3804,9 @@ pub fn LineMaterial::world_units(Self) -> Bool
 pub type LineSegments
 pub fn LineSegments::LineSegments(BufferGeometry, Material) -> Self
 pub fn LineSegments::add(Self, Object3D) -> Object3D
+pub fn LineSegments::add_child(Self, Object3D) -> Unit
+pub fn LineSegments::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn LineSegments::add_to(Self, Object3D) -> Unit
 pub fn LineSegments::apply_matrix4(Self, Matrix4) -> Unit
 pub fn LineSegments::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn LineSegments::as_object3d(Self) -> Object3D
@@ -3527,6 +3830,7 @@ pub fn LineSegments::position(Self) -> Vector3
 pub fn LineSegments::quaternion(Self) -> Quaternion
 pub fn LineSegments::receive_shadow(Self) -> Bool
 pub fn LineSegments::remove(Self, Object3D) -> Object3D
+pub fn LineSegments::remove_child(Self, Object3D) -> Unit
 pub fn LineSegments::remove_from_parent(Self) -> Object3D
 pub fn LineSegments::rotate_x(Self, Double) -> Object3D
 pub fn LineSegments::rotate_y(Self, Double) -> Object3D
@@ -3535,7 +3839,15 @@ pub fn LineSegments::rotation(Self) -> Euler
 pub fn LineSegments::scale(Self) -> Vector3
 pub fn LineSegments::set_cast_shadow(Self, Bool) -> Unit
 pub fn LineSegments::set_name(Self, String) -> Unit
+pub fn LineSegments::set_position(Self, Vector3) -> Unit
+pub fn LineSegments::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn LineSegments::set_quaternion(Self, Quaternion) -> Unit
 pub fn LineSegments::set_receive_shadow(Self, Bool) -> Unit
+pub fn LineSegments::set_rotation(Self, Euler) -> Unit
+pub fn LineSegments::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn LineSegments::set_scale(Self, Vector3) -> Unit
+pub fn LineSegments::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn LineSegments::set_uniform_scale(Self, Double) -> Unit
 pub fn LineSegments::set_visible(Self, Bool) -> Unit
 pub fn LineSegments::translate_x(Self, Double) -> Object3D
 pub fn LineSegments::translate_y(Self, Double) -> Object3D
@@ -3907,6 +4219,9 @@ pub fn Matrix4::transpose(Self) -> Self
 pub type Mesh
 pub fn Mesh::Mesh(BufferGeometry, Material) -> Self
 pub fn Mesh::add(Self, Object3D) -> Object3D
+pub fn Mesh::add_child(Self, Object3D) -> Unit
+pub fn Mesh::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn Mesh::add_to(Self, Object3D) -> Unit
 pub fn Mesh::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Mesh::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn Mesh::as_object3d(Self) -> Object3D
@@ -3935,6 +4250,7 @@ pub fn Mesh::position(Self) -> Vector3
 pub fn Mesh::quaternion(Self) -> Quaternion
 pub fn Mesh::receive_shadow(Self) -> Bool
 pub fn Mesh::remove(Self, Object3D) -> Object3D
+pub fn Mesh::remove_child(Self, Object3D) -> Unit
 pub fn Mesh::remove_from_parent(Self) -> Object3D
 pub fn Mesh::rotate_x(Self, Double) -> Object3D
 pub fn Mesh::rotate_y(Self, Double) -> Object3D
@@ -3948,7 +4264,15 @@ pub fn Mesh::set_materials(Self, FixedArray[Material]) -> Unit
 pub fn Mesh::set_morph_influence(Self, Int, Double) -> Bool
 pub fn Mesh::set_morph_weight(Self, String, Double) -> Bool
 pub fn Mesh::set_name(Self, String) -> Unit
+pub fn Mesh::set_position(Self, Vector3) -> Unit
+pub fn Mesh::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Mesh::set_quaternion(Self, Quaternion) -> Unit
 pub fn Mesh::set_receive_shadow(Self, Bool) -> Unit
+pub fn Mesh::set_rotation(Self, Euler) -> Unit
+pub fn Mesh::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Mesh::set_scale(Self, Vector3) -> Unit
+pub fn Mesh::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Mesh::set_uniform_scale(Self, Double) -> Unit
 pub fn Mesh::set_visible(Self, Bool) -> Unit
 pub fn Mesh::translate_x(Self, Double) -> Object3D
 pub fn Mesh::translate_y(Self, Double) -> Object3D
@@ -4766,6 +5090,9 @@ pub fn OBJMTLExporter::export_bundle(Self, Object3D, String, TexturePaths) -> OB
 pub type Object3D
 pub fn Object3D::Object3D() -> Self
 pub fn Object3D::add(Self, Self) -> Self
+pub fn Object3D::add_child(Self, Self) -> Unit
+pub fn Object3D::add_children(Self, FixedArray[Self]) -> Unit
+pub fn Object3D::add_to(Self, Self) -> Unit
 pub fn Object3D::animations(Self) -> FixedArray[AnimationClip]
 pub fn Object3D::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Object3D::apply_quaternion(Self, Quaternion) -> Self
@@ -4824,6 +5151,7 @@ pub fn Object3D::position(Self) -> Vector3
 pub fn Object3D::quaternion(Self) -> Quaternion
 pub fn Object3D::receive_shadow(Self) -> Bool
 pub fn Object3D::remove(Self, Self) -> Self
+pub fn Object3D::remove_child(Self, Self) -> Unit
 pub fn Object3D::remove_from_parent(Self) -> Self
 pub fn Object3D::render_order(Self) -> Int
 pub fn Object3D::rotate_on_axis(Self, Vector3, Double) -> Self
@@ -4849,12 +5177,20 @@ pub fn Object3D::set_on_after_shadow(Self, (ShadowRenderContext) -> Unit) -> Uni
 pub fn Object3D::set_on_before_render(Self, (RenderContext) -> Unit) -> Unit
 pub fn Object3D::set_on_before_shadow(Self, (ShadowRenderContext) -> Unit) -> Unit
 pub fn Object3D::set_pivot(Self, Vector3?) -> Unit
+pub fn Object3D::set_position(Self, Vector3) -> Unit
+pub fn Object3D::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Object3D::set_quaternion(Self, Quaternion) -> Unit
 pub fn Object3D::set_receive_shadow(Self, Bool) -> Unit
 pub fn Object3D::set_render_order(Self, Int) -> Unit
+pub fn Object3D::set_rotation(Self, Euler) -> Unit
 pub fn Object3D::set_rotation_from_axis_angle(Self, Vector3, Double) -> Unit
 pub fn Object3D::set_rotation_from_euler(Self, Euler) -> Unit
 pub fn Object3D::set_rotation_from_matrix(Self, Matrix4) -> Unit
 pub fn Object3D::set_rotation_from_quaternion(Self, Quaternion) -> Unit
+pub fn Object3D::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Object3D::set_scale(Self, Vector3) -> Unit
+pub fn Object3D::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Object3D::set_uniform_scale(Self, Double) -> Unit
 pub fn Object3D::set_visible(Self, Bool) -> Unit
 pub fn Object3D::to_json(Self) -> Json raise SerializationError
 pub fn Object3D::to_json_string(Self) -> String raise SerializationError
@@ -5039,6 +5375,9 @@ pub(all) enum OrbitCursorStyle {
 pub type OrthographicCamera
 pub fn OrthographicCamera::OrthographicCamera(Double, Double, Double, Double, Double, Double) -> Self
 pub fn OrthographicCamera::add(Self, Object3D) -> Object3D
+pub fn OrthographicCamera::add_child(Self, Object3D) -> Unit
+pub fn OrthographicCamera::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn OrthographicCamera::add_to(Self, Object3D) -> Unit
 pub fn OrthographicCamera::apply_matrix4(Self, Matrix4) -> Unit
 pub fn OrthographicCamera::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn OrthographicCamera::as_camera(Self) -> Camera
@@ -5067,6 +5406,7 @@ pub fn OrthographicCamera::position(Self) -> Vector3
 pub fn OrthographicCamera::quaternion(Self) -> Quaternion
 pub fn OrthographicCamera::receive_shadow(Self) -> Bool
 pub fn OrthographicCamera::remove(Self, Object3D) -> Object3D
+pub fn OrthographicCamera::remove_child(Self, Object3D) -> Unit
 pub fn OrthographicCamera::remove_from_parent(Self) -> Object3D
 pub fn OrthographicCamera::right(Self) -> Double
 pub fn OrthographicCamera::rotate_x(Self, Double) -> Object3D
@@ -5080,9 +5420,17 @@ pub fn OrthographicCamera::set_far(Self, Double) -> Unit
 pub fn OrthographicCamera::set_left(Self, Double) -> Unit
 pub fn OrthographicCamera::set_name(Self, String) -> Unit
 pub fn OrthographicCamera::set_near(Self, Double) -> Unit
+pub fn OrthographicCamera::set_position(Self, Vector3) -> Unit
+pub fn OrthographicCamera::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn OrthographicCamera::set_quaternion(Self, Quaternion) -> Unit
 pub fn OrthographicCamera::set_receive_shadow(Self, Bool) -> Unit
 pub fn OrthographicCamera::set_right(Self, Double) -> Unit
+pub fn OrthographicCamera::set_rotation(Self, Euler) -> Unit
+pub fn OrthographicCamera::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn OrthographicCamera::set_scale(Self, Vector3) -> Unit
+pub fn OrthographicCamera::set_scale_xyz(Self, Double, Double, Double) -> Unit
 pub fn OrthographicCamera::set_top(Self, Double) -> Unit
+pub fn OrthographicCamera::set_uniform_scale(Self, Double) -> Unit
 pub fn OrthographicCamera::set_view_offset(Self, Double, Double, Double, Double, Double, Double) -> Unit
 pub fn OrthographicCamera::set_visible(Self, Bool) -> Unit
 pub fn OrthographicCamera::set_zoom(Self, Double) -> Unit
@@ -5270,6 +5618,9 @@ pub fn Path::update_arc_lengths(Self) -> Unit
 pub type PerspectiveCamera
 pub fn PerspectiveCamera::PerspectiveCamera(Double, Double, Double, Double) -> Self
 pub fn PerspectiveCamera::add(Self, Object3D) -> Object3D
+pub fn PerspectiveCamera::add_child(Self, Object3D) -> Unit
+pub fn PerspectiveCamera::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn PerspectiveCamera::add_to(Self, Object3D) -> Unit
 pub fn PerspectiveCamera::apply_matrix4(Self, Matrix4) -> Unit
 pub fn PerspectiveCamera::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn PerspectiveCamera::as_camera(Self) -> Camera
@@ -5307,6 +5658,7 @@ pub fn PerspectiveCamera::position(Self) -> Vector3
 pub fn PerspectiveCamera::quaternion(Self) -> Quaternion
 pub fn PerspectiveCamera::receive_shadow(Self) -> Bool
 pub fn PerspectiveCamera::remove(Self, Object3D) -> Object3D
+pub fn PerspectiveCamera::remove_child(Self, Object3D) -> Unit
 pub fn PerspectiveCamera::remove_from_parent(Self) -> Object3D
 pub fn PerspectiveCamera::rotate_x(Self, Double) -> Object3D
 pub fn PerspectiveCamera::rotate_y(Self, Double) -> Object3D
@@ -5323,7 +5675,15 @@ pub fn PerspectiveCamera::set_focus(Self, Double) -> Unit
 pub fn PerspectiveCamera::set_fov(Self, Double) -> Unit
 pub fn PerspectiveCamera::set_name(Self, String) -> Unit
 pub fn PerspectiveCamera::set_near(Self, Double) -> Unit
+pub fn PerspectiveCamera::set_position(Self, Vector3) -> Unit
+pub fn PerspectiveCamera::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn PerspectiveCamera::set_quaternion(Self, Quaternion) -> Unit
 pub fn PerspectiveCamera::set_receive_shadow(Self, Bool) -> Unit
+pub fn PerspectiveCamera::set_rotation(Self, Euler) -> Unit
+pub fn PerspectiveCamera::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn PerspectiveCamera::set_scale(Self, Vector3) -> Unit
+pub fn PerspectiveCamera::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn PerspectiveCamera::set_uniform_scale(Self, Double) -> Unit
 pub fn PerspectiveCamera::set_view_offset(Self, Double, Double, Double, Double, Double, Double) -> Unit
 pub fn PerspectiveCamera::set_visible(Self, Bool) -> Unit
 pub fn PerspectiveCamera::set_zoom(Self, Double) -> Unit
@@ -5401,6 +5761,9 @@ pub fn PlaneGeometry::translate(Self, Double, Double, Double) -> BufferGeometry
 pub type PlaneHelper
 pub fn PlaneHelper::PlaneHelper(Plane, Double, Int) -> Self
 pub fn PlaneHelper::add(Self, Object3D) -> Object3D
+pub fn PlaneHelper::add_child(Self, Object3D) -> Unit
+pub fn PlaneHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn PlaneHelper::add_to(Self, Object3D) -> Unit
 pub fn PlaneHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn PlaneHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn PlaneHelper::as_object3d(Self) -> Object3D
@@ -5423,6 +5786,7 @@ pub fn PlaneHelper::position(Self) -> Vector3
 pub fn PlaneHelper::quaternion(Self) -> Quaternion
 pub fn PlaneHelper::receive_shadow(Self) -> Bool
 pub fn PlaneHelper::remove(Self, Object3D) -> Object3D
+pub fn PlaneHelper::remove_child(Self, Object3D) -> Unit
 pub fn PlaneHelper::remove_from_parent(Self) -> Object3D
 pub fn PlaneHelper::rotate_x(Self, Double) -> Object3D
 pub fn PlaneHelper::rotate_y(Self, Double) -> Object3D
@@ -5431,7 +5795,15 @@ pub fn PlaneHelper::rotation(Self) -> Euler
 pub fn PlaneHelper::scale(Self) -> Vector3
 pub fn PlaneHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn PlaneHelper::set_name(Self, String) -> Unit
+pub fn PlaneHelper::set_position(Self, Vector3) -> Unit
+pub fn PlaneHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn PlaneHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn PlaneHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn PlaneHelper::set_rotation(Self, Euler) -> Unit
+pub fn PlaneHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn PlaneHelper::set_scale(Self, Vector3) -> Unit
+pub fn PlaneHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn PlaneHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn PlaneHelper::set_visible(Self, Bool) -> Unit
 pub fn PlaneHelper::translate_x(Self, Double) -> Object3D
 pub fn PlaneHelper::translate_y(Self, Double) -> Object3D
@@ -5450,6 +5822,9 @@ pub fn PlaneHelper::world_to_local(Self, Vector3) -> Vector3
 pub type PointLight
 pub fn PointLight::PointLight(Int, Double, Double, Double) -> Self
 pub fn PointLight::add(Self, Object3D) -> Object3D
+pub fn PointLight::add_child(Self, Object3D) -> Unit
+pub fn PointLight::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn PointLight::add_to(Self, Object3D) -> Unit
 pub fn PointLight::apply_matrix4(Self, Matrix4) -> Unit
 pub fn PointLight::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn PointLight::as_light(Self) -> Light
@@ -5476,6 +5851,7 @@ pub fn PointLight::power(Self) -> Double
 pub fn PointLight::quaternion(Self) -> Quaternion
 pub fn PointLight::receive_shadow(Self) -> Bool
 pub fn PointLight::remove(Self, Object3D) -> Object3D
+pub fn PointLight::remove_child(Self, Object3D) -> Unit
 pub fn PointLight::remove_from_parent(Self) -> Object3D
 pub fn PointLight::rotate_x(Self, Double) -> Object3D
 pub fn PointLight::rotate_y(Self, Double) -> Object3D
@@ -5486,8 +5862,16 @@ pub fn PointLight::set_cast_shadow(Self, Bool) -> Unit
 pub fn PointLight::set_decay(Self, Double) -> Unit
 pub fn PointLight::set_distance(Self, Double) -> Unit
 pub fn PointLight::set_name(Self, String) -> Unit
+pub fn PointLight::set_position(Self, Vector3) -> Unit
+pub fn PointLight::set_position_xyz(Self, Double, Double, Double) -> Unit
 pub fn PointLight::set_power(Self, Double) -> Unit
+pub fn PointLight::set_quaternion(Self, Quaternion) -> Unit
 pub fn PointLight::set_receive_shadow(Self, Bool) -> Unit
+pub fn PointLight::set_rotation(Self, Euler) -> Unit
+pub fn PointLight::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn PointLight::set_scale(Self, Vector3) -> Unit
+pub fn PointLight::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn PointLight::set_uniform_scale(Self, Double) -> Unit
 pub fn PointLight::set_visible(Self, Bool) -> Unit
 pub fn PointLight::shadow(Self) -> LightShadow
 pub fn PointLight::translate_x(Self, Double) -> Object3D
@@ -5507,6 +5891,9 @@ pub fn PointLight::world_to_local(Self, Vector3) -> Vector3
 pub type PointLightHelper
 pub fn PointLightHelper::PointLightHelper(PointLight, Double) -> Self
 pub fn PointLightHelper::add(Self, Object3D) -> Object3D
+pub fn PointLightHelper::add_child(Self, Object3D) -> Unit
+pub fn PointLightHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn PointLightHelper::add_to(Self, Object3D) -> Unit
 pub fn PointLightHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn PointLightHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn PointLightHelper::as_object3d(Self) -> Object3D
@@ -5529,6 +5916,7 @@ pub fn PointLightHelper::position(Self) -> Vector3
 pub fn PointLightHelper::quaternion(Self) -> Quaternion
 pub fn PointLightHelper::receive_shadow(Self) -> Bool
 pub fn PointLightHelper::remove(Self, Object3D) -> Object3D
+pub fn PointLightHelper::remove_child(Self, Object3D) -> Unit
 pub fn PointLightHelper::remove_from_parent(Self) -> Object3D
 pub fn PointLightHelper::rotate_x(Self, Double) -> Object3D
 pub fn PointLightHelper::rotate_y(Self, Double) -> Object3D
@@ -5537,7 +5925,15 @@ pub fn PointLightHelper::rotation(Self) -> Euler
 pub fn PointLightHelper::scale(Self) -> Vector3
 pub fn PointLightHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn PointLightHelper::set_name(Self, String) -> Unit
+pub fn PointLightHelper::set_position(Self, Vector3) -> Unit
+pub fn PointLightHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn PointLightHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn PointLightHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn PointLightHelper::set_rotation(Self, Euler) -> Unit
+pub fn PointLightHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn PointLightHelper::set_scale(Self, Vector3) -> Unit
+pub fn PointLightHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn PointLightHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn PointLightHelper::set_visible(Self, Bool) -> Unit
 pub fn PointLightHelper::translate_x(Self, Double) -> Object3D
 pub fn PointLightHelper::translate_y(Self, Double) -> Object3D
@@ -5579,6 +5975,9 @@ pub fn PointerLockControls::unlock(Self) -> Unit
 pub type Points
 pub fn Points::Points(BufferGeometry, Material) -> Self
 pub fn Points::add(Self, Object3D) -> Object3D
+pub fn Points::add_child(Self, Object3D) -> Unit
+pub fn Points::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn Points::add_to(Self, Object3D) -> Unit
 pub fn Points::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Points::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn Points::as_object3d(Self) -> Object3D
@@ -5602,6 +6001,7 @@ pub fn Points::position(Self) -> Vector3
 pub fn Points::quaternion(Self) -> Quaternion
 pub fn Points::receive_shadow(Self) -> Bool
 pub fn Points::remove(Self, Object3D) -> Object3D
+pub fn Points::remove_child(Self, Object3D) -> Unit
 pub fn Points::remove_from_parent(Self) -> Object3D
 pub fn Points::rotate_x(Self, Double) -> Object3D
 pub fn Points::rotate_y(Self, Double) -> Object3D
@@ -5610,7 +6010,15 @@ pub fn Points::rotation(Self) -> Euler
 pub fn Points::scale(Self) -> Vector3
 pub fn Points::set_cast_shadow(Self, Bool) -> Unit
 pub fn Points::set_name(Self, String) -> Unit
+pub fn Points::set_position(Self, Vector3) -> Unit
+pub fn Points::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Points::set_quaternion(Self, Quaternion) -> Unit
 pub fn Points::set_receive_shadow(Self, Bool) -> Unit
+pub fn Points::set_rotation(Self, Euler) -> Unit
+pub fn Points::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Points::set_scale(Self, Vector3) -> Unit
+pub fn Points::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Points::set_uniform_scale(Self, Double) -> Unit
 pub fn Points::set_visible(Self, Bool) -> Unit
 pub fn Points::translate_x(Self, Double) -> Object3D
 pub fn Points::translate_y(Self, Double) -> Object3D
@@ -5849,6 +6257,9 @@ pub fn Raycaster::set_points_threshold(Self, Double) -> Unit
 pub type RectAreaLight
 pub fn RectAreaLight::RectAreaLight(Int, Double, Double, Double) -> Self
 pub fn RectAreaLight::add(Self, Object3D) -> Object3D
+pub fn RectAreaLight::add_child(Self, Object3D) -> Unit
+pub fn RectAreaLight::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn RectAreaLight::add_to(Self, Object3D) -> Unit
 pub fn RectAreaLight::apply_matrix4(Self, Matrix4) -> Unit
 pub fn RectAreaLight::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn RectAreaLight::as_light(Self) -> Light
@@ -5872,6 +6283,7 @@ pub fn RectAreaLight::position(Self) -> Vector3
 pub fn RectAreaLight::quaternion(Self) -> Quaternion
 pub fn RectAreaLight::receive_shadow(Self) -> Bool
 pub fn RectAreaLight::remove(Self, Object3D) -> Object3D
+pub fn RectAreaLight::remove_child(Self, Object3D) -> Unit
 pub fn RectAreaLight::remove_from_parent(Self) -> Object3D
 pub fn RectAreaLight::rotate_x(Self, Double) -> Object3D
 pub fn RectAreaLight::rotate_y(Self, Double) -> Object3D
@@ -5881,7 +6293,15 @@ pub fn RectAreaLight::scale(Self) -> Vector3
 pub fn RectAreaLight::set_cast_shadow(Self, Bool) -> Unit
 pub fn RectAreaLight::set_height(Self, Double) -> Unit
 pub fn RectAreaLight::set_name(Self, String) -> Unit
+pub fn RectAreaLight::set_position(Self, Vector3) -> Unit
+pub fn RectAreaLight::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn RectAreaLight::set_quaternion(Self, Quaternion) -> Unit
 pub fn RectAreaLight::set_receive_shadow(Self, Bool) -> Unit
+pub fn RectAreaLight::set_rotation(Self, Euler) -> Unit
+pub fn RectAreaLight::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn RectAreaLight::set_scale(Self, Vector3) -> Unit
+pub fn RectAreaLight::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn RectAreaLight::set_uniform_scale(Self, Double) -> Unit
 pub fn RectAreaLight::set_visible(Self, Bool) -> Unit
 pub fn RectAreaLight::set_width(Self, Double) -> Unit
 pub fn RectAreaLight::translate_x(Self, Double) -> Object3D
@@ -6079,6 +6499,9 @@ pub fn SVGResult::xml_string(Self) -> String
 pub type Scene
 pub fn Scene::Scene() -> Self
 pub fn Scene::add(Self, Object3D) -> Object3D
+pub fn Scene::add_child(Self, Object3D) -> Unit
+pub fn Scene::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn Scene::add_to(Self, Object3D) -> Unit
 pub fn Scene::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Scene::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn Scene::as_object3d(Self) -> Object3D
@@ -6110,6 +6533,7 @@ pub fn Scene::position(Self) -> Vector3
 pub fn Scene::quaternion(Self) -> Quaternion
 pub fn Scene::receive_shadow(Self) -> Bool
 pub fn Scene::remove(Self, Object3D) -> Object3D
+pub fn Scene::remove_child(Self, Object3D) -> Unit
 pub fn Scene::remove_from_parent(Self) -> Object3D
 pub fn Scene::rotate_x(Self, Double) -> Object3D
 pub fn Scene::rotate_y(Self, Double) -> Object3D
@@ -6126,7 +6550,15 @@ pub fn Scene::set_environment_intensity(Self, Double) -> Unit
 pub fn Scene::set_fog(Self, Fog?) -> Unit
 pub fn Scene::set_fog_exp2(Self, FogExp2?) -> Unit
 pub fn Scene::set_name(Self, String) -> Unit
+pub fn Scene::set_position(Self, Vector3) -> Unit
+pub fn Scene::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Scene::set_quaternion(Self, Quaternion) -> Unit
 pub fn Scene::set_receive_shadow(Self, Bool) -> Unit
+pub fn Scene::set_rotation(Self, Euler) -> Unit
+pub fn Scene::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Scene::set_scale(Self, Vector3) -> Unit
+pub fn Scene::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Scene::set_uniform_scale(Self, Double) -> Unit
 pub fn Scene::set_visible(Self, Bool) -> Unit
 pub fn Scene::translate_x(Self, Double) -> Object3D
 pub fn Scene::translate_y(Self, Double) -> Object3D
@@ -6431,6 +6863,9 @@ pub fn Skeleton::uuid(Self) -> String
 pub type SkeletonHelper
 pub fn SkeletonHelper::SkeletonHelper(Object3D) -> Self
 pub fn SkeletonHelper::add(Self, Object3D) -> Object3D
+pub fn SkeletonHelper::add_child(Self, Object3D) -> Unit
+pub fn SkeletonHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn SkeletonHelper::add_to(Self, Object3D) -> Unit
 pub fn SkeletonHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn SkeletonHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn SkeletonHelper::as_object3d(Self) -> Object3D
@@ -6454,6 +6889,7 @@ pub fn SkeletonHelper::position(Self) -> Vector3
 pub fn SkeletonHelper::quaternion(Self) -> Quaternion
 pub fn SkeletonHelper::receive_shadow(Self) -> Bool
 pub fn SkeletonHelper::remove(Self, Object3D) -> Object3D
+pub fn SkeletonHelper::remove_child(Self, Object3D) -> Unit
 pub fn SkeletonHelper::remove_from_parent(Self) -> Object3D
 pub fn SkeletonHelper::rotate_x(Self, Double) -> Object3D
 pub fn SkeletonHelper::rotate_y(Self, Double) -> Object3D
@@ -6463,7 +6899,15 @@ pub fn SkeletonHelper::scale(Self) -> Vector3
 pub fn SkeletonHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn SkeletonHelper::set_colors(Self, Color, Color) -> Unit
 pub fn SkeletonHelper::set_name(Self, String) -> Unit
+pub fn SkeletonHelper::set_position(Self, Vector3) -> Unit
+pub fn SkeletonHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn SkeletonHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn SkeletonHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn SkeletonHelper::set_rotation(Self, Euler) -> Unit
+pub fn SkeletonHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn SkeletonHelper::set_scale(Self, Vector3) -> Unit
+pub fn SkeletonHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn SkeletonHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn SkeletonHelper::set_visible(Self, Bool) -> Unit
 pub fn SkeletonHelper::translate_x(Self, Double) -> Object3D
 pub fn SkeletonHelper::translate_y(Self, Double) -> Object3D
@@ -6490,6 +6934,9 @@ pub fn SkeletonUtils::retarget_skeletons(Self, Skeleton, Skeleton, RetargetOptio
 pub type SkinnedMesh
 pub fn SkinnedMesh::SkinnedMesh(BufferGeometry, Material) -> Self
 pub fn SkinnedMesh::add(Self, Object3D) -> Object3D
+pub fn SkinnedMesh::add_child(Self, Object3D) -> Unit
+pub fn SkinnedMesh::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn SkinnedMesh::add_to(Self, Object3D) -> Unit
 pub fn SkinnedMesh::apply_bone_transform(Self, Int, Vector3) -> Vector3
 pub fn SkinnedMesh::apply_bone_transform4(Self, Int, Vector4) -> Vector4
 pub fn SkinnedMesh::apply_matrix4(Self, Matrix4) -> Unit
@@ -6523,6 +6970,7 @@ pub fn SkinnedMesh::position(Self) -> Vector3
 pub fn SkinnedMesh::quaternion(Self) -> Quaternion
 pub fn SkinnedMesh::receive_shadow(Self) -> Bool
 pub fn SkinnedMesh::remove(Self, Object3D) -> Object3D
+pub fn SkinnedMesh::remove_child(Self, Object3D) -> Unit
 pub fn SkinnedMesh::remove_from_parent(Self) -> Object3D
 pub fn SkinnedMesh::rotate_x(Self, Double) -> Object3D
 pub fn SkinnedMesh::rotate_y(Self, Double) -> Object3D
@@ -6531,7 +6979,15 @@ pub fn SkinnedMesh::rotation(Self) -> Euler
 pub fn SkinnedMesh::scale(Self) -> Vector3
 pub fn SkinnedMesh::set_cast_shadow(Self, Bool) -> Unit
 pub fn SkinnedMesh::set_name(Self, String) -> Unit
+pub fn SkinnedMesh::set_position(Self, Vector3) -> Unit
+pub fn SkinnedMesh::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn SkinnedMesh::set_quaternion(Self, Quaternion) -> Unit
 pub fn SkinnedMesh::set_receive_shadow(Self, Bool) -> Unit
+pub fn SkinnedMesh::set_rotation(Self, Euler) -> Unit
+pub fn SkinnedMesh::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn SkinnedMesh::set_scale(Self, Vector3) -> Unit
+pub fn SkinnedMesh::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn SkinnedMesh::set_uniform_scale(Self, Double) -> Unit
 pub fn SkinnedMesh::set_visible(Self, Bool) -> Unit
 pub fn SkinnedMesh::skeleton(Self) -> Skeleton?
 pub fn SkinnedMesh::translate_x(Self, Double) -> Object3D
@@ -6671,6 +7127,9 @@ pub fn SplineCurve::update_arc_lengths(Self) -> Unit
 pub type SpotLight
 pub fn SpotLight::SpotLight(Int, Double, Double, Double, Double, Double) -> Self
 pub fn SpotLight::add(Self, Object3D) -> Object3D
+pub fn SpotLight::add_child(Self, Object3D) -> Unit
+pub fn SpotLight::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn SpotLight::add_to(Self, Object3D) -> Unit
 pub fn SpotLight::angle(Self) -> Double
 pub fn SpotLight::apply_matrix4(Self, Matrix4) -> Unit
 pub fn SpotLight::apply_quaternion(Self, Quaternion) -> Object3D
@@ -6700,6 +7159,7 @@ pub fn SpotLight::power(Self) -> Double
 pub fn SpotLight::quaternion(Self) -> Quaternion
 pub fn SpotLight::receive_shadow(Self) -> Bool
 pub fn SpotLight::remove(Self, Object3D) -> Object3D
+pub fn SpotLight::remove_child(Self, Object3D) -> Unit
 pub fn SpotLight::remove_from_parent(Self) -> Object3D
 pub fn SpotLight::rotate_x(Self, Double) -> Object3D
 pub fn SpotLight::rotate_y(Self, Double) -> Object3D
@@ -6713,8 +7173,16 @@ pub fn SpotLight::set_distance(Self, Double) -> Unit
 pub fn SpotLight::set_map(Self, Texture?) -> Unit
 pub fn SpotLight::set_name(Self, String) -> Unit
 pub fn SpotLight::set_penumbra(Self, Double) -> Unit
+pub fn SpotLight::set_position(Self, Vector3) -> Unit
+pub fn SpotLight::set_position_xyz(Self, Double, Double, Double) -> Unit
 pub fn SpotLight::set_power(Self, Double) -> Unit
+pub fn SpotLight::set_quaternion(Self, Quaternion) -> Unit
 pub fn SpotLight::set_receive_shadow(Self, Bool) -> Unit
+pub fn SpotLight::set_rotation(Self, Euler) -> Unit
+pub fn SpotLight::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn SpotLight::set_scale(Self, Vector3) -> Unit
+pub fn SpotLight::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn SpotLight::set_uniform_scale(Self, Double) -> Unit
 pub fn SpotLight::set_visible(Self, Bool) -> Unit
 pub fn SpotLight::shadow(Self) -> LightShadow
 pub fn SpotLight::target(Self) -> Object3D
@@ -6735,6 +7203,9 @@ pub fn SpotLight::world_to_local(Self, Vector3) -> Vector3
 pub type SpotLightHelper
 pub fn SpotLightHelper::SpotLightHelper(SpotLight) -> Self
 pub fn SpotLightHelper::add(Self, Object3D) -> Object3D
+pub fn SpotLightHelper::add_child(Self, Object3D) -> Unit
+pub fn SpotLightHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn SpotLightHelper::add_to(Self, Object3D) -> Unit
 pub fn SpotLightHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn SpotLightHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn SpotLightHelper::as_object3d(Self) -> Object3D
@@ -6757,6 +7228,7 @@ pub fn SpotLightHelper::position(Self) -> Vector3
 pub fn SpotLightHelper::quaternion(Self) -> Quaternion
 pub fn SpotLightHelper::receive_shadow(Self) -> Bool
 pub fn SpotLightHelper::remove(Self, Object3D) -> Object3D
+pub fn SpotLightHelper::remove_child(Self, Object3D) -> Unit
 pub fn SpotLightHelper::remove_from_parent(Self) -> Object3D
 pub fn SpotLightHelper::rotate_x(Self, Double) -> Object3D
 pub fn SpotLightHelper::rotate_y(Self, Double) -> Object3D
@@ -6765,7 +7237,15 @@ pub fn SpotLightHelper::rotation(Self) -> Euler
 pub fn SpotLightHelper::scale(Self) -> Vector3
 pub fn SpotLightHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn SpotLightHelper::set_name(Self, String) -> Unit
+pub fn SpotLightHelper::set_position(Self, Vector3) -> Unit
+pub fn SpotLightHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn SpotLightHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn SpotLightHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn SpotLightHelper::set_rotation(Self, Euler) -> Unit
+pub fn SpotLightHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn SpotLightHelper::set_scale(Self, Vector3) -> Unit
+pub fn SpotLightHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn SpotLightHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn SpotLightHelper::set_visible(Self, Bool) -> Unit
 pub fn SpotLightHelper::translate_x(Self, Double) -> Object3D
 pub fn SpotLightHelper::translate_y(Self, Double) -> Object3D
@@ -6785,6 +7265,9 @@ pub fn SpotLightHelper::world_to_local(Self, Vector3) -> Vector3
 pub type Sprite
 pub fn Sprite::Sprite(SpriteMaterial) -> Self
 pub fn Sprite::add(Self, Object3D) -> Object3D
+pub fn Sprite::add_child(Self, Object3D) -> Unit
+pub fn Sprite::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn Sprite::add_to(Self, Object3D) -> Unit
 pub fn Sprite::apply_matrix4(Self, Matrix4) -> Unit
 pub fn Sprite::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn Sprite::as_object3d(Self) -> Object3D
@@ -6807,6 +7290,7 @@ pub fn Sprite::position(Self) -> Vector3
 pub fn Sprite::quaternion(Self) -> Quaternion
 pub fn Sprite::receive_shadow(Self) -> Bool
 pub fn Sprite::remove(Self, Object3D) -> Object3D
+pub fn Sprite::remove_child(Self, Object3D) -> Unit
 pub fn Sprite::remove_from_parent(Self) -> Object3D
 pub fn Sprite::rotate_x(Self, Double) -> Object3D
 pub fn Sprite::rotate_y(Self, Double) -> Object3D
@@ -6815,7 +7299,15 @@ pub fn Sprite::rotation(Self) -> Euler
 pub fn Sprite::scale(Self) -> Vector3
 pub fn Sprite::set_cast_shadow(Self, Bool) -> Unit
 pub fn Sprite::set_name(Self, String) -> Unit
+pub fn Sprite::set_position(Self, Vector3) -> Unit
+pub fn Sprite::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Sprite::set_quaternion(Self, Quaternion) -> Unit
 pub fn Sprite::set_receive_shadow(Self, Bool) -> Unit
+pub fn Sprite::set_rotation(Self, Euler) -> Unit
+pub fn Sprite::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Sprite::set_scale(Self, Vector3) -> Unit
+pub fn Sprite::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Sprite::set_uniform_scale(Self, Double) -> Unit
 pub fn Sprite::set_visible(Self, Bool) -> Unit
 pub fn Sprite::translate_x(Self, Double) -> Object3D
 pub fn Sprite::translate_y(Self, Double) -> Object3D
@@ -7518,6 +8010,7 @@ pub fn Vector2::distance_to(Self, Self) -> Double
 pub fn Vector2::distance_to_squared(Self, Self) -> Double
 pub fn Vector2::divide(Self, Self) -> Self
 pub fn Vector2::divide_scalar(Self, Double) -> Self
+pub fn Vector2::divided_by(Self, Double) -> Self
 pub fn Vector2::dot(Self, Self) -> Double
 pub fn Vector2::equals(Self, Self) -> Bool
 pub fn Vector2::floor(Self) -> Self
@@ -7543,6 +8036,7 @@ pub fn Vector2::rotate_around(Self, Self, Double) -> Self
 pub fn Vector2::round(Self) -> Self
 pub fn Vector2::round_to_zero(Self) -> Self
 pub fn Vector2::same_reference(Self, Self) -> Bool
+pub fn Vector2::scaled(Self, Double) -> Self
 pub fn Vector2::set(Self, Double, Double) -> Self
 pub fn Vector2::set_component(Self, Int, Double) -> Self
 pub fn Vector2::set_height(Self, Double) -> Unit
@@ -7559,6 +8053,11 @@ pub fn Vector2::to_array_into(Self, FixedArray[Double], Int) -> FixedArray[Doubl
 pub fn Vector2::width(Self) -> Double
 pub fn Vector2::x(Self) -> Double
 pub fn Vector2::y(Self) -> Double
+pub impl Add for Vector2
+pub impl Div for Vector2
+pub impl Mul for Vector2
+pub impl Neg for Vector2
+pub impl Sub for Vector2
 
 #external
 pub type Vector3
@@ -7586,6 +8085,7 @@ pub fn Vector3::distance_to(Self, Self) -> Double
 pub fn Vector3::distance_to_squared(Self, Self) -> Double
 pub fn Vector3::divide(Self, Self) -> Self
 pub fn Vector3::divide_scalar(Self, Double) -> Self
+pub fn Vector3::divided_by(Self, Double) -> Self
 pub fn Vector3::dot(Self, Self) -> Double
 pub fn Vector3::equals(Self, Self) -> Bool
 pub fn Vector3::floor(Self) -> Self
@@ -7615,6 +8115,7 @@ pub fn Vector3::reflect(Self, Self) -> Self
 pub fn Vector3::round(Self) -> Self
 pub fn Vector3::round_to_zero(Self) -> Self
 pub fn Vector3::same_reference(Self, Self) -> Bool
+pub fn Vector3::scaled(Self, Double) -> Self
 pub fn Vector3::set(Self, Double, Double, Double) -> Self
 pub fn Vector3::set_component(Self, Int, Double) -> Self
 pub fn Vector3::set_from_color(Self, Color) -> Self
@@ -7642,6 +8143,11 @@ pub fn Vector3::unproject(Self, Camera) -> Self
 pub fn Vector3::x(Self) -> Double
 pub fn Vector3::y(Self) -> Double
 pub fn Vector3::z(Self) -> Double
+pub impl Add for Vector3
+pub impl Div for Vector3
+pub impl Mul for Vector3
+pub impl Neg for Vector3
+pub impl Sub for Vector3
 
 #external
 pub type Vector4
@@ -7658,6 +8164,7 @@ pub fn Vector4::clone(Self) -> Self
 pub fn Vector4::copy(Self, Self) -> Self
 pub fn Vector4::divide(Self, Self) -> Self
 pub fn Vector4::divide_scalar(Self, Double) -> Self
+pub fn Vector4::divided_by(Self, Double) -> Self
 pub fn Vector4::dot(Self, Self) -> Double
 pub fn Vector4::equals(Self, Self) -> Bool
 pub fn Vector4::floor(Self) -> Self
@@ -7680,6 +8187,8 @@ pub fn Vector4::normalize(Self) -> Self
 pub fn Vector4::random(Self) -> Self
 pub fn Vector4::round(Self) -> Self
 pub fn Vector4::round_to_zero(Self) -> Self
+pub fn Vector4::same_reference(Self, Self) -> Bool
+pub fn Vector4::scaled(Self, Double) -> Self
 pub fn Vector4::set(Self, Double, Double, Double, Double) -> Self
 pub fn Vector4::set_axis_angle_from_quaternion(Self, Quaternion) -> Self
 pub fn Vector4::set_axis_angle_from_rotation_matrix(Self, Matrix4) -> Self
@@ -7703,6 +8212,11 @@ pub fn Vector4::width(Self) -> Double
 pub fn Vector4::x(Self) -> Double
 pub fn Vector4::y(Self) -> Double
 pub fn Vector4::z(Self) -> Double
+pub impl Add for Vector4
+pub impl Div for Vector4
+pub impl Mul for Vector4
+pub impl Neg for Vector4
+pub impl Sub for Vector4
 
 #external
 pub type VectorKeyframeTrack
@@ -7713,6 +8227,9 @@ pub fn VectorKeyframeTrack::as_keyframe_track(Self) -> KeyframeTrack
 pub type VertexNormalsHelper
 pub fn VertexNormalsHelper::VertexNormalsHelper(Object3D, Double, Int) -> Self
 pub fn VertexNormalsHelper::add(Self, Object3D) -> Object3D
+pub fn VertexNormalsHelper::add_child(Self, Object3D) -> Unit
+pub fn VertexNormalsHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn VertexNormalsHelper::add_to(Self, Object3D) -> Unit
 pub fn VertexNormalsHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn VertexNormalsHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn VertexNormalsHelper::as_line_segments(Self) -> LineSegments
@@ -7737,6 +8254,7 @@ pub fn VertexNormalsHelper::position(Self) -> Vector3
 pub fn VertexNormalsHelper::quaternion(Self) -> Quaternion
 pub fn VertexNormalsHelper::receive_shadow(Self) -> Bool
 pub fn VertexNormalsHelper::remove(Self, Object3D) -> Object3D
+pub fn VertexNormalsHelper::remove_child(Self, Object3D) -> Unit
 pub fn VertexNormalsHelper::remove_from_parent(Self) -> Object3D
 pub fn VertexNormalsHelper::rotate_x(Self, Double) -> Object3D
 pub fn VertexNormalsHelper::rotate_y(Self, Double) -> Object3D
@@ -7745,8 +8263,16 @@ pub fn VertexNormalsHelper::rotation(Self) -> Euler
 pub fn VertexNormalsHelper::scale(Self) -> Vector3
 pub fn VertexNormalsHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn VertexNormalsHelper::set_name(Self, String) -> Unit
+pub fn VertexNormalsHelper::set_position(Self, Vector3) -> Unit
+pub fn VertexNormalsHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn VertexNormalsHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn VertexNormalsHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn VertexNormalsHelper::set_rotation(Self, Euler) -> Unit
+pub fn VertexNormalsHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn VertexNormalsHelper::set_scale(Self, Vector3) -> Unit
+pub fn VertexNormalsHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
 pub fn VertexNormalsHelper::set_size(Self, Double) -> Unit
+pub fn VertexNormalsHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn VertexNormalsHelper::set_visible(Self, Bool) -> Unit
 pub fn VertexNormalsHelper::size(Self) -> Double
 pub fn VertexNormalsHelper::translate_x(Self, Double) -> Object3D
@@ -7767,6 +8293,9 @@ pub fn VertexNormalsHelper::world_to_local(Self, Vector3) -> Vector3
 pub type VertexTangentsHelper
 pub fn VertexTangentsHelper::VertexTangentsHelper(Object3D, Double, Int) -> Self
 pub fn VertexTangentsHelper::add(Self, Object3D) -> Object3D
+pub fn VertexTangentsHelper::add_child(Self, Object3D) -> Unit
+pub fn VertexTangentsHelper::add_children(Self, FixedArray[Object3D]) -> Unit
+pub fn VertexTangentsHelper::add_to(Self, Object3D) -> Unit
 pub fn VertexTangentsHelper::apply_matrix4(Self, Matrix4) -> Unit
 pub fn VertexTangentsHelper::apply_quaternion(Self, Quaternion) -> Object3D
 pub fn VertexTangentsHelper::as_line_segments(Self) -> LineSegments
@@ -7791,6 +8320,7 @@ pub fn VertexTangentsHelper::position(Self) -> Vector3
 pub fn VertexTangentsHelper::quaternion(Self) -> Quaternion
 pub fn VertexTangentsHelper::receive_shadow(Self) -> Bool
 pub fn VertexTangentsHelper::remove(Self, Object3D) -> Object3D
+pub fn VertexTangentsHelper::remove_child(Self, Object3D) -> Unit
 pub fn VertexTangentsHelper::remove_from_parent(Self) -> Object3D
 pub fn VertexTangentsHelper::rotate_x(Self, Double) -> Object3D
 pub fn VertexTangentsHelper::rotate_y(Self, Double) -> Object3D
@@ -7799,8 +8329,16 @@ pub fn VertexTangentsHelper::rotation(Self) -> Euler
 pub fn VertexTangentsHelper::scale(Self) -> Vector3
 pub fn VertexTangentsHelper::set_cast_shadow(Self, Bool) -> Unit
 pub fn VertexTangentsHelper::set_name(Self, String) -> Unit
+pub fn VertexTangentsHelper::set_position(Self, Vector3) -> Unit
+pub fn VertexTangentsHelper::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn VertexTangentsHelper::set_quaternion(Self, Quaternion) -> Unit
 pub fn VertexTangentsHelper::set_receive_shadow(Self, Bool) -> Unit
+pub fn VertexTangentsHelper::set_rotation(Self, Euler) -> Unit
+pub fn VertexTangentsHelper::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn VertexTangentsHelper::set_scale(Self, Vector3) -> Unit
+pub fn VertexTangentsHelper::set_scale_xyz(Self, Double, Double, Double) -> Unit
 pub fn VertexTangentsHelper::set_size(Self, Double) -> Unit
+pub fn VertexTangentsHelper::set_uniform_scale(Self, Double) -> Unit
 pub fn VertexTangentsHelper::set_visible(Self, Bool) -> Unit
 pub fn VertexTangentsHelper::size(Self) -> Double
 pub fn VertexTangentsHelper::translate_x(Self, Double) -> Object3D

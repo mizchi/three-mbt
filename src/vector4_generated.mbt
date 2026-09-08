@@ -327,3 +327,53 @@ pub extern "js" fn Vector4::set_from_matrix_position(
   matrix : Matrix4,
 ) -> Vector4 =
   #| (self, matrix) => self.setFromMatrixPosition(matrix)
+
+///|
+pub extern "js" fn Vector4::same_reference(
+  self : Vector4,
+  other : Vector4,
+) -> Bool =
+  #| (self, other) => self === other
+
+///|
+/// Returns a fresh vector; leaves the receiver unchanged. Numeric behavior follows three.js.
+pub extern "js" fn Vector4::scaled(self : Vector4, scalar : Double) -> Vector4 =
+  #| (self, scalar) => self.clone().multiplyScalar(scalar)
+
+///|
+/// Returns a fresh vector; leaves the receiver unchanged. Numeric behavior follows three.js.
+pub extern "js" fn Vector4::divided_by(
+  self : Vector4,
+  scalar : Double,
+) -> Vector4 =
+  #| (self, scalar) => self.clone().divideScalar(scalar)
+
+///|
+/// Returns a fresh vector without changing either operand. Binary operations are component-wise.
+pub impl Add for Vector4 with fn add(self : Vector4, other : Vector4) -> Vector4 {
+  self.clone().add(other)
+}
+
+///|
+/// Returns a fresh vector without changing either operand. Binary operations are component-wise.
+pub impl Sub for Vector4 with fn sub(self : Vector4, other : Vector4) -> Vector4 {
+  self.clone().sub(other)
+}
+
+///|
+/// Returns a fresh vector without changing either operand. Binary operations are component-wise.
+pub impl Mul for Vector4 with fn mul(self : Vector4, other : Vector4) -> Vector4 {
+  self.clone().multiply(other)
+}
+
+///|
+/// Returns a fresh vector without changing either operand. Binary operations are component-wise.
+pub impl Div for Vector4 with fn div(self : Vector4, other : Vector4) -> Vector4 {
+  self.clone().divide(other)
+}
+
+///|
+/// Returns a fresh vector without changing either operand. Binary operations are component-wise.
+pub impl Neg for Vector4 with fn neg(self : Vector4) -> Vector4 {
+  self.clone().negate()
+}

@@ -12,6 +12,10 @@ pub fn dispose(@three.Object3D) -> Unit
 
 pub fn ellipsoid(@three.Object3D, String, Int, @three.Vector3, @three.Vector3, detail? : Int) -> @three.Object3D
 
+pub fn ellipsoid_node(String, Int, @three.Vector3, @three.Vector3, detail? : Int) -> @three.Mesh
+
+pub fn part(String, @three.BufferGeometry, Int, @three.Vector3) -> @three.Mesh
+
 // Errors
 
 // Types and methods
