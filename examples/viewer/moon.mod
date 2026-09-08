@@ -2,6 +2,8 @@ name = "mizchi/three-viewer"
 
 version = "0.1.0"
 
+license = "MIT"
+
 source = "src"
 
 preferred_target = "js"

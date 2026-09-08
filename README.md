@@ -1,8 +1,35 @@
 # three-mbt
 
-three.js bindings for MoonBit's JavaScript target.
-Covers math, scene graphs, WebGL rendering, GLB/glTF loading, and animation.
+Typed three.js bindings for MoonBit's JavaScript target, published as `mizchi/three`.
+Covers math, scene graphs, WebGL rendering, modeling, GLB/glTF loading and export, and animation.
 Constructors are defined as `Type::Type` and called as `@three.Type(...)`.
+
+[Live character demo](https://mizchi.github.io/three-mbt/) ·
+[Installation](#installation) · [Examples](examples/viewer) · [MIT license](LICENSE)
+
+## Installation
+
+Add the MoonBit package to your project:
+
+```sh
+moon add mizchi/three@0.1.0
+```
+
+The generated JavaScript also requires three.js and the JavaScript companion
+package. The companion is not published to npm yet; install it from a checkout:
+
+```sh
+git clone https://github.com/mizchi/three-mbt.git /path/to/three-mbt
+# Run in your consuming project's directory:
+pnpm add three@0.185.1 @mizchi/three-mbt@link:/path/to/three-mbt/js
+```
+
+Add `"mizchi/three"` to your package's `moon.pkg` imports and build with
+`moon build --target js`. Browser applications need a bundler such as Vite to
+resolve the JavaScript imports. See [FFI and module resolution](#ffi-and-module-resolution)
+for details and [Getting started](#getting-started) to develop this repository.
+
+## API coverage
 
 | Area | Supported types |
 | --- | --- |
@@ -108,6 +135,10 @@ URL loading in Node.js requires host polyfills such as `ProgressEvent`, which th
 ## Low-poly character demos
 
 [Open the live demo](https://mizchi.github.io/three-mbt/).
+
+The default model is the MoonBit rabbit. [Open the mouse directly](https://mizchi.github.io/three-mbt/?model=mouse).
+The [Pages workflow](.github/workflows/pages.yml) builds and deploys the viewer
+on every push to `main`; it can also be run manually from GitHub Actions.
 
 Explore the MoonBit rabbit and a small procedural mouse in your browser:
 
@@ -1841,3 +1872,7 @@ just fixtures   # Regenerate the repository's GLB / glTF test fixtures
 
 When adding an API, write a test for the expected behavior first, confirm that it fails, then add the definition.
 `just check` detects manual edits to generated files.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
