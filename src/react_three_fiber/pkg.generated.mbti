@@ -1,0 +1,355 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three/react_three_fiber"
+
+import {
+  "mizchi/three",
+  "moonbitlang/async/js_async",
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn add_after_effect((Double) -> Unit) -> Subscription
+
+pub fn add_effect((Double) -> Unit) -> Subscription
+
+pub fn add_tail((Double) -> Unit) -> Subscription
+
+pub fn ambient_light(Props) -> Node
+
+pub fn box_geometry(Props) -> Node
+
+pub fn buffer_attribute(Props) -> Node
+
+pub fn buffer_geometry(Props) -> Node
+
+pub fn canvas(CanvasProps, FixedArray[Node]) -> Node
+
+pub fn color(Props) -> Node
+
+pub fn component(() -> Node) -> Component
+
+pub fn cone_geometry(Props) -> Node
+
+pub fn create_portal(Node, @three.Object3D) -> Node
+
+pub fn create_root(@three.Canvas) -> FiberRoot
+
+pub fn cylinder_geometry(Props) -> Node
+
+pub fn directional_light(Props) -> Node
+
+pub fn element(String, Props, FixedArray[Node]) -> Node
+
+pub fn empty() -> Node
+
+pub fn fragment(FixedArray[Node]) -> Node
+
+pub fn group(Props, FixedArray[Node]) -> Node
+
+pub fn hemisphere_light(Props) -> Node
+
+pub fn icosahedron_geometry(Props) -> Node
+
+pub fn instanced_mesh(Props, FixedArray[Node]) -> Node
+
+pub fn line(Props, FixedArray[Node]) -> Node
+
+pub fn mesh(Props, FixedArray[Node]) -> Node
+
+pub fn mesh_basic_material(Props) -> Node
+
+pub fn mesh_normal_material(Props) -> Node
+
+pub fn mesh_physical_material(Props) -> Node
+
+pub fn mesh_standard_material(Props) -> Node
+
+pub fn orthographic_camera(Props) -> Node
+
+pub fn perspective_camera(Props) -> Node
+
+pub fn plane_geometry(Props) -> Node
+
+pub fn point_light(Props) -> Node
+
+pub fn points(Props, FixedArray[Node]) -> Node
+
+pub fn primitive(Props) -> Node
+
+pub fn register_three() -> Unit
+
+pub fn scene(Props, FixedArray[Node]) -> Node
+
+pub fn skinned_mesh(Props, FixedArray[Node]) -> Node
+
+pub fn sphere_geometry(Props) -> Node
+
+pub fn spot_light(Props) -> Node
+
+pub fn suspense(Node, FixedArray[Node]) -> Node
+
+pub fn text(String) -> Node
+
+pub fn torus_geometry(Props) -> Node
+
+pub fn use_effect(() -> () -> Unit, FixedArray[Dependency]) -> Unit
+
+pub fn use_frame((RootState, Double) -> Unit, priority? : Double) -> Unit
+
+pub fn use_frame_xr((RootState, Double, XRFrame?) -> Unit, priority? : Double) -> Unit
+
+pub fn use_graph(@three.Object3D) -> ObjectMap
+
+pub fn[T] use_loader(Loader[T], String) -> T
+
+pub fn[T] use_loaders(Loader[T], FixedArray[String]) -> FixedArray[T]
+
+pub fn[T] use_memo(() -> T, FixedArray[Dependency]) -> T
+
+pub fn use_object_ref() -> ObjectRef
+
+pub fn[T] use_ref(T) -> Ref[T]
+
+pub fn[T] use_state(T) -> State[T]
+
+pub fn use_store() -> RootStore
+
+pub fn use_three() -> RootState
+
+pub fn[T] use_three_select((RootState) -> T) -> T
+
+// Errors
+
+// Types and methods
+#external
+pub type Arg
+pub fn Arg::bool(Bool) -> Self
+pub fn Arg::color(@three.Color) -> Self
+pub fn Arg::geometry(@three.BufferGeometry) -> Self
+pub fn Arg::int(Int) -> Self
+pub fn Arg::ints(FixedArray[Int]) -> Self
+pub fn Arg::material(@three.Material) -> Self
+pub fn Arg::number(Double) -> Self
+pub fn Arg::numbers(FixedArray[Double]) -> Self
+pub fn Arg::string(String) -> Self
+pub fn Arg::vector3(@three.Vector3) -> Self
+
+#external
+pub type CameraProps
+pub fn CameraProps::CameraProps() -> Self
+pub fn CameraProps::set_bottom(Self, Double) -> Unit
+pub fn CameraProps::set_far(Self, Double) -> Unit
+pub fn CameraProps::set_fov(Self, Double) -> Unit
+pub fn CameraProps::set_left(Self, Double) -> Unit
+pub fn CameraProps::set_near(Self, Double) -> Unit
+pub fn CameraProps::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn CameraProps::set_right(Self, Double) -> Unit
+pub fn CameraProps::set_top(Self, Double) -> Unit
+pub fn CameraProps::set_zoom(Self, Double) -> Unit
+
+#external
+pub type CanvasProps
+pub fn CanvasProps::CanvasProps() -> Self
+pub fn CanvasProps::on_created(Self, (RootState) -> Unit) -> Unit
+pub fn CanvasProps::set_camera(Self, @three.Camera) -> Unit
+pub fn CanvasProps::set_camera_options(Self, CameraProps) -> Unit
+pub fn CanvasProps::set_class_name(Self, String) -> Unit
+pub fn CanvasProps::set_dpr(Self, Double) -> Unit
+pub fn CanvasProps::set_dpr_range(Self, Double, Double) -> Unit
+pub fn CanvasProps::set_fallback(Self, Node) -> Unit
+pub fn CanvasProps::set_flat(Self, Bool) -> Unit
+pub fn CanvasProps::set_frameloop(Self, Frameloop) -> Unit
+pub fn CanvasProps::set_legacy(Self, Bool) -> Unit
+pub fn CanvasProps::set_linear(Self, Bool) -> Unit
+pub fn CanvasProps::set_orthographic(Self, Bool) -> Unit
+pub fn CanvasProps::set_renderer(Self, @three.WebGLRenderer) -> Unit
+pub fn CanvasProps::set_shadows(Self, Bool) -> Unit
+pub fn CanvasProps::set_style_size(Self, String, String) -> Unit
+
+#external
+pub type Clock
+pub fn Clock::elapsed_time(Self) -> Double
+
+#external
+pub type Component
+pub fn Component::element(Self) -> Node
+
+#external
+pub type Dependency
+pub fn[T] Dependency::of(T) -> Self
+
+#external
+pub type FiberRoot
+pub fn FiberRoot::configure(Self, RootOptions) -> @js_async.Promise[Unit]
+pub fn FiberRoot::render(Self, Node) -> RootStore
+pub fn FiberRoot::unmount(Self) -> Unit
+
+pub(all) enum Frameloop {
+  Always
+  Demand
+  Never
+} derive(Eq, @debug.Debug)
+
+#external
+pub type Loader[T]
+pub fn[T] Loader::clear(Self[T], String) -> Unit
+pub fn Loader::from_gltf(@three.GLTFLoader) -> Self[@three.GLTF]
+pub fn Loader::gltf() -> Self[@three.GLTF]
+pub fn[T] Loader::preload(Self[T], String) -> Unit
+pub fn Loader::texture() -> Self[@three.Texture]
+
+#external
+pub type Node
+
+#external
+pub type ObjectMap
+pub fn ObjectMap::material(Self, String) -> @three.Material?
+pub fn ObjectMap::node(Self, String) -> @three.Object3D?
+
+#external
+pub type ObjectRef
+pub fn ObjectRef::current(Self) -> @three.Object3D?
+
+#external
+pub type Props
+pub fn Props::Props() -> Self
+pub fn Props::on_click(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_context_menu(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_double_click(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_lost_pointer_capture(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_pointer_cancel(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_pointer_down(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_pointer_enter(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_pointer_leave(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_pointer_move(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_pointer_out(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_pointer_over(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_pointer_up(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::on_update(Self, (@three.Object3D) -> Unit) -> Unit
+pub fn Props::on_wheel(Self, (ThreeEvent) -> Unit) -> Unit
+pub fn Props::set_args(Self, FixedArray[Arg]) -> Unit
+pub fn Props::set_attach(Self, String) -> Unit
+pub fn Props::set_bool(Self, String, Bool) -> Unit
+pub fn Props::set_cast_shadow(Self, Bool) -> Unit
+pub fn Props::set_color(Self, Int) -> Unit
+pub fn Props::set_color_css(Self, String) -> Unit
+pub fn Props::set_dispose_automatic(Self, Bool) -> Unit
+pub fn Props::set_flat_shading(Self, Bool) -> Unit
+pub fn Props::set_geometry(Self, @three.BufferGeometry) -> Unit
+pub fn Props::set_intensity(Self, Double) -> Unit
+pub fn Props::set_key(Self, String) -> Unit
+pub fn Props::set_material(Self, @three.Material) -> Unit
+pub fn Props::set_metalness(Self, Double) -> Unit
+pub fn Props::set_name(Self, String) -> Unit
+pub fn Props::set_number(Self, String, Double) -> Unit
+pub fn Props::set_object(Self, @three.Object3D) -> Unit
+pub fn Props::set_opacity(Self, Double) -> Unit
+pub fn Props::set_position(Self, @three.Vector3) -> Unit
+pub fn Props::set_position_xyz(Self, Double, Double, Double) -> Unit
+pub fn Props::set_quaternion(Self, @three.Quaternion) -> Unit
+pub fn Props::set_receive_shadow(Self, Bool) -> Unit
+pub fn Props::set_ref(Self, ObjectRef) -> Unit
+pub fn Props::set_rotation(Self, @three.Euler) -> Unit
+pub fn Props::set_rotation_xyz(Self, Double, Double, Double) -> Unit
+pub fn Props::set_roughness(Self, Double) -> Unit
+pub fn Props::set_scale(Self, @three.Vector3) -> Unit
+pub fn Props::set_scale_xyz(Self, Double, Double, Double) -> Unit
+pub fn Props::set_string(Self, String, String) -> Unit
+pub fn Props::set_transparent(Self, Bool) -> Unit
+pub fn Props::set_uniform_scale(Self, Double) -> Unit
+pub fn Props::set_visible(Self, Bool) -> Unit
+pub fn Props::set_wireframe(Self, Bool) -> Unit
+
+#external
+pub type Ref[T]
+pub fn[T] Ref::current(Self[T]) -> T
+pub fn[T] Ref::set(Self[T], T) -> Unit
+
+#external
+pub type RootOptions
+pub fn RootOptions::RootOptions() -> Self
+pub fn RootOptions::on_created(Self, (RootState) -> Unit) -> Unit
+pub fn RootOptions::set_camera(Self, @three.Camera) -> Unit
+pub fn RootOptions::set_camera_options(Self, CameraProps) -> Unit
+pub fn RootOptions::set_dpr(Self, Double) -> Unit
+pub fn RootOptions::set_dpr_range(Self, Double, Double) -> Unit
+pub fn RootOptions::set_flat(Self, Bool) -> Unit
+pub fn RootOptions::set_frameloop(Self, Frameloop) -> Unit
+pub fn RootOptions::set_legacy(Self, Bool) -> Unit
+pub fn RootOptions::set_linear(Self, Bool) -> Unit
+pub fn RootOptions::set_orthographic(Self, Bool) -> Unit
+pub fn RootOptions::set_pointer_events(Self) -> Unit
+pub fn RootOptions::set_renderer(Self, @three.WebGLRenderer) -> Unit
+pub fn RootOptions::set_shadows(Self, Bool) -> Unit
+pub fn RootOptions::set_size(Self, Double, Double, Double, Double) -> Unit
+
+#external
+pub type RootState
+pub fn RootState::advance(Self, Double, Bool) -> Unit
+pub fn RootState::camera(Self) -> @three.Camera
+pub fn RootState::clock(Self) -> Clock
+pub fn RootState::get(Self) -> Self
+pub fn RootState::gl(Self) -> @three.WebGLRenderer
+pub fn RootState::invalidate(Self, Int) -> Unit
+pub fn RootState::pointer(Self) -> @three.Vector2
+pub fn RootState::raycaster(Self) -> @three.Raycaster
+pub fn RootState::scene(Self) -> @three.Scene
+pub fn RootState::set_camera(Self, @three.Camera) -> Unit
+pub fn RootState::set_dpr(Self, Double) -> Unit
+pub fn RootState::set_frameloop(Self, Frameloop) -> Unit
+pub fn RootState::set_size(Self, Double, Double) -> Unit
+pub fn RootState::size(Self) -> Size
+pub fn RootState::viewport(Self) -> Viewport
+
+#external
+pub type RootStore
+pub fn RootStore::get_state(Self) -> RootState
+pub fn RootStore::subscribe(Self, (RootState, RootState) -> Unit) -> Subscription
+
+#external
+pub type Size
+pub fn Size::height(Self) -> Double
+pub fn Size::left(Self) -> Double
+pub fn Size::top(Self) -> Double
+pub fn Size::width(Self) -> Double
+
+#external
+pub type State[T]
+pub fn[T] State::set(Self[T], T) -> Unit
+pub fn[T] State::update(Self[T], (T) -> T) -> Unit
+pub fn[T] State::value(Self[T]) -> T
+
+#external
+pub type Subscription
+pub fn Subscription::unsubscribe(Self) -> Unit
+
+#external
+pub type ThreeEvent
+pub fn ThreeEvent::camera(Self) -> @three.Camera
+pub fn ThreeEvent::delta(Self) -> Double
+pub fn ThreeEvent::distance(Self) -> Double
+pub fn ThreeEvent::event_object(Self) -> @three.Object3D
+pub fn ThreeEvent::object(Self) -> @three.Object3D
+pub fn ThreeEvent::point(Self) -> @three.Vector3
+pub fn ThreeEvent::pointer(Self) -> @three.Vector2
+pub fn ThreeEvent::ray(Self) -> @three.Ray
+pub fn ThreeEvent::stop_propagation(Self) -> Unit
+pub fn ThreeEvent::stopped(Self) -> Bool
+
+#external
+pub type Viewport
+pub fn Viewport::aspect(Self) -> Double
+pub fn Viewport::distance(Self) -> Double
+pub fn Viewport::dpr(Self) -> Double
+pub fn Viewport::factor(Self) -> Double
+pub fn Viewport::height(Self) -> Double
+pub fn Viewport::left(Self) -> Double
+pub fn Viewport::top(Self) -> Double
+pub fn Viewport::width(Self) -> Double
+
+#external
+pub type XRFrame
+
+// Type aliases
+
+// Traits

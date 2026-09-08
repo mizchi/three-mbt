@@ -1,0 +1,25 @@
+import {
+  "mizchi/three",
+  "moonbitlang/async/js_async",
+  "mizchi/three/react_three_fiber" @r3f,
+}
+
+supported_targets = "js"
+
+pkgtype(kind: "executable")
+
+options(
+  link: {
+    "js": {
+      "exports": [
+        "app",
+        "state",
+        "frame_count",
+        "cleanup_count",
+        "clear_asset_cache",
+        "mount_manual",
+      ],
+      "format": "esm",
+    },
+  },
+)

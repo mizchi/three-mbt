@@ -12,7 +12,7 @@ Constructors are defined as `Type::Type` and called as `@three.Type(...)`.
 Add the MoonBit package to your project:
 
 ```sh
-moon add mizchi/three@0.1.2
+moon add mizchi/three@0.1.3
 ```
 
 The Mooncakes archive includes the JavaScript companion under `js/`, together
@@ -256,6 +256,16 @@ let position = child.get_world_position(@three.Vector3(0, 0, 0))
 ```
 
 A runnable example is available in [`examples/viewer/src/scene_graph`](examples/viewer/src/scene_graph).
+
+### React Three Fiber
+
+The new [`mizchi/three/react_three_fiber`](src/react_three_fiber/README.md)
+subpackage provides native React elements, Canvas, R3F hooks, typed React
+state/refs, pointer events, Suspense loaders, and manual roots. It targets
+`@react-three/fiber@9.7.0` with React 19 and is included starting with `0.1.3`.
+Its JavaScript companion is shipped under the separate
+`@mizchi/three-mbt/react-three-fiber` export. React dependencies are optional;
+ordinary three.js bindings do not import them.
 
 ### Vector arithmetic
 
@@ -1996,7 +2006,7 @@ Other projects also need this companion package in addition to the MoonBit depen
 Install the MoonBit package from Mooncakes:
 
 ```sh
-moon add mizchi/three@0.1.2
+moon add mizchi/three@0.1.3
 ```
 
 The companion is included in the same Mooncakes version. Link to the installed
@@ -2014,7 +2024,7 @@ the local library checkout's `js/` directory:
 members = ["three-mbt", "my-app"]
 ```
 
-Add `import { "mizchi/three@0.1.2" }` to the consuming project's `moon.mod` to use the local
+Add `import { "mizchi/three@0.1.3" }` to the consuming project's `moon.mod` to use the local
 implementation from the workspace. In browsers, bundle the generated ESM or configure an import map
 that resolves `@mizchi/three-mbt/constructors`, `@mizchi/three-mbt/loaders`,
 `@mizchi/three-mbt/events`, `@mizchi/three-mbt/controls`, `@mizchi/three-mbt/postprocessing`,

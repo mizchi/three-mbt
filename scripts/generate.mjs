@@ -1,3 +1,4 @@
+import { generateReactThreeFiber } from './generate-react-three-fiber.mjs';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { bindings } from '../bindings/api.mjs';
@@ -138,3 +139,5 @@ for (const binding of staticBindings) for (const method of binding.methods.filte
   statics.push(`export const ${binding.type}_${method.name} = (${params.join(', ')}) => ${method.expression ?? `${binding.type}.${method.js}(${params.join(', ')})`};`);
 }
 output(new URL('../js/static-methods.js', import.meta.url), statics.join('\n') + '\n');
+
+generateReactThreeFiber(output);

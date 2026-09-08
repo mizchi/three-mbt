@@ -1,6 +1,6 @@
 {
   "name": "@mizchi/three-mbt",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -33,7 +33,8 @@
     "./gltf-plugins": "./gltf-plugins.js",
     "./parametric": "./parametric.js",
     "./topology": "./topology.js",
-    "./csg": "./csg.js"
+    "./csg": "./csg.js",
+    "./react-three-fiber": "./react-three-fiber.js"
   },
   "files": [
     "constructors.js",
@@ -71,11 +72,28 @@
     "topology-bevel.js",
     "csg.js",
     "csg-geometry.js",
-    "topology-graph.js"
+    "topology-graph.js",
+    "react-three-fiber.js"
   ],
   "peerDependencies": {
     "manifold-3d": "3.5.3",
-    "three": ">=0.185.1 <0.186.0"
+    "three": ">=0.185.1 <0.186.0",
+    "@react-three/fiber": ">=9.7.0 <10",
+    "react": ">=19 <19.3",
+    "react-dom": ">=19 <19.3"
   },
-  "peerDependenciesMeta": {"manifold-3d":{"optional":true}}
+  "peerDependenciesMeta": {
+    "manifold-3d": {
+      "optional": true
+    },
+    "@react-three/fiber": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
 }

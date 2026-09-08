@@ -77,3 +77,9 @@ owned geometry or material instead of combining it with `parts.dispose`.
 
 The interactive viewer returns from its creation function before rendering ends,
 so its resources are released by `dispose(viewer)` during browser teardown.
+
+The [`src/react_three_fiber`](src/react_three_fiber) executable exports a native
+React `app(asset_url)` element: a rotating, clickable box and a Suspense-loaded
+GLB. Mount it using React DOM `createRoot(container).render(app(url))` in a
+container with an explicit height. The browser test builds and mounts this
+example independently of the imperative character viewer.

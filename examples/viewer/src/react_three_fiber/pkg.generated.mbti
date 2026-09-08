@@ -1,0 +1,28 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/react_three_fiber"
+
+import {
+  "mizchi/three",
+  "moonbitlang/async/js_async",
+}
+
+// Values
+pub fn app(String) -> @mizchi/three/react_three_fiber.Node
+
+pub fn cleanup_count() -> Int
+
+pub fn clear_asset_cache(String) -> Unit
+
+pub fn frame_count() -> Int
+
+pub fn mount_manual(@three.Canvas) -> @js_async.Promise[@mizchi/three/react_three_fiber.FiberRoot]
+
+pub fn state() -> @mizchi/three/react_three_fiber.RootState
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
