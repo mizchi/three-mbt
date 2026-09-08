@@ -32,6 +32,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Check and build the workspace
         run: |
+          moon update
           moon check --target js --deny-warn
           moon build --target js --release --deny-warn
           pnpm exec vite build --config examples/viewer/vite.config.mjs
