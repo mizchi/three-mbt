@@ -12,7 +12,7 @@ Constructors are defined as `Type::Type` and called as `@three.Type(...)`.
 Add the MoonBit package to your project:
 
 ```sh
-moon add mizchi/three@0.1.0
+moon add mizchi/three@0.1.1
 ```
 
 The Mooncakes archive includes the JavaScript companion under `js/`, together
@@ -48,6 +48,31 @@ pnpm exec vite build
 The link above assumes a standalone module. In a workspace, use the actual
 `.mooncakes/mizchi/three/js` path relative to the consuming `package.json`.
 For a local library workspace member, link to that member's `js/` directory.
+
+### Vite integration
+
+Install Vite and the MoonBit plugin in the consuming project:
+
+```sh
+pnpm add -D vite vite-plugin-moonbit
+```
+
+```js
+// vite.config.mjs (at the MoonBit module root)
+import { defineConfig } from 'vite';
+import moonbit from 'vite-plugin-moonbit';
+
+export default defineConfig({
+  plugins: [moonbit({ target: 'js' })],
+});
+```
+
+Configure your executable MoonBit package to emit ESM and export the functions
+used by the browser. Import it as `mbt:your/module/package` from JavaScript.
+Run `moon build --target js --release` before starting `pnpm exec vite` or
+`pnpm exec vite build`, so the plugin can resolve the initial build output.
+No Vite alias for `@mizchi/three-mbt` is needed: its local package link resolves
+the companion's export map in both development and production.
 
 ## API coverage
 
@@ -1808,7 +1833,7 @@ Other projects also need this companion package in addition to the MoonBit depen
 Install the MoonBit package from Mooncakes:
 
 ```sh
-moon add mizchi/three@0.1.0
+moon add mizchi/three@0.1.1
 ```
 
 The companion is included in the same Mooncakes version. Link to the installed
@@ -1826,7 +1851,7 @@ the local library checkout's `js/` directory:
 members = ["three-mbt", "my-app"]
 ```
 
-Add `import { "mizchi/three@0.1.0" }` to the consuming project's `moon.mod` to use the local
+Add `import { "mizchi/three@0.1.1" }` to the consuming project's `moon.mod` to use the local
 implementation from the workspace. In browsers, bundle the generated ESM or configure an import map
 that resolves `@mizchi/three-mbt/constructors`, `@mizchi/three-mbt/loaders`,
 `@mizchi/three-mbt/events`, `@mizchi/three-mbt/controls`, `@mizchi/three-mbt/postprocessing`,
@@ -1894,6 +1919,28 @@ just fixtures   # Regenerate the repository's GLB / glTF test fixtures
 
 When adding an API, write a test for the expected behavior first, confirm that it fails, then add the definition.
 `just check` detects manual edits to generated files.
+
+### Publishing
+
+Keep the library version in `moon.mod`, the companion version in
+`js/package.json`, the viewer's library dependency, and the installation examples
+in this README in sync. Publish from the repository root:
+
+```sh
+just check
+moon package
+moon publish
+```
+
+The archive includes the library, companion JS, its export map, this README, and
+the MIT license. `.moonignore` excludes the viewer workspace, build output, and
+installed dependencies. No separate npm publication is required.
+
+Verify each release in a fresh directory outside the workspace: install the
+published version with `moon add`, link its installed `js/` directory as shown
+above, and check both the Vite development server and production build. This
+ensures the application uses the registry package rather than a local workspace
+override.
 
 ## License
 

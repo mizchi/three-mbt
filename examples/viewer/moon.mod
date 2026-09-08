@@ -11,6 +11,6 @@ preferred_target = "js"
 description = "Browser demos and integration examples for mizchi/three"
 
 import {
-  "mizchi/three@0.1.0",
+  "mizchi/three@0.1.1",
   "moonbitlang/async@0.21.2",
 }
