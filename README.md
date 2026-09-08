@@ -12,7 +12,7 @@ Constructors are defined as `Type::Type` and called as `@three.Type(...)`.
 Add the MoonBit package to your project:
 
 ```sh
-moon add mizchi/three@0.1.1
+moon add mizchi/three@0.1.2
 ```
 
 The Mooncakes archive includes the JavaScript companion under `js/`, together
@@ -259,8 +259,7 @@ A runnable example is available in [`examples/viewer/src/scene_graph`](examples/
 
 ### Vector arithmetic
 
-These operators and scalar helpers are available in the development version;
-the published `0.1.1` package does not include them yet.
+These operators and scalar helpers are available starting with `0.1.2`.
 
 `Vector2`, `Vector3`, and `Vector4` support `+`, `-`, unary `-`, and
 component-wise `*` and `/`. Each operation returns a fresh vector and preserves
@@ -294,7 +293,7 @@ native methods such as `add_scaled_vector` to reuse storage in hot loops.
 
 ### Cascade configuration
 
-The development version also adds `Unit`-returning configuration methods for
+Version `0.1.2` adds `Unit`-returning configuration methods for
 `Object3D` and its concrete subclasses. MoonBit's cascade syntax is `..`, not
 `::`: each call operates on the same receiver, and the expression returns that
 receiver with its concrete type intact. The receiver expression is evaluated
@@ -1997,7 +1996,7 @@ Other projects also need this companion package in addition to the MoonBit depen
 Install the MoonBit package from Mooncakes:
 
 ```sh
-moon add mizchi/three@0.1.1
+moon add mizchi/three@0.1.2
 ```
 
 The companion is included in the same Mooncakes version. Link to the installed
@@ -2015,7 +2014,7 @@ the local library checkout's `js/` directory:
 members = ["three-mbt", "my-app"]
 ```
 
-Add `import { "mizchi/three@0.1.1" }` to the consuming project's `moon.mod` to use the local
+Add `import { "mizchi/three@0.1.2" }` to the consuming project's `moon.mod` to use the local
 implementation from the workspace. In browsers, bundle the generated ESM or configure an import map
 that resolves `@mizchi/three-mbt/constructors`, `@mizchi/three-mbt/loaders`,
 `@mizchi/three-mbt/events`, `@mizchi/three-mbt/controls`, `@mizchi/three-mbt/postprocessing`,
