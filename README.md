@@ -15,19 +15,39 @@ Add the MoonBit package to your project:
 moon add mizchi/three@0.1.0
 ```
 
-The generated JavaScript also requires three.js and the JavaScript companion
-package. The companion is not published to npm yet; install it from a checkout:
+The Mooncakes archive includes the JavaScript companion under `js/`, together
+with its `package.json`. Register that installed directory as a local dependency
+and install three.js:
 
 ```sh
-git clone https://github.com/mizchi/three-mbt.git /path/to/three-mbt
-# Run in your consuming project's directory:
-pnpm add three@0.185.1 @mizchi/three-mbt@link:/path/to/three-mbt/js
+# Run from the consuming MoonBit module's root, after moon add:
+pnpm add three@0.185.1 @mizchi/three-mbt@link:./.mooncakes/mizchi/three/js
 ```
 
 Add `"mizchi/three"` to your package's `moon.pkg` imports and build with
 `moon build --target js`. Browser applications need a bundler such as Vite to
 resolve the JavaScript imports. See [FFI and module resolution](#ffi-and-module-resolution)
 for details and [Getting started](#getting-started) to develop this repository.
+
+Both the MoonBit bindings and their JavaScript support are distributed by
+`moon publish`; no companion npm release or repository checkout is required.
+The local link resolves the existing `#module("@mizchi/three-mbt/...")` imports
+and follows the companion installed by MoonBit. three.js itself and build tools
+such as `vite-plugin-moonbit` remain npm dependencies.
+
+Commit your MoonBit and pnpm manifests and lockfiles. On a fresh checkout or in
+CI, restore MoonBit dependencies before installing the local JavaScript link:
+
+```sh
+moon update
+moon build --target js --release
+pnpm install --frozen-lockfile
+pnpm exec vite build
+```
+
+The link above assumes a standalone module. In a workspace, use the actual
+`.mooncakes/mizchi/three/js` path relative to the consuming `package.json`.
+For a local library workspace member, link to that member's `js/` directory.
 
 ## API coverage
 
@@ -1791,15 +1811,16 @@ Install the MoonBit package from Mooncakes:
 moon add mizchi/three@0.1.0
 ```
 
-The JavaScript companion is currently installed from a checkout:
+The companion is included in the same Mooncakes version. Link to the installed
+copy so Node.js and bundlers resolve its package exports:
 
 ```sh
-# Run in the consuming project, using the path to your checkout
-pnpm add three@0.185.1 @mizchi/three-mbt@link:/path/to/three-mbt/js
+pnpm add three@0.185.1 @mizchi/three-mbt@link:./.mooncakes/mizchi/three/js
 ```
 
 For local development instead of the registry version, register both projects in
-a `moon.work` file in their parent directory:
+a `moon.work` file in their parent directory and point the JavaScript link at
+the local library checkout's `js/` directory:
 
 ```moonbit
 members = ["three-mbt", "my-app"]
