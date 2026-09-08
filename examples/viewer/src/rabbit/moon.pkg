@@ -1,4 +1,5 @@
 import {
+  "moonbitlang/core/math",
   "mizchi/three",
   "mizchi/three-viewer/parts",
 }

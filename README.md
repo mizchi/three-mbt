@@ -162,7 +162,8 @@ shadows, camera, orbit controls, and GLB exporter. The small
 and resource cleanup. No external models or textures are used.
 
 [`rabbit/model.mbt`](examples/viewer/src/rabbit/model.mbt) creates a low-poly
-interpretation of the MoonBit character: a magenta body, folded ears, and a white
+interpretation of the MoonBit character: a magenta body, thick ears that rise
+backward and curl forward, and a white
 visor with geometric `01` / `<>` markings. The rabbit is a reusable MoonBit
 package: `@rabbit.create()` returns an independent `Object3D` without a renderer
 or DOM. The example's [`parts`](examples/viewer/src/parts) package supplies shared

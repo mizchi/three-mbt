@@ -30,7 +30,8 @@ This triggers browser updates after successful builds. `hmr.spec.mjs` verifies
 two successive dependency edits in an isolated MoonBit workspace.
 
 - [`src/mouse/model.mbt`](src/mouse/model.mbt): procedural character geometry.
-- [`src/rabbit/model.mbt`](src/rabbit/model.mbt): MoonBit rabbit with folded ears
+- [`src/rabbit/model.mbt`](src/rabbit/model.mbt): MoonBit rabbit with thick,
+  octagonal ear sections swept backward and then curled forward,
   and a white visor; the `01` and `<>` marks are actual geometry.
 - [`src/parts/`](src/parts): shared shape helpers and resource disposal.
 - [`src/mouse/viewer.mbt`](src/mouse/viewer.mbt): rendering, controls, and export.

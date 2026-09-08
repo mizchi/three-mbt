@@ -1,4 +1,38 @@
 ///|
+test "ears have volume and curl from behind the head toward the visor" {
+  let rabbit = @rabbit.create()
+  defer @parts.dispose(rabbit)
+  for name in ["rabbit-ear-left", "rabbit-ear-right"] {
+    let ear = rabbit.get_object_by_name(name).unwrap()
+    let bounds = @three.Box3().set_from_object(ear)
+    assert_true(bounds.max().z() - bounds.min().z() > 0.9)
+    let vertices = ear
+      .as_mesh()
+      .unwrap()
+      .geometry()
+      .get_attribute("position")
+      .unwrap()
+    let mut back_of_stem = false
+    let mut forward_tip_below_crown = false
+    for i in 0..<vertices.count() {
+      let point = ear.local_to_world(
+        @three.Vector3(vertices.get_x(i), vertices.get_y(i), vertices.get_z(i)),
+      )
+      if point.y() > 2.6 && point.y() < 3.2 {
+        if point.z() < -0.35 {
+          back_of_stem = true
+        }
+        if point.z() > 0.6 {
+          forward_tip_below_crown = true
+        }
+      }
+    }
+    assert_true(back_of_stem)
+    assert_true(forward_tip_below_crown)
+  }
+}
+
+///|
 test "rabbit has folded tall ears, a white visor, and geometric code marks" {
   let rabbit = @rabbit.create()
   defer @parts.dispose(rabbit)
