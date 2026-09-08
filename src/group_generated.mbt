@@ -3,3 +3,228 @@
 ///|
 #module("@mizchi/three-mbt/constructors")
 pub extern "js" fn Group::Group() -> Group = "group"
+
+///|
+pub extern "js" fn Group::cast_shadow(self : Group) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn Group::set_cast_shadow(self : Group, value : Bool) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn Group::receive_shadow(self : Group) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn Group::set_receive_shadow(
+  self : Group,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn Group::id(self : Group) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn Group::uuid(self : Group) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn Group::kind(self : Group) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn Group::name(self : Group) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn Group::visible(self : Group) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Group::position(self : Group) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Group::rotation(self : Group) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Group::quaternion(self : Group) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Group::scale(self : Group) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Group::up(self : Group) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Group::matrix(self : Group) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Group::matrix_world(self : Group) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn Group::set_name(self : Group, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn Group::set_visible(self : Group, visible : Bool) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn Group::children(self : Group) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn Group::add(self : Group, child : Object3D) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn Group::remove(self : Group, child : Object3D) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn Group::attach(self : Group, child : Object3D) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn Group::remove_from_parent(self : Group) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn Group::look_at(self : Group, target : Vector3) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn Group::rotate_x(self : Group, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn Group::rotate_y(self : Group, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn Group::rotate_z(self : Group, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn Group::translate_x(
+  self : Group,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn Group::translate_y(
+  self : Group,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn Group::translate_z(
+  self : Group,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn Group::apply_matrix4(self : Group, matrix : Matrix4) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn Group::apply_quaternion(
+  self : Group,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn Group::update_matrix(self : Group) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn Group::update_matrix_world(
+  self : Group,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn Group::update_world_matrix(
+  self : Group,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn Group::get_world_position(
+  self : Group,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn Group::get_world_quaternion(
+  self : Group,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn Group::get_world_scale(
+  self : Group,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn Group::get_world_direction(
+  self : Group,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn Group::local_to_world(
+  self : Group,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn Group::world_to_local(
+  self : Group,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn Group::traverse(
+  self : Group,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn Group::traverse_visible(
+  self : Group,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

@@ -101,3 +101,222 @@ pub extern "js" fn Mesh::set_materials(
   materials : FixedArray[Material],
 ) -> Unit =
   #| (self, materials) => { self.material = materials.slice(); }
+
+///|
+pub extern "js" fn Mesh::cast_shadow(self : Mesh) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn Mesh::set_cast_shadow(self : Mesh, value : Bool) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn Mesh::receive_shadow(self : Mesh) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn Mesh::set_receive_shadow(self : Mesh, value : Bool) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn Mesh::id(self : Mesh) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn Mesh::uuid(self : Mesh) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn Mesh::kind(self : Mesh) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn Mesh::name(self : Mesh) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn Mesh::visible(self : Mesh) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Mesh::position(self : Mesh) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Mesh::rotation(self : Mesh) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Mesh::quaternion(self : Mesh) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Mesh::scale(self : Mesh) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Mesh::up(self : Mesh) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Mesh::matrix(self : Mesh) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Mesh::matrix_world(self : Mesh) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn Mesh::set_name(self : Mesh, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn Mesh::set_visible(self : Mesh, visible : Bool) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn Mesh::children(self : Mesh) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn Mesh::add(self : Mesh, child : Object3D) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn Mesh::remove(self : Mesh, child : Object3D) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn Mesh::attach(self : Mesh, child : Object3D) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn Mesh::remove_from_parent(self : Mesh) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn Mesh::look_at(self : Mesh, target : Vector3) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn Mesh::rotate_x(self : Mesh, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn Mesh::rotate_y(self : Mesh, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn Mesh::rotate_z(self : Mesh, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn Mesh::translate_x(
+  self : Mesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn Mesh::translate_y(
+  self : Mesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn Mesh::translate_z(
+  self : Mesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn Mesh::apply_matrix4(self : Mesh, matrix : Matrix4) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn Mesh::apply_quaternion(
+  self : Mesh,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn Mesh::update_matrix(self : Mesh) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn Mesh::update_matrix_world(self : Mesh, force : Bool) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn Mesh::update_world_matrix(
+  self : Mesh,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn Mesh::get_world_position(
+  self : Mesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn Mesh::get_world_quaternion(
+  self : Mesh,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn Mesh::get_world_scale(
+  self : Mesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn Mesh::get_world_direction(
+  self : Mesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn Mesh::local_to_world(
+  self : Mesh,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn Mesh::world_to_local(
+  self : Mesh,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn Mesh::traverse(
+  self : Mesh,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn Mesh::traverse_visible(
+  self : Mesh,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

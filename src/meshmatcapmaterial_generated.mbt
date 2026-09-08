@@ -284,3 +284,103 @@ pub extern "js" fn MeshMatcapMaterial::set_fog(
   value : Bool,
 ) -> Unit =
   #| (self, value) => { self.fog = value; }
+
+///|
+pub extern "js" fn MeshMatcapMaterial::id(self : MeshMatcapMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn MeshMatcapMaterial::kind(
+  self : MeshMatcapMaterial,
+) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn MeshMatcapMaterial::name(
+  self : MeshMatcapMaterial,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn MeshMatcapMaterial::set_name(
+  self : MeshMatcapMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn MeshMatcapMaterial::opacity(
+  self : MeshMatcapMaterial,
+) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn MeshMatcapMaterial::set_opacity(
+  self : MeshMatcapMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn MeshMatcapMaterial::transparent(
+  self : MeshMatcapMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn MeshMatcapMaterial::set_transparent(
+  self : MeshMatcapMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn MeshMatcapMaterial::visible(
+  self : MeshMatcapMaterial,
+) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn MeshMatcapMaterial::set_visible(
+  self : MeshMatcapMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn MeshMatcapMaterial::depth_test(
+  self : MeshMatcapMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn MeshMatcapMaterial::set_depth_test(
+  self : MeshMatcapMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn MeshMatcapMaterial::depth_write(
+  self : MeshMatcapMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn MeshMatcapMaterial::set_depth_write(
+  self : MeshMatcapMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn MeshMatcapMaterial::dispose(
+  self : MeshMatcapMaterial,
+) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn MeshMatcapMaterial::mark_needs_update(
+  self : MeshMatcapMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

@@ -15,3 +15,170 @@ pub extern "js" fn OctahedronGeometry::OctahedronGeometry(
 pub fn OctahedronGeometry::as_buffer_geometry(
   self : OctahedronGeometry,
 ) -> BufferGeometry = "%identity"
+
+///|
+pub extern "js" fn OctahedronGeometry::id(self : OctahedronGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn OctahedronGeometry::name(
+  self : OctahedronGeometry,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn OctahedronGeometry::set_name(
+  self : OctahedronGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn OctahedronGeometry::set_attribute(
+  self : OctahedronGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn OctahedronGeometry::ffi_get_attribute(
+  self : OctahedronGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn OctahedronGeometry::get_attribute(
+  self : OctahedronGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn OctahedronGeometry::has_attribute(
+  self : OctahedronGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn OctahedronGeometry::set_indices(
+  self : OctahedronGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn OctahedronGeometry::ffi_get_index(
+  self : OctahedronGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn OctahedronGeometry::get_index(
+  self : OctahedronGeometry,
+) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn OctahedronGeometry::compute_vertex_normals(
+  self : OctahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn OctahedronGeometry::compute_bounding_box(
+  self : OctahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn OctahedronGeometry::compute_bounding_sphere(
+  self : OctahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn OctahedronGeometry::ffi_bounding_box(
+  self : OctahedronGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn OctahedronGeometry::bounding_box(self : OctahedronGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn OctahedronGeometry::ffi_bounding_sphere(
+  self : OctahedronGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn OctahedronGeometry::bounding_sphere(
+  self : OctahedronGeometry,
+) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn OctahedronGeometry::translate(
+  self : OctahedronGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn OctahedronGeometry::scale(
+  self : OctahedronGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn OctahedronGeometry::rotate_x(
+  self : OctahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn OctahedronGeometry::rotate_y(
+  self : OctahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn OctahedronGeometry::rotate_z(
+  self : OctahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn OctahedronGeometry::apply_matrix4(
+  self : OctahedronGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn OctahedronGeometry::center(
+  self : OctahedronGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn OctahedronGeometry::dispose(
+  self : OctahedronGeometry,
+) -> Unit =
+  #| (self) => self.dispose()

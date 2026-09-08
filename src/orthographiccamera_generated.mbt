@@ -150,3 +150,291 @@ pub extern "js" fn OrthographicCamera::clear_view_offset(
   self : OrthographicCamera,
 ) -> Unit =
   #| (self) => self.clearViewOffset()
+
+///|
+pub extern "js" fn OrthographicCamera::cast_shadow(
+  self : OrthographicCamera,
+) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn OrthographicCamera::set_cast_shadow(
+  self : OrthographicCamera,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn OrthographicCamera::receive_shadow(
+  self : OrthographicCamera,
+) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn OrthographicCamera::set_receive_shadow(
+  self : OrthographicCamera,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn OrthographicCamera::id(self : OrthographicCamera) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn OrthographicCamera::uuid(
+  self : OrthographicCamera,
+) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn OrthographicCamera::kind(
+  self : OrthographicCamera,
+) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn OrthographicCamera::name(
+  self : OrthographicCamera,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn OrthographicCamera::visible(
+  self : OrthographicCamera,
+) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn OrthographicCamera::position(
+  self : OrthographicCamera,
+) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn OrthographicCamera::rotation(
+  self : OrthographicCamera,
+) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn OrthographicCamera::quaternion(
+  self : OrthographicCamera,
+) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn OrthographicCamera::scale(
+  self : OrthographicCamera,
+) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn OrthographicCamera::up(self : OrthographicCamera) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn OrthographicCamera::matrix(
+  self : OrthographicCamera,
+) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn OrthographicCamera::matrix_world(
+  self : OrthographicCamera,
+) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn OrthographicCamera::set_name(
+  self : OrthographicCamera,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn OrthographicCamera::set_visible(
+  self : OrthographicCamera,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn OrthographicCamera::children(
+  self : OrthographicCamera,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn OrthographicCamera::add(
+  self : OrthographicCamera,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn OrthographicCamera::remove(
+  self : OrthographicCamera,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn OrthographicCamera::attach(
+  self : OrthographicCamera,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn OrthographicCamera::remove_from_parent(
+  self : OrthographicCamera,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn OrthographicCamera::look_at(
+  self : OrthographicCamera,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn OrthographicCamera::rotate_x(
+  self : OrthographicCamera,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn OrthographicCamera::rotate_y(
+  self : OrthographicCamera,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn OrthographicCamera::rotate_z(
+  self : OrthographicCamera,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn OrthographicCamera::translate_x(
+  self : OrthographicCamera,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn OrthographicCamera::translate_y(
+  self : OrthographicCamera,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn OrthographicCamera::translate_z(
+  self : OrthographicCamera,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn OrthographicCamera::apply_matrix4(
+  self : OrthographicCamera,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn OrthographicCamera::apply_quaternion(
+  self : OrthographicCamera,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn OrthographicCamera::update_matrix(
+  self : OrthographicCamera,
+) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn OrthographicCamera::update_matrix_world(
+  self : OrthographicCamera,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn OrthographicCamera::update_world_matrix(
+  self : OrthographicCamera,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn OrthographicCamera::get_world_position(
+  self : OrthographicCamera,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn OrthographicCamera::get_world_quaternion(
+  self : OrthographicCamera,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn OrthographicCamera::get_world_scale(
+  self : OrthographicCamera,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn OrthographicCamera::get_world_direction(
+  self : OrthographicCamera,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn OrthographicCamera::local_to_world(
+  self : OrthographicCamera,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn OrthographicCamera::world_to_local(
+  self : OrthographicCamera,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn OrthographicCamera::traverse(
+  self : OrthographicCamera,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn OrthographicCamera::traverse_visible(
+  self : OrthographicCamera,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

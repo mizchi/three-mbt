@@ -1,6 +1,10 @@
 ///|
 test "Standard surface maps preserve live vector settings and clear optional textures" {
-  let material = @three.MeshStandardMaterial(0xffffff, 0.5, 0)
+  let material = @three.MeshStandardMaterial(
+    0xffffff,
+    roughness=0.5,
+    metalness=0,
+  )
   let texture = @three.Texture()
   material.set_normal_map(Some(texture))
   material.normal_scale().set(0.5, -0.5) |> ignore
@@ -40,7 +44,11 @@ test "Standard surface maps preserve live vector settings and clear optional tex
 
 ///|
 test "Physical coatings and fabric settings survive cloning with independent colors and ranges" {
-  let physical = @three.MeshPhysicalMaterial(0xffffff, 0.3, 0)
+  let physical = @three.MeshPhysicalMaterial(
+    0xffffff,
+    roughness=0.3,
+    metalness=0,
+  )
   physical.set_clearcoat(1)
   physical.set_clearcoat_roughness(0.25)
   physical.clearcoat_normal_scale().set(0.5, 0.25) |> ignore

@@ -52,3 +52,293 @@ pub extern "js" fn VertexTangentsHelper::dispose(
   self : VertexTangentsHelper,
 ) -> Unit =
   #| (self) => self.dispose()
+
+///|
+pub extern "js" fn VertexTangentsHelper::cast_shadow(
+  self : VertexTangentsHelper,
+) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn VertexTangentsHelper::set_cast_shadow(
+  self : VertexTangentsHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn VertexTangentsHelper::receive_shadow(
+  self : VertexTangentsHelper,
+) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn VertexTangentsHelper::set_receive_shadow(
+  self : VertexTangentsHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn VertexTangentsHelper::id(self : VertexTangentsHelper) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn VertexTangentsHelper::uuid(
+  self : VertexTangentsHelper,
+) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn VertexTangentsHelper::kind(
+  self : VertexTangentsHelper,
+) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn VertexTangentsHelper::name(
+  self : VertexTangentsHelper,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn VertexTangentsHelper::visible(
+  self : VertexTangentsHelper,
+) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn VertexTangentsHelper::position(
+  self : VertexTangentsHelper,
+) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn VertexTangentsHelper::rotation(
+  self : VertexTangentsHelper,
+) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn VertexTangentsHelper::quaternion(
+  self : VertexTangentsHelper,
+) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn VertexTangentsHelper::scale(
+  self : VertexTangentsHelper,
+) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn VertexTangentsHelper::up(
+  self : VertexTangentsHelper,
+) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn VertexTangentsHelper::matrix(
+  self : VertexTangentsHelper,
+) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn VertexTangentsHelper::matrix_world(
+  self : VertexTangentsHelper,
+) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn VertexTangentsHelper::set_name(
+  self : VertexTangentsHelper,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn VertexTangentsHelper::set_visible(
+  self : VertexTangentsHelper,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn VertexTangentsHelper::children(
+  self : VertexTangentsHelper,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn VertexTangentsHelper::add(
+  self : VertexTangentsHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn VertexTangentsHelper::remove(
+  self : VertexTangentsHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn VertexTangentsHelper::attach(
+  self : VertexTangentsHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn VertexTangentsHelper::remove_from_parent(
+  self : VertexTangentsHelper,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn VertexTangentsHelper::look_at(
+  self : VertexTangentsHelper,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn VertexTangentsHelper::rotate_x(
+  self : VertexTangentsHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn VertexTangentsHelper::rotate_y(
+  self : VertexTangentsHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn VertexTangentsHelper::rotate_z(
+  self : VertexTangentsHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn VertexTangentsHelper::translate_x(
+  self : VertexTangentsHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn VertexTangentsHelper::translate_y(
+  self : VertexTangentsHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn VertexTangentsHelper::translate_z(
+  self : VertexTangentsHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn VertexTangentsHelper::apply_matrix4(
+  self : VertexTangentsHelper,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn VertexTangentsHelper::apply_quaternion(
+  self : VertexTangentsHelper,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn VertexTangentsHelper::update_matrix(
+  self : VertexTangentsHelper,
+) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn VertexTangentsHelper::update_matrix_world(
+  self : VertexTangentsHelper,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn VertexTangentsHelper::update_world_matrix(
+  self : VertexTangentsHelper,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn VertexTangentsHelper::get_world_position(
+  self : VertexTangentsHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn VertexTangentsHelper::get_world_quaternion(
+  self : VertexTangentsHelper,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn VertexTangentsHelper::get_world_scale(
+  self : VertexTangentsHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn VertexTangentsHelper::get_world_direction(
+  self : VertexTangentsHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn VertexTangentsHelper::local_to_world(
+  self : VertexTangentsHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn VertexTangentsHelper::world_to_local(
+  self : VertexTangentsHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn VertexTangentsHelper::traverse(
+  self : VertexTangentsHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn VertexTangentsHelper::traverse_visible(
+  self : VertexTangentsHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

@@ -98,3 +98,267 @@ pub extern "js" fn InstancedMesh::get_morph_at(
   mesh : Mesh,
 ) -> Unit =
   #| (self, index, mesh) => self.getMorphAt(index, mesh)
+
+///|
+pub extern "js" fn InstancedMesh::cast_shadow(self : InstancedMesh) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn InstancedMesh::set_cast_shadow(
+  self : InstancedMesh,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn InstancedMesh::receive_shadow(self : InstancedMesh) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn InstancedMesh::set_receive_shadow(
+  self : InstancedMesh,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn InstancedMesh::id(self : InstancedMesh) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn InstancedMesh::uuid(self : InstancedMesh) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn InstancedMesh::kind(self : InstancedMesh) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn InstancedMesh::name(self : InstancedMesh) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn InstancedMesh::visible(self : InstancedMesh) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn InstancedMesh::position(self : InstancedMesh) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn InstancedMesh::rotation(self : InstancedMesh) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn InstancedMesh::quaternion(
+  self : InstancedMesh,
+) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn InstancedMesh::scale(self : InstancedMesh) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn InstancedMesh::up(self : InstancedMesh) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn InstancedMesh::matrix(self : InstancedMesh) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn InstancedMesh::matrix_world(self : InstancedMesh) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn InstancedMesh::set_name(
+  self : InstancedMesh,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn InstancedMesh::set_visible(
+  self : InstancedMesh,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn InstancedMesh::children(
+  self : InstancedMesh,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn InstancedMesh::add(
+  self : InstancedMesh,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn InstancedMesh::remove(
+  self : InstancedMesh,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn InstancedMesh::attach(
+  self : InstancedMesh,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn InstancedMesh::remove_from_parent(
+  self : InstancedMesh,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn InstancedMesh::look_at(
+  self : InstancedMesh,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn InstancedMesh::rotate_x(
+  self : InstancedMesh,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn InstancedMesh::rotate_y(
+  self : InstancedMesh,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn InstancedMesh::rotate_z(
+  self : InstancedMesh,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn InstancedMesh::translate_x(
+  self : InstancedMesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn InstancedMesh::translate_y(
+  self : InstancedMesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn InstancedMesh::translate_z(
+  self : InstancedMesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn InstancedMesh::apply_matrix4(
+  self : InstancedMesh,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn InstancedMesh::apply_quaternion(
+  self : InstancedMesh,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn InstancedMesh::update_matrix(self : InstancedMesh) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn InstancedMesh::update_matrix_world(
+  self : InstancedMesh,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn InstancedMesh::update_world_matrix(
+  self : InstancedMesh,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn InstancedMesh::get_world_position(
+  self : InstancedMesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn InstancedMesh::get_world_quaternion(
+  self : InstancedMesh,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn InstancedMesh::get_world_scale(
+  self : InstancedMesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn InstancedMesh::get_world_direction(
+  self : InstancedMesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn InstancedMesh::local_to_world(
+  self : InstancedMesh,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn InstancedMesh::world_to_local(
+  self : InstancedMesh,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn InstancedMesh::traverse(
+  self : InstancedMesh,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn InstancedMesh::traverse_visible(
+  self : InstancedMesh,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

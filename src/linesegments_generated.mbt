@@ -25,3 +25,265 @@ pub extern "js" fn LineSegments::geometry(
   self : LineSegments,
 ) -> BufferGeometry =
   #| (self) => self.geometry
+
+///|
+pub extern "js" fn LineSegments::cast_shadow(self : LineSegments) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn LineSegments::set_cast_shadow(
+  self : LineSegments,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn LineSegments::receive_shadow(self : LineSegments) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn LineSegments::set_receive_shadow(
+  self : LineSegments,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn LineSegments::id(self : LineSegments) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn LineSegments::uuid(self : LineSegments) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn LineSegments::kind(self : LineSegments) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn LineSegments::name(self : LineSegments) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn LineSegments::visible(self : LineSegments) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LineSegments::position(self : LineSegments) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LineSegments::rotation(self : LineSegments) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LineSegments::quaternion(self : LineSegments) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LineSegments::scale(self : LineSegments) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LineSegments::up(self : LineSegments) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LineSegments::matrix(self : LineSegments) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LineSegments::matrix_world(self : LineSegments) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn LineSegments::set_name(
+  self : LineSegments,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn LineSegments::set_visible(
+  self : LineSegments,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn LineSegments::children(
+  self : LineSegments,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn LineSegments::add(
+  self : LineSegments,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn LineSegments::remove(
+  self : LineSegments,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn LineSegments::attach(
+  self : LineSegments,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn LineSegments::remove_from_parent(
+  self : LineSegments,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn LineSegments::look_at(
+  self : LineSegments,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn LineSegments::rotate_x(
+  self : LineSegments,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn LineSegments::rotate_y(
+  self : LineSegments,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn LineSegments::rotate_z(
+  self : LineSegments,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn LineSegments::translate_x(
+  self : LineSegments,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn LineSegments::translate_y(
+  self : LineSegments,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn LineSegments::translate_z(
+  self : LineSegments,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn LineSegments::apply_matrix4(
+  self : LineSegments,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn LineSegments::apply_quaternion(
+  self : LineSegments,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn LineSegments::update_matrix(self : LineSegments) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn LineSegments::update_matrix_world(
+  self : LineSegments,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn LineSegments::update_world_matrix(
+  self : LineSegments,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn LineSegments::get_world_position(
+  self : LineSegments,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn LineSegments::get_world_quaternion(
+  self : LineSegments,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn LineSegments::get_world_scale(
+  self : LineSegments,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn LineSegments::get_world_direction(
+  self : LineSegments,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn LineSegments::local_to_world(
+  self : LineSegments,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn LineSegments::world_to_local(
+  self : LineSegments,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn LineSegments::traverse(
+  self : LineSegments,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn LineSegments::traverse_visible(
+  self : LineSegments,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

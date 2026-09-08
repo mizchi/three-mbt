@@ -88,3 +88,231 @@ pub extern "js" fn Camera::copy(
   recursive : Bool,
 ) -> Camera =
   #| (self, other, recursive) => self.copy(other, recursive)
+
+///|
+pub extern "js" fn Camera::cast_shadow(self : Camera) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn Camera::set_cast_shadow(self : Camera, value : Bool) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn Camera::receive_shadow(self : Camera) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn Camera::set_receive_shadow(
+  self : Camera,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn Camera::id(self : Camera) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn Camera::uuid(self : Camera) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn Camera::kind(self : Camera) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn Camera::name(self : Camera) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn Camera::visible(self : Camera) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Camera::position(self : Camera) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Camera::rotation(self : Camera) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Camera::quaternion(self : Camera) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Camera::scale(self : Camera) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Camera::up(self : Camera) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Camera::matrix(self : Camera) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Camera::matrix_world(self : Camera) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn Camera::set_name(self : Camera, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn Camera::set_visible(self : Camera, visible : Bool) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn Camera::children(self : Camera) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn Camera::add(self : Camera, child : Object3D) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn Camera::remove(self : Camera, child : Object3D) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn Camera::attach(self : Camera, child : Object3D) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn Camera::remove_from_parent(self : Camera) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn Camera::look_at(self : Camera, target : Vector3) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn Camera::rotate_x(self : Camera, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn Camera::rotate_y(self : Camera, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn Camera::rotate_z(self : Camera, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn Camera::translate_x(
+  self : Camera,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn Camera::translate_y(
+  self : Camera,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn Camera::translate_z(
+  self : Camera,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn Camera::apply_matrix4(
+  self : Camera,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn Camera::apply_quaternion(
+  self : Camera,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn Camera::update_matrix(self : Camera) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn Camera::update_matrix_world(
+  self : Camera,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn Camera::update_world_matrix(
+  self : Camera,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn Camera::get_world_position(
+  self : Camera,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn Camera::get_world_quaternion(
+  self : Camera,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn Camera::get_world_scale(
+  self : Camera,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn Camera::get_world_direction(
+  self : Camera,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn Camera::local_to_world(
+  self : Camera,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn Camera::world_to_local(
+  self : Camera,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn Camera::traverse(
+  self : Camera,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn Camera::traverse_visible(
+  self : Camera,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

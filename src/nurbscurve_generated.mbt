@@ -117,3 +117,105 @@ pub fn NURBSCurve::from_json_string(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+extern "js" fn NURBSCurve::ffi_get_point(
+  self : NURBSCurve,
+  t : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, t, target) => self.getPoint(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn NURBSCurve::get_point(
+  self : NURBSCurve,
+  t : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_point(t, target)
+}
+
+///|
+extern "js" fn NURBSCurve::ffi_get_point_at(
+  self : NURBSCurve,
+  u : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, u, target) => self.getPointAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn NURBSCurve::get_point_at(
+  self : NURBSCurve,
+  u : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_point_at(u, target)
+}
+
+///|
+extern "js" fn NURBSCurve::ffi_get_tangent(
+  self : NURBSCurve,
+  t : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, t, target) => self.getTangent(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn NURBSCurve::get_tangent(
+  self : NURBSCurve,
+  t : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_tangent(t, target)
+}
+
+///|
+extern "js" fn NURBSCurve::ffi_get_tangent_at(
+  self : NURBSCurve,
+  u : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, u, target) => self.getTangentAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn NURBSCurve::get_tangent_at(
+  self : NURBSCurve,
+  u : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_tangent_at(u, target)
+}
+
+///|
+pub extern "js" fn NURBSCurve::get_points(
+  self : NURBSCurve,
+  divisions : Int,
+) -> FixedArray[Vector3] =
+  #| (self, divisions) => self.getPoints(divisions)
+
+///|
+pub extern "js" fn NURBSCurve::get_spaced_points(
+  self : NURBSCurve,
+  divisions : Int,
+) -> FixedArray[Vector3] =
+  #| (self, divisions) => self.getSpacedPoints(divisions)
+
+///|
+pub extern "js" fn NURBSCurve::get_length(self : NURBSCurve) -> Double =
+  #| (self) => self.getLength()
+
+///|
+pub extern "js" fn NURBSCurve::update_arc_lengths(self : NURBSCurve) -> Unit =
+  #| (self) => self.updateArcLengths()
+
+///|
+pub extern "js" fn NURBSCurve::compute_frenet_frames(
+  self : NURBSCurve,
+  segments : Int,
+  closed : Bool,
+) -> FrenetFrames =
+  #| (self, segments, closed) => self.computeFrenetFrames(segments, closed)

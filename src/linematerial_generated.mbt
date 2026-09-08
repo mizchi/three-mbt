@@ -101,3 +101,85 @@ pub extern "js" fn LineMaterial::set_dash_offset(
   value : Double,
 ) -> Unit =
   #| (self, value) => { self.dashOffset = value; }
+
+///|
+pub extern "js" fn LineMaterial::id(self : LineMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn LineMaterial::kind(self : LineMaterial) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn LineMaterial::name(self : LineMaterial) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn LineMaterial::set_name(
+  self : LineMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn LineMaterial::opacity(self : LineMaterial) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn LineMaterial::set_opacity(
+  self : LineMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn LineMaterial::transparent(self : LineMaterial) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn LineMaterial::set_transparent(
+  self : LineMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn LineMaterial::visible(self : LineMaterial) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn LineMaterial::set_visible(
+  self : LineMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn LineMaterial::depth_test(self : LineMaterial) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn LineMaterial::set_depth_test(
+  self : LineMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn LineMaterial::depth_write(self : LineMaterial) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn LineMaterial::set_depth_write(
+  self : LineMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn LineMaterial::dispose(self : LineMaterial) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn LineMaterial::mark_needs_update(self : LineMaterial) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

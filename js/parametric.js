@@ -9,7 +9,7 @@ export const checked = fn => (...args) => {
   catch(error) { return {ok:false,error:String(error)}; }
 };
 const finitePoint = point => [point.x,point.y,point.z].every(Number.isFinite);
-export const loftOptions = () => ({closed:true,capStart:false,capEnd:false});
+export const loftOptions = (closed=true, capStart=false, capEnd=false) => ({closed,capStart,capEnd});
 export function loftGeometry(sections, options) {
   const columns=sections[0]?.length??0;
   if(sections.length<2 || columns<(options.closed?3:2) ||

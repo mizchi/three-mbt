@@ -53,3 +53,160 @@ pub fn TubeGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn TubeGeometry::id(self : TubeGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn TubeGeometry::name(self : TubeGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn TubeGeometry::set_name(
+  self : TubeGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn TubeGeometry::set_attribute(
+  self : TubeGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn TubeGeometry::ffi_get_attribute(
+  self : TubeGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn TubeGeometry::get_attribute(
+  self : TubeGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn TubeGeometry::has_attribute(
+  self : TubeGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn TubeGeometry::set_indices(
+  self : TubeGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn TubeGeometry::ffi_get_index(
+  self : TubeGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn TubeGeometry::get_index(self : TubeGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn TubeGeometry::compute_vertex_normals(
+  self : TubeGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn TubeGeometry::compute_bounding_box(
+  self : TubeGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn TubeGeometry::compute_bounding_sphere(
+  self : TubeGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn TubeGeometry::ffi_bounding_box(
+  self : TubeGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn TubeGeometry::bounding_box(self : TubeGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn TubeGeometry::ffi_bounding_sphere(
+  self : TubeGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn TubeGeometry::bounding_sphere(self : TubeGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn TubeGeometry::translate(
+  self : TubeGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn TubeGeometry::scale(
+  self : TubeGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn TubeGeometry::rotate_x(
+  self : TubeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn TubeGeometry::rotate_y(
+  self : TubeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn TubeGeometry::rotate_z(
+  self : TubeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn TubeGeometry::apply_matrix4(
+  self : TubeGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn TubeGeometry::center(self : TubeGeometry) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn TubeGeometry::dispose(self : TubeGeometry) -> Unit =
+  #| (self) => self.dispose()

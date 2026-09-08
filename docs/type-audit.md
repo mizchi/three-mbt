@@ -6,7 +6,7 @@ Runtime-exported WebGL core classes, existing core facades, currently imported a
 
 Mapped means at least one typed facade/overload exists, not full signature compatibility or both getter and setter coverage. Partial means an indirect reference was detected. Unavailable means a math method declared in the types is absent from the pinned runtime. Namespace counts are separate. Other functions, constants, interfaces and structural option objects are inventoried in otherExports, outside class-member counts.
 
-Classes with bindings: 265/290. Member names: 2160 mapped, 32 partial, 889 missing, 7 unavailable.
+Classes with bindings: 265/290. Member names: 2172 mapped, 32 partial, 877 missing, 7 unavailable.
 
 Run `just audit-api` to regenerate; `just check` rejects stale reports. Signatures, source locations, excluded classes and other exported contracts: [type-audit.json](type-audit.json).
 
@@ -50,7 +50,7 @@ Run `just audit-api` to regenerate; `just check` rejects stale reports. Signatur
 | BatchedMesh | 31 | 0 | 3 | 0 |
 | BezierInterpolant | 1 | 0 | 0 | 0 |
 | BokehPass | 2 | 0 | 8 | 0 |
-| Bone | 1 | 0 | 2 | 0 |
+| Bone | 2 | 0 | 1 | 0 |
 | BooleanKeyframeTrack | 1 | 0 | 0 | 0 |
 | Box2 | 25 | 0 | 0 | 2 |
 | Box3 | 35 | 0 | 2 | 0 |
@@ -90,7 +90,7 @@ Run `just audit-api` to regenerate; `just check` rejects stale reports. Signatur
 | CubicBezierCurve3 | 5 | 0 | 2 | 0 |
 | CubicInterpolant | 1 | 0 | 0 | 0 |
 | Curve | 16 | 0 | 1 | 0 |
-| CurvePath | 9 | 0 | 3 | 0 |
+| CurvePath | 11 | 0 | 1 | 0 |
 | CylinderGeometry | 2 | 0 | 2 | 0 |
 | Cylindrical | 9 | 0 | 0 | 0 |
 | Data3DTexture | 2 | 0 | 6 | 0 |
@@ -166,7 +166,7 @@ Run `just audit-api` to regenerate; `just check` rejects stale reports. Signatur
 | Light | 4 | 0 | 3 | 0 |
 | LightProbe | 3 | 0 | 2 | 0 |
 | LightShadow | 19 | 0 | 5 | 0 |
-| Line | 3 | 0 | 6 | 0 |
+| Line | 4 | 0 | 5 | 0 |
 | Line2 | 1 | 0 | 3 | 0 |
 | Line2 | 1 | 0 | 3 | 0 |
 | Line3 | 16 | 0 | 0 | 0 |
@@ -176,13 +176,13 @@ Run `just audit-api` to regenerate; `just check` rejects stale reports. Signatur
 | LineCurve3 | 3 | 0 | 2 | 0 |
 | LineDashedMaterial | 4 | 0 | 2 | 0 |
 | LineGeometry | 1 | 0 | 2 | 0 |
-| LineLoop | 1 | 0 | 2 | 0 |
+| LineLoop | 2 | 0 | 1 | 0 |
 | LineMaterial | 9 | 0 | 1 | 0 |
-| LineSegments | 1 | 0 | 2 | 0 |
+| LineSegments | 2 | 0 | 1 | 0 |
 | Loader | 11 | 0 | 5 | 0 |
 | LoaderUtils | 0 | 0 | 2 | 0 |
 | LoadingManager | 13 | 0 | 2 | 0 |
-| LOD | 8 | 0 | 3 | 0 |
+| LOD | 9 | 0 | 2 | 0 |
 | LoftGeometry | 1 | 1 | 0 | 0 |
 | MapControls | 1 | 0 | 0 | 0 |
 | Material | 55 | 0 | 5 | 0 |
@@ -191,7 +191,7 @@ Run `just audit-api` to regenerate; `just check` rejects stale reports. Signatur
 | Matrix2 | 6 | 0 | 0 | 0 |
 | Matrix3 | 27 | 0 | 1 | 0 |
 | Matrix4 | 39 | 0 | 0 | 0 |
-| Mesh | 6 | 1 | 4 | 0 |
+| Mesh | 7 | 1 | 3 | 0 |
 | MeshBasicMaterial | 17 | 0 | 4 | 0 |
 | MeshDepthMaterial | 9 | 0 | 2 | 0 |
 | MeshDistanceMaterial | 6 | 0 | 2 | 0 |
@@ -233,7 +233,7 @@ Run `just audit-api` to regenerate; `just check` rejects stale reports. Signatur
 | PointerLockControls | 10 | 0 | 0 | 0 |
 | PointLight | 6 | 0 | 2 | 0 |
 | PointLightHelper | 3 | 0 | 2 | 0 |
-| Points | 3 | 0 | 5 | 0 |
+| Points | 4 | 0 | 4 | 0 |
 | PointsMaterial | 7 | 0 | 2 | 0 |
 | PolarGridHelper | 0 | 0 | 2 | 0 |
 | PolyhedronGeometry | 1 | 0 | 3 | 0 |
@@ -269,7 +269,7 @@ Run `just audit-api` to regenerate; `just check` rejects stale reports. Signatur
 | SimplifyModifier | 2 | 0 | 0 | 0 |
 | Skeleton | 16 | 0 | 1 | 0 |
 | SkeletonHelper | 3 | 0 | 3 | 0 |
-| SkinnedMesh | 12 | 0 | 4 | 0 |
+| SkinnedMesh | 13 | 0 | 3 | 0 |
 | SMAAPass | 1 | 0 | 13 | 0 |
 | Source | 6 | 1 | 3 | 0 |
 | Sphere | 22 | 0 | 2 | 1 |
@@ -279,7 +279,7 @@ Run `just audit-api` to regenerate; `just check` rejects stale reports. Signatur
 | SplineCurve | 2 | 0 | 2 | 0 |
 | SpotLight | 10 | 0 | 2 | 0 |
 | SpotLightHelper | 3 | 0 | 3 | 0 |
-| Sprite | 2 | 0 | 6 | 0 |
+| Sprite | 4 | 0 | 4 | 0 |
 | SpriteMaterial | 7 | 0 | 2 | 0 |
 | StereoCamera | 6 | 0 | 0 | 0 |
 | STLExporter | 2 | 0 | 0 | 0 |
@@ -409,7 +409,7 @@ Remaining: none
 
 ### Bone
 
-`isBone`, `type`
+`isBone`
 
 ### Box2
 
@@ -541,7 +541,7 @@ Remaining: none
 
 ### CurvePath
 
-`type`, `getPoints`, `getSpacedPoints`
+`type`
 
 ### CylinderGeometry
 
@@ -773,7 +773,7 @@ Remaining: none
 
 ### Line
 
-`isLine`, `type`, `material`, `morphTargetInfluences`, `morphTargetDictionary`, `updateMorphTargets`
+`isLine`, `material`, `morphTargetInfluences`, `morphTargetDictionary`, `updateMorphTargets`
 
 ### Line2
 
@@ -805,7 +805,7 @@ Remaining: none
 
 ### LineLoop
 
-`isLineLoop`, `type`
+`isLineLoop`
 
 ### LineMaterial
 
@@ -813,7 +813,7 @@ Remaining: none
 
 ### LineSegments
 
-`isLineSegments`, `type`
+`isLineSegments`
 
 ### Loader
 
@@ -829,7 +829,7 @@ Remaining: none
 
 ### LOD
 
-`isLOD`, `type`, `toJSON`
+`isLOD`, `toJSON`
 
 ### LoftGeometry
 
@@ -853,7 +853,7 @@ Remaining: none
 
 ### Mesh
 
-`isMesh`, `type`, `morphTargetDictionary` (partial), `count`, `toJSON`
+`isMesh`, `morphTargetDictionary` (partial), `count`, `toJSON`
 
 ### MeshBasicMaterial
 
@@ -985,7 +985,7 @@ Remaining: none
 
 ### Points
 
-`isPoints`, `type`, `morphTargetInfluences`, `morphTargetDictionary`, `updateMorphTargets`
+`isPoints`, `morphTargetInfluences`, `morphTargetDictionary`, `updateMorphTargets`
 
 ### PointsMaterial
 
@@ -1105,7 +1105,7 @@ Remaining: none
 
 ### SkinnedMesh
 
-`isSkinnedMesh`, `type`, `bindMode`, `toJSON`
+`isSkinnedMesh`, `bindMode`, `toJSON`
 
 ### SMAAPass
 
@@ -1141,7 +1141,7 @@ Remaining: none
 
 ### Sprite
 
-`isSprite`, `type`, `castShadow`, `geometry`, `material`, `count`
+`isSprite`, `geometry`, `material`, `count`
 
 ### SpriteMaterial
 

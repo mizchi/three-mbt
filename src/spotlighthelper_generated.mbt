@@ -20,3 +20,273 @@ pub extern "js" fn SpotLightHelper::update(self : SpotLightHelper) -> Unit =
 ///|
 pub extern "js" fn SpotLightHelper::dispose(self : SpotLightHelper) -> Unit =
   #| (self) => self.dispose()
+
+///|
+pub extern "js" fn SpotLightHelper::cast_shadow(self : SpotLightHelper) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn SpotLightHelper::set_cast_shadow(
+  self : SpotLightHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn SpotLightHelper::receive_shadow(
+  self : SpotLightHelper,
+) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn SpotLightHelper::set_receive_shadow(
+  self : SpotLightHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn SpotLightHelper::id(self : SpotLightHelper) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn SpotLightHelper::uuid(self : SpotLightHelper) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn SpotLightHelper::kind(self : SpotLightHelper) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn SpotLightHelper::name(self : SpotLightHelper) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn SpotLightHelper::visible(self : SpotLightHelper) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLightHelper::position(self : SpotLightHelper) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLightHelper::rotation(self : SpotLightHelper) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLightHelper::quaternion(
+  self : SpotLightHelper,
+) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLightHelper::scale(self : SpotLightHelper) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLightHelper::up(self : SpotLightHelper) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLightHelper::matrix(self : SpotLightHelper) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLightHelper::matrix_world(
+  self : SpotLightHelper,
+) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn SpotLightHelper::set_name(
+  self : SpotLightHelper,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn SpotLightHelper::set_visible(
+  self : SpotLightHelper,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn SpotLightHelper::children(
+  self : SpotLightHelper,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn SpotLightHelper::add(
+  self : SpotLightHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn SpotLightHelper::remove(
+  self : SpotLightHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn SpotLightHelper::attach(
+  self : SpotLightHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn SpotLightHelper::remove_from_parent(
+  self : SpotLightHelper,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn SpotLightHelper::look_at(
+  self : SpotLightHelper,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn SpotLightHelper::rotate_x(
+  self : SpotLightHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn SpotLightHelper::rotate_y(
+  self : SpotLightHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn SpotLightHelper::rotate_z(
+  self : SpotLightHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn SpotLightHelper::translate_x(
+  self : SpotLightHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn SpotLightHelper::translate_y(
+  self : SpotLightHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn SpotLightHelper::translate_z(
+  self : SpotLightHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn SpotLightHelper::apply_matrix4(
+  self : SpotLightHelper,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn SpotLightHelper::apply_quaternion(
+  self : SpotLightHelper,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn SpotLightHelper::update_matrix(
+  self : SpotLightHelper,
+) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn SpotLightHelper::update_matrix_world(
+  self : SpotLightHelper,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn SpotLightHelper::update_world_matrix(
+  self : SpotLightHelper,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn SpotLightHelper::get_world_position(
+  self : SpotLightHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn SpotLightHelper::get_world_quaternion(
+  self : SpotLightHelper,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn SpotLightHelper::get_world_scale(
+  self : SpotLightHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn SpotLightHelper::get_world_direction(
+  self : SpotLightHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn SpotLightHelper::local_to_world(
+  self : SpotLightHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn SpotLightHelper::world_to_local(
+  self : SpotLightHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn SpotLightHelper::traverse(
+  self : SpotLightHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn SpotLightHelper::traverse_visible(
+  self : SpotLightHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

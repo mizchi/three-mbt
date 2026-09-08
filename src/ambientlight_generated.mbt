@@ -16,3 +16,265 @@ pub fn AmbientLight::as_light(self : AmbientLight) -> Light = "%identity"
 
 ///|
 pub fn AmbientLight::as_object3d(self : AmbientLight) -> Object3D = "%identity"
+
+///|
+pub extern "js" fn AmbientLight::cast_shadow(self : AmbientLight) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn AmbientLight::set_cast_shadow(
+  self : AmbientLight,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn AmbientLight::receive_shadow(self : AmbientLight) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn AmbientLight::set_receive_shadow(
+  self : AmbientLight,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn AmbientLight::id(self : AmbientLight) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn AmbientLight::uuid(self : AmbientLight) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn AmbientLight::kind(self : AmbientLight) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn AmbientLight::name(self : AmbientLight) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn AmbientLight::visible(self : AmbientLight) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AmbientLight::position(self : AmbientLight) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AmbientLight::rotation(self : AmbientLight) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AmbientLight::quaternion(self : AmbientLight) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AmbientLight::scale(self : AmbientLight) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AmbientLight::up(self : AmbientLight) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AmbientLight::matrix(self : AmbientLight) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AmbientLight::matrix_world(self : AmbientLight) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn AmbientLight::set_name(
+  self : AmbientLight,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn AmbientLight::set_visible(
+  self : AmbientLight,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn AmbientLight::children(
+  self : AmbientLight,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn AmbientLight::add(
+  self : AmbientLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn AmbientLight::remove(
+  self : AmbientLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn AmbientLight::attach(
+  self : AmbientLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn AmbientLight::remove_from_parent(
+  self : AmbientLight,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn AmbientLight::look_at(
+  self : AmbientLight,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn AmbientLight::rotate_x(
+  self : AmbientLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn AmbientLight::rotate_y(
+  self : AmbientLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn AmbientLight::rotate_z(
+  self : AmbientLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn AmbientLight::translate_x(
+  self : AmbientLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn AmbientLight::translate_y(
+  self : AmbientLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn AmbientLight::translate_z(
+  self : AmbientLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn AmbientLight::apply_matrix4(
+  self : AmbientLight,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn AmbientLight::apply_quaternion(
+  self : AmbientLight,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn AmbientLight::update_matrix(self : AmbientLight) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn AmbientLight::update_matrix_world(
+  self : AmbientLight,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn AmbientLight::update_world_matrix(
+  self : AmbientLight,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn AmbientLight::get_world_position(
+  self : AmbientLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn AmbientLight::get_world_quaternion(
+  self : AmbientLight,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn AmbientLight::get_world_scale(
+  self : AmbientLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn AmbientLight::get_world_direction(
+  self : AmbientLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn AmbientLight::local_to_world(
+  self : AmbientLight,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn AmbientLight::world_to_local(
+  self : AmbientLight,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn AmbientLight::traverse(
+  self : AmbientLight,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn AmbientLight::traverse_visible(
+  self : AmbientLight,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

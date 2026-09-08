@@ -14,3 +14,265 @@ pub fn CameraHelper::as_object3d(self : CameraHelper) -> Object3D = "%identity"
 ///|
 pub extern "js" fn CameraHelper::dispose(self : CameraHelper) -> Unit =
   #| (self) => self.dispose()
+
+///|
+pub extern "js" fn CameraHelper::cast_shadow(self : CameraHelper) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn CameraHelper::set_cast_shadow(
+  self : CameraHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn CameraHelper::receive_shadow(self : CameraHelper) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn CameraHelper::set_receive_shadow(
+  self : CameraHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn CameraHelper::id(self : CameraHelper) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn CameraHelper::uuid(self : CameraHelper) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn CameraHelper::kind(self : CameraHelper) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn CameraHelper::name(self : CameraHelper) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn CameraHelper::visible(self : CameraHelper) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CameraHelper::position(self : CameraHelper) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CameraHelper::rotation(self : CameraHelper) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CameraHelper::quaternion(self : CameraHelper) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CameraHelper::scale(self : CameraHelper) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CameraHelper::up(self : CameraHelper) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CameraHelper::matrix(self : CameraHelper) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CameraHelper::matrix_world(self : CameraHelper) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn CameraHelper::set_name(
+  self : CameraHelper,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn CameraHelper::set_visible(
+  self : CameraHelper,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn CameraHelper::children(
+  self : CameraHelper,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn CameraHelper::add(
+  self : CameraHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn CameraHelper::remove(
+  self : CameraHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn CameraHelper::attach(
+  self : CameraHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn CameraHelper::remove_from_parent(
+  self : CameraHelper,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn CameraHelper::look_at(
+  self : CameraHelper,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn CameraHelper::rotate_x(
+  self : CameraHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn CameraHelper::rotate_y(
+  self : CameraHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn CameraHelper::rotate_z(
+  self : CameraHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn CameraHelper::translate_x(
+  self : CameraHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn CameraHelper::translate_y(
+  self : CameraHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn CameraHelper::translate_z(
+  self : CameraHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn CameraHelper::apply_matrix4(
+  self : CameraHelper,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn CameraHelper::apply_quaternion(
+  self : CameraHelper,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn CameraHelper::update_matrix(self : CameraHelper) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn CameraHelper::update_matrix_world(
+  self : CameraHelper,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn CameraHelper::update_world_matrix(
+  self : CameraHelper,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn CameraHelper::get_world_position(
+  self : CameraHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn CameraHelper::get_world_quaternion(
+  self : CameraHelper,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn CameraHelper::get_world_scale(
+  self : CameraHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn CameraHelper::get_world_direction(
+  self : CameraHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn CameraHelper::local_to_world(
+  self : CameraHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn CameraHelper::world_to_local(
+  self : CameraHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn CameraHelper::traverse(
+  self : CameraHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn CameraHelper::traverse_visible(
+  self : CameraHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

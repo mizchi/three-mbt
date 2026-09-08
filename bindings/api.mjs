@@ -35,6 +35,7 @@ import { animation } from './animation.mjs';
 import { loaders } from './loaders.mjs';
 import { extended } from './extended.mjs';
 import { dataBindings } from './data.mjs';
+import { extendErgonomics } from './ergonomics.mjs';
 // Binding contract: explicit MoonBit argument/return types and JS member names.
 // Only direct forwarding belongs here. Option/enum conversions live in src/.
 const method = (name, args, returns, js = name) => ({ name, args, returns, js });
@@ -249,3 +250,5 @@ extendGLTFPlugins(bindings);
 bindings.push(...parametric);
 bindings.push(...topology);
 bindings.push(...csg);
+
+extendErgonomics(bindings);

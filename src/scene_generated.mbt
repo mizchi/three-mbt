@@ -125,3 +125,228 @@ pub extern "js" fn Scene::background_rotation(self : Scene) -> Euler =
 ///|
 pub extern "js" fn Scene::environment_rotation(self : Scene) -> Euler =
   #| (self) => self.environmentRotation
+
+///|
+pub extern "js" fn Scene::cast_shadow(self : Scene) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn Scene::set_cast_shadow(self : Scene, value : Bool) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn Scene::receive_shadow(self : Scene) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn Scene::set_receive_shadow(
+  self : Scene,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn Scene::id(self : Scene) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn Scene::uuid(self : Scene) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn Scene::kind(self : Scene) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn Scene::name(self : Scene) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn Scene::visible(self : Scene) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Scene::position(self : Scene) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Scene::rotation(self : Scene) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Scene::quaternion(self : Scene) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Scene::scale(self : Scene) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Scene::up(self : Scene) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Scene::matrix(self : Scene) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Scene::matrix_world(self : Scene) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn Scene::set_name(self : Scene, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn Scene::set_visible(self : Scene, visible : Bool) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn Scene::children(self : Scene) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn Scene::add(self : Scene, child : Object3D) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn Scene::remove(self : Scene, child : Object3D) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn Scene::attach(self : Scene, child : Object3D) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn Scene::remove_from_parent(self : Scene) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn Scene::look_at(self : Scene, target : Vector3) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn Scene::rotate_x(self : Scene, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn Scene::rotate_y(self : Scene, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn Scene::rotate_z(self : Scene, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn Scene::translate_x(
+  self : Scene,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn Scene::translate_y(
+  self : Scene,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn Scene::translate_z(
+  self : Scene,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn Scene::apply_matrix4(self : Scene, matrix : Matrix4) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn Scene::apply_quaternion(
+  self : Scene,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn Scene::update_matrix(self : Scene) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn Scene::update_matrix_world(
+  self : Scene,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn Scene::update_world_matrix(
+  self : Scene,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn Scene::get_world_position(
+  self : Scene,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn Scene::get_world_quaternion(
+  self : Scene,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn Scene::get_world_scale(
+  self : Scene,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn Scene::get_world_direction(
+  self : Scene,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn Scene::local_to_world(
+  self : Scene,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn Scene::world_to_local(
+  self : Scene,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn Scene::traverse(
+  self : Scene,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn Scene::traverse_visible(
+  self : Scene,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

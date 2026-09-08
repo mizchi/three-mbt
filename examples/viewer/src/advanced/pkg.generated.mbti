@@ -1,0 +1,33 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/advanced"
+
+import {
+  "moonbitlang/async/js_async",
+}
+
+// Values
+pub fn controls_state() -> FixedArray[Double]
+
+pub fn dispose_controls() -> Unit
+
+pub fn export_roundtrip() -> @js_async.Promise[FixedArray[Int]]
+
+pub fn lock_pointer() -> Unit
+
+pub fn render_dynamic() -> FixedArray[Int]
+
+pub fn render_effects() -> FixedArray[Int]
+
+pub fn render_regions() -> @js_async.Promise[FixedArray[Int]]
+
+pub fn setup_controls() -> Unit
+
+pub fn unlock_pointer() -> Unit
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

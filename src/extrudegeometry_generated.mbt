@@ -41,3 +41,162 @@ pub fn ExtrudeGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn ExtrudeGeometry::id(self : ExtrudeGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn ExtrudeGeometry::name(self : ExtrudeGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn ExtrudeGeometry::set_name(
+  self : ExtrudeGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn ExtrudeGeometry::set_attribute(
+  self : ExtrudeGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn ExtrudeGeometry::ffi_get_attribute(
+  self : ExtrudeGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn ExtrudeGeometry::get_attribute(
+  self : ExtrudeGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn ExtrudeGeometry::has_attribute(
+  self : ExtrudeGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn ExtrudeGeometry::set_indices(
+  self : ExtrudeGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn ExtrudeGeometry::ffi_get_index(
+  self : ExtrudeGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn ExtrudeGeometry::get_index(self : ExtrudeGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn ExtrudeGeometry::compute_vertex_normals(
+  self : ExtrudeGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn ExtrudeGeometry::compute_bounding_box(
+  self : ExtrudeGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn ExtrudeGeometry::compute_bounding_sphere(
+  self : ExtrudeGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn ExtrudeGeometry::ffi_bounding_box(
+  self : ExtrudeGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn ExtrudeGeometry::bounding_box(self : ExtrudeGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn ExtrudeGeometry::ffi_bounding_sphere(
+  self : ExtrudeGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn ExtrudeGeometry::bounding_sphere(self : ExtrudeGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn ExtrudeGeometry::translate(
+  self : ExtrudeGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn ExtrudeGeometry::scale(
+  self : ExtrudeGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn ExtrudeGeometry::rotate_x(
+  self : ExtrudeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn ExtrudeGeometry::rotate_y(
+  self : ExtrudeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn ExtrudeGeometry::rotate_z(
+  self : ExtrudeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn ExtrudeGeometry::apply_matrix4(
+  self : ExtrudeGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn ExtrudeGeometry::center(
+  self : ExtrudeGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn ExtrudeGeometry::dispose(self : ExtrudeGeometry) -> Unit =
+  #| (self) => self.dispose()

@@ -1,0 +1,38 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/modeling"
+
+import {
+  "mizchi/three",
+  "moonbitlang/async/js_async",
+}
+
+// Values
+pub fn bake_comparison(Bool) -> @js_async.Promise[Bytes]
+
+pub fn close_selection(@three.SelectionHelper) -> Unit
+
+pub fn export_part() -> @js_async.Promise[Bytes]
+
+pub fn load_modeling_asset(Int, String) -> @js_async.Promise[Int]
+
+pub fn orbit_editing_demo() -> @three.OrbitControls
+
+pub fn orbit_editing_target(@three.OrbitControls) -> FixedArray[Double]
+
+pub fn render_flow() -> @js_async.Promise[Bytes]
+
+pub fn render_part() -> Bytes
+
+pub fn selection_demo() -> @three.SelectionHelper
+
+pub fn stop_editing_keys(@three.OrbitControls) -> Unit
+
+pub fn svg_profile(String) -> @js_async.Promise[FixedArray[Double]]
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

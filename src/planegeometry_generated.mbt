@@ -43,3 +43,162 @@ pub fn PlaneGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn PlaneGeometry::id(self : PlaneGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn PlaneGeometry::name(self : PlaneGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn PlaneGeometry::set_name(
+  self : PlaneGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn PlaneGeometry::set_attribute(
+  self : PlaneGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn PlaneGeometry::ffi_get_attribute(
+  self : PlaneGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn PlaneGeometry::get_attribute(
+  self : PlaneGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn PlaneGeometry::has_attribute(
+  self : PlaneGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn PlaneGeometry::set_indices(
+  self : PlaneGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn PlaneGeometry::ffi_get_index(
+  self : PlaneGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn PlaneGeometry::get_index(self : PlaneGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn PlaneGeometry::compute_vertex_normals(
+  self : PlaneGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn PlaneGeometry::compute_bounding_box(
+  self : PlaneGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn PlaneGeometry::compute_bounding_sphere(
+  self : PlaneGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn PlaneGeometry::ffi_bounding_box(
+  self : PlaneGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn PlaneGeometry::bounding_box(self : PlaneGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn PlaneGeometry::ffi_bounding_sphere(
+  self : PlaneGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn PlaneGeometry::bounding_sphere(self : PlaneGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn PlaneGeometry::translate(
+  self : PlaneGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn PlaneGeometry::scale(
+  self : PlaneGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn PlaneGeometry::rotate_x(
+  self : PlaneGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn PlaneGeometry::rotate_y(
+  self : PlaneGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn PlaneGeometry::rotate_z(
+  self : PlaneGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn PlaneGeometry::apply_matrix4(
+  self : PlaneGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn PlaneGeometry::center(
+  self : PlaneGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn PlaneGeometry::dispose(self : PlaneGeometry) -> Unit =
+  #| (self) => self.dispose()

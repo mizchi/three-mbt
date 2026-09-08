@@ -8,9 +8,9 @@
   "counts": {
     "classes": 290,
     "boundClasses": 265,
-    "mapped": 2160,
+    "mapped": 2172,
     "partial": 32,
-    "missing": 889,
+    "missing": 877,
     "unavailable": 7
   },
   "classes": [
@@ -2688,8 +2688,10 @@
           ],
           "line": 35,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "kind"
+          ]
         }
       ],
       "bound": true
@@ -9784,8 +9786,10 @@
           ],
           "line": 67,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "get_points"
+          ]
         },
         {
           "key": "getSpacedPoints",
@@ -9799,8 +9803,10 @@
           ],
           "line": 73,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "get_spaced_points"
+          ]
         },
         {
           "key": "toJSON",
@@ -19831,8 +19837,10 @@
           ],
           "line": 50,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "kind"
+          ]
         },
         {
           "key": "geometry",
@@ -20958,8 +20966,10 @@
           ],
           "line": 39,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "kind"
+          ]
         }
       ],
       "bound": true
@@ -21209,8 +21219,10 @@
           ],
           "line": 40,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "kind"
+          ]
         }
       ],
       "bound": true
@@ -21839,8 +21851,10 @@
           ],
           "line": 55,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "kind"
+          ]
         },
         {
           "key": "levels",
@@ -24884,8 +24898,10 @@
           ],
           "line": 53,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "kind"
+          ]
         },
         {
           "key": "geometry",
@@ -36722,8 +36738,10 @@
           ],
           "line": 35,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "kind"
+          ]
         },
         {
           "key": "morphTargetInfluences",
@@ -42237,8 +42255,10 @@
           ],
           "line": 83,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "kind"
+          ]
         },
         {
           "key": "bindMode",
@@ -44302,8 +44322,10 @@
           ],
           "line": 39,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "kind"
+          ]
         },
         {
           "key": "castShadow",
@@ -44317,8 +44339,11 @@
           ],
           "line": 48,
           "runtimePresent": null,
-          "status": "missing",
-          "bindings": []
+          "status": "mapped",
+          "bindings": [
+            "cast_shadow",
+            "set_cast_shadow"
+          ]
         },
         {
           "key": "geometry",

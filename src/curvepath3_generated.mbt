@@ -134,3 +134,87 @@ pub fn CurvePath3::from_json_string(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+extern "js" fn CurvePath3::ffi_get_point_at(
+  self : CurvePath3,
+  u : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, u, target) => self.getPointAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn CurvePath3::get_point_at(
+  self : CurvePath3,
+  u : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_point_at(u, target)
+}
+
+///|
+extern "js" fn CurvePath3::ffi_get_tangent(
+  self : CurvePath3,
+  t : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, t, target) => self.getTangent(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn CurvePath3::get_tangent(
+  self : CurvePath3,
+  t : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_tangent(t, target)
+}
+
+///|
+extern "js" fn CurvePath3::ffi_get_tangent_at(
+  self : CurvePath3,
+  u : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, u, target) => self.getTangentAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn CurvePath3::get_tangent_at(
+  self : CurvePath3,
+  u : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_tangent_at(u, target)
+}
+
+///|
+pub extern "js" fn CurvePath3::get_points(
+  self : CurvePath3,
+  divisions : Int,
+) -> FixedArray[Vector3] =
+  #| (self, divisions) => self.getPoints(divisions)
+
+///|
+pub extern "js" fn CurvePath3::get_spaced_points(
+  self : CurvePath3,
+  divisions : Int,
+) -> FixedArray[Vector3] =
+  #| (self, divisions) => self.getSpacedPoints(divisions)
+
+///|
+pub extern "js" fn CurvePath3::get_length(self : CurvePath3) -> Double =
+  #| (self) => self.getLength()
+
+///|
+pub extern "js" fn CurvePath3::update_arc_lengths(self : CurvePath3) -> Unit =
+  #| (self) => self.updateArcLengths()
+
+///|
+pub extern "js" fn CurvePath3::compute_frenet_frames(
+  self : CurvePath3,
+  segments : Int,
+  closed : Bool,
+) -> FrenetFrames =
+  #| (self, segments, closed) => self.computeFrenetFrames(segments, closed)

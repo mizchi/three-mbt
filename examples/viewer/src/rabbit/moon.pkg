@@ -1,0 +1,6 @@
+import {
+  "mizchi/three",
+  "mizchi/three-viewer/parts",
+}
+
+supported_targets = "js"

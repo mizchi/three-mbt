@@ -25,3 +25,87 @@ pub extern "js" fn ShadowMaterial::set_fog(
   value : Bool,
 ) -> Unit =
   #| (self, value) => { self.fog = value; }
+
+///|
+pub extern "js" fn ShadowMaterial::id(self : ShadowMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn ShadowMaterial::kind(self : ShadowMaterial) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn ShadowMaterial::name(self : ShadowMaterial) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn ShadowMaterial::set_name(
+  self : ShadowMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn ShadowMaterial::opacity(self : ShadowMaterial) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn ShadowMaterial::set_opacity(
+  self : ShadowMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn ShadowMaterial::transparent(self : ShadowMaterial) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn ShadowMaterial::set_transparent(
+  self : ShadowMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn ShadowMaterial::visible(self : ShadowMaterial) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn ShadowMaterial::set_visible(
+  self : ShadowMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn ShadowMaterial::depth_test(self : ShadowMaterial) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn ShadowMaterial::set_depth_test(
+  self : ShadowMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn ShadowMaterial::depth_write(self : ShadowMaterial) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn ShadowMaterial::set_depth_write(
+  self : ShadowMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn ShadowMaterial::dispose(self : ShadowMaterial) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn ShadowMaterial::mark_needs_update(
+  self : ShadowMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

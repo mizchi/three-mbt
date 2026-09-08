@@ -46,3 +46,105 @@ pub extern "js" fn LineCurve3::copy(
   source : LineCurve3,
 ) -> LineCurve3 =
   #| (self, source) => self.copy(source)
+
+///|
+extern "js" fn LineCurve3::ffi_get_point(
+  self : LineCurve3,
+  t : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, t, target) => self.getPoint(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn LineCurve3::get_point(
+  self : LineCurve3,
+  t : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_point(t, target)
+}
+
+///|
+extern "js" fn LineCurve3::ffi_get_point_at(
+  self : LineCurve3,
+  u : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, u, target) => self.getPointAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn LineCurve3::get_point_at(
+  self : LineCurve3,
+  u : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_point_at(u, target)
+}
+
+///|
+extern "js" fn LineCurve3::ffi_get_tangent(
+  self : LineCurve3,
+  t : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, t, target) => self.getTangent(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn LineCurve3::get_tangent(
+  self : LineCurve3,
+  t : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_tangent(t, target)
+}
+
+///|
+extern "js" fn LineCurve3::ffi_get_tangent_at(
+  self : LineCurve3,
+  u : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, u, target) => self.getTangentAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn LineCurve3::get_tangent_at(
+  self : LineCurve3,
+  u : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_tangent_at(u, target)
+}
+
+///|
+pub extern "js" fn LineCurve3::get_points(
+  self : LineCurve3,
+  divisions : Int,
+) -> FixedArray[Vector3] =
+  #| (self, divisions) => self.getPoints(divisions)
+
+///|
+pub extern "js" fn LineCurve3::get_spaced_points(
+  self : LineCurve3,
+  divisions : Int,
+) -> FixedArray[Vector3] =
+  #| (self, divisions) => self.getSpacedPoints(divisions)
+
+///|
+pub extern "js" fn LineCurve3::get_length(self : LineCurve3) -> Double =
+  #| (self) => self.getLength()
+
+///|
+pub extern "js" fn LineCurve3::update_arc_lengths(self : LineCurve3) -> Unit =
+  #| (self) => self.updateArcLengths()
+
+///|
+pub extern "js" fn LineCurve3::compute_frenet_frames(
+  self : LineCurve3,
+  segments : Int,
+  closed : Bool,
+) -> FrenetFrames =
+  #| (self, segments, closed) => self.computeFrenetFrames(segments, closed)

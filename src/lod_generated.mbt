@@ -55,3 +55,207 @@ pub fn LOD::get_object_for_distance(self : LOD, distance : Double) -> Object3D? 
 ///|
 pub extern "js" fn LOD::update(self : LOD, camera : Camera) -> Unit =
   #| (self, camera) => self.update(camera)
+
+///|
+pub extern "js" fn LOD::cast_shadow(self : LOD) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn LOD::set_cast_shadow(self : LOD, value : Bool) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn LOD::receive_shadow(self : LOD) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn LOD::set_receive_shadow(self : LOD, value : Bool) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn LOD::id(self : LOD) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn LOD::uuid(self : LOD) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn LOD::kind(self : LOD) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn LOD::name(self : LOD) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn LOD::visible(self : LOD) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LOD::position(self : LOD) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LOD::rotation(self : LOD) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LOD::quaternion(self : LOD) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LOD::scale(self : LOD) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LOD::up(self : LOD) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LOD::matrix(self : LOD) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LOD::matrix_world(self : LOD) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn LOD::set_name(self : LOD, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn LOD::set_visible(self : LOD, visible : Bool) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn LOD::children(self : LOD) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn LOD::add(self : LOD, child : Object3D) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn LOD::remove(self : LOD, child : Object3D) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn LOD::attach(self : LOD, child : Object3D) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn LOD::remove_from_parent(self : LOD) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn LOD::look_at(self : LOD, target : Vector3) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn LOD::rotate_x(self : LOD, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn LOD::rotate_y(self : LOD, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn LOD::rotate_z(self : LOD, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn LOD::translate_x(self : LOD, distance : Double) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn LOD::translate_y(self : LOD, distance : Double) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn LOD::translate_z(self : LOD, distance : Double) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn LOD::apply_matrix4(self : LOD, matrix : Matrix4) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn LOD::apply_quaternion(
+  self : LOD,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn LOD::update_matrix(self : LOD) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn LOD::update_matrix_world(self : LOD, force : Bool) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn LOD::update_world_matrix(
+  self : LOD,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn LOD::get_world_position(
+  self : LOD,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn LOD::get_world_quaternion(
+  self : LOD,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn LOD::get_world_scale(
+  self : LOD,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn LOD::get_world_direction(
+  self : LOD,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn LOD::local_to_world(self : LOD, vector : Vector3) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn LOD::world_to_local(self : LOD, vector : Vector3) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn LOD::traverse(
+  self : LOD,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn LOD::traverse_visible(
+  self : LOD,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

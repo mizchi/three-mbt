@@ -313,3 +313,265 @@ extern "js" fn BatchedMesh::ffi_bounding_sphere(
 pub fn BatchedMesh::bounding_sphere(self : BatchedMesh) -> Sphere? {
   self.ffi_bounding_sphere().to_option()
 }
+
+///|
+pub extern "js" fn BatchedMesh::cast_shadow(self : BatchedMesh) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn BatchedMesh::set_cast_shadow(
+  self : BatchedMesh,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn BatchedMesh::receive_shadow(self : BatchedMesh) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn BatchedMesh::set_receive_shadow(
+  self : BatchedMesh,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn BatchedMesh::id(self : BatchedMesh) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn BatchedMesh::uuid(self : BatchedMesh) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn BatchedMesh::kind(self : BatchedMesh) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn BatchedMesh::name(self : BatchedMesh) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn BatchedMesh::visible(self : BatchedMesh) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BatchedMesh::position(self : BatchedMesh) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BatchedMesh::rotation(self : BatchedMesh) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BatchedMesh::quaternion(self : BatchedMesh) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BatchedMesh::scale(self : BatchedMesh) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BatchedMesh::up(self : BatchedMesh) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BatchedMesh::matrix(self : BatchedMesh) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BatchedMesh::matrix_world(self : BatchedMesh) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn BatchedMesh::set_name(
+  self : BatchedMesh,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn BatchedMesh::set_visible(
+  self : BatchedMesh,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn BatchedMesh::children(
+  self : BatchedMesh,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn BatchedMesh::add(
+  self : BatchedMesh,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn BatchedMesh::remove(
+  self : BatchedMesh,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn BatchedMesh::attach(
+  self : BatchedMesh,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn BatchedMesh::remove_from_parent(
+  self : BatchedMesh,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn BatchedMesh::look_at(
+  self : BatchedMesh,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn BatchedMesh::rotate_x(
+  self : BatchedMesh,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn BatchedMesh::rotate_y(
+  self : BatchedMesh,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn BatchedMesh::rotate_z(
+  self : BatchedMesh,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn BatchedMesh::translate_x(
+  self : BatchedMesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn BatchedMesh::translate_y(
+  self : BatchedMesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn BatchedMesh::translate_z(
+  self : BatchedMesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn BatchedMesh::apply_matrix4(
+  self : BatchedMesh,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn BatchedMesh::apply_quaternion(
+  self : BatchedMesh,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn BatchedMesh::update_matrix(self : BatchedMesh) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn BatchedMesh::update_matrix_world(
+  self : BatchedMesh,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn BatchedMesh::update_world_matrix(
+  self : BatchedMesh,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn BatchedMesh::get_world_position(
+  self : BatchedMesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn BatchedMesh::get_world_quaternion(
+  self : BatchedMesh,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn BatchedMesh::get_world_scale(
+  self : BatchedMesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn BatchedMesh::get_world_direction(
+  self : BatchedMesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn BatchedMesh::local_to_world(
+  self : BatchedMesh,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn BatchedMesh::world_to_local(
+  self : BatchedMesh,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn BatchedMesh::traverse(
+  self : BatchedMesh,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn BatchedMesh::traverse_visible(
+  self : BatchedMesh,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

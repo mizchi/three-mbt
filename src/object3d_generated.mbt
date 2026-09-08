@@ -122,30 +122,37 @@ pub extern "js" fn Object3D::visible(self : Object3D) -> Bool =
   #| (self) => self.visible
 
 ///|
+/// Returns the live three.js reference, not a copy.
 pub extern "js" fn Object3D::position(self : Object3D) -> Vector3 =
   #| (self) => self.position
 
 ///|
+/// Returns the live three.js reference, not a copy.
 pub extern "js" fn Object3D::rotation(self : Object3D) -> Euler =
   #| (self) => self.rotation
 
 ///|
+/// Returns the live three.js reference, not a copy.
 pub extern "js" fn Object3D::quaternion(self : Object3D) -> Quaternion =
   #| (self) => self.quaternion
 
 ///|
+/// Returns the live three.js reference, not a copy.
 pub extern "js" fn Object3D::scale(self : Object3D) -> Vector3 =
   #| (self) => self.scale
 
 ///|
+/// Returns the live three.js reference, not a copy.
 pub extern "js" fn Object3D::up(self : Object3D) -> Vector3 =
   #| (self) => self.up
 
 ///|
+/// Returns the live three.js reference, not a copy.
 pub extern "js" fn Object3D::matrix(self : Object3D) -> Matrix4 =
   #| (self) => self.matrix
 
 ///|
+/// Returns the live three.js reference, not a copy.
 pub extern "js" fn Object3D::matrix_world(self : Object3D) -> Matrix4 =
   #| (self) => self.matrixWorld
 

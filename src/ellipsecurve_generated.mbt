@@ -107,3 +107,99 @@ pub extern "js" fn EllipseCurve::set_clockwise(
   value : Bool,
 ) -> Unit =
   #| (self, value) => { self.aClockwise = value; }
+
+///|
+extern "js" fn EllipseCurve::ffi_get_point(
+  self : EllipseCurve,
+  t : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, t, target) => self.getPoint(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn EllipseCurve::get_point(
+  self : EllipseCurve,
+  t : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_point(t, target)
+}
+
+///|
+extern "js" fn EllipseCurve::ffi_get_point_at(
+  self : EllipseCurve,
+  u : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, u, target) => self.getPointAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn EllipseCurve::get_point_at(
+  self : EllipseCurve,
+  u : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_point_at(u, target)
+}
+
+///|
+extern "js" fn EllipseCurve::ffi_get_tangent(
+  self : EllipseCurve,
+  t : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, t, target) => self.getTangent(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn EllipseCurve::get_tangent(
+  self : EllipseCurve,
+  t : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_tangent(t, target)
+}
+
+///|
+extern "js" fn EllipseCurve::ffi_get_tangent_at(
+  self : EllipseCurve,
+  u : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, u, target) => self.getTangentAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn EllipseCurve::get_tangent_at(
+  self : EllipseCurve,
+  u : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_tangent_at(u, target)
+}
+
+///|
+pub extern "js" fn EllipseCurve::get_points(
+  self : EllipseCurve,
+  divisions : Int,
+) -> FixedArray[Vector2] =
+  #| (self, divisions) => self.getPoints(divisions)
+
+///|
+pub extern "js" fn EllipseCurve::get_spaced_points(
+  self : EllipseCurve,
+  divisions : Int,
+) -> FixedArray[Vector2] =
+  #| (self, divisions) => self.getSpacedPoints(divisions)
+
+///|
+pub extern "js" fn EllipseCurve::get_length(self : EllipseCurve) -> Double =
+  #| (self) => self.getLength()
+
+///|
+pub extern "js" fn EllipseCurve::update_arc_lengths(
+  self : EllipseCurve,
+) -> Unit =
+  #| (self) => self.updateArcLengths()

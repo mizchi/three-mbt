@@ -35,3 +35,277 @@ pub extern "js" fn DirectionalLight::copy(
   source : DirectionalLight,
 ) -> DirectionalLight =
   #| (self, source) => self.copy(source)
+
+///|
+pub extern "js" fn DirectionalLight::cast_shadow(
+  self : DirectionalLight,
+) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn DirectionalLight::set_cast_shadow(
+  self : DirectionalLight,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn DirectionalLight::receive_shadow(
+  self : DirectionalLight,
+) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn DirectionalLight::set_receive_shadow(
+  self : DirectionalLight,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn DirectionalLight::id(self : DirectionalLight) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn DirectionalLight::uuid(self : DirectionalLight) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn DirectionalLight::kind(self : DirectionalLight) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn DirectionalLight::name(self : DirectionalLight) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn DirectionalLight::visible(self : DirectionalLight) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLight::position(
+  self : DirectionalLight,
+) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLight::rotation(self : DirectionalLight) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLight::quaternion(
+  self : DirectionalLight,
+) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLight::scale(self : DirectionalLight) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLight::up(self : DirectionalLight) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLight::matrix(self : DirectionalLight) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLight::matrix_world(
+  self : DirectionalLight,
+) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn DirectionalLight::set_name(
+  self : DirectionalLight,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn DirectionalLight::set_visible(
+  self : DirectionalLight,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn DirectionalLight::children(
+  self : DirectionalLight,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn DirectionalLight::add(
+  self : DirectionalLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn DirectionalLight::remove(
+  self : DirectionalLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn DirectionalLight::attach(
+  self : DirectionalLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn DirectionalLight::remove_from_parent(
+  self : DirectionalLight,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn DirectionalLight::look_at(
+  self : DirectionalLight,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn DirectionalLight::rotate_x(
+  self : DirectionalLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn DirectionalLight::rotate_y(
+  self : DirectionalLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn DirectionalLight::rotate_z(
+  self : DirectionalLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn DirectionalLight::translate_x(
+  self : DirectionalLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn DirectionalLight::translate_y(
+  self : DirectionalLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn DirectionalLight::translate_z(
+  self : DirectionalLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn DirectionalLight::apply_matrix4(
+  self : DirectionalLight,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn DirectionalLight::apply_quaternion(
+  self : DirectionalLight,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn DirectionalLight::update_matrix(
+  self : DirectionalLight,
+) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn DirectionalLight::update_matrix_world(
+  self : DirectionalLight,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn DirectionalLight::update_world_matrix(
+  self : DirectionalLight,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn DirectionalLight::get_world_position(
+  self : DirectionalLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn DirectionalLight::get_world_quaternion(
+  self : DirectionalLight,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn DirectionalLight::get_world_scale(
+  self : DirectionalLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn DirectionalLight::get_world_direction(
+  self : DirectionalLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn DirectionalLight::local_to_world(
+  self : DirectionalLight,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn DirectionalLight::world_to_local(
+  self : DirectionalLight,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn DirectionalLight::traverse(
+  self : DirectionalLight,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn DirectionalLight::traverse_visible(
+  self : DirectionalLight,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

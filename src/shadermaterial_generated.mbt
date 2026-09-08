@@ -206,3 +206,87 @@ pub extern "js" fn ShaderMaterial::set_uniforms_groups(
   groups : FixedArray[UniformsGroup],
 ) -> Unit =
   #| (self, groups) => { self.uniformsGroups=groups.slice();self.needsUpdate=true; }
+
+///|
+pub extern "js" fn ShaderMaterial::id(self : ShaderMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn ShaderMaterial::kind(self : ShaderMaterial) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn ShaderMaterial::name(self : ShaderMaterial) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn ShaderMaterial::set_name(
+  self : ShaderMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn ShaderMaterial::opacity(self : ShaderMaterial) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn ShaderMaterial::set_opacity(
+  self : ShaderMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn ShaderMaterial::transparent(self : ShaderMaterial) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn ShaderMaterial::set_transparent(
+  self : ShaderMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn ShaderMaterial::visible(self : ShaderMaterial) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn ShaderMaterial::set_visible(
+  self : ShaderMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn ShaderMaterial::depth_test(self : ShaderMaterial) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn ShaderMaterial::set_depth_test(
+  self : ShaderMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn ShaderMaterial::depth_write(self : ShaderMaterial) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn ShaderMaterial::set_depth_write(
+  self : ShaderMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn ShaderMaterial::dispose(self : ShaderMaterial) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn ShaderMaterial::mark_needs_update(
+  self : ShaderMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

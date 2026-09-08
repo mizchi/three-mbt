@@ -14,3 +14,164 @@ pub extern "js" fn WireframeGeometry::WireframeGeometry(
 pub fn WireframeGeometry::as_buffer_geometry(
   self : WireframeGeometry,
 ) -> BufferGeometry = "%identity"
+
+///|
+pub extern "js" fn WireframeGeometry::id(self : WireframeGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn WireframeGeometry::name(self : WireframeGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn WireframeGeometry::set_name(
+  self : WireframeGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn WireframeGeometry::set_attribute(
+  self : WireframeGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn WireframeGeometry::ffi_get_attribute(
+  self : WireframeGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn WireframeGeometry::get_attribute(
+  self : WireframeGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn WireframeGeometry::has_attribute(
+  self : WireframeGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn WireframeGeometry::set_indices(
+  self : WireframeGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn WireframeGeometry::ffi_get_index(
+  self : WireframeGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn WireframeGeometry::get_index(
+  self : WireframeGeometry,
+) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn WireframeGeometry::compute_vertex_normals(
+  self : WireframeGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn WireframeGeometry::compute_bounding_box(
+  self : WireframeGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn WireframeGeometry::compute_bounding_sphere(
+  self : WireframeGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn WireframeGeometry::ffi_bounding_box(
+  self : WireframeGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn WireframeGeometry::bounding_box(self : WireframeGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn WireframeGeometry::ffi_bounding_sphere(
+  self : WireframeGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn WireframeGeometry::bounding_sphere(self : WireframeGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn WireframeGeometry::translate(
+  self : WireframeGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn WireframeGeometry::scale(
+  self : WireframeGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn WireframeGeometry::rotate_x(
+  self : WireframeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn WireframeGeometry::rotate_y(
+  self : WireframeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn WireframeGeometry::rotate_z(
+  self : WireframeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn WireframeGeometry::apply_matrix4(
+  self : WireframeGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn WireframeGeometry::center(
+  self : WireframeGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn WireframeGeometry::dispose(self : WireframeGeometry) -> Unit =
+  #| (self) => self.dispose()

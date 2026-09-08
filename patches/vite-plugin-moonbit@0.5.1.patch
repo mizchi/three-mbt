@@ -1,0 +1,27 @@
+diff --git a/dist/index.mjs b/dist/index.mjs
+index a42f7fecdc010664551f975e12a409b75f19bb20..9c2a2bf2fda19de4719aa8f67356c72a572a4632 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -27081,7 +27081,7 @@ function moonbitPlugin(options = {}) {
+ 				cycleDiagnostics = [];
+ 			}
+ 			log(line);
+-			if (line.includes("Finished") || line.includes("Build completed") || line.includes("moon: ran")) {
++			if (line.includes("Finished") || line.includes("Build completed") || line.includes("moon: ran") || line.includes("Success, waiting for filesystem changes")) {
+ 				clearErrorBuffer();
+ 				try {
+ 					ensureNormalizedDtsGeneration("watch");
+diff --git a/src/index.ts b/src/index.ts
+index 34fbb52133f6f240b93703fbe2aaab28db198176..0b9f1e676ce2f6e64322868f2df380de966ba9c6 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -1778,7 +1778,8 @@ export default function moonbitPlugin(
+       if (
+         line.includes("Finished") ||
+         line.includes("Build completed") ||
+-        line.includes("moon: ran")
++        line.includes("moon: ran") ||
++        line.includes("Success, waiting for filesystem changes")
+       ) {
+         clearErrorBuffer();
+         try {

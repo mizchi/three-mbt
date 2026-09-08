@@ -36,3 +36,162 @@ pub fn LatheGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn LatheGeometry::id(self : LatheGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn LatheGeometry::name(self : LatheGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn LatheGeometry::set_name(
+  self : LatheGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn LatheGeometry::set_attribute(
+  self : LatheGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn LatheGeometry::ffi_get_attribute(
+  self : LatheGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn LatheGeometry::get_attribute(
+  self : LatheGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn LatheGeometry::has_attribute(
+  self : LatheGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn LatheGeometry::set_indices(
+  self : LatheGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn LatheGeometry::ffi_get_index(
+  self : LatheGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn LatheGeometry::get_index(self : LatheGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn LatheGeometry::compute_vertex_normals(
+  self : LatheGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn LatheGeometry::compute_bounding_box(
+  self : LatheGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn LatheGeometry::compute_bounding_sphere(
+  self : LatheGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn LatheGeometry::ffi_bounding_box(
+  self : LatheGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn LatheGeometry::bounding_box(self : LatheGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn LatheGeometry::ffi_bounding_sphere(
+  self : LatheGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn LatheGeometry::bounding_sphere(self : LatheGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn LatheGeometry::translate(
+  self : LatheGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn LatheGeometry::scale(
+  self : LatheGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn LatheGeometry::rotate_x(
+  self : LatheGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn LatheGeometry::rotate_y(
+  self : LatheGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn LatheGeometry::rotate_z(
+  self : LatheGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn LatheGeometry::apply_matrix4(
+  self : LatheGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn LatheGeometry::center(
+  self : LatheGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn LatheGeometry::dispose(self : LatheGeometry) -> Unit =
+  #| (self) => self.dispose()

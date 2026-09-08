@@ -6,7 +6,20 @@ pub type LoftOptions
 
 ///|
 #module("@mizchi/three-mbt/parametric")
-pub extern "js" fn LoftOptions::LoftOptions() -> LoftOptions = "loftOptions"
+extern "js" fn LoftOptions::ffi_create_LoftOptions(
+  closed : Bool,
+  cap_start : Bool,
+  cap_end : Bool,
+) -> LoftOptions = "loftOptions"
+
+///|
+pub fn LoftOptions::LoftOptions(
+  closed? : Bool = true,
+  cap_start? : Bool = false,
+  cap_end? : Bool = false,
+) -> LoftOptions {
+  LoftOptions::ffi_create_LoftOptions(closed, cap_start, cap_end)
+}
 
 ///|
 pub extern "js" fn LoftOptions::closed(self : LoftOptions) -> Bool =

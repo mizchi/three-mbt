@@ -15,3 +15,162 @@ pub extern "js" fn EdgesGeometry::EdgesGeometry(
 pub fn EdgesGeometry::as_buffer_geometry(
   self : EdgesGeometry,
 ) -> BufferGeometry = "%identity"
+
+///|
+pub extern "js" fn EdgesGeometry::id(self : EdgesGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn EdgesGeometry::name(self : EdgesGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn EdgesGeometry::set_name(
+  self : EdgesGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn EdgesGeometry::set_attribute(
+  self : EdgesGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn EdgesGeometry::ffi_get_attribute(
+  self : EdgesGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn EdgesGeometry::get_attribute(
+  self : EdgesGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn EdgesGeometry::has_attribute(
+  self : EdgesGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn EdgesGeometry::set_indices(
+  self : EdgesGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn EdgesGeometry::ffi_get_index(
+  self : EdgesGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn EdgesGeometry::get_index(self : EdgesGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn EdgesGeometry::compute_vertex_normals(
+  self : EdgesGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn EdgesGeometry::compute_bounding_box(
+  self : EdgesGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn EdgesGeometry::compute_bounding_sphere(
+  self : EdgesGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn EdgesGeometry::ffi_bounding_box(
+  self : EdgesGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn EdgesGeometry::bounding_box(self : EdgesGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn EdgesGeometry::ffi_bounding_sphere(
+  self : EdgesGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn EdgesGeometry::bounding_sphere(self : EdgesGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn EdgesGeometry::translate(
+  self : EdgesGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn EdgesGeometry::scale(
+  self : EdgesGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn EdgesGeometry::rotate_x(
+  self : EdgesGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn EdgesGeometry::rotate_y(
+  self : EdgesGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn EdgesGeometry::rotate_z(
+  self : EdgesGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn EdgesGeometry::apply_matrix4(
+  self : EdgesGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn EdgesGeometry::center(
+  self : EdgesGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn EdgesGeometry::dispose(self : EdgesGeometry) -> Unit =
+  #| (self) => self.dispose()

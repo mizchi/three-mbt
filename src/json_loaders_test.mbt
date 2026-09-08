@@ -1,6 +1,10 @@
 ///|
 async test "Object JSON roundtrip preserves hierarchy, material sharing and animations" {
-  let material = @three.MeshStandardMaterial(0xff0000, 0.4, 0.2).as_material()
+  let material = @three.MeshStandardMaterial(
+    0xff0000,
+    roughness=0.4,
+    metalness=0.2,
+  ).as_material()
   let geometry = @three.BoxGeometry(1, 2, 3).as_buffer_geometry()
   let root = @three.Group().as_object3d()
   root.set_name("root")
@@ -44,7 +48,11 @@ test "Geometry and material JSON loaders reconstruct typed resources" {
   let texture = @three.Texture()
   let textures = @three.TextureDictionary()
   textures.set(texture.uuid(), texture)
-  let material = @three.MeshStandardMaterial(0x123456, 0.4, 0.2)
+  let material = @three.MeshStandardMaterial(
+    0x123456,
+    roughness=0.4,
+    metalness=0.2,
+  )
   material.set_map(Some(texture))
   let loader = @three.MaterialLoader()
   loader.set_textures(textures) |> ignore

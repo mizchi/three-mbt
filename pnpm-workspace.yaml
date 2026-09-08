@@ -2,3 +2,5 @@ allowBuilds:
   esbuild: true
 minimumReleaseAgeExclude:
   - manifold-3d@3.5.3
+patchedDependencies:
+  vite-plugin-moonbit@0.5.1: patches/vite-plugin-moonbit@0.5.1.patch

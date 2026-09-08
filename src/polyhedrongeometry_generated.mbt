@@ -17,3 +17,170 @@ pub extern "js" fn PolyhedronGeometry::PolyhedronGeometry(
 pub fn PolyhedronGeometry::as_buffer_geometry(
   self : PolyhedronGeometry,
 ) -> BufferGeometry = "%identity"
+
+///|
+pub extern "js" fn PolyhedronGeometry::id(self : PolyhedronGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn PolyhedronGeometry::name(
+  self : PolyhedronGeometry,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn PolyhedronGeometry::set_name(
+  self : PolyhedronGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn PolyhedronGeometry::set_attribute(
+  self : PolyhedronGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn PolyhedronGeometry::ffi_get_attribute(
+  self : PolyhedronGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn PolyhedronGeometry::get_attribute(
+  self : PolyhedronGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn PolyhedronGeometry::has_attribute(
+  self : PolyhedronGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn PolyhedronGeometry::set_indices(
+  self : PolyhedronGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn PolyhedronGeometry::ffi_get_index(
+  self : PolyhedronGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn PolyhedronGeometry::get_index(
+  self : PolyhedronGeometry,
+) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn PolyhedronGeometry::compute_vertex_normals(
+  self : PolyhedronGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn PolyhedronGeometry::compute_bounding_box(
+  self : PolyhedronGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn PolyhedronGeometry::compute_bounding_sphere(
+  self : PolyhedronGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn PolyhedronGeometry::ffi_bounding_box(
+  self : PolyhedronGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn PolyhedronGeometry::bounding_box(self : PolyhedronGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn PolyhedronGeometry::ffi_bounding_sphere(
+  self : PolyhedronGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn PolyhedronGeometry::bounding_sphere(
+  self : PolyhedronGeometry,
+) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn PolyhedronGeometry::translate(
+  self : PolyhedronGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn PolyhedronGeometry::scale(
+  self : PolyhedronGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn PolyhedronGeometry::rotate_x(
+  self : PolyhedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn PolyhedronGeometry::rotate_y(
+  self : PolyhedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn PolyhedronGeometry::rotate_z(
+  self : PolyhedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn PolyhedronGeometry::apply_matrix4(
+  self : PolyhedronGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn PolyhedronGeometry::center(
+  self : PolyhedronGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn PolyhedronGeometry::dispose(
+  self : PolyhedronGeometry,
+) -> Unit =
+  #| (self) => self.dispose()

@@ -36,3 +36,162 @@ pub fn CapsuleGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn CapsuleGeometry::id(self : CapsuleGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn CapsuleGeometry::name(self : CapsuleGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn CapsuleGeometry::set_name(
+  self : CapsuleGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn CapsuleGeometry::set_attribute(
+  self : CapsuleGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn CapsuleGeometry::ffi_get_attribute(
+  self : CapsuleGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn CapsuleGeometry::get_attribute(
+  self : CapsuleGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn CapsuleGeometry::has_attribute(
+  self : CapsuleGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn CapsuleGeometry::set_indices(
+  self : CapsuleGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn CapsuleGeometry::ffi_get_index(
+  self : CapsuleGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn CapsuleGeometry::get_index(self : CapsuleGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn CapsuleGeometry::compute_vertex_normals(
+  self : CapsuleGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn CapsuleGeometry::compute_bounding_box(
+  self : CapsuleGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn CapsuleGeometry::compute_bounding_sphere(
+  self : CapsuleGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn CapsuleGeometry::ffi_bounding_box(
+  self : CapsuleGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn CapsuleGeometry::bounding_box(self : CapsuleGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn CapsuleGeometry::ffi_bounding_sphere(
+  self : CapsuleGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn CapsuleGeometry::bounding_sphere(self : CapsuleGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn CapsuleGeometry::translate(
+  self : CapsuleGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn CapsuleGeometry::scale(
+  self : CapsuleGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn CapsuleGeometry::rotate_x(
+  self : CapsuleGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn CapsuleGeometry::rotate_y(
+  self : CapsuleGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn CapsuleGeometry::rotate_z(
+  self : CapsuleGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn CapsuleGeometry::apply_matrix4(
+  self : CapsuleGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn CapsuleGeometry::center(
+  self : CapsuleGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn CapsuleGeometry::dispose(self : CapsuleGeometry) -> Unit =
+  #| (self) => self.dispose()

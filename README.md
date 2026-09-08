@@ -63,6 +63,29 @@ getters copy array containers; elements such as vectors remain live three.js ref
 Requires MoonBit (tested with `moonc v0.10.10` / `moon 0.1.20260824`), Node.js 24 or later, pnpm, and just.
 Uses three.js `0.185.1`; the API audit is pinned to `@types/three` `0.185.4`.
 
+The repository is a MoonBit workspace defined by [`moon.work`](moon.work).
+The root module is the library `mizchi/three`. The separate
+[`examples/viewer`](examples/viewer) module, `mizchi/three-viewer`, depends on
+the local library through the workspace. Run the commands below from the
+repository root.
+
+`.moonignore` excludes the viewer module and `moon.work` from the library archive.
+Use `moon package --list` to inspect the archive without publishing it.
+
+```text
+moon.work
+moon.mod                       # mizchi/three
+src/                           # Library and library tests
+bindings/                      # Binding contracts
+js/                            # JavaScript runtime support
+examples/viewer/
+  moon.mod                     # mizchi/three-viewer
+  src/                         # MoonBit example packages, including mouse/ and rabbit/
+  web/                         # Character demo HTML, CSS, and browser host
+  vite.config.mjs              # vite-plugin-moonbit workspace integration
+  tests/browser/               # Playwright integration tests
+```
+
 ```sh
 just install
 just test
@@ -81,6 +104,52 @@ just ci
 Math, scene graphs, and GLB parsing without textures are tested in Node.js.
 URL loaders, image decoding, WebGLRenderer, and OrbitControls assume a browser environment.
 URL loading in Node.js requires host polyfills such as `ProgressEvent`, which three.js expects.
+
+## Low-poly character demos
+
+[Open the live demo](https://mizchi.github.io/three-mbt/).
+
+Explore the MoonBit rabbit and a small procedural mouse in your browser:
+
+```sh
+just install
+just mouse
+# Open http://127.0.0.1:4173 (or use: just mouse 8080)
+```
+
+Choose Moon rabbit or Little mouse, drag to orbit, scroll or pinch to zoom,
+switch to wireframe, or download the selected character
+as a GLB. With the canvas focused, use arrow keys to rotate, `+` / `-` to zoom,
+and `R` to reset the camera. The export contains the character and its materials;
+the studio floor and lights are excluded.
+
+[`model.mbt`](examples/viewer/src/mouse/model.mbt) builds the mouse from scaled
+icosahedrons, a cone, cylindrical whiskers, and a tapered loft following a
+Catmull–Rom curve. [`viewer.mbt`](examples/viewer/src/mouse/viewer.mbt) sets up the lights,
+shadows, camera, orbit controls, and GLB exporter. The small
+[`browser host`](examples/viewer/web/main.js) handles DOM events, resizing, downloads,
+and resource cleanup. No external models or textures are used.
+
+[`rabbit/model.mbt`](examples/viewer/src/rabbit/model.mbt) creates a low-poly
+interpretation of the MoonBit character: a magenta body, folded ears, and a white
+visor with geometric `01` / `<>` markings. The rabbit is a reusable MoonBit
+package: `@rabbit.create()` returns an independent `Object3D` without a renderer
+or DOM. The example's [`parts`](examples/viewer/src/parts) package supplies shared
+mesh helpers and resource disposal.
+
+The dev server uses [`vite-plugin-moonbit`](https://github.com/mizchi/vite-plugin-moonbit).
+[`web/models.js`](examples/viewer/web/models.js) imports the executable package as
+`mbt:mizchi/three-viewer/mouse`. The plugin watches the workspace and reloads the
+page when MoonBit output changes; HTML, CSS, and JavaScript use Vite's normal
+development workflow. `just build-mouse` produces a
+self-contained static site in `_build/mouse-site/`, which can be served by any
+static HTTP server. To run just this demo's browser tests:
+
+```sh
+just build
+pnpm exec playwright install chromium
+pnpm exec playwright test --config examples/viewer/playwright.config.mjs mouse.spec.mjs rabbit.spec.mjs
+```
 
 ## Usage
 
@@ -109,7 +178,44 @@ let position = child.get_world_position(@three.Vector3(0, 0, 0))
 // position = (12, 4, 6)
 ```
 
-A runnable example is available in [`src/examples/scene_graph`](src/examples/scene_graph).
+A runnable example is available in [`examples/viewer/src/scene_graph`](examples/viewer/src/scene_graph).
+
+### Call syntax and reference semantics
+
+Frequently used inherited operations can be called directly on concrete types:
+
+```moonbit
+let geometry = @three.BoxGeometry(1, 1, 1)
+let material = @three.MeshStandardMaterial(
+  0xaaaaaa, roughness=0.85, metalness=0, flat_shading=true,
+)
+let mesh = @three.Mesh(geometry.as_buffer_geometry(), material.as_material())
+mesh.position().set(0, 1, 0) |> ignore
+mesh.set_cast_shadow(true)
+material.set_opacity(0.8)
+geometry.dispose()
+material.dispose()
+```
+
+`MeshStandardMaterial` and `MeshPhysicalMaterial` use named optional `roughness`,
+`metalness`, and `flat_shading` arguments with native defaults of `1`, `0`, and
+`false`. Migrate positional calls such as `(color, 0.4, 0.2)` to
+`(color, roughness=0.4, metalness=0.2)`.
+`CatmullRomCurve3` takes named optional `closed`, `curve_type`, and `tension`
+arguments. `LoftOptions(cap_start=true, cap_end=true)` initializes the existing
+mutable options object directly; its setters remain available.
+
+`Curve2` / `Curve3` methods `get_point`, `get_point_at`, `get_tangent`, and `get_tangent_at` accept an
+optional named `target`. For example, `curve.get_point(0.5)` allocates a fresh
+target each call; `curve.get_point(0.5, target=buffer)` passes the supplied vector
+to the native method. Existing positional target arguments must become named.
+
+These conveniences retain the native operations and return values. Transform
+getters such as `mesh.position()` return live references; mutating them updates
+the original object. Use `clone()` for an independent value. Mutators continue
+to return the native receiver where applicable, so standalone calls still use
+`|> ignore`. Explicit `as_*()` upcasts remain necessary at parameters requiring
+a base type and preserve identity without allocating a wrapper.
 
 ## Loading and rendering GLB / glTF
 
@@ -166,7 +272,7 @@ renderer.set_animation_loop(fn(time_ms) {
 })
 ```
 
-The ESM example in [`src/examples/model_viewer`](src/examples/model_viewer) loads and renders models.
+The ESM example in [`examples/viewer/src/model_viewer`](examples/viewer/src/model_viewer) loads and renders models.
 After `just build`, `model_viewer.js` exports `load_model(url)`, `render_model(url)`,
 `render_triangle()`, and `load_texture(url)`.
 Playwright tests render loaded models to a render target and check the resulting pixels.
@@ -229,7 +335,7 @@ let gltf = @three.GLTFLoader().parse_glb(bytes, path="/models/")
 validate it before crossing the FFI. Three.js coalesces requests by URL and may share
 cached responses; simultaneous requests for the same URL with different response types
 can therefore reject with `LoadError`. `abort()` rejects pending fetches and allows
-subsequent requests. Browser integration examples are in [`src/examples/loading`](src/examples/loading).
+subsequent requests. Browser integration examples are in [`examples/viewer/src/loading`](examples/viewer/src/loading).
 
 ## Interpolation and buffer storage
 
@@ -302,7 +408,7 @@ environment.dispose()
 are also available. The generated render target owns the environment texture, so keep it alive
 while the texture is in use. The default `size` for `from_scene()` is 256.
 Run operations that require WebGL in a browser.
-See [`src/examples/pbr`](src/examples/pbr) for an example that loads HDR data and renders with it.
+See [`examples/viewer/src/pbr`](examples/viewer/src/pbr) for an example that loads HDR data and renders with it.
 
 ## userData, events, and Layers
 
@@ -363,7 +469,7 @@ Physical materials expose clearcoat, transmission / thickness / attenuation, IOR
 sheen, specular, anisotropy, dispersion, and their corresponding maps.
 
 ```moonbit
-let glass = @three.MeshPhysicalMaterial(0xffffff, 0.1, 0)
+let glass = @three.MeshPhysicalMaterial(0xffffff, roughness=0.1, metalness=0)
 glass.set_transmission(1)
 glass.set_thickness(0.5)
 glass.set_ior(1.5)
@@ -641,14 +747,14 @@ indices for nonindexed meshes, avoiding native exporter layout limitations. Inpu
 remain unchanged. Encode/decode speeds range from 0 to 10, quantization from 0 to 30
 bits, with `SequentialEncoding` or `EdgeBreakerEncoding` methods. Bake the desired pose first.
 
-The runnable [`modeling example`](src/examples/modeling) generates a plate with a
+The runnable [`modeling example`](examples/viewer/src/modeling) generates a plate with a
 through-hole and beveled edges. Its ESM exports are `render_part()` and async
 `export_part()`. Browser tests check the hole's pixels and validate that the exported
 binary STL has a closed, consistently wound surface with positive volume.
 
 ## Additional editing and interchange APIs
 
-The [migration example](src/examples/migration) exercises mesh editing, UBO rendering,
+The [migration example](examples/viewer/src/migration) exercises mesh editing, UBO rendering,
 post-processing, texture copying, file interchange, and glTF extension hooks.
 
 ### Mesh decomposition and interpolation
@@ -1164,7 +1270,7 @@ ridges are outside this API's current scope. Invalid or unsupported inputs raise
 
 Subdivision surfaces, UV unwrapping, and undo history remain unimplemented.
 Edge splitting adds triangles without smoothing the surface. The browser example in
-[`src/examples/topology/main.mbt`](src/examples/topology/main.mbt) creates a noisy
+[`examples/viewer/src/topology/main.mbt`](examples/viewer/src/topology/main.mbt) creates a noisy
 capped loft and also extrudes a cube region, splits its edges, renders the side-wall
 material, and exports binary STL. Its bevel example renders a chamfer with a separate
 material and exports the result. Tests check shared-edge closure and exported volume.
@@ -1260,7 +1366,7 @@ module includes conditional Node-only imports; the esbuild example uses
 are not executed in a browser. For unbundled browser ESM, map `manifold-3d` to the
 package's `manifold.js` and initialize with an explicit WASM URL.
 
-[`src/examples/csg/main.mbt`](src/examples/csg/main.mbt) subtracts a cylindrical tool
+[`examples/viewer/src/csg/main.mbt`](examples/viewer/src/csg/main.mbt) subtracts a cylindrical tool
 from a block, renders the hole and cut-face material, and exports STL and GLB.
 Tests cover analytic volume, closed topology, material and UV export, initialization
 errors, mirrored parents, repeated operations, and use of beveled geometry as input.
@@ -1467,7 +1573,7 @@ and complete Vector / Quaternion tracks for glTF-compatible animation channels.
 Saving or downloading the returned data is the application's responsibility.
 Round-trip tests verify geometry, animation, metadata, and visibility filtering.
 
-The runnable functions in [`src/examples/advanced`](src/examples/advanced) cover rendering controls,
+The runnable functions in [`examples/viewer/src/advanced`](examples/viewer/src/advanced) cover rendering controls,
 control input, post-processing, dynamic geometry, and export.
 
 ## Cube, video, and volume textures
@@ -1561,7 +1667,7 @@ call `compute_line_distances()` when using dashed lines. Dispose geometry and ma
 ArrowHelper, SkeletonHelper, Box3Helper, PlaneHelper, and directional / point / spot / hemisphere light
 helpers are available. Remove helpers from the scene and dispose their resources when no longer needed.
 Call `init_area_lights()` before rendering RectAreaLight with WebGLRenderer.
-The asset examples in [`src/examples/assets`](src/examples/assets) exercise compressed loading,
+The asset examples in [`examples/viewer/src/assets`](examples/viewer/src/assets) exercise compressed loading,
 texture sampling, stencil/clipping, batched instances, wide lines, and area lighting.
 
 ## Custom shaders
@@ -1624,7 +1730,7 @@ management. Shared Source users see the same CPU data.
 mipmap generation, and schedules upload. Supply a complete chain starting with the
 base level, matching the texture's dimensions, then halve dimensions down to 1 × 1.
 Select a mipmap minification filter; `rgba_mipmaps()` returns snapshots.
-The [completion example](src/examples/completion) and browser tests cover shader
+The [completion example](examples/viewer/src/completion) and browser tests cover shader
 callbacks, partial uploads, manual mip selection, 3MF/USDZ, and Draco.
 
 ## FFI and module resolution
@@ -1647,14 +1753,21 @@ Both ESM and CommonJS output work without a global `THREE` or handwritten `requi
 
 In this repository, `pnpm install` links the companion npm package through `link:./js`.
 Other projects also need this companion package in addition to the MoonBit dependency.
-The packages have not yet been published to Mooncakes or npm.
+Install the MoonBit package from Mooncakes:
+
+```sh
+moon add mizchi/three@0.1.0
+```
+
+The JavaScript companion is currently installed from a checkout:
 
 ```sh
 # Run in the consuming project, using the path to your checkout
 pnpm add three@0.185.1 @mizchi/three-mbt@link:/path/to/three-mbt/js
 ```
 
-For MoonBit, register both projects in a `moon.work` file in their parent directory:
+For local development instead of the registry version, register both projects in
+a `moon.work` file in their parent directory:
 
 ```moonbit
 members = ["three-mbt", "my-app"]

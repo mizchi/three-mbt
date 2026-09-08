@@ -43,9 +43,17 @@ build:
     moon info --target js
 
 example:
-    moon run src/examples/scene_graph --target js
+    moon run examples/viewer/src/scene_graph --target js
+
+# Vite watches MoonBit through vite-plugin-moonbit and reloads the viewer.
+mouse port="4173": build
+    pnpm exec vite --config examples/viewer/vite.config.mjs --port {{port}}
+
+# Create a self-contained static demo in _build/mouse-site/.
+build-mouse: build
+    pnpm exec vite build --config examples/viewer/vite.config.mjs
 
 test-browser: build
-    pnpm exec playwright test
+    pnpm exec playwright test --config examples/viewer/playwright.config.mjs
 
 ci: check test-scripts test test-release test-browser

@@ -118,3 +118,103 @@ pub extern "js" fn MeshDistanceMaterial::set_displacement_bias(
   value : Double,
 ) -> Unit =
   #| (self, value) => { self.displacementBias = value; }
+
+///|
+pub extern "js" fn MeshDistanceMaterial::id(self : MeshDistanceMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn MeshDistanceMaterial::kind(
+  self : MeshDistanceMaterial,
+) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn MeshDistanceMaterial::name(
+  self : MeshDistanceMaterial,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn MeshDistanceMaterial::set_name(
+  self : MeshDistanceMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn MeshDistanceMaterial::opacity(
+  self : MeshDistanceMaterial,
+) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn MeshDistanceMaterial::set_opacity(
+  self : MeshDistanceMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn MeshDistanceMaterial::transparent(
+  self : MeshDistanceMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn MeshDistanceMaterial::set_transparent(
+  self : MeshDistanceMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn MeshDistanceMaterial::visible(
+  self : MeshDistanceMaterial,
+) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn MeshDistanceMaterial::set_visible(
+  self : MeshDistanceMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn MeshDistanceMaterial::depth_test(
+  self : MeshDistanceMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn MeshDistanceMaterial::set_depth_test(
+  self : MeshDistanceMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn MeshDistanceMaterial::depth_write(
+  self : MeshDistanceMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn MeshDistanceMaterial::set_depth_write(
+  self : MeshDistanceMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn MeshDistanceMaterial::dispose(
+  self : MeshDistanceMaterial,
+) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn MeshDistanceMaterial::mark_needs_update(
+  self : MeshDistanceMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

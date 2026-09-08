@@ -28,8 +28,8 @@ export const capsuleGeometry = (radius, height, cap_segments, radial_segments) =
 export const edgesGeometry = (geometry, threshold_angle) => new EdgesGeometry(geometry, threshold_angle);
 export const wireframeGeometry = (geometry) => new WireframeGeometry(geometry);
 export const meshBasicMaterial = (color) => new MeshBasicMaterial({ color });
-export const meshStandardMaterial = (color, roughness, metalness) => new MeshStandardMaterial({ color, roughness, metalness });
-export const meshPhysicalMaterial = (color, roughness, metalness) => new MeshPhysicalMaterial({ color, roughness, metalness });
+export const meshStandardMaterial = (color, roughness = 1, metalness = 0, flat_shading = false) => new MeshStandardMaterial({ color, roughness, metalness, flatShading: flat_shading });
+export const meshPhysicalMaterial = (color, roughness = 1, metalness = 0, flat_shading = false) => new MeshPhysicalMaterial({ color, roughness, metalness, flatShading: flat_shading });
 export const meshPhongMaterial = (color, shininess) => new MeshPhongMaterial({ color, shininess });
 export const meshLambertMaterial = (color) => new MeshLambertMaterial({ color });
 export const meshNormalMaterial = () => new MeshNormalMaterial({  });

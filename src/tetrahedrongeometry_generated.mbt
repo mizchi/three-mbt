@@ -15,3 +15,170 @@ pub extern "js" fn TetrahedronGeometry::TetrahedronGeometry(
 pub fn TetrahedronGeometry::as_buffer_geometry(
   self : TetrahedronGeometry,
 ) -> BufferGeometry = "%identity"
+
+///|
+pub extern "js" fn TetrahedronGeometry::id(self : TetrahedronGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn TetrahedronGeometry::name(
+  self : TetrahedronGeometry,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn TetrahedronGeometry::set_name(
+  self : TetrahedronGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn TetrahedronGeometry::set_attribute(
+  self : TetrahedronGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn TetrahedronGeometry::ffi_get_attribute(
+  self : TetrahedronGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn TetrahedronGeometry::get_attribute(
+  self : TetrahedronGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn TetrahedronGeometry::has_attribute(
+  self : TetrahedronGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn TetrahedronGeometry::set_indices(
+  self : TetrahedronGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn TetrahedronGeometry::ffi_get_index(
+  self : TetrahedronGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn TetrahedronGeometry::get_index(
+  self : TetrahedronGeometry,
+) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn TetrahedronGeometry::compute_vertex_normals(
+  self : TetrahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn TetrahedronGeometry::compute_bounding_box(
+  self : TetrahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn TetrahedronGeometry::compute_bounding_sphere(
+  self : TetrahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn TetrahedronGeometry::ffi_bounding_box(
+  self : TetrahedronGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn TetrahedronGeometry::bounding_box(self : TetrahedronGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn TetrahedronGeometry::ffi_bounding_sphere(
+  self : TetrahedronGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn TetrahedronGeometry::bounding_sphere(
+  self : TetrahedronGeometry,
+) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn TetrahedronGeometry::translate(
+  self : TetrahedronGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn TetrahedronGeometry::scale(
+  self : TetrahedronGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn TetrahedronGeometry::rotate_x(
+  self : TetrahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn TetrahedronGeometry::rotate_y(
+  self : TetrahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn TetrahedronGeometry::rotate_z(
+  self : TetrahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn TetrahedronGeometry::apply_matrix4(
+  self : TetrahedronGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn TetrahedronGeometry::center(
+  self : TetrahedronGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn TetrahedronGeometry::dispose(
+  self : TetrahedronGeometry,
+) -> Unit =
+  #| (self) => self.dispose()

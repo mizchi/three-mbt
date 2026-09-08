@@ -40,3 +40,267 @@ pub extern "js" fn RectAreaLight::set_height(
   value : Double,
 ) -> Unit =
   #| (self, value) => { self.height = value; }
+
+///|
+pub extern "js" fn RectAreaLight::cast_shadow(self : RectAreaLight) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn RectAreaLight::set_cast_shadow(
+  self : RectAreaLight,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn RectAreaLight::receive_shadow(self : RectAreaLight) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn RectAreaLight::set_receive_shadow(
+  self : RectAreaLight,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn RectAreaLight::id(self : RectAreaLight) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn RectAreaLight::uuid(self : RectAreaLight) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn RectAreaLight::kind(self : RectAreaLight) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn RectAreaLight::name(self : RectAreaLight) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn RectAreaLight::visible(self : RectAreaLight) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn RectAreaLight::position(self : RectAreaLight) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn RectAreaLight::rotation(self : RectAreaLight) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn RectAreaLight::quaternion(
+  self : RectAreaLight,
+) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn RectAreaLight::scale(self : RectAreaLight) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn RectAreaLight::up(self : RectAreaLight) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn RectAreaLight::matrix(self : RectAreaLight) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn RectAreaLight::matrix_world(self : RectAreaLight) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn RectAreaLight::set_name(
+  self : RectAreaLight,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn RectAreaLight::set_visible(
+  self : RectAreaLight,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn RectAreaLight::children(
+  self : RectAreaLight,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn RectAreaLight::add(
+  self : RectAreaLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn RectAreaLight::remove(
+  self : RectAreaLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn RectAreaLight::attach(
+  self : RectAreaLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn RectAreaLight::remove_from_parent(
+  self : RectAreaLight,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn RectAreaLight::look_at(
+  self : RectAreaLight,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn RectAreaLight::rotate_x(
+  self : RectAreaLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn RectAreaLight::rotate_y(
+  self : RectAreaLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn RectAreaLight::rotate_z(
+  self : RectAreaLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn RectAreaLight::translate_x(
+  self : RectAreaLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn RectAreaLight::translate_y(
+  self : RectAreaLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn RectAreaLight::translate_z(
+  self : RectAreaLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn RectAreaLight::apply_matrix4(
+  self : RectAreaLight,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn RectAreaLight::apply_quaternion(
+  self : RectAreaLight,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn RectAreaLight::update_matrix(self : RectAreaLight) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn RectAreaLight::update_matrix_world(
+  self : RectAreaLight,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn RectAreaLight::update_world_matrix(
+  self : RectAreaLight,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn RectAreaLight::get_world_position(
+  self : RectAreaLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn RectAreaLight::get_world_quaternion(
+  self : RectAreaLight,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn RectAreaLight::get_world_scale(
+  self : RectAreaLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn RectAreaLight::get_world_direction(
+  self : RectAreaLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn RectAreaLight::local_to_world(
+  self : RectAreaLight,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn RectAreaLight::world_to_local(
+  self : RectAreaLight,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn RectAreaLight::traverse(
+  self : RectAreaLight,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn RectAreaLight::traverse_visible(
+  self : RectAreaLight,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

@@ -14,3 +14,265 @@ pub fn AxesHelper::as_object3d(self : AxesHelper) -> Object3D = "%identity"
 ///|
 pub extern "js" fn AxesHelper::dispose(self : AxesHelper) -> Unit =
   #| (self) => self.dispose()
+
+///|
+pub extern "js" fn AxesHelper::cast_shadow(self : AxesHelper) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn AxesHelper::set_cast_shadow(
+  self : AxesHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn AxesHelper::receive_shadow(self : AxesHelper) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn AxesHelper::set_receive_shadow(
+  self : AxesHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn AxesHelper::id(self : AxesHelper) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn AxesHelper::uuid(self : AxesHelper) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn AxesHelper::kind(self : AxesHelper) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn AxesHelper::name(self : AxesHelper) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn AxesHelper::visible(self : AxesHelper) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AxesHelper::position(self : AxesHelper) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AxesHelper::rotation(self : AxesHelper) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AxesHelper::quaternion(self : AxesHelper) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AxesHelper::scale(self : AxesHelper) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AxesHelper::up(self : AxesHelper) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AxesHelper::matrix(self : AxesHelper) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn AxesHelper::matrix_world(self : AxesHelper) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn AxesHelper::set_name(
+  self : AxesHelper,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn AxesHelper::set_visible(
+  self : AxesHelper,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn AxesHelper::children(
+  self : AxesHelper,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn AxesHelper::add(
+  self : AxesHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn AxesHelper::remove(
+  self : AxesHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn AxesHelper::attach(
+  self : AxesHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn AxesHelper::remove_from_parent(
+  self : AxesHelper,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn AxesHelper::look_at(
+  self : AxesHelper,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn AxesHelper::rotate_x(
+  self : AxesHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn AxesHelper::rotate_y(
+  self : AxesHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn AxesHelper::rotate_z(
+  self : AxesHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn AxesHelper::translate_x(
+  self : AxesHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn AxesHelper::translate_y(
+  self : AxesHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn AxesHelper::translate_z(
+  self : AxesHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn AxesHelper::apply_matrix4(
+  self : AxesHelper,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn AxesHelper::apply_quaternion(
+  self : AxesHelper,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn AxesHelper::update_matrix(self : AxesHelper) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn AxesHelper::update_matrix_world(
+  self : AxesHelper,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn AxesHelper::update_world_matrix(
+  self : AxesHelper,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn AxesHelper::get_world_position(
+  self : AxesHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn AxesHelper::get_world_quaternion(
+  self : AxesHelper,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn AxesHelper::get_world_scale(
+  self : AxesHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn AxesHelper::get_world_direction(
+  self : AxesHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn AxesHelper::local_to_world(
+  self : AxesHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn AxesHelper::world_to_local(
+  self : AxesHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn AxesHelper::traverse(
+  self : AxesHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn AxesHelper::traverse_visible(
+  self : AxesHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

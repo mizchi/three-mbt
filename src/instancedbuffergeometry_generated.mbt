@@ -25,3 +25,174 @@ pub extern "js" fn InstancedBufferGeometry::set_instance_count(
   value : Double,
 ) -> Unit =
   #| (self, value) => { self.instanceCount = value; }
+
+///|
+pub extern "js" fn InstancedBufferGeometry::id(
+  self : InstancedBufferGeometry,
+) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn InstancedBufferGeometry::name(
+  self : InstancedBufferGeometry,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn InstancedBufferGeometry::set_name(
+  self : InstancedBufferGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn InstancedBufferGeometry::set_attribute(
+  self : InstancedBufferGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn InstancedBufferGeometry::ffi_get_attribute(
+  self : InstancedBufferGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn InstancedBufferGeometry::get_attribute(
+  self : InstancedBufferGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn InstancedBufferGeometry::has_attribute(
+  self : InstancedBufferGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn InstancedBufferGeometry::set_indices(
+  self : InstancedBufferGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn InstancedBufferGeometry::ffi_get_index(
+  self : InstancedBufferGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn InstancedBufferGeometry::get_index(
+  self : InstancedBufferGeometry,
+) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn InstancedBufferGeometry::compute_vertex_normals(
+  self : InstancedBufferGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn InstancedBufferGeometry::compute_bounding_box(
+  self : InstancedBufferGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn InstancedBufferGeometry::compute_bounding_sphere(
+  self : InstancedBufferGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn InstancedBufferGeometry::ffi_bounding_box(
+  self : InstancedBufferGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn InstancedBufferGeometry::bounding_box(
+  self : InstancedBufferGeometry,
+) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn InstancedBufferGeometry::ffi_bounding_sphere(
+  self : InstancedBufferGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn InstancedBufferGeometry::bounding_sphere(
+  self : InstancedBufferGeometry,
+) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn InstancedBufferGeometry::translate(
+  self : InstancedBufferGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn InstancedBufferGeometry::scale(
+  self : InstancedBufferGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn InstancedBufferGeometry::rotate_x(
+  self : InstancedBufferGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn InstancedBufferGeometry::rotate_y(
+  self : InstancedBufferGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn InstancedBufferGeometry::rotate_z(
+  self : InstancedBufferGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn InstancedBufferGeometry::apply_matrix4(
+  self : InstancedBufferGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn InstancedBufferGeometry::center(
+  self : InstancedBufferGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn InstancedBufferGeometry::dispose(
+  self : InstancedBufferGeometry,
+) -> Unit =
+  #| (self) => self.dispose()

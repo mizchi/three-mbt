@@ -112,3 +112,260 @@ extern "js" fn SpotLight::ffi_set_map(
 pub fn SpotLight::set_map(self : SpotLight, value : Texture?) -> Unit {
   self.ffi_set_map(Nullable::from_option(value))
 }
+
+///|
+pub extern "js" fn SpotLight::cast_shadow(self : SpotLight) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn SpotLight::set_cast_shadow(
+  self : SpotLight,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn SpotLight::receive_shadow(self : SpotLight) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn SpotLight::set_receive_shadow(
+  self : SpotLight,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn SpotLight::id(self : SpotLight) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn SpotLight::uuid(self : SpotLight) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn SpotLight::kind(self : SpotLight) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn SpotLight::name(self : SpotLight) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn SpotLight::visible(self : SpotLight) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLight::position(self : SpotLight) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLight::rotation(self : SpotLight) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLight::quaternion(self : SpotLight) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLight::scale(self : SpotLight) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLight::up(self : SpotLight) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLight::matrix(self : SpotLight) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SpotLight::matrix_world(self : SpotLight) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn SpotLight::set_name(self : SpotLight, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn SpotLight::set_visible(
+  self : SpotLight,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn SpotLight::children(
+  self : SpotLight,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn SpotLight::add(
+  self : SpotLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn SpotLight::remove(
+  self : SpotLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn SpotLight::attach(
+  self : SpotLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn SpotLight::remove_from_parent(self : SpotLight) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn SpotLight::look_at(
+  self : SpotLight,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn SpotLight::rotate_x(
+  self : SpotLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn SpotLight::rotate_y(
+  self : SpotLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn SpotLight::rotate_z(
+  self : SpotLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn SpotLight::translate_x(
+  self : SpotLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn SpotLight::translate_y(
+  self : SpotLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn SpotLight::translate_z(
+  self : SpotLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn SpotLight::apply_matrix4(
+  self : SpotLight,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn SpotLight::apply_quaternion(
+  self : SpotLight,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn SpotLight::update_matrix(self : SpotLight) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn SpotLight::update_matrix_world(
+  self : SpotLight,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn SpotLight::update_world_matrix(
+  self : SpotLight,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn SpotLight::get_world_position(
+  self : SpotLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn SpotLight::get_world_quaternion(
+  self : SpotLight,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn SpotLight::get_world_scale(
+  self : SpotLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn SpotLight::get_world_direction(
+  self : SpotLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn SpotLight::local_to_world(
+  self : SpotLight,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn SpotLight::world_to_local(
+  self : SpotLight,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn SpotLight::traverse(
+  self : SpotLight,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn SpotLight::traverse_visible(
+  self : SpotLight,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

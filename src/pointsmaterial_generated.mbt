@@ -101,3 +101,87 @@ pub extern "js" fn PointsMaterial::set_fog(
   value : Bool,
 ) -> Unit =
   #| (self, value) => { self.fog = value; }
+
+///|
+pub extern "js" fn PointsMaterial::id(self : PointsMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn PointsMaterial::kind(self : PointsMaterial) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn PointsMaterial::name(self : PointsMaterial) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn PointsMaterial::set_name(
+  self : PointsMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn PointsMaterial::opacity(self : PointsMaterial) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn PointsMaterial::set_opacity(
+  self : PointsMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn PointsMaterial::transparent(self : PointsMaterial) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn PointsMaterial::set_transparent(
+  self : PointsMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn PointsMaterial::visible(self : PointsMaterial) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn PointsMaterial::set_visible(
+  self : PointsMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn PointsMaterial::depth_test(self : PointsMaterial) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn PointsMaterial::set_depth_test(
+  self : PointsMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn PointsMaterial::depth_write(self : PointsMaterial) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn PointsMaterial::set_depth_write(
+  self : PointsMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn PointsMaterial::dispose(self : PointsMaterial) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn PointsMaterial::mark_needs_update(
+  self : PointsMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

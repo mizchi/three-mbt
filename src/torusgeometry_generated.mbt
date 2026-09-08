@@ -46,3 +46,162 @@ pub fn TorusGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn TorusGeometry::id(self : TorusGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn TorusGeometry::name(self : TorusGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn TorusGeometry::set_name(
+  self : TorusGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn TorusGeometry::set_attribute(
+  self : TorusGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn TorusGeometry::ffi_get_attribute(
+  self : TorusGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn TorusGeometry::get_attribute(
+  self : TorusGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn TorusGeometry::has_attribute(
+  self : TorusGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn TorusGeometry::set_indices(
+  self : TorusGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn TorusGeometry::ffi_get_index(
+  self : TorusGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn TorusGeometry::get_index(self : TorusGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn TorusGeometry::compute_vertex_normals(
+  self : TorusGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn TorusGeometry::compute_bounding_box(
+  self : TorusGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn TorusGeometry::compute_bounding_sphere(
+  self : TorusGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn TorusGeometry::ffi_bounding_box(
+  self : TorusGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn TorusGeometry::bounding_box(self : TorusGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn TorusGeometry::ffi_bounding_sphere(
+  self : TorusGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn TorusGeometry::bounding_sphere(self : TorusGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn TorusGeometry::translate(
+  self : TorusGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn TorusGeometry::scale(
+  self : TorusGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn TorusGeometry::rotate_x(
+  self : TorusGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn TorusGeometry::rotate_y(
+  self : TorusGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn TorusGeometry::rotate_z(
+  self : TorusGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn TorusGeometry::apply_matrix4(
+  self : TorusGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn TorusGeometry::center(
+  self : TorusGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn TorusGeometry::dispose(self : TorusGeometry) -> Unit =
+  #| (self) => self.dispose()

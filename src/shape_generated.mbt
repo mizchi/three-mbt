@@ -120,3 +120,97 @@ pub fn Shape::from_json_string(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+extern "js" fn Shape::ffi_get_point(
+  self : Shape,
+  t : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, t, target) => self.getPoint(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn Shape::get_point(
+  self : Shape,
+  t : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_point(t, target)
+}
+
+///|
+extern "js" fn Shape::ffi_get_point_at(
+  self : Shape,
+  u : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, u, target) => self.getPointAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn Shape::get_point_at(
+  self : Shape,
+  u : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_point_at(u, target)
+}
+
+///|
+extern "js" fn Shape::ffi_get_tangent(
+  self : Shape,
+  t : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, t, target) => self.getTangent(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn Shape::get_tangent(
+  self : Shape,
+  t : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_tangent(t, target)
+}
+
+///|
+extern "js" fn Shape::ffi_get_tangent_at(
+  self : Shape,
+  u : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, u, target) => self.getTangentAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn Shape::get_tangent_at(
+  self : Shape,
+  u : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_tangent_at(u, target)
+}
+
+///|
+pub extern "js" fn Shape::get_points(
+  self : Shape,
+  divisions : Int,
+) -> FixedArray[Vector2] =
+  #| (self, divisions) => self.getPoints(divisions)
+
+///|
+pub extern "js" fn Shape::get_spaced_points(
+  self : Shape,
+  divisions : Int,
+) -> FixedArray[Vector2] =
+  #| (self, divisions) => self.getSpacedPoints(divisions)
+
+///|
+pub extern "js" fn Shape::get_length(self : Shape) -> Double =
+  #| (self) => self.getLength()
+
+///|
+pub extern "js" fn Shape::update_arc_lengths(self : Shape) -> Unit =
+  #| (self) => self.updateArcLengths()

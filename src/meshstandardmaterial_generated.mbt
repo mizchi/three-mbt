@@ -6,11 +6,24 @@ pub type MeshStandardMaterial
 
 ///|
 #module("@mizchi/three-mbt/constructors")
-pub extern "js" fn MeshStandardMaterial::MeshStandardMaterial(
+extern "js" fn MeshStandardMaterial::ffi_create_MeshStandardMaterial(
   color : Int,
   roughness : Double,
   metalness : Double,
+  flat_shading : Bool,
 ) -> MeshStandardMaterial = "meshStandardMaterial"
+
+///|
+pub fn MeshStandardMaterial::MeshStandardMaterial(
+  color : Int,
+  roughness? : Double = 1,
+  metalness? : Double = 0,
+  flat_shading? : Bool = false,
+) -> MeshStandardMaterial {
+  MeshStandardMaterial::ffi_create_MeshStandardMaterial(
+    color, roughness, metalness, flat_shading,
+  )
+}
 
 ///|
 pub fn MeshStandardMaterial::as_material(
@@ -518,3 +531,103 @@ pub extern "js" fn MeshStandardMaterial::set_fog(
   value : Bool,
 ) -> Unit =
   #| (self, value) => { self.fog = value; }
+
+///|
+pub extern "js" fn MeshStandardMaterial::id(self : MeshStandardMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn MeshStandardMaterial::kind(
+  self : MeshStandardMaterial,
+) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn MeshStandardMaterial::name(
+  self : MeshStandardMaterial,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn MeshStandardMaterial::set_name(
+  self : MeshStandardMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn MeshStandardMaterial::opacity(
+  self : MeshStandardMaterial,
+) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn MeshStandardMaterial::set_opacity(
+  self : MeshStandardMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn MeshStandardMaterial::transparent(
+  self : MeshStandardMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn MeshStandardMaterial::set_transparent(
+  self : MeshStandardMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn MeshStandardMaterial::visible(
+  self : MeshStandardMaterial,
+) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn MeshStandardMaterial::set_visible(
+  self : MeshStandardMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn MeshStandardMaterial::depth_test(
+  self : MeshStandardMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn MeshStandardMaterial::set_depth_test(
+  self : MeshStandardMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn MeshStandardMaterial::depth_write(
+  self : MeshStandardMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn MeshStandardMaterial::set_depth_write(
+  self : MeshStandardMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn MeshStandardMaterial::dispose(
+  self : MeshStandardMaterial,
+) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn MeshStandardMaterial::mark_needs_update(
+  self : MeshStandardMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

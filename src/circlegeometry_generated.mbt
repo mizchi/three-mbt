@@ -43,3 +43,162 @@ pub fn CircleGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn CircleGeometry::id(self : CircleGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn CircleGeometry::name(self : CircleGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn CircleGeometry::set_name(
+  self : CircleGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn CircleGeometry::set_attribute(
+  self : CircleGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn CircleGeometry::ffi_get_attribute(
+  self : CircleGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn CircleGeometry::get_attribute(
+  self : CircleGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn CircleGeometry::has_attribute(
+  self : CircleGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn CircleGeometry::set_indices(
+  self : CircleGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn CircleGeometry::ffi_get_index(
+  self : CircleGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn CircleGeometry::get_index(self : CircleGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn CircleGeometry::compute_vertex_normals(
+  self : CircleGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn CircleGeometry::compute_bounding_box(
+  self : CircleGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn CircleGeometry::compute_bounding_sphere(
+  self : CircleGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn CircleGeometry::ffi_bounding_box(
+  self : CircleGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn CircleGeometry::bounding_box(self : CircleGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn CircleGeometry::ffi_bounding_sphere(
+  self : CircleGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn CircleGeometry::bounding_sphere(self : CircleGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn CircleGeometry::translate(
+  self : CircleGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn CircleGeometry::scale(
+  self : CircleGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn CircleGeometry::rotate_x(
+  self : CircleGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn CircleGeometry::rotate_y(
+  self : CircleGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn CircleGeometry::rotate_z(
+  self : CircleGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn CircleGeometry::apply_matrix4(
+  self : CircleGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn CircleGeometry::center(
+  self : CircleGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn CircleGeometry::dispose(self : CircleGeometry) -> Unit =
+  #| (self) => self.dispose()

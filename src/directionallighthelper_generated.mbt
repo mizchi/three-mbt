@@ -27,3 +27,295 @@ pub extern "js" fn DirectionalLightHelper::dispose(
   self : DirectionalLightHelper,
 ) -> Unit =
   #| (self) => self.dispose()
+
+///|
+pub extern "js" fn DirectionalLightHelper::cast_shadow(
+  self : DirectionalLightHelper,
+) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn DirectionalLightHelper::set_cast_shadow(
+  self : DirectionalLightHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn DirectionalLightHelper::receive_shadow(
+  self : DirectionalLightHelper,
+) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn DirectionalLightHelper::set_receive_shadow(
+  self : DirectionalLightHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn DirectionalLightHelper::id(
+  self : DirectionalLightHelper,
+) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn DirectionalLightHelper::uuid(
+  self : DirectionalLightHelper,
+) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn DirectionalLightHelper::kind(
+  self : DirectionalLightHelper,
+) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn DirectionalLightHelper::name(
+  self : DirectionalLightHelper,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn DirectionalLightHelper::visible(
+  self : DirectionalLightHelper,
+) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLightHelper::position(
+  self : DirectionalLightHelper,
+) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLightHelper::rotation(
+  self : DirectionalLightHelper,
+) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLightHelper::quaternion(
+  self : DirectionalLightHelper,
+) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLightHelper::scale(
+  self : DirectionalLightHelper,
+) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLightHelper::up(
+  self : DirectionalLightHelper,
+) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLightHelper::matrix(
+  self : DirectionalLightHelper,
+) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn DirectionalLightHelper::matrix_world(
+  self : DirectionalLightHelper,
+) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn DirectionalLightHelper::set_name(
+  self : DirectionalLightHelper,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn DirectionalLightHelper::set_visible(
+  self : DirectionalLightHelper,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn DirectionalLightHelper::children(
+  self : DirectionalLightHelper,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn DirectionalLightHelper::add(
+  self : DirectionalLightHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn DirectionalLightHelper::remove(
+  self : DirectionalLightHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn DirectionalLightHelper::attach(
+  self : DirectionalLightHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn DirectionalLightHelper::remove_from_parent(
+  self : DirectionalLightHelper,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn DirectionalLightHelper::look_at(
+  self : DirectionalLightHelper,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn DirectionalLightHelper::rotate_x(
+  self : DirectionalLightHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn DirectionalLightHelper::rotate_y(
+  self : DirectionalLightHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn DirectionalLightHelper::rotate_z(
+  self : DirectionalLightHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn DirectionalLightHelper::translate_x(
+  self : DirectionalLightHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn DirectionalLightHelper::translate_y(
+  self : DirectionalLightHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn DirectionalLightHelper::translate_z(
+  self : DirectionalLightHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn DirectionalLightHelper::apply_matrix4(
+  self : DirectionalLightHelper,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn DirectionalLightHelper::apply_quaternion(
+  self : DirectionalLightHelper,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn DirectionalLightHelper::update_matrix(
+  self : DirectionalLightHelper,
+) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn DirectionalLightHelper::update_matrix_world(
+  self : DirectionalLightHelper,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn DirectionalLightHelper::update_world_matrix(
+  self : DirectionalLightHelper,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn DirectionalLightHelper::get_world_position(
+  self : DirectionalLightHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn DirectionalLightHelper::get_world_quaternion(
+  self : DirectionalLightHelper,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn DirectionalLightHelper::get_world_scale(
+  self : DirectionalLightHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn DirectionalLightHelper::get_world_direction(
+  self : DirectionalLightHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn DirectionalLightHelper::local_to_world(
+  self : DirectionalLightHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn DirectionalLightHelper::world_to_local(
+  self : DirectionalLightHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn DirectionalLightHelper::traverse(
+  self : DirectionalLightHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn DirectionalLightHelper::traverse_visible(
+  self : DirectionalLightHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

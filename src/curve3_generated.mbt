@@ -5,7 +5,7 @@
 pub type Curve3
 
 ///|
-pub extern "js" fn Curve3::get_point(
+extern "js" fn Curve3::ffi_get_point(
   self : Curve3,
   t : Double,
   target : Vector3,
@@ -13,7 +13,17 @@ pub extern "js" fn Curve3::get_point(
   #| (self, t, target) => self.getPoint(t, target)
 
 ///|
-pub extern "js" fn Curve3::get_point_at(
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn Curve3::get_point(
+  self : Curve3,
+  t : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_point(t, target)
+}
+
+///|
+extern "js" fn Curve3::ffi_get_point_at(
   self : Curve3,
   u : Double,
   target : Vector3,
@@ -21,7 +31,17 @@ pub extern "js" fn Curve3::get_point_at(
   #| (self, u, target) => self.getPointAt(u, target)
 
 ///|
-pub extern "js" fn Curve3::get_tangent(
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn Curve3::get_point_at(
+  self : Curve3,
+  u : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_point_at(u, target)
+}
+
+///|
+extern "js" fn Curve3::ffi_get_tangent(
   self : Curve3,
   t : Double,
   target : Vector3,
@@ -29,12 +49,32 @@ pub extern "js" fn Curve3::get_tangent(
   #| (self, t, target) => self.getTangent(t, target)
 
 ///|
-pub extern "js" fn Curve3::get_tangent_at(
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn Curve3::get_tangent(
+  self : Curve3,
+  t : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_tangent(t, target)
+}
+
+///|
+extern "js" fn Curve3::ffi_get_tangent_at(
   self : Curve3,
   u : Double,
   target : Vector3,
 ) -> Vector3 =
   #| (self, u, target) => self.getTangentAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn Curve3::get_tangent_at(
+  self : Curve3,
+  u : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_tangent_at(u, target)
+}
 
 ///|
 pub extern "js" fn Curve3::get_points(

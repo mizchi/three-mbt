@@ -15,3 +15,170 @@ pub extern "js" fn IcosahedronGeometry::IcosahedronGeometry(
 pub fn IcosahedronGeometry::as_buffer_geometry(
   self : IcosahedronGeometry,
 ) -> BufferGeometry = "%identity"
+
+///|
+pub extern "js" fn IcosahedronGeometry::id(self : IcosahedronGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn IcosahedronGeometry::name(
+  self : IcosahedronGeometry,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn IcosahedronGeometry::set_name(
+  self : IcosahedronGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn IcosahedronGeometry::set_attribute(
+  self : IcosahedronGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn IcosahedronGeometry::ffi_get_attribute(
+  self : IcosahedronGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn IcosahedronGeometry::get_attribute(
+  self : IcosahedronGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn IcosahedronGeometry::has_attribute(
+  self : IcosahedronGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn IcosahedronGeometry::set_indices(
+  self : IcosahedronGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn IcosahedronGeometry::ffi_get_index(
+  self : IcosahedronGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn IcosahedronGeometry::get_index(
+  self : IcosahedronGeometry,
+) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn IcosahedronGeometry::compute_vertex_normals(
+  self : IcosahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn IcosahedronGeometry::compute_bounding_box(
+  self : IcosahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn IcosahedronGeometry::compute_bounding_sphere(
+  self : IcosahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn IcosahedronGeometry::ffi_bounding_box(
+  self : IcosahedronGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn IcosahedronGeometry::bounding_box(self : IcosahedronGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn IcosahedronGeometry::ffi_bounding_sphere(
+  self : IcosahedronGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn IcosahedronGeometry::bounding_sphere(
+  self : IcosahedronGeometry,
+) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn IcosahedronGeometry::translate(
+  self : IcosahedronGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn IcosahedronGeometry::scale(
+  self : IcosahedronGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn IcosahedronGeometry::rotate_x(
+  self : IcosahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn IcosahedronGeometry::rotate_y(
+  self : IcosahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn IcosahedronGeometry::rotate_z(
+  self : IcosahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn IcosahedronGeometry::apply_matrix4(
+  self : IcosahedronGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn IcosahedronGeometry::center(
+  self : IcosahedronGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn IcosahedronGeometry::dispose(
+  self : IcosahedronGeometry,
+) -> Unit =
+  #| (self) => self.dispose()

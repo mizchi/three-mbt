@@ -44,3 +44,160 @@ pub fn BoxGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn BoxGeometry::id(self : BoxGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn BoxGeometry::name(self : BoxGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn BoxGeometry::set_name(
+  self : BoxGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn BoxGeometry::set_attribute(
+  self : BoxGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn BoxGeometry::ffi_get_attribute(
+  self : BoxGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn BoxGeometry::get_attribute(
+  self : BoxGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn BoxGeometry::has_attribute(
+  self : BoxGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn BoxGeometry::set_indices(
+  self : BoxGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn BoxGeometry::ffi_get_index(
+  self : BoxGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn BoxGeometry::get_index(self : BoxGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn BoxGeometry::compute_vertex_normals(
+  self : BoxGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn BoxGeometry::compute_bounding_box(
+  self : BoxGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn BoxGeometry::compute_bounding_sphere(
+  self : BoxGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn BoxGeometry::ffi_bounding_box(
+  self : BoxGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn BoxGeometry::bounding_box(self : BoxGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn BoxGeometry::ffi_bounding_sphere(
+  self : BoxGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn BoxGeometry::bounding_sphere(self : BoxGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn BoxGeometry::translate(
+  self : BoxGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn BoxGeometry::scale(
+  self : BoxGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn BoxGeometry::rotate_x(
+  self : BoxGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn BoxGeometry::rotate_y(
+  self : BoxGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn BoxGeometry::rotate_z(
+  self : BoxGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn BoxGeometry::apply_matrix4(
+  self : BoxGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn BoxGeometry::center(self : BoxGeometry) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn BoxGeometry::dispose(self : BoxGeometry) -> Unit =
+  #| (self) => self.dispose()

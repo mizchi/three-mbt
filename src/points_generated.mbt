@@ -21,3 +21,231 @@ pub extern "js" fn Points::geometry(self : Points) -> BufferGeometry =
 ///|
 pub extern "js" fn Points::material(self : Points) -> Material =
   #| (self) => self.material
+
+///|
+pub extern "js" fn Points::cast_shadow(self : Points) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn Points::set_cast_shadow(self : Points, value : Bool) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn Points::receive_shadow(self : Points) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn Points::set_receive_shadow(
+  self : Points,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn Points::id(self : Points) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn Points::uuid(self : Points) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn Points::kind(self : Points) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn Points::name(self : Points) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn Points::visible(self : Points) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Points::position(self : Points) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Points::rotation(self : Points) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Points::quaternion(self : Points) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Points::scale(self : Points) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Points::up(self : Points) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Points::matrix(self : Points) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Points::matrix_world(self : Points) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn Points::set_name(self : Points, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn Points::set_visible(self : Points, visible : Bool) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn Points::children(self : Points) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn Points::add(self : Points, child : Object3D) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn Points::remove(self : Points, child : Object3D) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn Points::attach(self : Points, child : Object3D) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn Points::remove_from_parent(self : Points) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn Points::look_at(self : Points, target : Vector3) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn Points::rotate_x(self : Points, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn Points::rotate_y(self : Points, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn Points::rotate_z(self : Points, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn Points::translate_x(
+  self : Points,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn Points::translate_y(
+  self : Points,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn Points::translate_z(
+  self : Points,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn Points::apply_matrix4(
+  self : Points,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn Points::apply_quaternion(
+  self : Points,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn Points::update_matrix(self : Points) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn Points::update_matrix_world(
+  self : Points,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn Points::update_world_matrix(
+  self : Points,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn Points::get_world_position(
+  self : Points,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn Points::get_world_quaternion(
+  self : Points,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn Points::get_world_scale(
+  self : Points,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn Points::get_world_direction(
+  self : Points,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn Points::local_to_world(
+  self : Points,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn Points::world_to_local(
+  self : Points,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn Points::traverse(
+  self : Points,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn Points::traverse_visible(
+  self : Points,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

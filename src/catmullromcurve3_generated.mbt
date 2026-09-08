@@ -6,12 +6,24 @@ pub type CatmullRomCurve3
 
 ///|
 #module("@mizchi/three-mbt/geometry")
-pub extern "js" fn CatmullRomCurve3::CatmullRomCurve3(
+extern "js" fn CatmullRomCurve3::ffi_create_CatmullRomCurve3(
   points : FixedArray[Vector3],
   closed : Bool,
   curve_type : CatmullRomType,
   tension : Double,
 ) -> CatmullRomCurve3 = "catmullRomCurve3"
+
+///|
+pub fn CatmullRomCurve3::CatmullRomCurve3(
+  points : FixedArray[Vector3],
+  closed? : Bool = false,
+  curve_type? : CatmullRomType = Centripetal,
+  tension? : Double = 0.5,
+) -> CatmullRomCurve3 {
+  CatmullRomCurve3::ffi_create_CatmullRomCurve3(
+    points, closed, curve_type, tension,
+  )
+}
 
 ///|
 pub fn CatmullRomCurve3::as_curve3(self : CatmullRomCurve3) -> Curve3 = "%identity"
@@ -50,3 +62,109 @@ pub extern "js" fn CatmullRomCurve3::set_points(
   points : FixedArray[Vector3],
 ) -> Unit =
   #| (self, points) => { self.points = points.slice(); self.updateArcLengths(); }
+
+///|
+extern "js" fn CatmullRomCurve3::ffi_get_point(
+  self : CatmullRomCurve3,
+  t : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, t, target) => self.getPoint(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn CatmullRomCurve3::get_point(
+  self : CatmullRomCurve3,
+  t : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_point(t, target)
+}
+
+///|
+extern "js" fn CatmullRomCurve3::ffi_get_point_at(
+  self : CatmullRomCurve3,
+  u : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, u, target) => self.getPointAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn CatmullRomCurve3::get_point_at(
+  self : CatmullRomCurve3,
+  u : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_point_at(u, target)
+}
+
+///|
+extern "js" fn CatmullRomCurve3::ffi_get_tangent(
+  self : CatmullRomCurve3,
+  t : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, t, target) => self.getTangent(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn CatmullRomCurve3::get_tangent(
+  self : CatmullRomCurve3,
+  t : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_tangent(t, target)
+}
+
+///|
+extern "js" fn CatmullRomCurve3::ffi_get_tangent_at(
+  self : CatmullRomCurve3,
+  u : Double,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, u, target) => self.getTangentAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn CatmullRomCurve3::get_tangent_at(
+  self : CatmullRomCurve3,
+  u : Double,
+  target? : Vector3 = Vector3(0, 0, 0),
+) -> Vector3 {
+  self.ffi_get_tangent_at(u, target)
+}
+
+///|
+pub extern "js" fn CatmullRomCurve3::get_points(
+  self : CatmullRomCurve3,
+  divisions : Int,
+) -> FixedArray[Vector3] =
+  #| (self, divisions) => self.getPoints(divisions)
+
+///|
+pub extern "js" fn CatmullRomCurve3::get_spaced_points(
+  self : CatmullRomCurve3,
+  divisions : Int,
+) -> FixedArray[Vector3] =
+  #| (self, divisions) => self.getSpacedPoints(divisions)
+
+///|
+pub extern "js" fn CatmullRomCurve3::get_length(
+  self : CatmullRomCurve3,
+) -> Double =
+  #| (self) => self.getLength()
+
+///|
+pub extern "js" fn CatmullRomCurve3::update_arc_lengths(
+  self : CatmullRomCurve3,
+) -> Unit =
+  #| (self) => self.updateArcLengths()
+
+///|
+pub extern "js" fn CatmullRomCurve3::compute_frenet_frames(
+  self : CatmullRomCurve3,
+  segments : Int,
+  closed : Bool,
+) -> FrenetFrames =
+  #| (self, segments, closed) => self.computeFrenetFrames(segments, closed)

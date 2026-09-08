@@ -66,3 +66,95 @@ pub extern "js" fn LineBasicMaterial::set_fog(
   value : Bool,
 ) -> Unit =
   #| (self, value) => { self.fog = value; }
+
+///|
+pub extern "js" fn LineBasicMaterial::id(self : LineBasicMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn LineBasicMaterial::kind(self : LineBasicMaterial) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn LineBasicMaterial::name(self : LineBasicMaterial) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn LineBasicMaterial::set_name(
+  self : LineBasicMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn LineBasicMaterial::opacity(
+  self : LineBasicMaterial,
+) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn LineBasicMaterial::set_opacity(
+  self : LineBasicMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn LineBasicMaterial::transparent(
+  self : LineBasicMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn LineBasicMaterial::set_transparent(
+  self : LineBasicMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn LineBasicMaterial::visible(self : LineBasicMaterial) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn LineBasicMaterial::set_visible(
+  self : LineBasicMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn LineBasicMaterial::depth_test(
+  self : LineBasicMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn LineBasicMaterial::set_depth_test(
+  self : LineBasicMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn LineBasicMaterial::depth_write(
+  self : LineBasicMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn LineBasicMaterial::set_depth_write(
+  self : LineBasicMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn LineBasicMaterial::dispose(self : LineBasicMaterial) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn LineBasicMaterial::mark_needs_update(
+  self : LineBasicMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

@@ -1,0 +1,21 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/parts"
+
+import {
+  "mizchi/three",
+}
+
+// Values
+pub fn add_part(@three.Object3D, String, @three.BufferGeometry, Int, @three.Vector3) -> @three.Object3D
+
+pub fn dispose(@three.Object3D) -> Unit
+
+pub fn ellipsoid(@three.Object3D, String, Int, @three.Vector3, @three.Vector3, detail? : Int) -> @three.Object3D
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

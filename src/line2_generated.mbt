@@ -17,3 +17,228 @@ pub fn Line2::as_object3d(self : Line2) -> Object3D = "%identity"
 ///|
 pub extern "js" fn Line2::compute_line_distances(self : Line2) -> Line2 =
   #| (self) => self.computeLineDistances()
+
+///|
+pub extern "js" fn Line2::cast_shadow(self : Line2) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn Line2::set_cast_shadow(self : Line2, value : Bool) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn Line2::receive_shadow(self : Line2) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn Line2::set_receive_shadow(
+  self : Line2,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn Line2::id(self : Line2) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn Line2::uuid(self : Line2) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn Line2::kind(self : Line2) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn Line2::name(self : Line2) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn Line2::visible(self : Line2) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line2::position(self : Line2) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line2::rotation(self : Line2) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line2::quaternion(self : Line2) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line2::scale(self : Line2) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line2::up(self : Line2) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line2::matrix(self : Line2) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line2::matrix_world(self : Line2) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn Line2::set_name(self : Line2, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn Line2::set_visible(self : Line2, visible : Bool) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn Line2::children(self : Line2) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn Line2::add(self : Line2, child : Object3D) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn Line2::remove(self : Line2, child : Object3D) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn Line2::attach(self : Line2, child : Object3D) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn Line2::remove_from_parent(self : Line2) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn Line2::look_at(self : Line2, target : Vector3) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn Line2::rotate_x(self : Line2, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn Line2::rotate_y(self : Line2, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn Line2::rotate_z(self : Line2, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn Line2::translate_x(
+  self : Line2,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn Line2::translate_y(
+  self : Line2,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn Line2::translate_z(
+  self : Line2,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn Line2::apply_matrix4(self : Line2, matrix : Matrix4) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn Line2::apply_quaternion(
+  self : Line2,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn Line2::update_matrix(self : Line2) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn Line2::update_matrix_world(
+  self : Line2,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn Line2::update_world_matrix(
+  self : Line2,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn Line2::get_world_position(
+  self : Line2,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn Line2::get_world_quaternion(
+  self : Line2,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn Line2::get_world_scale(
+  self : Line2,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn Line2::get_world_direction(
+  self : Line2,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn Line2::local_to_world(
+  self : Line2,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn Line2::world_to_local(
+  self : Line2,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn Line2::traverse(
+  self : Line2,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn Line2::traverse_visible(
+  self : Line2,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

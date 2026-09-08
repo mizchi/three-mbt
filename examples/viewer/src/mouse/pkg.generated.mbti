@@ -1,0 +1,55 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/mouse"
+
+import {
+  "mizchi/three",
+  "moonbitlang/async/js_async",
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn create_mouse() -> @js_async.Promise[@three.Object3D]
+
+pub fn create_viewer(@three.Canvas) -> @js_async.Promise[Viewer]
+
+pub fn dispose(Viewer) -> Unit
+
+pub fn export_model(Viewer) -> @js_async.Promise[Bytes]
+
+pub fn export_mouse() -> @js_async.Promise[Bytes]
+
+pub fn navigate(Viewer, String) -> Bool
+
+pub fn render(Viewer) -> Unit
+
+pub fn reset_view(Viewer) -> Unit
+
+pub fn resize(Viewer, Int, Int, Double) -> Unit
+
+pub fn select_model(Viewer, String) -> @js_async.Promise[Unit]
+
+pub fn set_wireframe(Viewer, Bool) -> Unit
+
+pub fn triangle_count(Viewer) -> Int
+
+// Errors
+type ViewerError derive(@debug.Debug)
+
+// Types and methods
+type Character
+
+pub struct Viewer {
+  renderer : @three.WebGLRenderer
+  scene : @three.Scene
+  camera : @three.PerspectiveCamera
+  controls : @three.OrbitControls
+  mut model : @three.Object3D
+  mut character : Character
+  mut wireframe : Bool
+  shadow : @three.LightShadow
+  mut disposed : Bool
+}
+
+// Type aliases
+
+// Traits

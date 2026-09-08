@@ -18,3 +18,265 @@ pub fn PlaneHelper::as_object3d(self : PlaneHelper) -> Object3D = "%identity"
 ///|
 pub extern "js" fn PlaneHelper::dispose(self : PlaneHelper) -> Unit =
   #| (self) => self.dispose()
+
+///|
+pub extern "js" fn PlaneHelper::cast_shadow(self : PlaneHelper) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn PlaneHelper::set_cast_shadow(
+  self : PlaneHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn PlaneHelper::receive_shadow(self : PlaneHelper) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn PlaneHelper::set_receive_shadow(
+  self : PlaneHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn PlaneHelper::id(self : PlaneHelper) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn PlaneHelper::uuid(self : PlaneHelper) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn PlaneHelper::kind(self : PlaneHelper) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn PlaneHelper::name(self : PlaneHelper) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn PlaneHelper::visible(self : PlaneHelper) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PlaneHelper::position(self : PlaneHelper) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PlaneHelper::rotation(self : PlaneHelper) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PlaneHelper::quaternion(self : PlaneHelper) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PlaneHelper::scale(self : PlaneHelper) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PlaneHelper::up(self : PlaneHelper) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PlaneHelper::matrix(self : PlaneHelper) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PlaneHelper::matrix_world(self : PlaneHelper) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn PlaneHelper::set_name(
+  self : PlaneHelper,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn PlaneHelper::set_visible(
+  self : PlaneHelper,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn PlaneHelper::children(
+  self : PlaneHelper,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn PlaneHelper::add(
+  self : PlaneHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn PlaneHelper::remove(
+  self : PlaneHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn PlaneHelper::attach(
+  self : PlaneHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn PlaneHelper::remove_from_parent(
+  self : PlaneHelper,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn PlaneHelper::look_at(
+  self : PlaneHelper,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn PlaneHelper::rotate_x(
+  self : PlaneHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn PlaneHelper::rotate_y(
+  self : PlaneHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn PlaneHelper::rotate_z(
+  self : PlaneHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn PlaneHelper::translate_x(
+  self : PlaneHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn PlaneHelper::translate_y(
+  self : PlaneHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn PlaneHelper::translate_z(
+  self : PlaneHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn PlaneHelper::apply_matrix4(
+  self : PlaneHelper,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn PlaneHelper::apply_quaternion(
+  self : PlaneHelper,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn PlaneHelper::update_matrix(self : PlaneHelper) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn PlaneHelper::update_matrix_world(
+  self : PlaneHelper,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn PlaneHelper::update_world_matrix(
+  self : PlaneHelper,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn PlaneHelper::get_world_position(
+  self : PlaneHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn PlaneHelper::get_world_quaternion(
+  self : PlaneHelper,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn PlaneHelper::get_world_scale(
+  self : PlaneHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn PlaneHelper::get_world_direction(
+  self : PlaneHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn PlaneHelper::local_to_world(
+  self : PlaneHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn PlaneHelper::world_to_local(
+  self : PlaneHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn PlaneHelper::traverse(
+  self : PlaneHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn PlaneHelper::traverse_visible(
+  self : PlaneHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

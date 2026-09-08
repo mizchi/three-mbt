@@ -14,3 +14,231 @@ pub fn Sprite::as_object3d(self : Sprite) -> Object3D = "%identity"
 ///|
 pub extern "js" fn Sprite::center(self : Sprite) -> Vector2 =
   #| (self) => self.center
+
+///|
+pub extern "js" fn Sprite::cast_shadow(self : Sprite) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn Sprite::set_cast_shadow(self : Sprite, value : Bool) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn Sprite::receive_shadow(self : Sprite) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn Sprite::set_receive_shadow(
+  self : Sprite,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn Sprite::id(self : Sprite) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn Sprite::uuid(self : Sprite) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn Sprite::kind(self : Sprite) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn Sprite::name(self : Sprite) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn Sprite::visible(self : Sprite) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Sprite::position(self : Sprite) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Sprite::rotation(self : Sprite) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Sprite::quaternion(self : Sprite) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Sprite::scale(self : Sprite) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Sprite::up(self : Sprite) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Sprite::matrix(self : Sprite) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Sprite::matrix_world(self : Sprite) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn Sprite::set_name(self : Sprite, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn Sprite::set_visible(self : Sprite, visible : Bool) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn Sprite::children(self : Sprite) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn Sprite::add(self : Sprite, child : Object3D) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn Sprite::remove(self : Sprite, child : Object3D) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn Sprite::attach(self : Sprite, child : Object3D) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn Sprite::remove_from_parent(self : Sprite) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn Sprite::look_at(self : Sprite, target : Vector3) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn Sprite::rotate_x(self : Sprite, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn Sprite::rotate_y(self : Sprite, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn Sprite::rotate_z(self : Sprite, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn Sprite::translate_x(
+  self : Sprite,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn Sprite::translate_y(
+  self : Sprite,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn Sprite::translate_z(
+  self : Sprite,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn Sprite::apply_matrix4(
+  self : Sprite,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn Sprite::apply_quaternion(
+  self : Sprite,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn Sprite::update_matrix(self : Sprite) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn Sprite::update_matrix_world(
+  self : Sprite,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn Sprite::update_world_matrix(
+  self : Sprite,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn Sprite::get_world_position(
+  self : Sprite,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn Sprite::get_world_quaternion(
+  self : Sprite,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn Sprite::get_world_scale(
+  self : Sprite,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn Sprite::get_world_direction(
+  self : Sprite,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn Sprite::local_to_world(
+  self : Sprite,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn Sprite::world_to_local(
+  self : Sprite,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn Sprite::traverse(
+  self : Sprite,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn Sprite::traverse_visible(
+  self : Sprite,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

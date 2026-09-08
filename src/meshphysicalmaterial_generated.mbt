@@ -6,11 +6,24 @@ pub type MeshPhysicalMaterial
 
 ///|
 #module("@mizchi/three-mbt/constructors")
-pub extern "js" fn MeshPhysicalMaterial::MeshPhysicalMaterial(
+extern "js" fn MeshPhysicalMaterial::ffi_create_MeshPhysicalMaterial(
   color : Int,
   roughness : Double,
   metalness : Double,
+  flat_shading : Bool,
 ) -> MeshPhysicalMaterial = "meshPhysicalMaterial"
+
+///|
+pub fn MeshPhysicalMaterial::MeshPhysicalMaterial(
+  color : Int,
+  roughness? : Double = 1,
+  metalness? : Double = 0,
+  flat_shading? : Bool = false,
+) -> MeshPhysicalMaterial {
+  MeshPhysicalMaterial::ffi_create_MeshPhysicalMaterial(
+    color, roughness, metalness, flat_shading,
+  )
+}
 
 ///|
 pub fn MeshPhysicalMaterial::as_material(
@@ -590,3 +603,161 @@ pub fn MeshPhysicalMaterial::set_anisotropy_map(
 ) -> Unit {
   self.ffi_set_anisotropy_map(Nullable::from_option(value))
 }
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::id(self : MeshPhysicalMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::kind(
+  self : MeshPhysicalMaterial,
+) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::name(
+  self : MeshPhysicalMaterial,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::set_name(
+  self : MeshPhysicalMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::opacity(
+  self : MeshPhysicalMaterial,
+) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::set_opacity(
+  self : MeshPhysicalMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::transparent(
+  self : MeshPhysicalMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::set_transparent(
+  self : MeshPhysicalMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::visible(
+  self : MeshPhysicalMaterial,
+) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::set_visible(
+  self : MeshPhysicalMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::depth_test(
+  self : MeshPhysicalMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::set_depth_test(
+  self : MeshPhysicalMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::depth_write(
+  self : MeshPhysicalMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::set_depth_write(
+  self : MeshPhysicalMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::dispose(
+  self : MeshPhysicalMaterial,
+) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::mark_needs_update(
+  self : MeshPhysicalMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::color(
+  self : MeshPhysicalMaterial,
+) -> Color =
+  #| (self) => self.color
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::roughness(
+  self : MeshPhysicalMaterial,
+) -> Double =
+  #| (self) => self.roughness
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::set_roughness(
+  self : MeshPhysicalMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.roughness = value; }
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::metalness(
+  self : MeshPhysicalMaterial,
+) -> Double =
+  #| (self) => self.metalness
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::set_metalness(
+  self : MeshPhysicalMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.metalness = value; }
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::wireframe(
+  self : MeshPhysicalMaterial,
+) -> Bool =
+  #| (self) => self.wireframe
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::set_wireframe(
+  self : MeshPhysicalMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.wireframe = value; }
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::flat_shading(
+  self : MeshPhysicalMaterial,
+) -> Bool =
+  #| (self) => self.flatShading
+
+///|
+pub extern "js" fn MeshPhysicalMaterial::set_flat_shading(
+  self : MeshPhysicalMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.flatShading = value; }

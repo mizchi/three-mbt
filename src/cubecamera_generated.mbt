@@ -22,3 +22,265 @@ pub extern "js" fn CubeCamera::update(
   scene : Scene,
 ) -> Unit =
   #| (self, renderer, scene) => self.update(renderer, scene)
+
+///|
+pub extern "js" fn CubeCamera::cast_shadow(self : CubeCamera) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn CubeCamera::set_cast_shadow(
+  self : CubeCamera,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn CubeCamera::receive_shadow(self : CubeCamera) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn CubeCamera::set_receive_shadow(
+  self : CubeCamera,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn CubeCamera::id(self : CubeCamera) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn CubeCamera::uuid(self : CubeCamera) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn CubeCamera::kind(self : CubeCamera) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn CubeCamera::name(self : CubeCamera) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn CubeCamera::visible(self : CubeCamera) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CubeCamera::position(self : CubeCamera) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CubeCamera::rotation(self : CubeCamera) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CubeCamera::quaternion(self : CubeCamera) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CubeCamera::scale(self : CubeCamera) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CubeCamera::up(self : CubeCamera) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CubeCamera::matrix(self : CubeCamera) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CubeCamera::matrix_world(self : CubeCamera) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn CubeCamera::set_name(
+  self : CubeCamera,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn CubeCamera::set_visible(
+  self : CubeCamera,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn CubeCamera::children(
+  self : CubeCamera,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn CubeCamera::add(
+  self : CubeCamera,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn CubeCamera::remove(
+  self : CubeCamera,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn CubeCamera::attach(
+  self : CubeCamera,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn CubeCamera::remove_from_parent(
+  self : CubeCamera,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn CubeCamera::look_at(
+  self : CubeCamera,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn CubeCamera::rotate_x(
+  self : CubeCamera,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn CubeCamera::rotate_y(
+  self : CubeCamera,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn CubeCamera::rotate_z(
+  self : CubeCamera,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn CubeCamera::translate_x(
+  self : CubeCamera,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn CubeCamera::translate_y(
+  self : CubeCamera,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn CubeCamera::translate_z(
+  self : CubeCamera,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn CubeCamera::apply_matrix4(
+  self : CubeCamera,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn CubeCamera::apply_quaternion(
+  self : CubeCamera,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn CubeCamera::update_matrix(self : CubeCamera) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn CubeCamera::update_matrix_world(
+  self : CubeCamera,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn CubeCamera::update_world_matrix(
+  self : CubeCamera,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn CubeCamera::get_world_position(
+  self : CubeCamera,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn CubeCamera::get_world_quaternion(
+  self : CubeCamera,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn CubeCamera::get_world_scale(
+  self : CubeCamera,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn CubeCamera::get_world_direction(
+  self : CubeCamera,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn CubeCamera::local_to_world(
+  self : CubeCamera,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn CubeCamera::world_to_local(
+  self : CubeCamera,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn CubeCamera::traverse(
+  self : CubeCamera,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn CubeCamera::traverse_visible(
+  self : CubeCamera,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

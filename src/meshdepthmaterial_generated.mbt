@@ -155,3 +155,95 @@ pub extern "js" fn MeshDepthMaterial::set_wireframe_linewidth(
   value : Double,
 ) -> Unit =
   #| (self, value) => { self.wireframeLinewidth = value; }
+
+///|
+pub extern "js" fn MeshDepthMaterial::id(self : MeshDepthMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn MeshDepthMaterial::kind(self : MeshDepthMaterial) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn MeshDepthMaterial::name(self : MeshDepthMaterial) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn MeshDepthMaterial::set_name(
+  self : MeshDepthMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn MeshDepthMaterial::opacity(
+  self : MeshDepthMaterial,
+) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn MeshDepthMaterial::set_opacity(
+  self : MeshDepthMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn MeshDepthMaterial::transparent(
+  self : MeshDepthMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn MeshDepthMaterial::set_transparent(
+  self : MeshDepthMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn MeshDepthMaterial::visible(self : MeshDepthMaterial) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn MeshDepthMaterial::set_visible(
+  self : MeshDepthMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn MeshDepthMaterial::depth_test(
+  self : MeshDepthMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn MeshDepthMaterial::set_depth_test(
+  self : MeshDepthMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn MeshDepthMaterial::depth_write(
+  self : MeshDepthMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn MeshDepthMaterial::set_depth_write(
+  self : MeshDepthMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn MeshDepthMaterial::dispose(self : MeshDepthMaterial) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn MeshDepthMaterial::mark_needs_update(
+  self : MeshDepthMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

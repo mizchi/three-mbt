@@ -59,3 +59,103 @@ pub extern "js" fn LineDashedMaterial::set_gap_size(
   value : Double,
 ) -> Unit =
   #| (self, value) => { self.gapSize = value; }
+
+///|
+pub extern "js" fn LineDashedMaterial::id(self : LineDashedMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn LineDashedMaterial::kind(
+  self : LineDashedMaterial,
+) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn LineDashedMaterial::name(
+  self : LineDashedMaterial,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn LineDashedMaterial::set_name(
+  self : LineDashedMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn LineDashedMaterial::opacity(
+  self : LineDashedMaterial,
+) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn LineDashedMaterial::set_opacity(
+  self : LineDashedMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn LineDashedMaterial::transparent(
+  self : LineDashedMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn LineDashedMaterial::set_transparent(
+  self : LineDashedMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn LineDashedMaterial::visible(
+  self : LineDashedMaterial,
+) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn LineDashedMaterial::set_visible(
+  self : LineDashedMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn LineDashedMaterial::depth_test(
+  self : LineDashedMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn LineDashedMaterial::set_depth_test(
+  self : LineDashedMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn LineDashedMaterial::depth_write(
+  self : LineDashedMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn LineDashedMaterial::set_depth_write(
+  self : LineDashedMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn LineDashedMaterial::dispose(
+  self : LineDashedMaterial,
+) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn LineDashedMaterial::mark_needs_update(
+  self : LineDashedMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

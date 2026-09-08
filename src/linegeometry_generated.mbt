@@ -24,3 +24,160 @@ pub extern "js" fn LineGeometry::set_colors(
   colors : FixedArray[Double],
 ) -> LineGeometry =
   #| (self, colors) => self.setColors(colors)
+
+///|
+pub extern "js" fn LineGeometry::id(self : LineGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn LineGeometry::name(self : LineGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn LineGeometry::set_name(
+  self : LineGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn LineGeometry::set_attribute(
+  self : LineGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn LineGeometry::ffi_get_attribute(
+  self : LineGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn LineGeometry::get_attribute(
+  self : LineGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn LineGeometry::has_attribute(
+  self : LineGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn LineGeometry::set_indices(
+  self : LineGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn LineGeometry::ffi_get_index(
+  self : LineGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn LineGeometry::get_index(self : LineGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn LineGeometry::compute_vertex_normals(
+  self : LineGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn LineGeometry::compute_bounding_box(
+  self : LineGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn LineGeometry::compute_bounding_sphere(
+  self : LineGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn LineGeometry::ffi_bounding_box(
+  self : LineGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn LineGeometry::bounding_box(self : LineGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn LineGeometry::ffi_bounding_sphere(
+  self : LineGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn LineGeometry::bounding_sphere(self : LineGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn LineGeometry::translate(
+  self : LineGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn LineGeometry::scale(
+  self : LineGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn LineGeometry::rotate_x(
+  self : LineGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn LineGeometry::rotate_y(
+  self : LineGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn LineGeometry::rotate_z(
+  self : LineGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn LineGeometry::apply_matrix4(
+  self : LineGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn LineGeometry::center(self : LineGeometry) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn LineGeometry::dispose(self : LineGeometry) -> Unit =
+  #| (self) => self.dispose()

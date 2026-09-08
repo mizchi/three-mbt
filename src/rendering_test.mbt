@@ -20,7 +20,11 @@ test "Cameras project and unproject points" {
 ///|
 test "Geometry, materials, mesh, and bounding volumes" {
   let geometry = @three.BoxGeometry(2, 4, 6).as_buffer_geometry()
-  let material = @three.MeshStandardMaterial(0xff0000, 0.25, 0.75)
+  let material = @three.MeshStandardMaterial(
+    0xff0000,
+    roughness=0.25,
+    metalness=0.75,
+  )
   let mesh = @three.Mesh(geometry, material.as_material())
   assert_eq(mesh.geometry().get_attribute("position").unwrap().count(), 24)
   assert_eq(material.color().get_hex(), 0xff0000)

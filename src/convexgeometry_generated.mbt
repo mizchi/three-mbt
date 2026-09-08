@@ -14,3 +14,162 @@ pub extern "js" fn ConvexGeometry::ConvexGeometry(
 pub fn ConvexGeometry::as_buffer_geometry(
   self : ConvexGeometry,
 ) -> BufferGeometry = "%identity"
+
+///|
+pub extern "js" fn ConvexGeometry::id(self : ConvexGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn ConvexGeometry::name(self : ConvexGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn ConvexGeometry::set_name(
+  self : ConvexGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn ConvexGeometry::set_attribute(
+  self : ConvexGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn ConvexGeometry::ffi_get_attribute(
+  self : ConvexGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn ConvexGeometry::get_attribute(
+  self : ConvexGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn ConvexGeometry::has_attribute(
+  self : ConvexGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn ConvexGeometry::set_indices(
+  self : ConvexGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn ConvexGeometry::ffi_get_index(
+  self : ConvexGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn ConvexGeometry::get_index(self : ConvexGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn ConvexGeometry::compute_vertex_normals(
+  self : ConvexGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn ConvexGeometry::compute_bounding_box(
+  self : ConvexGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn ConvexGeometry::compute_bounding_sphere(
+  self : ConvexGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn ConvexGeometry::ffi_bounding_box(
+  self : ConvexGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn ConvexGeometry::bounding_box(self : ConvexGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn ConvexGeometry::ffi_bounding_sphere(
+  self : ConvexGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn ConvexGeometry::bounding_sphere(self : ConvexGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn ConvexGeometry::translate(
+  self : ConvexGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn ConvexGeometry::scale(
+  self : ConvexGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn ConvexGeometry::rotate_x(
+  self : ConvexGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn ConvexGeometry::rotate_y(
+  self : ConvexGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn ConvexGeometry::rotate_z(
+  self : ConvexGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn ConvexGeometry::apply_matrix4(
+  self : ConvexGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn ConvexGeometry::center(
+  self : ConvexGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn ConvexGeometry::dispose(self : ConvexGeometry) -> Unit =
+  #| (self) => self.dispose()

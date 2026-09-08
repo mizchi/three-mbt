@@ -17,3 +17,260 @@ pub fn BoxHelper::as_object3d(self : BoxHelper) -> Object3D = "%identity"
 ///|
 pub extern "js" fn BoxHelper::dispose(self : BoxHelper) -> Unit =
   #| (self) => self.dispose()
+
+///|
+pub extern "js" fn BoxHelper::cast_shadow(self : BoxHelper) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn BoxHelper::set_cast_shadow(
+  self : BoxHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn BoxHelper::receive_shadow(self : BoxHelper) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn BoxHelper::set_receive_shadow(
+  self : BoxHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn BoxHelper::id(self : BoxHelper) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn BoxHelper::uuid(self : BoxHelper) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn BoxHelper::kind(self : BoxHelper) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn BoxHelper::name(self : BoxHelper) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn BoxHelper::visible(self : BoxHelper) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BoxHelper::position(self : BoxHelper) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BoxHelper::rotation(self : BoxHelper) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BoxHelper::quaternion(self : BoxHelper) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BoxHelper::scale(self : BoxHelper) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BoxHelper::up(self : BoxHelper) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BoxHelper::matrix(self : BoxHelper) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn BoxHelper::matrix_world(self : BoxHelper) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn BoxHelper::set_name(self : BoxHelper, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn BoxHelper::set_visible(
+  self : BoxHelper,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn BoxHelper::children(
+  self : BoxHelper,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn BoxHelper::add(
+  self : BoxHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn BoxHelper::remove(
+  self : BoxHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn BoxHelper::attach(
+  self : BoxHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn BoxHelper::remove_from_parent(self : BoxHelper) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn BoxHelper::look_at(
+  self : BoxHelper,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn BoxHelper::rotate_x(
+  self : BoxHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn BoxHelper::rotate_y(
+  self : BoxHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn BoxHelper::rotate_z(
+  self : BoxHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn BoxHelper::translate_x(
+  self : BoxHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn BoxHelper::translate_y(
+  self : BoxHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn BoxHelper::translate_z(
+  self : BoxHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn BoxHelper::apply_matrix4(
+  self : BoxHelper,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn BoxHelper::apply_quaternion(
+  self : BoxHelper,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn BoxHelper::update_matrix(self : BoxHelper) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn BoxHelper::update_matrix_world(
+  self : BoxHelper,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn BoxHelper::update_world_matrix(
+  self : BoxHelper,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn BoxHelper::get_world_position(
+  self : BoxHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn BoxHelper::get_world_quaternion(
+  self : BoxHelper,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn BoxHelper::get_world_scale(
+  self : BoxHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn BoxHelper::get_world_direction(
+  self : BoxHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn BoxHelper::local_to_world(
+  self : BoxHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn BoxHelper::world_to_local(
+  self : BoxHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn BoxHelper::traverse(
+  self : BoxHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn BoxHelper::traverse_visible(
+  self : BoxHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

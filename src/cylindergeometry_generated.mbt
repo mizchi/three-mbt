@@ -49,3 +49,162 @@ pub fn CylinderGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn CylinderGeometry::id(self : CylinderGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn CylinderGeometry::name(self : CylinderGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn CylinderGeometry::set_name(
+  self : CylinderGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn CylinderGeometry::set_attribute(
+  self : CylinderGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn CylinderGeometry::ffi_get_attribute(
+  self : CylinderGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn CylinderGeometry::get_attribute(
+  self : CylinderGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn CylinderGeometry::has_attribute(
+  self : CylinderGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn CylinderGeometry::set_indices(
+  self : CylinderGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn CylinderGeometry::ffi_get_index(
+  self : CylinderGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn CylinderGeometry::get_index(self : CylinderGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn CylinderGeometry::compute_vertex_normals(
+  self : CylinderGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn CylinderGeometry::compute_bounding_box(
+  self : CylinderGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn CylinderGeometry::compute_bounding_sphere(
+  self : CylinderGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn CylinderGeometry::ffi_bounding_box(
+  self : CylinderGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn CylinderGeometry::bounding_box(self : CylinderGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn CylinderGeometry::ffi_bounding_sphere(
+  self : CylinderGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn CylinderGeometry::bounding_sphere(self : CylinderGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn CylinderGeometry::translate(
+  self : CylinderGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn CylinderGeometry::scale(
+  self : CylinderGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn CylinderGeometry::rotate_x(
+  self : CylinderGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn CylinderGeometry::rotate_y(
+  self : CylinderGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn CylinderGeometry::rotate_z(
+  self : CylinderGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn CylinderGeometry::apply_matrix4(
+  self : CylinderGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn CylinderGeometry::center(
+  self : CylinderGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn CylinderGeometry::dispose(self : CylinderGeometry) -> Unit =
+  #| (self) => self.dispose()

@@ -1,0 +1,25 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/assets"
+
+import {
+  "moonbitlang/async/js_async",
+}
+
+// Values
+pub fn load_compressed(String, String) -> @js_async.Promise[FixedArray[Int]]
+
+pub fn reject_invalid_assets(String) -> @js_async.Promise[FixedArray[Int]]
+
+pub fn render_objects() -> FixedArray[Int]
+
+pub fn render_stencil() -> FixedArray[Int]
+
+pub fn sample_textures(String) -> @js_async.Promise[FixedArray[Int]]
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

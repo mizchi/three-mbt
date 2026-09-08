@@ -1,0 +1,27 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/topology"
+
+import {
+  "moonbitlang/async/js_async",
+}
+
+// Values
+pub fn export_bevel() -> @js_async.Promise[Bytes]
+
+pub fn export_connectivity() -> @js_async.Promise[Bytes]
+
+pub fn export_edit() -> @js_async.Promise[Bytes]
+
+pub fn render_bevel() -> @js_async.Promise[Bytes]
+
+pub fn render_connectivity() -> @js_async.Promise[Bytes]
+
+pub fn render_edit() -> @js_async.Promise[Bytes]
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

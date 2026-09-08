@@ -509,3 +509,95 @@ pub extern "js" fn MeshPhongMaterial::set_flat_shading(
   value : Bool,
 ) -> Unit =
   #| (self, value) => { self.flatShading = value; }
+
+///|
+pub extern "js" fn MeshPhongMaterial::id(self : MeshPhongMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn MeshPhongMaterial::kind(self : MeshPhongMaterial) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn MeshPhongMaterial::name(self : MeshPhongMaterial) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn MeshPhongMaterial::set_name(
+  self : MeshPhongMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn MeshPhongMaterial::opacity(
+  self : MeshPhongMaterial,
+) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn MeshPhongMaterial::set_opacity(
+  self : MeshPhongMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn MeshPhongMaterial::transparent(
+  self : MeshPhongMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn MeshPhongMaterial::set_transparent(
+  self : MeshPhongMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn MeshPhongMaterial::visible(self : MeshPhongMaterial) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn MeshPhongMaterial::set_visible(
+  self : MeshPhongMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn MeshPhongMaterial::depth_test(
+  self : MeshPhongMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn MeshPhongMaterial::set_depth_test(
+  self : MeshPhongMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn MeshPhongMaterial::depth_write(
+  self : MeshPhongMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn MeshPhongMaterial::set_depth_write(
+  self : MeshPhongMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn MeshPhongMaterial::dispose(self : MeshPhongMaterial) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn MeshPhongMaterial::mark_needs_update(
+  self : MeshPhongMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

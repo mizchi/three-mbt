@@ -66,3 +66,101 @@ pub extern "js" fn QuadraticBezierCurve::copy(
   source : QuadraticBezierCurve,
 ) -> QuadraticBezierCurve =
   #| (self, source) => self.copy(source)
+
+///|
+extern "js" fn QuadraticBezierCurve::ffi_get_point(
+  self : QuadraticBezierCurve,
+  t : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, t, target) => self.getPoint(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn QuadraticBezierCurve::get_point(
+  self : QuadraticBezierCurve,
+  t : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_point(t, target)
+}
+
+///|
+extern "js" fn QuadraticBezierCurve::ffi_get_point_at(
+  self : QuadraticBezierCurve,
+  u : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, u, target) => self.getPointAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn QuadraticBezierCurve::get_point_at(
+  self : QuadraticBezierCurve,
+  u : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_point_at(u, target)
+}
+
+///|
+extern "js" fn QuadraticBezierCurve::ffi_get_tangent(
+  self : QuadraticBezierCurve,
+  t : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, t, target) => self.getTangent(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn QuadraticBezierCurve::get_tangent(
+  self : QuadraticBezierCurve,
+  t : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_tangent(t, target)
+}
+
+///|
+extern "js" fn QuadraticBezierCurve::ffi_get_tangent_at(
+  self : QuadraticBezierCurve,
+  u : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, u, target) => self.getTangentAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn QuadraticBezierCurve::get_tangent_at(
+  self : QuadraticBezierCurve,
+  u : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_tangent_at(u, target)
+}
+
+///|
+pub extern "js" fn QuadraticBezierCurve::get_points(
+  self : QuadraticBezierCurve,
+  divisions : Int,
+) -> FixedArray[Vector2] =
+  #| (self, divisions) => self.getPoints(divisions)
+
+///|
+pub extern "js" fn QuadraticBezierCurve::get_spaced_points(
+  self : QuadraticBezierCurve,
+  divisions : Int,
+) -> FixedArray[Vector2] =
+  #| (self, divisions) => self.getSpacedPoints(divisions)
+
+///|
+pub extern "js" fn QuadraticBezierCurve::get_length(
+  self : QuadraticBezierCurve,
+) -> Double =
+  #| (self) => self.getLength()
+
+///|
+pub extern "js" fn QuadraticBezierCurve::update_arc_lengths(
+  self : QuadraticBezierCurve,
+) -> Unit =
+  #| (self) => self.updateArcLengths()

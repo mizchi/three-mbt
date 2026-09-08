@@ -85,7 +85,7 @@ test "Weighted NURBS quarter circle and a bilinear surface retain geometry" {
     @three.Vector4(1, 1, 0, 0.7071067811865476),
     @three.Vector4(0, 1, 0, 1),
   ])
-  let point = curve.as_curve3().get_point(0.5, @three.Vector3(0, 0, 0))
+  let point = curve.as_curve3().get_point(0.5, target=@three.Vector3(0, 0, 0))
   near(point.x(), 0.7071067811865476)
   near(point.y(), 0.7071067811865476)
   let surface = @three.NURBSSurface(1, 1, [0, 0, 1, 1], [0, 0, 1, 1], [
@@ -123,7 +123,12 @@ test "Flow instances encode curve lengths and offsets without modifying source g
   near(translation.z(), 0.25)
   near(flow.as_flow().curve_length(0).unwrap(), 4)
   near(
-    flow.as_flow().curve(0).unwrap().get_point(1, @three.Vector3(0, 0, 0)).x(),
+    flow
+    .as_flow()
+    .curve(0)
+    .unwrap()
+    .get_point(1, target=@three.Vector3(0, 0, 0))
+    .x(),
     4,
   )
   try flow.set_curve(2, 0) catch {

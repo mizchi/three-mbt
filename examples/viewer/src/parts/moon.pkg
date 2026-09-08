@@ -1,0 +1,5 @@
+import {
+  "mizchi/three",
+}
+
+supported_targets = "js"

@@ -17,3 +17,265 @@ pub fn GridHelper::as_object3d(self : GridHelper) -> Object3D = "%identity"
 ///|
 pub extern "js" fn GridHelper::dispose(self : GridHelper) -> Unit =
   #| (self) => self.dispose()
+
+///|
+pub extern "js" fn GridHelper::cast_shadow(self : GridHelper) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn GridHelper::set_cast_shadow(
+  self : GridHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn GridHelper::receive_shadow(self : GridHelper) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn GridHelper::set_receive_shadow(
+  self : GridHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn GridHelper::id(self : GridHelper) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn GridHelper::uuid(self : GridHelper) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn GridHelper::kind(self : GridHelper) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn GridHelper::name(self : GridHelper) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn GridHelper::visible(self : GridHelper) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn GridHelper::position(self : GridHelper) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn GridHelper::rotation(self : GridHelper) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn GridHelper::quaternion(self : GridHelper) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn GridHelper::scale(self : GridHelper) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn GridHelper::up(self : GridHelper) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn GridHelper::matrix(self : GridHelper) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn GridHelper::matrix_world(self : GridHelper) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn GridHelper::set_name(
+  self : GridHelper,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn GridHelper::set_visible(
+  self : GridHelper,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn GridHelper::children(
+  self : GridHelper,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn GridHelper::add(
+  self : GridHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn GridHelper::remove(
+  self : GridHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn GridHelper::attach(
+  self : GridHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn GridHelper::remove_from_parent(
+  self : GridHelper,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn GridHelper::look_at(
+  self : GridHelper,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn GridHelper::rotate_x(
+  self : GridHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn GridHelper::rotate_y(
+  self : GridHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn GridHelper::rotate_z(
+  self : GridHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn GridHelper::translate_x(
+  self : GridHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn GridHelper::translate_y(
+  self : GridHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn GridHelper::translate_z(
+  self : GridHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn GridHelper::apply_matrix4(
+  self : GridHelper,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn GridHelper::apply_quaternion(
+  self : GridHelper,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn GridHelper::update_matrix(self : GridHelper) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn GridHelper::update_matrix_world(
+  self : GridHelper,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn GridHelper::update_world_matrix(
+  self : GridHelper,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn GridHelper::get_world_position(
+  self : GridHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn GridHelper::get_world_quaternion(
+  self : GridHelper,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn GridHelper::get_world_scale(
+  self : GridHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn GridHelper::get_world_direction(
+  self : GridHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn GridHelper::local_to_world(
+  self : GridHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn GridHelper::world_to_local(
+  self : GridHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn GridHelper::traverse(
+  self : GridHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn GridHelper::traverse_visible(
+  self : GridHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

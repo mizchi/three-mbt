@@ -1,0 +1,13 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/scene_graph"
+
+// Values
+pub fn world_position() -> FixedArray[Double]
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

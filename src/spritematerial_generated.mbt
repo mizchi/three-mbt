@@ -100,3 +100,87 @@ pub extern "js" fn SpriteMaterial::set_size_attenuation(
   value : Bool,
 ) -> Unit =
   #| (self, value) => { self.sizeAttenuation = value; }
+
+///|
+pub extern "js" fn SpriteMaterial::id(self : SpriteMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn SpriteMaterial::kind(self : SpriteMaterial) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn SpriteMaterial::name(self : SpriteMaterial) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn SpriteMaterial::set_name(
+  self : SpriteMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn SpriteMaterial::opacity(self : SpriteMaterial) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn SpriteMaterial::set_opacity(
+  self : SpriteMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn SpriteMaterial::transparent(self : SpriteMaterial) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn SpriteMaterial::set_transparent(
+  self : SpriteMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn SpriteMaterial::visible(self : SpriteMaterial) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn SpriteMaterial::set_visible(
+  self : SpriteMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn SpriteMaterial::depth_test(self : SpriteMaterial) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn SpriteMaterial::set_depth_test(
+  self : SpriteMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn SpriteMaterial::depth_write(self : SpriteMaterial) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn SpriteMaterial::set_depth_write(
+  self : SpriteMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn SpriteMaterial::dispose(self : SpriteMaterial) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn SpriteMaterial::mark_needs_update(
+  self : SpriteMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

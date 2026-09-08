@@ -10,3 +10,222 @@ pub extern "js" fn Bone::Bone() -> Bone = "bone"
 
 ///|
 pub fn Bone::as_object3d(self : Bone) -> Object3D = "%identity"
+
+///|
+pub extern "js" fn Bone::cast_shadow(self : Bone) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn Bone::set_cast_shadow(self : Bone, value : Bool) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn Bone::receive_shadow(self : Bone) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn Bone::set_receive_shadow(self : Bone, value : Bool) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn Bone::id(self : Bone) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn Bone::uuid(self : Bone) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn Bone::kind(self : Bone) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn Bone::name(self : Bone) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn Bone::visible(self : Bone) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Bone::position(self : Bone) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Bone::rotation(self : Bone) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Bone::quaternion(self : Bone) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Bone::scale(self : Bone) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Bone::up(self : Bone) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Bone::matrix(self : Bone) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Bone::matrix_world(self : Bone) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn Bone::set_name(self : Bone, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn Bone::set_visible(self : Bone, visible : Bool) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn Bone::children(self : Bone) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn Bone::add(self : Bone, child : Object3D) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn Bone::remove(self : Bone, child : Object3D) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn Bone::attach(self : Bone, child : Object3D) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn Bone::remove_from_parent(self : Bone) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn Bone::look_at(self : Bone, target : Vector3) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn Bone::rotate_x(self : Bone, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn Bone::rotate_y(self : Bone, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn Bone::rotate_z(self : Bone, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn Bone::translate_x(
+  self : Bone,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn Bone::translate_y(
+  self : Bone,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn Bone::translate_z(
+  self : Bone,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn Bone::apply_matrix4(self : Bone, matrix : Matrix4) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn Bone::apply_quaternion(
+  self : Bone,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn Bone::update_matrix(self : Bone) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn Bone::update_matrix_world(self : Bone, force : Bool) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn Bone::update_world_matrix(
+  self : Bone,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn Bone::get_world_position(
+  self : Bone,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn Bone::get_world_quaternion(
+  self : Bone,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn Bone::get_world_scale(
+  self : Bone,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn Bone::get_world_direction(
+  self : Bone,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn Bone::local_to_world(
+  self : Bone,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn Bone::world_to_local(
+  self : Bone,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn Bone::traverse(
+  self : Bone,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn Bone::traverse_visible(
+  self : Bone,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

@@ -17,3 +17,162 @@ pub extern "js" fn DecalGeometry::DecalGeometry(
 pub fn DecalGeometry::as_buffer_geometry(
   self : DecalGeometry,
 ) -> BufferGeometry = "%identity"
+
+///|
+pub extern "js" fn DecalGeometry::id(self : DecalGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn DecalGeometry::name(self : DecalGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn DecalGeometry::set_name(
+  self : DecalGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn DecalGeometry::set_attribute(
+  self : DecalGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn DecalGeometry::ffi_get_attribute(
+  self : DecalGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn DecalGeometry::get_attribute(
+  self : DecalGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn DecalGeometry::has_attribute(
+  self : DecalGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn DecalGeometry::set_indices(
+  self : DecalGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn DecalGeometry::ffi_get_index(
+  self : DecalGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn DecalGeometry::get_index(self : DecalGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn DecalGeometry::compute_vertex_normals(
+  self : DecalGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn DecalGeometry::compute_bounding_box(
+  self : DecalGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn DecalGeometry::compute_bounding_sphere(
+  self : DecalGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn DecalGeometry::ffi_bounding_box(
+  self : DecalGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn DecalGeometry::bounding_box(self : DecalGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn DecalGeometry::ffi_bounding_sphere(
+  self : DecalGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn DecalGeometry::bounding_sphere(self : DecalGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn DecalGeometry::translate(
+  self : DecalGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn DecalGeometry::scale(
+  self : DecalGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn DecalGeometry::rotate_x(
+  self : DecalGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn DecalGeometry::rotate_y(
+  self : DecalGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn DecalGeometry::rotate_z(
+  self : DecalGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn DecalGeometry::apply_matrix4(
+  self : DecalGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn DecalGeometry::center(
+  self : DecalGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn DecalGeometry::dispose(self : DecalGeometry) -> Unit =
+  #| (self) => self.dispose()

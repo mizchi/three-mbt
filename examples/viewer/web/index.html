@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>Moon rabbit — three.mbt</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="https://github.com/mizchi/three-mbt"><span class="mark" aria-hidden="true">◈</span> three.mbt</a>
+      <span class="header-note">SMALL STUDIES IN 3D</span>
+      <a class="source-link" href="https://github.com/mizchi/three-mbt/tree/main/examples/viewer/src/mouse">View source <span aria-hidden="true">↗</span></a>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="title">
+        <div class="eyebrow"><span class="dot"></span> <span id="study-number">MODELING STUDY / 002</span></div>
+        <h1 id="title">Moon rabbit<span>.</span></h1>
+        <p id="description">The MoonBit character, in a new dimension.<br />A low-poly model, built entirely in MoonBit.</p>
+        <div class="tags"><span>Procedural geometry</span><span>No textures</span></div>
+      </section>
+      <section class="studio" aria-label="Model viewer">
+        <div class="character-picker" role="group" aria-label="Choose a character">
+          <span>CHARACTERS</span>
+          <button type="button" data-model="rabbit" aria-pressed="true" disabled>Moon rabbit</button>
+          <button type="button" data-model="mouse" aria-pressed="false" disabled>Little mouse</button>
+        </div>
+        <div class="viewport" id="viewport">
+          <canvas id="mouse-canvas" role="img" aria-label="Interactive low-poly MoonBit rabbit model" aria-describedby="interaction-hint" tabindex="0"></canvas>
+          <div class="viewport-label"><span class="live-dot"></span> LIVE PREVIEW</div>
+          <div class="model-number" aria-hidden="true">02 / MOON</div>
+          <p class="interaction-hint" id="interaction-hint"><span aria-hidden="true">↔</span> Drag to orbit <span class="separator">/</span> Scroll or pinch to zoom<br /><span class="keyboard-hint">Arrow keys rotate · + / − zoom · R resets</span></p>
+          <noscript><p class="no-script">Enable JavaScript to explore the characters.</p></noscript>
+        </div>
+        <div class="toolbar">
+          <div class="view-controls">
+            <button id="wireframe" type="button" aria-pressed="false" disabled><span aria-hidden="true">◇</span> Wireframe</button>
+            <button id="reset" type="button" aria-label="Reset view" disabled><span aria-hidden="true">↺</span><span class="reset-label"> Reset view</span></button>
+          </div>
+          <button id="download" class="download" type="button" disabled>Download GLB <span aria-hidden="true">↓</span></button>
+        </div>
+      </section>
+      <section class="details" aria-label="Model details">
+        <div class="model-stats"><span class="eyebrow">LIGHT ON POLYGONS</span><strong id="triangles">— <small>triangles</small></strong><p>Flat faces, soft silhouette.</p></div>
+        <div class="recipe"><span class="step">01</span><div><h2>Shape the character</h2><p id="shape-description">Faceted solids and folded ears give the MoonBit rabbit its silhouette.</p></div></div>
+        <div class="recipe"><span class="step">02</span><div><h2 id="detail-title">Write it in geometry</h2><p id="detail-description">The white visor and 01 &lt;&gt; symbols are meshes, with no textures or fonts.</p></div></div>
+        <div class="recipe"><span class="step">03</span><div><h2>Make it yours</h2><p>Inspect the mesh or save the character as a GLB for your own scene.</p></div></div>
+      </section>
+    </main>
+    <footer><span>MoonBit × Three.js</span><span id="status" role="status">Preparing the characters…</span><span>Made of simple things.</span></footer>
+  </body>
+</html>

@@ -45,3 +45,160 @@ pub fn ConeGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn ConeGeometry::id(self : ConeGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn ConeGeometry::name(self : ConeGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn ConeGeometry::set_name(
+  self : ConeGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn ConeGeometry::set_attribute(
+  self : ConeGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn ConeGeometry::ffi_get_attribute(
+  self : ConeGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn ConeGeometry::get_attribute(
+  self : ConeGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn ConeGeometry::has_attribute(
+  self : ConeGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn ConeGeometry::set_indices(
+  self : ConeGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn ConeGeometry::ffi_get_index(
+  self : ConeGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn ConeGeometry::get_index(self : ConeGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn ConeGeometry::compute_vertex_normals(
+  self : ConeGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn ConeGeometry::compute_bounding_box(
+  self : ConeGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn ConeGeometry::compute_bounding_sphere(
+  self : ConeGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn ConeGeometry::ffi_bounding_box(
+  self : ConeGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn ConeGeometry::bounding_box(self : ConeGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn ConeGeometry::ffi_bounding_sphere(
+  self : ConeGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn ConeGeometry::bounding_sphere(self : ConeGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn ConeGeometry::translate(
+  self : ConeGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn ConeGeometry::scale(
+  self : ConeGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn ConeGeometry::rotate_x(
+  self : ConeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn ConeGeometry::rotate_y(
+  self : ConeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn ConeGeometry::rotate_z(
+  self : ConeGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn ConeGeometry::apply_matrix4(
+  self : ConeGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn ConeGeometry::center(self : ConeGeometry) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn ConeGeometry::dispose(self : ConeGeometry) -> Unit =
+  #| (self) => self.dispose()

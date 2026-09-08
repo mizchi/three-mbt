@@ -15,3 +15,170 @@ pub extern "js" fn DodecahedronGeometry::DodecahedronGeometry(
 pub fn DodecahedronGeometry::as_buffer_geometry(
   self : DodecahedronGeometry,
 ) -> BufferGeometry = "%identity"
+
+///|
+pub extern "js" fn DodecahedronGeometry::id(self : DodecahedronGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn DodecahedronGeometry::name(
+  self : DodecahedronGeometry,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn DodecahedronGeometry::set_name(
+  self : DodecahedronGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn DodecahedronGeometry::set_attribute(
+  self : DodecahedronGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn DodecahedronGeometry::ffi_get_attribute(
+  self : DodecahedronGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn DodecahedronGeometry::get_attribute(
+  self : DodecahedronGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn DodecahedronGeometry::has_attribute(
+  self : DodecahedronGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn DodecahedronGeometry::set_indices(
+  self : DodecahedronGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn DodecahedronGeometry::ffi_get_index(
+  self : DodecahedronGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn DodecahedronGeometry::get_index(
+  self : DodecahedronGeometry,
+) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn DodecahedronGeometry::compute_vertex_normals(
+  self : DodecahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn DodecahedronGeometry::compute_bounding_box(
+  self : DodecahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn DodecahedronGeometry::compute_bounding_sphere(
+  self : DodecahedronGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn DodecahedronGeometry::ffi_bounding_box(
+  self : DodecahedronGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn DodecahedronGeometry::bounding_box(self : DodecahedronGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn DodecahedronGeometry::ffi_bounding_sphere(
+  self : DodecahedronGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn DodecahedronGeometry::bounding_sphere(
+  self : DodecahedronGeometry,
+) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn DodecahedronGeometry::translate(
+  self : DodecahedronGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn DodecahedronGeometry::scale(
+  self : DodecahedronGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn DodecahedronGeometry::rotate_x(
+  self : DodecahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn DodecahedronGeometry::rotate_y(
+  self : DodecahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn DodecahedronGeometry::rotate_z(
+  self : DodecahedronGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn DodecahedronGeometry::apply_matrix4(
+  self : DodecahedronGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn DodecahedronGeometry::center(
+  self : DodecahedronGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn DodecahedronGeometry::dispose(
+  self : DodecahedronGeometry,
+) -> Unit =
+  #| (self) => self.dispose()

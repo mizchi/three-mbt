@@ -134,3 +134,79 @@ pub fn CurvePath2::from_json_string(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+extern "js" fn CurvePath2::ffi_get_point_at(
+  self : CurvePath2,
+  u : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, u, target) => self.getPointAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn CurvePath2::get_point_at(
+  self : CurvePath2,
+  u : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_point_at(u, target)
+}
+
+///|
+extern "js" fn CurvePath2::ffi_get_tangent(
+  self : CurvePath2,
+  t : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, t, target) => self.getTangent(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn CurvePath2::get_tangent(
+  self : CurvePath2,
+  t : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_tangent(t, target)
+}
+
+///|
+extern "js" fn CurvePath2::ffi_get_tangent_at(
+  self : CurvePath2,
+  u : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, u, target) => self.getTangentAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn CurvePath2::get_tangent_at(
+  self : CurvePath2,
+  u : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_tangent_at(u, target)
+}
+
+///|
+pub extern "js" fn CurvePath2::get_points(
+  self : CurvePath2,
+  divisions : Int,
+) -> FixedArray[Vector2] =
+  #| (self, divisions) => self.getPoints(divisions)
+
+///|
+pub extern "js" fn CurvePath2::get_spaced_points(
+  self : CurvePath2,
+  divisions : Int,
+) -> FixedArray[Vector2] =
+  #| (self, divisions) => self.getSpacedPoints(divisions)
+
+///|
+pub extern "js" fn CurvePath2::get_length(self : CurvePath2) -> Double =
+  #| (self) => self.getLength()
+
+///|
+pub extern "js" fn CurvePath2::update_arc_lengths(self : CurvePath2) -> Unit =
+  #| (self) => self.updateArcLengths()

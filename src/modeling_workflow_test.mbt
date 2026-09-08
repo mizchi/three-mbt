@@ -144,7 +144,7 @@ test "Texture UV transforms and curve JSON preserve editable state" {
     @three.Vector4(2, 0, 0, 1),
   ])
   curve.from_json(curve.to_json()) |> ignore
-  near(curve.as_curve3().get_point(0.5, @three.Vector3(0, 0, 0)).x(), 1)
+  near(curve.as_curve3().get_point(0.5, target=@three.Vector3(0, 0, 0)).x(), 1)
   let geometry = @three.BoxGeometry::segmented(2, 3, 4, 2, 3, 4)
   near(curve.as_curve3().get_length(), 2)
   let longer = @three.NURBSCurve(1, [0, 0, 1, 1], [

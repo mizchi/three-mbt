@@ -19,3 +19,95 @@ pub fn RawShaderMaterial::as_material(self : RawShaderMaterial) -> Material = "%
 pub fn RawShaderMaterial::as_shader_material(
   self : RawShaderMaterial,
 ) -> ShaderMaterial = "%identity"
+
+///|
+pub extern "js" fn RawShaderMaterial::id(self : RawShaderMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn RawShaderMaterial::kind(self : RawShaderMaterial) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn RawShaderMaterial::name(self : RawShaderMaterial) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn RawShaderMaterial::set_name(
+  self : RawShaderMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn RawShaderMaterial::opacity(
+  self : RawShaderMaterial,
+) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn RawShaderMaterial::set_opacity(
+  self : RawShaderMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn RawShaderMaterial::transparent(
+  self : RawShaderMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn RawShaderMaterial::set_transparent(
+  self : RawShaderMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn RawShaderMaterial::visible(self : RawShaderMaterial) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn RawShaderMaterial::set_visible(
+  self : RawShaderMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn RawShaderMaterial::depth_test(
+  self : RawShaderMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn RawShaderMaterial::set_depth_test(
+  self : RawShaderMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn RawShaderMaterial::depth_write(
+  self : RawShaderMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn RawShaderMaterial::set_depth_write(
+  self : RawShaderMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn RawShaderMaterial::dispose(self : RawShaderMaterial) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn RawShaderMaterial::mark_needs_update(
+  self : RawShaderMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

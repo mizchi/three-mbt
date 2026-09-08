@@ -1,0 +1,11 @@
+# .moonignore replaces .gitignore for packaging; retain build/dependency ignores.
+/_build/
+/target/
+/.mooncakes/
+/node_modules/
+/test-results/
+/playwright-report/
+
+# The viewer is a separate workspace module, outside the published library.
+/examples/
+/moon.work

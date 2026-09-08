@@ -20,3 +20,97 @@ pub fn ArcCurve::as_curve2(self : ArcCurve) -> Curve2 = "%identity"
 
 ///|
 pub fn ArcCurve::as_ellipse_curve(self : ArcCurve) -> EllipseCurve = "%identity"
+
+///|
+extern "js" fn ArcCurve::ffi_get_point(
+  self : ArcCurve,
+  t : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, t, target) => self.getPoint(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn ArcCurve::get_point(
+  self : ArcCurve,
+  t : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_point(t, target)
+}
+
+///|
+extern "js" fn ArcCurve::ffi_get_point_at(
+  self : ArcCurve,
+  u : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, u, target) => self.getPointAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn ArcCurve::get_point_at(
+  self : ArcCurve,
+  u : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_point_at(u, target)
+}
+
+///|
+extern "js" fn ArcCurve::ffi_get_tangent(
+  self : ArcCurve,
+  t : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, t, target) => self.getTangent(t, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn ArcCurve::get_tangent(
+  self : ArcCurve,
+  t : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_tangent(t, target)
+}
+
+///|
+extern "js" fn ArcCurve::ffi_get_tangent_at(
+  self : ArcCurve,
+  u : Double,
+  target : Vector2,
+) -> Vector2 =
+  #| (self, u, target) => self.getTangentAt(u, target)
+
+///|
+/// Passes target to the native method and preserves its return value. An omitted target is allocated per call.
+pub fn ArcCurve::get_tangent_at(
+  self : ArcCurve,
+  u : Double,
+  target? : Vector2 = Vector2(0, 0),
+) -> Vector2 {
+  self.ffi_get_tangent_at(u, target)
+}
+
+///|
+pub extern "js" fn ArcCurve::get_points(
+  self : ArcCurve,
+  divisions : Int,
+) -> FixedArray[Vector2] =
+  #| (self, divisions) => self.getPoints(divisions)
+
+///|
+pub extern "js" fn ArcCurve::get_spaced_points(
+  self : ArcCurve,
+  divisions : Int,
+) -> FixedArray[Vector2] =
+  #| (self, divisions) => self.getSpacedPoints(divisions)
+
+///|
+pub extern "js" fn ArcCurve::get_length(self : ArcCurve) -> Double =
+  #| (self) => self.getLength()
+
+///|
+pub extern "js" fn ArcCurve::update_arc_lengths(self : ArcCurve) -> Unit =
+  #| (self) => self.updateArcLengths()

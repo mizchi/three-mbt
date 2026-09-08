@@ -10,3 +10,265 @@ pub fn CCDIKHelper::as_object3d(self : CCDIKHelper) -> Object3D = "%identity"
 ///|
 pub extern "js" fn CCDIKHelper::dispose(self : CCDIKHelper) -> Unit =
   #| (self) => self.dispose()
+
+///|
+pub extern "js" fn CCDIKHelper::cast_shadow(self : CCDIKHelper) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn CCDIKHelper::set_cast_shadow(
+  self : CCDIKHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn CCDIKHelper::receive_shadow(self : CCDIKHelper) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn CCDIKHelper::set_receive_shadow(
+  self : CCDIKHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn CCDIKHelper::id(self : CCDIKHelper) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn CCDIKHelper::uuid(self : CCDIKHelper) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn CCDIKHelper::kind(self : CCDIKHelper) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn CCDIKHelper::name(self : CCDIKHelper) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn CCDIKHelper::visible(self : CCDIKHelper) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CCDIKHelper::position(self : CCDIKHelper) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CCDIKHelper::rotation(self : CCDIKHelper) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CCDIKHelper::quaternion(self : CCDIKHelper) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CCDIKHelper::scale(self : CCDIKHelper) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CCDIKHelper::up(self : CCDIKHelper) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CCDIKHelper::matrix(self : CCDIKHelper) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn CCDIKHelper::matrix_world(self : CCDIKHelper) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn CCDIKHelper::set_name(
+  self : CCDIKHelper,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn CCDIKHelper::set_visible(
+  self : CCDIKHelper,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn CCDIKHelper::children(
+  self : CCDIKHelper,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn CCDIKHelper::add(
+  self : CCDIKHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn CCDIKHelper::remove(
+  self : CCDIKHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn CCDIKHelper::attach(
+  self : CCDIKHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn CCDIKHelper::remove_from_parent(
+  self : CCDIKHelper,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn CCDIKHelper::look_at(
+  self : CCDIKHelper,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn CCDIKHelper::rotate_x(
+  self : CCDIKHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn CCDIKHelper::rotate_y(
+  self : CCDIKHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn CCDIKHelper::rotate_z(
+  self : CCDIKHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn CCDIKHelper::translate_x(
+  self : CCDIKHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn CCDIKHelper::translate_y(
+  self : CCDIKHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn CCDIKHelper::translate_z(
+  self : CCDIKHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn CCDIKHelper::apply_matrix4(
+  self : CCDIKHelper,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn CCDIKHelper::apply_quaternion(
+  self : CCDIKHelper,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn CCDIKHelper::update_matrix(self : CCDIKHelper) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn CCDIKHelper::update_matrix_world(
+  self : CCDIKHelper,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn CCDIKHelper::update_world_matrix(
+  self : CCDIKHelper,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn CCDIKHelper::get_world_position(
+  self : CCDIKHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn CCDIKHelper::get_world_quaternion(
+  self : CCDIKHelper,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn CCDIKHelper::get_world_scale(
+  self : CCDIKHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn CCDIKHelper::get_world_direction(
+  self : CCDIKHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn CCDIKHelper::local_to_world(
+  self : CCDIKHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn CCDIKHelper::world_to_local(
+  self : CCDIKHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn CCDIKHelper::traverse(
+  self : CCDIKHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn CCDIKHelper::traverse_visible(
+  self : CCDIKHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

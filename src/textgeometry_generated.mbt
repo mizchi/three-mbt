@@ -37,3 +37,160 @@ pub fn TextGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn TextGeometry::id(self : TextGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn TextGeometry::name(self : TextGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn TextGeometry::set_name(
+  self : TextGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn TextGeometry::set_attribute(
+  self : TextGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn TextGeometry::ffi_get_attribute(
+  self : TextGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn TextGeometry::get_attribute(
+  self : TextGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn TextGeometry::has_attribute(
+  self : TextGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn TextGeometry::set_indices(
+  self : TextGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn TextGeometry::ffi_get_index(
+  self : TextGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn TextGeometry::get_index(self : TextGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn TextGeometry::compute_vertex_normals(
+  self : TextGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn TextGeometry::compute_bounding_box(
+  self : TextGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn TextGeometry::compute_bounding_sphere(
+  self : TextGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn TextGeometry::ffi_bounding_box(
+  self : TextGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn TextGeometry::bounding_box(self : TextGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn TextGeometry::ffi_bounding_sphere(
+  self : TextGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn TextGeometry::bounding_sphere(self : TextGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn TextGeometry::translate(
+  self : TextGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn TextGeometry::scale(
+  self : TextGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn TextGeometry::rotate_x(
+  self : TextGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn TextGeometry::rotate_y(
+  self : TextGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn TextGeometry::rotate_z(
+  self : TextGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn TextGeometry::apply_matrix4(
+  self : TextGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn TextGeometry::center(self : TextGeometry) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn TextGeometry::dispose(self : TextGeometry) -> Unit =
+  #| (self) => self.dispose()

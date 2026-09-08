@@ -21,3 +21,222 @@ pub extern "js" fn Line::compute_line_distances(self : Line) -> Line =
 ///|
 pub extern "js" fn Line::geometry(self : Line) -> BufferGeometry =
   #| (self) => self.geometry
+
+///|
+pub extern "js" fn Line::cast_shadow(self : Line) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn Line::set_cast_shadow(self : Line, value : Bool) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn Line::receive_shadow(self : Line) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn Line::set_receive_shadow(self : Line, value : Bool) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn Line::id(self : Line) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn Line::uuid(self : Line) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn Line::kind(self : Line) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn Line::name(self : Line) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn Line::visible(self : Line) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line::position(self : Line) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line::rotation(self : Line) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line::quaternion(self : Line) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line::scale(self : Line) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line::up(self : Line) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line::matrix(self : Line) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn Line::matrix_world(self : Line) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn Line::set_name(self : Line, name : String) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn Line::set_visible(self : Line, visible : Bool) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn Line::children(self : Line) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn Line::add(self : Line, child : Object3D) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn Line::remove(self : Line, child : Object3D) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn Line::attach(self : Line, child : Object3D) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn Line::remove_from_parent(self : Line) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn Line::look_at(self : Line, target : Vector3) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn Line::rotate_x(self : Line, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn Line::rotate_y(self : Line, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn Line::rotate_z(self : Line, angle : Double) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn Line::translate_x(
+  self : Line,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn Line::translate_y(
+  self : Line,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn Line::translate_z(
+  self : Line,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn Line::apply_matrix4(self : Line, matrix : Matrix4) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn Line::apply_quaternion(
+  self : Line,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn Line::update_matrix(self : Line) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn Line::update_matrix_world(self : Line, force : Bool) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn Line::update_world_matrix(
+  self : Line,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn Line::get_world_position(
+  self : Line,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn Line::get_world_quaternion(
+  self : Line,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn Line::get_world_scale(
+  self : Line,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn Line::get_world_direction(
+  self : Line,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn Line::local_to_world(
+  self : Line,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn Line::world_to_local(
+  self : Line,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn Line::traverse(
+  self : Line,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn Line::traverse_visible(
+  self : Line,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

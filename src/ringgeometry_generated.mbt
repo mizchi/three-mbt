@@ -44,3 +44,160 @@ pub fn RingGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn RingGeometry::id(self : RingGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn RingGeometry::name(self : RingGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn RingGeometry::set_name(
+  self : RingGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn RingGeometry::set_attribute(
+  self : RingGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn RingGeometry::ffi_get_attribute(
+  self : RingGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn RingGeometry::get_attribute(
+  self : RingGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn RingGeometry::has_attribute(
+  self : RingGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn RingGeometry::set_indices(
+  self : RingGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn RingGeometry::ffi_get_index(
+  self : RingGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn RingGeometry::get_index(self : RingGeometry) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn RingGeometry::compute_vertex_normals(
+  self : RingGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn RingGeometry::compute_bounding_box(
+  self : RingGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn RingGeometry::compute_bounding_sphere(
+  self : RingGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn RingGeometry::ffi_bounding_box(
+  self : RingGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn RingGeometry::bounding_box(self : RingGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn RingGeometry::ffi_bounding_sphere(
+  self : RingGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn RingGeometry::bounding_sphere(self : RingGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn RingGeometry::translate(
+  self : RingGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn RingGeometry::scale(
+  self : RingGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn RingGeometry::rotate_x(
+  self : RingGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn RingGeometry::rotate_y(
+  self : RingGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn RingGeometry::rotate_z(
+  self : RingGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn RingGeometry::apply_matrix4(
+  self : RingGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn RingGeometry::center(self : RingGeometry) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn RingGeometry::dispose(self : RingGeometry) -> Unit =
+  #| (self) => self.dispose()

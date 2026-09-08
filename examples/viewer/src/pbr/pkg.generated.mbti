@@ -1,0 +1,19 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/pbr"
+
+import {
+  "moonbitlang/async/js_async",
+}
+
+// Values
+pub fn render_environment(String) -> @js_async.Promise[FixedArray[Int]]
+
+pub fn render_transmission(String) -> @js_async.Promise[FixedArray[Int]]
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

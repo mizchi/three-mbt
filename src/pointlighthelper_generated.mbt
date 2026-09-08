@@ -21,3 +21,277 @@ pub extern "js" fn PointLightHelper::update(self : PointLightHelper) -> Unit =
 ///|
 pub extern "js" fn PointLightHelper::dispose(self : PointLightHelper) -> Unit =
   #| (self) => self.dispose()
+
+///|
+pub extern "js" fn PointLightHelper::cast_shadow(
+  self : PointLightHelper,
+) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn PointLightHelper::set_cast_shadow(
+  self : PointLightHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn PointLightHelper::receive_shadow(
+  self : PointLightHelper,
+) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn PointLightHelper::set_receive_shadow(
+  self : PointLightHelper,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn PointLightHelper::id(self : PointLightHelper) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn PointLightHelper::uuid(self : PointLightHelper) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn PointLightHelper::kind(self : PointLightHelper) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn PointLightHelper::name(self : PointLightHelper) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn PointLightHelper::visible(self : PointLightHelper) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PointLightHelper::position(
+  self : PointLightHelper,
+) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PointLightHelper::rotation(self : PointLightHelper) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PointLightHelper::quaternion(
+  self : PointLightHelper,
+) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PointLightHelper::scale(self : PointLightHelper) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PointLightHelper::up(self : PointLightHelper) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PointLightHelper::matrix(self : PointLightHelper) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn PointLightHelper::matrix_world(
+  self : PointLightHelper,
+) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn PointLightHelper::set_name(
+  self : PointLightHelper,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn PointLightHelper::set_visible(
+  self : PointLightHelper,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn PointLightHelper::children(
+  self : PointLightHelper,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn PointLightHelper::add(
+  self : PointLightHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn PointLightHelper::remove(
+  self : PointLightHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn PointLightHelper::attach(
+  self : PointLightHelper,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn PointLightHelper::remove_from_parent(
+  self : PointLightHelper,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn PointLightHelper::look_at(
+  self : PointLightHelper,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn PointLightHelper::rotate_x(
+  self : PointLightHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn PointLightHelper::rotate_y(
+  self : PointLightHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn PointLightHelper::rotate_z(
+  self : PointLightHelper,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn PointLightHelper::translate_x(
+  self : PointLightHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn PointLightHelper::translate_y(
+  self : PointLightHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn PointLightHelper::translate_z(
+  self : PointLightHelper,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn PointLightHelper::apply_matrix4(
+  self : PointLightHelper,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn PointLightHelper::apply_quaternion(
+  self : PointLightHelper,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn PointLightHelper::update_matrix(
+  self : PointLightHelper,
+) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn PointLightHelper::update_matrix_world(
+  self : PointLightHelper,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn PointLightHelper::update_world_matrix(
+  self : PointLightHelper,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn PointLightHelper::get_world_position(
+  self : PointLightHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn PointLightHelper::get_world_quaternion(
+  self : PointLightHelper,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn PointLightHelper::get_world_scale(
+  self : PointLightHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn PointLightHelper::get_world_direction(
+  self : PointLightHelper,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn PointLightHelper::local_to_world(
+  self : PointLightHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn PointLightHelper::world_to_local(
+  self : PointLightHelper,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn PointLightHelper::traverse(
+  self : PointLightHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn PointLightHelper::traverse_visible(
+  self : PointLightHelper,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

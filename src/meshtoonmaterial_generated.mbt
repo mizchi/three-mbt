@@ -386,3 +386,93 @@ pub extern "js" fn MeshToonMaterial::set_fog(
   value : Bool,
 ) -> Unit =
   #| (self, value) => { self.fog = value; }
+
+///|
+pub extern "js" fn MeshToonMaterial::id(self : MeshToonMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn MeshToonMaterial::kind(self : MeshToonMaterial) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn MeshToonMaterial::name(self : MeshToonMaterial) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn MeshToonMaterial::set_name(
+  self : MeshToonMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn MeshToonMaterial::opacity(self : MeshToonMaterial) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn MeshToonMaterial::set_opacity(
+  self : MeshToonMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn MeshToonMaterial::transparent(
+  self : MeshToonMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn MeshToonMaterial::set_transparent(
+  self : MeshToonMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn MeshToonMaterial::visible(self : MeshToonMaterial) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn MeshToonMaterial::set_visible(
+  self : MeshToonMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn MeshToonMaterial::depth_test(
+  self : MeshToonMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn MeshToonMaterial::set_depth_test(
+  self : MeshToonMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn MeshToonMaterial::depth_write(
+  self : MeshToonMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn MeshToonMaterial::set_depth_write(
+  self : MeshToonMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn MeshToonMaterial::dispose(self : MeshToonMaterial) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn MeshToonMaterial::mark_needs_update(
+  self : MeshToonMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

@@ -187,3 +187,103 @@ pub extern "js" fn MeshNormalMaterial::set_flat_shading(
   value : Bool,
 ) -> Unit =
   #| (self, value) => { self.flatShading = value; }
+
+///|
+pub extern "js" fn MeshNormalMaterial::id(self : MeshNormalMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn MeshNormalMaterial::kind(
+  self : MeshNormalMaterial,
+) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn MeshNormalMaterial::name(
+  self : MeshNormalMaterial,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn MeshNormalMaterial::set_name(
+  self : MeshNormalMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn MeshNormalMaterial::opacity(
+  self : MeshNormalMaterial,
+) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn MeshNormalMaterial::set_opacity(
+  self : MeshNormalMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn MeshNormalMaterial::transparent(
+  self : MeshNormalMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn MeshNormalMaterial::set_transparent(
+  self : MeshNormalMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn MeshNormalMaterial::visible(
+  self : MeshNormalMaterial,
+) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn MeshNormalMaterial::set_visible(
+  self : MeshNormalMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn MeshNormalMaterial::depth_test(
+  self : MeshNormalMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn MeshNormalMaterial::set_depth_test(
+  self : MeshNormalMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn MeshNormalMaterial::depth_write(
+  self : MeshNormalMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn MeshNormalMaterial::set_depth_write(
+  self : MeshNormalMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn MeshNormalMaterial::dispose(
+  self : MeshNormalMaterial,
+) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn MeshNormalMaterial::mark_needs_update(
+  self : MeshNormalMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }

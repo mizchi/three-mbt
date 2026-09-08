@@ -47,3 +47,164 @@ pub fn TorusKnotGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn TorusKnotGeometry::id(self : TorusKnotGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn TorusKnotGeometry::name(self : TorusKnotGeometry) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn TorusKnotGeometry::set_name(
+  self : TorusKnotGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn TorusKnotGeometry::set_attribute(
+  self : TorusKnotGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn TorusKnotGeometry::ffi_get_attribute(
+  self : TorusKnotGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn TorusKnotGeometry::get_attribute(
+  self : TorusKnotGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn TorusKnotGeometry::has_attribute(
+  self : TorusKnotGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn TorusKnotGeometry::set_indices(
+  self : TorusKnotGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn TorusKnotGeometry::ffi_get_index(
+  self : TorusKnotGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn TorusKnotGeometry::get_index(
+  self : TorusKnotGeometry,
+) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn TorusKnotGeometry::compute_vertex_normals(
+  self : TorusKnotGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn TorusKnotGeometry::compute_bounding_box(
+  self : TorusKnotGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn TorusKnotGeometry::compute_bounding_sphere(
+  self : TorusKnotGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn TorusKnotGeometry::ffi_bounding_box(
+  self : TorusKnotGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn TorusKnotGeometry::bounding_box(self : TorusKnotGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn TorusKnotGeometry::ffi_bounding_sphere(
+  self : TorusKnotGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn TorusKnotGeometry::bounding_sphere(self : TorusKnotGeometry) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn TorusKnotGeometry::translate(
+  self : TorusKnotGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn TorusKnotGeometry::scale(
+  self : TorusKnotGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn TorusKnotGeometry::rotate_x(
+  self : TorusKnotGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn TorusKnotGeometry::rotate_y(
+  self : TorusKnotGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn TorusKnotGeometry::rotate_z(
+  self : TorusKnotGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn TorusKnotGeometry::apply_matrix4(
+  self : TorusKnotGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn TorusKnotGeometry::center(
+  self : TorusKnotGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn TorusKnotGeometry::dispose(self : TorusKnotGeometry) -> Unit =
+  #| (self) => self.dispose()

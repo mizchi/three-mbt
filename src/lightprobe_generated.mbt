@@ -34,3 +34,265 @@ pub extern "js" fn LightProbe::copy(
   other : LightProbe,
 ) -> LightProbe =
   #| (self, other) => self.copy(other)
+
+///|
+pub extern "js" fn LightProbe::cast_shadow(self : LightProbe) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn LightProbe::set_cast_shadow(
+  self : LightProbe,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn LightProbe::receive_shadow(self : LightProbe) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn LightProbe::set_receive_shadow(
+  self : LightProbe,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn LightProbe::id(self : LightProbe) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn LightProbe::uuid(self : LightProbe) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn LightProbe::kind(self : LightProbe) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn LightProbe::name(self : LightProbe) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn LightProbe::visible(self : LightProbe) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LightProbe::position(self : LightProbe) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LightProbe::rotation(self : LightProbe) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LightProbe::quaternion(self : LightProbe) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LightProbe::scale(self : LightProbe) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LightProbe::up(self : LightProbe) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LightProbe::matrix(self : LightProbe) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn LightProbe::matrix_world(self : LightProbe) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn LightProbe::set_name(
+  self : LightProbe,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn LightProbe::set_visible(
+  self : LightProbe,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn LightProbe::children(
+  self : LightProbe,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn LightProbe::add(
+  self : LightProbe,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn LightProbe::remove(
+  self : LightProbe,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn LightProbe::attach(
+  self : LightProbe,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn LightProbe::remove_from_parent(
+  self : LightProbe,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn LightProbe::look_at(
+  self : LightProbe,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn LightProbe::rotate_x(
+  self : LightProbe,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn LightProbe::rotate_y(
+  self : LightProbe,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn LightProbe::rotate_z(
+  self : LightProbe,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn LightProbe::translate_x(
+  self : LightProbe,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn LightProbe::translate_y(
+  self : LightProbe,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn LightProbe::translate_z(
+  self : LightProbe,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn LightProbe::apply_matrix4(
+  self : LightProbe,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn LightProbe::apply_quaternion(
+  self : LightProbe,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn LightProbe::update_matrix(self : LightProbe) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn LightProbe::update_matrix_world(
+  self : LightProbe,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn LightProbe::update_world_matrix(
+  self : LightProbe,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn LightProbe::get_world_position(
+  self : LightProbe,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn LightProbe::get_world_quaternion(
+  self : LightProbe,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn LightProbe::get_world_scale(
+  self : LightProbe,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn LightProbe::get_world_direction(
+  self : LightProbe,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn LightProbe::local_to_world(
+  self : LightProbe,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn LightProbe::world_to_local(
+  self : LightProbe,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn LightProbe::traverse(
+  self : LightProbe,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn LightProbe::traverse_visible(
+  self : LightProbe,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

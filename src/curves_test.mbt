@@ -5,19 +5,21 @@ test "Bezier curves sample endpoints and arc lengths with typed vectors" {
     @three.Vector2(1, 2),
     @three.Vector2(2, 0),
   ).as_curve2()
-  let middle = curve.get_point(0.5, @three.Vector2(0, 0))
+  let middle = curve.get_point(0.5, target=@three.Vector2(0, 0))
   assert_eq(middle.x(), 1)
   assert_eq(middle.y(), 1)
   assert_eq(curve.get_points(4).length(), 5)
   assert_true(curve.get_length() > 2)
   let path = @three.CatmullRomCurve3(
     [@three.Vector3(0, 0, 0), @three.Vector3(0, 0, 2), @three.Vector3(2, 0, 2)],
-    false,
-    Centripetal,
-    0.5,
+    closed=false,
+    curve_type=Centripetal,
+    tension=0.5,
   ).as_curve3()
   assert_true(
-    path.get_point(1, @three.Vector3(0, 0, 0)).equals(@three.Vector3(2, 0, 2)),
+    path
+    .get_point(1, target=@three.Vector3(0, 0, 0))
+    .equals(@three.Vector3(2, 0, 2)),
   )
   let tube = @three.TubeGeometry(path, 16, 0.1, 8, false).as_buffer_geometry()
   assert_eq(tube.get_attribute("position").unwrap().count(), 17 * 9)

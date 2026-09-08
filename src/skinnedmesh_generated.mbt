@@ -105,3 +105,265 @@ pub extern "js" fn SkinnedMesh::apply_bone_transform4(
   vector : Vector4,
 ) -> Vector4 =
   #| (self, index, vector) => self.applyBoneTransform(index, vector)
+
+///|
+pub extern "js" fn SkinnedMesh::cast_shadow(self : SkinnedMesh) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn SkinnedMesh::set_cast_shadow(
+  self : SkinnedMesh,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn SkinnedMesh::receive_shadow(self : SkinnedMesh) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn SkinnedMesh::set_receive_shadow(
+  self : SkinnedMesh,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn SkinnedMesh::id(self : SkinnedMesh) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn SkinnedMesh::uuid(self : SkinnedMesh) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn SkinnedMesh::kind(self : SkinnedMesh) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn SkinnedMesh::name(self : SkinnedMesh) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn SkinnedMesh::visible(self : SkinnedMesh) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SkinnedMesh::position(self : SkinnedMesh) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SkinnedMesh::rotation(self : SkinnedMesh) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SkinnedMesh::quaternion(self : SkinnedMesh) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SkinnedMesh::scale(self : SkinnedMesh) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SkinnedMesh::up(self : SkinnedMesh) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SkinnedMesh::matrix(self : SkinnedMesh) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn SkinnedMesh::matrix_world(self : SkinnedMesh) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn SkinnedMesh::set_name(
+  self : SkinnedMesh,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn SkinnedMesh::set_visible(
+  self : SkinnedMesh,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn SkinnedMesh::children(
+  self : SkinnedMesh,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn SkinnedMesh::add(
+  self : SkinnedMesh,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn SkinnedMesh::remove(
+  self : SkinnedMesh,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn SkinnedMesh::attach(
+  self : SkinnedMesh,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn SkinnedMesh::remove_from_parent(
+  self : SkinnedMesh,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn SkinnedMesh::look_at(
+  self : SkinnedMesh,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn SkinnedMesh::rotate_x(
+  self : SkinnedMesh,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn SkinnedMesh::rotate_y(
+  self : SkinnedMesh,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn SkinnedMesh::rotate_z(
+  self : SkinnedMesh,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn SkinnedMesh::translate_x(
+  self : SkinnedMesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn SkinnedMesh::translate_y(
+  self : SkinnedMesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn SkinnedMesh::translate_z(
+  self : SkinnedMesh,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn SkinnedMesh::apply_matrix4(
+  self : SkinnedMesh,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn SkinnedMesh::apply_quaternion(
+  self : SkinnedMesh,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn SkinnedMesh::update_matrix(self : SkinnedMesh) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn SkinnedMesh::update_matrix_world(
+  self : SkinnedMesh,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn SkinnedMesh::update_world_matrix(
+  self : SkinnedMesh,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn SkinnedMesh::get_world_position(
+  self : SkinnedMesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn SkinnedMesh::get_world_quaternion(
+  self : SkinnedMesh,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn SkinnedMesh::get_world_scale(
+  self : SkinnedMesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn SkinnedMesh::get_world_direction(
+  self : SkinnedMesh,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn SkinnedMesh::local_to_world(
+  self : SkinnedMesh,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn SkinnedMesh::world_to_local(
+  self : SkinnedMesh,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn SkinnedMesh::traverse(
+  self : SkinnedMesh,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn SkinnedMesh::traverse_visible(
+  self : SkinnedMesh,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

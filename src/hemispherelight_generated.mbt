@@ -23,3 +23,273 @@ pub extern "js" fn HemisphereLight::ground_color(
   self : HemisphereLight,
 ) -> Color =
   #| (self) => self.groundColor
+
+///|
+pub extern "js" fn HemisphereLight::cast_shadow(self : HemisphereLight) -> Bool =
+  #| (self) => self.castShadow
+
+///|
+pub extern "js" fn HemisphereLight::set_cast_shadow(
+  self : HemisphereLight,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.castShadow = value; }
+
+///|
+pub extern "js" fn HemisphereLight::receive_shadow(
+  self : HemisphereLight,
+) -> Bool =
+  #| (self) => self.receiveShadow
+
+///|
+pub extern "js" fn HemisphereLight::set_receive_shadow(
+  self : HemisphereLight,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.receiveShadow = value; }
+
+///|
+pub extern "js" fn HemisphereLight::id(self : HemisphereLight) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn HemisphereLight::uuid(self : HemisphereLight) -> String =
+  #| (self) => self.uuid
+
+///|
+pub extern "js" fn HemisphereLight::kind(self : HemisphereLight) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn HemisphereLight::name(self : HemisphereLight) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn HemisphereLight::visible(self : HemisphereLight) -> Bool =
+  #| (self) => self.visible
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn HemisphereLight::position(self : HemisphereLight) -> Vector3 =
+  #| (self) => self.position
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn HemisphereLight::rotation(self : HemisphereLight) -> Euler =
+  #| (self) => self.rotation
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn HemisphereLight::quaternion(
+  self : HemisphereLight,
+) -> Quaternion =
+  #| (self) => self.quaternion
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn HemisphereLight::scale(self : HemisphereLight) -> Vector3 =
+  #| (self) => self.scale
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn HemisphereLight::up(self : HemisphereLight) -> Vector3 =
+  #| (self) => self.up
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn HemisphereLight::matrix(self : HemisphereLight) -> Matrix4 =
+  #| (self) => self.matrix
+
+///|
+/// Returns the live three.js reference, not a copy.
+pub extern "js" fn HemisphereLight::matrix_world(
+  self : HemisphereLight,
+) -> Matrix4 =
+  #| (self) => self.matrixWorld
+
+///|
+pub extern "js" fn HemisphereLight::set_name(
+  self : HemisphereLight,
+  name : String,
+) -> Unit =
+  #| (self, name) => { self.name = name; }
+
+///|
+pub extern "js" fn HemisphereLight::set_visible(
+  self : HemisphereLight,
+  visible : Bool,
+) -> Unit =
+  #| (self, visible) => { self.visible = visible; }
+
+///|
+pub extern "js" fn HemisphereLight::children(
+  self : HemisphereLight,
+) -> FixedArray[Object3D] =
+  #| (self) => self.children.slice()
+
+///|
+pub extern "js" fn HemisphereLight::add(
+  self : HemisphereLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.add(child)
+
+///|
+pub extern "js" fn HemisphereLight::remove(
+  self : HemisphereLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.remove(child)
+
+///|
+pub extern "js" fn HemisphereLight::attach(
+  self : HemisphereLight,
+  child : Object3D,
+) -> Object3D =
+  #| (self, child) => self.attach(child)
+
+///|
+pub extern "js" fn HemisphereLight::remove_from_parent(
+  self : HemisphereLight,
+) -> Object3D =
+  #| (self) => self.removeFromParent()
+
+///|
+pub extern "js" fn HemisphereLight::look_at(
+  self : HemisphereLight,
+  target : Vector3,
+) -> Unit =
+  #| (self, target) => self.lookAt(target)
+
+///|
+pub extern "js" fn HemisphereLight::rotate_x(
+  self : HemisphereLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn HemisphereLight::rotate_y(
+  self : HemisphereLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn HemisphereLight::rotate_z(
+  self : HemisphereLight,
+  angle : Double,
+) -> Object3D =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn HemisphereLight::translate_x(
+  self : HemisphereLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateX(distance)
+
+///|
+pub extern "js" fn HemisphereLight::translate_y(
+  self : HemisphereLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateY(distance)
+
+///|
+pub extern "js" fn HemisphereLight::translate_z(
+  self : HemisphereLight,
+  distance : Double,
+) -> Object3D =
+  #| (self, distance) => self.translateZ(distance)
+
+///|
+pub extern "js" fn HemisphereLight::apply_matrix4(
+  self : HemisphereLight,
+  matrix : Matrix4,
+) -> Unit =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn HemisphereLight::apply_quaternion(
+  self : HemisphereLight,
+  quaternion : Quaternion,
+) -> Object3D =
+  #| (self, quaternion) => self.applyQuaternion(quaternion)
+
+///|
+pub extern "js" fn HemisphereLight::update_matrix(
+  self : HemisphereLight,
+) -> Unit =
+  #| (self) => self.updateMatrix()
+
+///|
+pub extern "js" fn HemisphereLight::update_matrix_world(
+  self : HemisphereLight,
+  force : Bool,
+) -> Unit =
+  #| (self, force) => self.updateMatrixWorld(force)
+
+///|
+pub extern "js" fn HemisphereLight::update_world_matrix(
+  self : HemisphereLight,
+  update_parents : Bool,
+  update_children : Bool,
+) -> Unit =
+  #| (self, update_parents, update_children) => self.updateWorldMatrix(update_parents, update_children)
+
+///|
+pub extern "js" fn HemisphereLight::get_world_position(
+  self : HemisphereLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldPosition(target)
+
+///|
+pub extern "js" fn HemisphereLight::get_world_quaternion(
+  self : HemisphereLight,
+  target : Quaternion,
+) -> Quaternion =
+  #| (self, target) => self.getWorldQuaternion(target)
+
+///|
+pub extern "js" fn HemisphereLight::get_world_scale(
+  self : HemisphereLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldScale(target)
+
+///|
+pub extern "js" fn HemisphereLight::get_world_direction(
+  self : HemisphereLight,
+  target : Vector3,
+) -> Vector3 =
+  #| (self, target) => self.getWorldDirection(target)
+
+///|
+pub extern "js" fn HemisphereLight::local_to_world(
+  self : HemisphereLight,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.localToWorld(vector)
+
+///|
+pub extern "js" fn HemisphereLight::world_to_local(
+  self : HemisphereLight,
+  vector : Vector3,
+) -> Vector3 =
+  #| (self, vector) => self.worldToLocal(vector)
+
+///|
+pub extern "js" fn HemisphereLight::traverse(
+  self : HemisphereLight,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverse(callback)
+
+///|
+pub extern "js" fn HemisphereLight::traverse_visible(
+  self : HemisphereLight,
+  callback : (Object3D) -> Unit,
+) -> Unit =
+  #| (self, callback) => self.traverseVisible(callback)

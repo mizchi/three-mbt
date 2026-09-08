@@ -35,3 +35,170 @@ pub fn ParametricGeometry::parameters_json(
     Err(message) => raise SerializationError(message)
   }
 }
+
+///|
+pub extern "js" fn ParametricGeometry::id(self : ParametricGeometry) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn ParametricGeometry::name(
+  self : ParametricGeometry,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn ParametricGeometry::set_name(
+  self : ParametricGeometry,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn ParametricGeometry::set_attribute(
+  self : ParametricGeometry,
+  name : String,
+  attribute : BufferAttribute,
+) -> BufferGeometry =
+  #| (self, name, attribute) => self.setAttribute(name, attribute)
+
+///|
+extern "js" fn ParametricGeometry::ffi_get_attribute(
+  self : ParametricGeometry,
+  name : String,
+) -> Nullable[BufferAttribute] =
+  #| (self, name) => self.getAttribute(name)
+
+///|
+pub fn ParametricGeometry::get_attribute(
+  self : ParametricGeometry,
+  name : String,
+) -> BufferAttribute? {
+  self.ffi_get_attribute(name).to_option()
+}
+
+///|
+pub extern "js" fn ParametricGeometry::has_attribute(
+  self : ParametricGeometry,
+  name : String,
+) -> Bool =
+  #| (self, name) => self.hasAttribute(name)
+
+///|
+pub extern "js" fn ParametricGeometry::set_indices(
+  self : ParametricGeometry,
+  indices : FixedArray[Int],
+) -> BufferGeometry =
+  #| (self, indices) => self.setIndex(indices)
+
+///|
+extern "js" fn ParametricGeometry::ffi_get_index(
+  self : ParametricGeometry,
+) -> Nullable[BufferAttribute] =
+  #| (self) => self.getIndex()
+
+///|
+pub fn ParametricGeometry::get_index(
+  self : ParametricGeometry,
+) -> BufferAttribute? {
+  self.ffi_get_index().to_option()
+}
+
+///|
+pub extern "js" fn ParametricGeometry::compute_vertex_normals(
+  self : ParametricGeometry,
+) -> Unit =
+  #| (self) => self.computeVertexNormals()
+
+///|
+pub extern "js" fn ParametricGeometry::compute_bounding_box(
+  self : ParametricGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingBox()
+
+///|
+pub extern "js" fn ParametricGeometry::compute_bounding_sphere(
+  self : ParametricGeometry,
+) -> Unit =
+  #| (self) => self.computeBoundingSphere()
+
+///|
+extern "js" fn ParametricGeometry::ffi_bounding_box(
+  self : ParametricGeometry,
+) -> Nullable[Box3] =
+  #| (self) => self.boundingBox
+
+///|
+pub fn ParametricGeometry::bounding_box(self : ParametricGeometry) -> Box3? {
+  self.ffi_bounding_box().to_option()
+}
+
+///|
+extern "js" fn ParametricGeometry::ffi_bounding_sphere(
+  self : ParametricGeometry,
+) -> Nullable[Sphere] =
+  #| (self) => self.boundingSphere
+
+///|
+pub fn ParametricGeometry::bounding_sphere(
+  self : ParametricGeometry,
+) -> Sphere? {
+  self.ffi_bounding_sphere().to_option()
+}
+
+///|
+pub extern "js" fn ParametricGeometry::translate(
+  self : ParametricGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.translate(x, y, z)
+
+///|
+pub extern "js" fn ParametricGeometry::scale(
+  self : ParametricGeometry,
+  x : Double,
+  y : Double,
+  z : Double,
+) -> BufferGeometry =
+  #| (self, x, y, z) => self.scale(x, y, z)
+
+///|
+pub extern "js" fn ParametricGeometry::rotate_x(
+  self : ParametricGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateX(angle)
+
+///|
+pub extern "js" fn ParametricGeometry::rotate_y(
+  self : ParametricGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateY(angle)
+
+///|
+pub extern "js" fn ParametricGeometry::rotate_z(
+  self : ParametricGeometry,
+  angle : Double,
+) -> BufferGeometry =
+  #| (self, angle) => self.rotateZ(angle)
+
+///|
+pub extern "js" fn ParametricGeometry::apply_matrix4(
+  self : ParametricGeometry,
+  matrix : Matrix4,
+) -> BufferGeometry =
+  #| (self, matrix) => self.applyMatrix4(matrix)
+
+///|
+pub extern "js" fn ParametricGeometry::center(
+  self : ParametricGeometry,
+) -> BufferGeometry =
+  #| (self) => self.center()
+
+///|
+pub extern "js" fn ParametricGeometry::dispose(
+  self : ParametricGeometry,
+) -> Unit =
+  #| (self) => self.dispose()

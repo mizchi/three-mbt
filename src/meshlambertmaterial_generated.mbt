@@ -495,3 +495,103 @@ pub extern "js" fn MeshLambertMaterial::set_flat_shading(
   value : Bool,
 ) -> Unit =
   #| (self, value) => { self.flatShading = value; }
+
+///|
+pub extern "js" fn MeshLambertMaterial::id(self : MeshLambertMaterial) -> Int =
+  #| (self) => self.id
+
+///|
+pub extern "js" fn MeshLambertMaterial::kind(
+  self : MeshLambertMaterial,
+) -> String =
+  #| (self) => self.type
+
+///|
+pub extern "js" fn MeshLambertMaterial::name(
+  self : MeshLambertMaterial,
+) -> String =
+  #| (self) => self.name
+
+///|
+pub extern "js" fn MeshLambertMaterial::set_name(
+  self : MeshLambertMaterial,
+  value : String,
+) -> Unit =
+  #| (self, value) => { self.name = value; }
+
+///|
+pub extern "js" fn MeshLambertMaterial::opacity(
+  self : MeshLambertMaterial,
+) -> Double =
+  #| (self) => self.opacity
+
+///|
+pub extern "js" fn MeshLambertMaterial::set_opacity(
+  self : MeshLambertMaterial,
+  value : Double,
+) -> Unit =
+  #| (self, value) => { self.opacity = value; }
+
+///|
+pub extern "js" fn MeshLambertMaterial::transparent(
+  self : MeshLambertMaterial,
+) -> Bool =
+  #| (self) => self.transparent
+
+///|
+pub extern "js" fn MeshLambertMaterial::set_transparent(
+  self : MeshLambertMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.transparent = value; }
+
+///|
+pub extern "js" fn MeshLambertMaterial::visible(
+  self : MeshLambertMaterial,
+) -> Bool =
+  #| (self) => self.visible
+
+///|
+pub extern "js" fn MeshLambertMaterial::set_visible(
+  self : MeshLambertMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.visible = value; }
+
+///|
+pub extern "js" fn MeshLambertMaterial::depth_test(
+  self : MeshLambertMaterial,
+) -> Bool =
+  #| (self) => self.depthTest
+
+///|
+pub extern "js" fn MeshLambertMaterial::set_depth_test(
+  self : MeshLambertMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthTest = value; }
+
+///|
+pub extern "js" fn MeshLambertMaterial::depth_write(
+  self : MeshLambertMaterial,
+) -> Bool =
+  #| (self) => self.depthWrite
+
+///|
+pub extern "js" fn MeshLambertMaterial::set_depth_write(
+  self : MeshLambertMaterial,
+  value : Bool,
+) -> Unit =
+  #| (self, value) => { self.depthWrite = value; }
+
+///|
+pub extern "js" fn MeshLambertMaterial::dispose(
+  self : MeshLambertMaterial,
+) -> Unit =
+  #| (self) => self.dispose()
+
+///|
+pub extern "js" fn MeshLambertMaterial::mark_needs_update(
+  self : MeshLambertMaterial,
+) -> Unit =
+  #| (self) => { self.needsUpdate = true; }
