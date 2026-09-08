@@ -2,6 +2,7 @@ import {
   "mizchi/three",
   "mizchi/three-viewer/parts",
   "mizchi/three-viewer/rabbit",
+  "mizchi/three-viewer/purple",
   "moonbitlang/async/js_async",
   "moonbitlang/core/math",
 }

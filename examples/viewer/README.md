@@ -21,8 +21,9 @@ just test-browser   # Build workspace members and run all browser tests
 reload automatically; the browser imports `mbt:mizchi/three-viewer/mouse` through
 [`web/models.js`](web/models.js), without hard-coding generated file paths.
 The default character is the MoonBit rabbit; use the picker to switch to the
-mouse. Both support drag, wheel, pinch, keyboard navigation, wireframe inspection,
-and GLB download. `?model=mouse` opens the mouse directly.
+mouse or the purple mascot. All three support drag, wheel, pinch, keyboard
+navigation, wireframe inspection, and GLB download. `?model=mouse` opens the mouse
+directly; `?model=purple` opens the reference-inspired purple mascot.
 
 The pinned `vite-plugin-moonbit@0.5.1` has a small pnpm patch to recognize the
 current MoonBit watcher's `Success, waiting for filesystem changes` message.
@@ -34,6 +35,11 @@ two successive dependency edits in an isolated MoonBit workspace.
   octagonal ear sections swept backward and then curled forward,
   and a white visor; the `01` and `<>` marks are actual geometry.
 - [`src/parts/`](src/parts): shared shape helpers and resource disposal.
+- [`src/purple/`](src/purple): smooth purple mascot with sideways drooping ears
+  and a geometric smile. `field.mbt` defines blended ellipsoids, `surface.mbt`
+  builds a closed indexed skin with marching tetrahedra, and `model.mbt` bends
+  subdivided facial geometry onto the head. The exported body is one connected
+  mesh; facial markings are separate relief meshes. No textures are needed.
 - [`src/mouse/viewer.mbt`](src/mouse/viewer.mbt): rendering, controls, and export.
 - [`web/`](web): HTML, CSS, and browser lifecycle glue.
 - [`vite.config.mjs`](vite.config.mjs): development and static build configuration.

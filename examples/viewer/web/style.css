@@ -92,3 +92,14 @@ footer { max-width: 1232px; margin: auto; display: flex; justify-content: space-
   .details { padding: 26px 4px; gap: 26px 18px; }
   footer { margin: 0 20px; font-size: 9px; }
 }
+
+:root[data-model="purple"] h1 > span { color: #a43af0; }
+:root[data-model="purple"] .live-dot, :root[data-model="purple"] .dot { background: #a43af0; }
+:root[data-model="purple"] button[aria-pressed="true"] { background: #f0e3fc; border-color: #d7b4f1; color: #7c26b9; }
+:root[data-model="purple"] button.download { background: #7c26b9; }
+:root[data-model="purple"] button.download:hover { background: #652095; }
+@media (max-width: 480px) {
+  .character-picker { gap: 4px; }
+  .character-picker > span { display: none; }
+  .character-picker button { flex: 1; padding-inline: 8px; }
+}

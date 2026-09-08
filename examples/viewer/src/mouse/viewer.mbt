@@ -2,6 +2,7 @@
 enum Character {
   Mouse
   Rabbit
+  Purple
 }
 
 ///|
@@ -96,6 +97,11 @@ fn fit_view(viewer : Viewer) -> Unit {
       viewer.camera.position().set(4.6, 3.2, 5.8) |> ignore
       viewer.controls.target().set(0.15, 1.0, -0.25) |> ignore
     }
+    Purple => {
+      viewer.renderer.set_tone_mapping_exposure(0.75)
+      viewer.camera.position().set(1.4, 2.35, 9.8) |> ignore
+      viewer.controls.target().set(0, 1.9, 0) |> ignore
+    }
     Rabbit => {
       viewer.renderer.set_tone_mapping_exposure(0.65)
       viewer.camera.position().set(2.7, 2.4, 9.0) |> ignore
@@ -111,6 +117,7 @@ fn build_character(character : Character) -> @three.Object3D raise {
   match character {
     Mouse => make_mouse()
     Rabbit => @rabbit.create()
+    Purple => @purple.create()
   }
 }
 
@@ -123,6 +130,7 @@ pub fn select_model(viewer : Viewer, name : String) -> @js_async.Promise[Unit] {
     let character = match name {
       "mouse" => Mouse
       "rabbit" => Rabbit
+      "purple" => Purple
       _ => raise ViewerError("Unknown character: \{name}")
     }
     // Build before removing the current model, so a failure leaves it usable.

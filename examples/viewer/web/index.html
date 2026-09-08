@@ -25,6 +25,7 @@
       <section class="studio" aria-label="Model viewer">
         <div class="character-picker" role="group" aria-label="Choose a character">
           <span>CHARACTERS</span>
+          <button type="button" data-model="purple" aria-pressed="false" disabled>Purple pal</button>
           <button type="button" data-model="rabbit" aria-pressed="true" disabled>Moon rabbit</button>
           <button type="button" data-model="mouse" aria-pressed="false" disabled>Little mouse</button>
         </div>
@@ -44,7 +45,7 @@
         </div>
       </section>
       <section class="details" aria-label="Model details">
-        <div class="model-stats"><span class="eyebrow">LIGHT ON POLYGONS</span><strong id="triangles">— <small>triangles</small></strong><p>Flat faces, soft silhouette.</p></div>
+        <div class="model-stats"><span class="eyebrow">MODEL GEOMETRY</span><strong id="triangles">— <small>triangles</small></strong><p id="surface-description">Flat faces, soft silhouette.</p></div>
         <div class="recipe"><span class="step">01</span><div><h2>Shape the character</h2><p id="shape-description">Faceted solids and folded ears give the MoonBit rabbit its silhouette.</p></div></div>
         <div class="recipe"><span class="step">02</span><div><h2 id="detail-title">Write it in geometry</h2><p id="detail-description">The white visor and 01 &lt;&gt; symbols are meshes, with no textures or fonts.</p></div></div>
         <div class="recipe"><span class="step">03</span><div><h2>Make it yours</h2><p>Inspect the mesh or save the character as a GLB for your own scene.</p></div></div>

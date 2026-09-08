@@ -1,0 +1,17 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/purple"
+
+import {
+  "mizchi/three",
+}
+
+// Values
+pub fn create() -> @three.Object3D
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
