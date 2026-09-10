@@ -12,6 +12,7 @@ Run these commands from the repository root:
 just install
 just mouse          # http://127.0.0.1:4173
 just mouse 8080     # Choose another port
+just cat            # http://127.0.0.1:4173/cat.html
 just build-mouse    # Static site in _build/mouse-site/
 just test-browser   # Build workspace members and run all browser tests
 ```
@@ -21,7 +22,28 @@ radius, palette and visibility use Luna signals and `mizchi/luna_three`.
 [`src/luna_three/main.mbt`](src/luna_three/main.mbt) contains the model;
 [`web/luna-three.js`](web/luna-three.js) owns the canvas, camera and controls.
 `just test-luna-three-browser` verifies scene updates and GPU resource cleanup.
-The static build includes both the character viewer and this example.
+The static build includes the character viewer, the sculpture, and the cat.
+
+Open `/cat.html` for **ひなたの、ねこ。**, a sitting low-poly cat made of Luna
+nodes. Choose ginger, gray or cream fur; tilt its head, move its curled tail,
+pause blinking and motion, inspect the wireframe, or export the current pose as
+`low-poly-cat.glb`. The exported file contains the cat without the studio.
+Export bakes face normals into a separate snapshot, preserving the faceted
+appearance in GLTF viewers even though glTF has no `flatShading` material flag.
+
+[`src/cat/model.mbt`](src/cat/model.mbt) exports `@cat.view(...)`, a reusable
+component with reactive getters for head tilt, tail angle (radians), eye openness
+(0..1), and palette (0..2). It shares flat-shaded icosahedra and materials, owns
+them within the Luna component's scope, and releases them on unmount. Custom
+triangular ears and a pentagonal curved tail live in
+[`src/cat/geometry.mbt`](src/cat/geometry.mbt). The model uses fewer than 2,000
+triangles and needs no textures or external assets.
+
+[`src/cat_viewer/main.mbt`](src/cat_viewer/main.mbt) manages signals, blinking,
+tail animation and studio nodes; [`web/cat.js`](web/cat.js) manages the canvas,
+camera, controls and GLB download. `just test-cat` checks geometry, landmarks and
+reactivity; `just test-cat-browser` checks WebGL, controls, exported nodes,
+shared-resource cleanup and the phone layout.
 
 `just mouse` performs an initial MoonBit build, then runs Vite with
 `vite-plugin-moonbit`. MoonBit edits rebuild and

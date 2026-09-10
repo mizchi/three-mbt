@@ -1,0 +1,18 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/cat"
+
+import {
+  "mizchi/luna/core",
+  "mizchi/luna_three",
+}
+
+// Values
+pub fn view(head_tilt? : () -> Double, tail_angle? : () -> Double, eyes_open? : () -> Double, palette? : () -> Int) -> @core.Node[Unit, @luna_three.Property]
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

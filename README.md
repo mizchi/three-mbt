@@ -142,6 +142,8 @@ custom renderer for declarative modeling with typed geometry/material specs,
 signals, keyed scene updates, and resource cleanup. Run `just mouse` and open
 `/luna-three.html` for its interactive sculpture example. See its
 [README](luna-three/README.md) for the API and current scope.
+Run `just cat` and open `/cat.html` for a [declarative low-poly cat](examples/viewer/src/cat/model.mbt)
+with adjustable fur and pose, blinking, a moving tail, and GLB download.
 The separate
 [`examples/viewer`](examples/viewer) module, `mizchi/three-viewer`, depends on
 the local library through the workspace. Run the commands below from the

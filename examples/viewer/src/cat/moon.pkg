@@ -1,0 +1,13 @@
+import {
+  "mizchi/three",
+  "mizchi/luna_three" @lt,
+  "mizchi/luna/core" @luna,
+  "mizchi/luna/js/resource" @reactivity,
+  "moonbitlang/core/math",
+}
+
+import {
+  "mizchi/signals",
+} for "test"
+
+supported_targets = "js"

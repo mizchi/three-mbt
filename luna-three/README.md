@@ -149,6 +149,13 @@ keyed parametric meshes, dynamic geometry/materials, conditional mounting and
 cleanup. The Playwright test exercises real WebGL drawing, controls and GPU
 resource release.
 
+The [low-poly cat](../examples/viewer/src/cat/model.mbt) is a complete declarative
+character with shared flat-shaded geometry/materials, custom triangular ears,
+whiskers, a curved tail, and signal-driven poses. Run `just cat` and open
+`http://127.0.0.1:4173/cat.html` to change its fur, move it, and save a GLB.
+Its component owns borrowed resources through `on_cleanup`; geometry and
+materials are reused when the pose or palette changes.
+
 `api.mbt` defines the typed contract; `pkg.generated.mbti` is regenerated with
 `moon info --target js`. `renderer.mbt` manages Luna scopes and reconciliation,
 `state.mbt` holds mounted state and ordering, `properties.mbt` applies property

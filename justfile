@@ -38,6 +38,12 @@ test-luna-three:
 test-luna-three-browser: build
     pnpm exec playwright test --config examples/viewer/playwright.config.mjs luna-three.spec.mjs
 
+test-cat:
+    moon test examples/viewer/src/cat --target js --deny-warn
+
+test-cat-browser: build
+    pnpm exec playwright test --config examples/viewer/playwright.config.mjs cat.spec.mjs
+
 test-scripts:
     node --test tests/scripts/*.test.mjs
 
@@ -57,6 +63,10 @@ example:
 
 # Vite watches MoonBit through vite-plugin-moonbit and reloads the viewer.
 mouse port="4173": build
+    pnpm exec vite --config examples/viewer/vite.config.mjs --port {{port}}
+
+# Open http://127.0.0.1:4173/cat.html for the declarative low-poly cat.
+cat port="4173": build
     pnpm exec vite --config examples/viewer/vite.config.mjs --port {{port}}
 
 # Create a self-contained static demo in _build/mouse-site/.

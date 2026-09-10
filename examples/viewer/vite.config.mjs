@@ -14,6 +14,7 @@ export default defineConfig({
       input: {
         main: fileURLToPath(new URL('./web/index.html', import.meta.url)),
         lunaThree: fileURLToPath(new URL('./web/luna-three.html', import.meta.url)),
+        cat: fileURLToPath(new URL('./web/cat.html', import.meta.url)),
       },
     },
     outDir: fileURLToPath(new URL('../../_build/mouse-site', import.meta.url)),

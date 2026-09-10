@@ -1,0 +1,31 @@
+import {
+  "mizchi/three",
+  "mizchi/luna_three" @lt,
+  "mizchi/three-viewer/cat",
+  "mizchi/luna/core" @luna,
+  "mizchi/luna/js/resource" @reactivity,
+  "mizchi/signals",
+  "moonbitlang/core/math",
+}
+
+supported_targets = "js"
+
+pkgtype(kind: "executable")
+
+options(
+  link: {
+    "js": {
+      "exports": [
+        "mount",
+        "unmount",
+        "set_palette",
+        "set_head_tilt",
+        "set_tail_angle",
+        "set_motion",
+        "tick",
+        "error",
+      ],
+      "format": "esm",
+    },
+  },
+)

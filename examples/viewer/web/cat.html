@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3eadf" />
+    <title>ひなたの、ねこ。 — Luna Three</title>
+    <link rel="stylesheet" href="./cat.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="brand" href="./luna-three.html"><span class="brand-mark" aria-hidden="true">◒</span> LUNA THREE</a>
+      <span class="edition">SMALL CREATURES <span class="edition-number">/ 001</span></span>
+    </header>
+    <main>
+      <section class="stage" aria-label="ローポリ猫の 3D ビュー">
+        <div id="viewport"><canvas aria-label="ドラッグで回転、スクロールで拡大できる猫のモデル"></canvas></div>
+        <div class="introduction">
+          <p class="eyebrow"><span></span> LOW-POLY STUDY</p>
+          <h1>ひなたの、ねこ。</h1>
+          <p class="subtitle">少ない面で、のんびりと。</p>
+        </div>
+        <div class="stage-footer"><span><b id="triangle-count">—</b> TRIANGLES</span><span class="orbit-hint">ドラッグで回転 <span aria-hidden="true">↗</span></span></div>
+      </section>
+      <aside class="panel" aria-label="猫のカスタマイズ">
+        <div class="panel-heading"><span class="eyebrow">MAKE YOUR CAT</span><span class="tiny-paw" aria-hidden="true">✳</span></div>
+        <h2>きょうの気分は？</h2>
+        <p class="description">三角の耳と、くるんとしたしっぽ。<br />ちょっと首をかしげて、こちらをちらり。</p>
+        <fieldset class="coat-control">
+          <legend>毛色 <span id="coat-name">茶トラ</span></legend>
+          <div class="swatches">
+            <button type="button" class="swatch" data-palette="0" aria-label="茶トラの毛色" aria-pressed="true"><span style="--fur:#d49257;--stripe:#a36539"></span></button>
+            <button type="button" class="swatch" data-palette="1" aria-label="グレーの毛色" aria-pressed="false"><span style="--fur:#687682;--stripe:#414c58"></span></button>
+            <button type="button" class="swatch" data-palette="2" aria-label="クリームの毛色" aria-pressed="false"><span style="--fur:#e9d5b1;--stripe:#b9a280"></span></button>
+          </div>
+        </fieldset>
+        <div class="pose-control">
+          <label for="head-tilt">首をかしげる <output id="head-value" for="head-tilt">−5°</output></label>
+          <input id="head-tilt" type="range" min="-18" max="18" value="-5" />
+          <label for="tail-angle">しっぽの角度 <output id="tail-value" for="tail-angle">0°</output></label>
+          <input id="tail-angle" type="range" min="-35" max="35" value="0" />
+        </div>
+        <div class="view-controls">
+          <button id="motion" type="button" aria-pressed="true">動きを止める</button>
+          <button id="wireframe" type="button" aria-pressed="false">ワイヤーフレーム</button>
+        </div>
+        <button id="reset-view" type="button" class="reset">↺ <span>視点を戻す</span></button>
+        <div class="take-home">
+          <span class="eyebrow">A LITTLE FRIEND, TO GO</span>
+          <button id="export" type="button">GLB を保存 <span aria-hidden="true">↓</span></button>
+          <p id="export-status" role="status">今の毛色とポーズで、お持ち帰り。</p>
+        </div>
+        <footer class="colophon">Modeled with <b>MoonBit + Luna Three</b><br />小さなパーツを、宣言的に組み合わせて。</footer>
+      </aside>
+    </main>
+    <script type="module" src="./cat.js"></script>
+  </body>
+</html>

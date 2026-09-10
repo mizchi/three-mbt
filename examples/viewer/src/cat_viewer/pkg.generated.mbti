@@ -1,0 +1,31 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/cat_viewer"
+
+import {
+  "mizchi/three",
+}
+
+// Values
+pub fn error() -> String
+
+pub fn mount(@three.Scene) -> Unit
+
+pub fn set_head_tilt(Double) -> Unit
+
+pub fn set_motion(Bool) -> Unit
+
+pub fn set_palette(Int) -> Unit
+
+pub fn set_tail_angle(Double) -> Unit
+
+pub fn tick(Double) -> Unit
+
+pub fn unmount() -> Unit
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits
