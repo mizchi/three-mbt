@@ -5,13 +5,30 @@
 signals, using `mizchi/three` for the actual objects and GPU resources.
 It runs in Node.js for modeling/export and in a browser for rendering.
 
-This module is developed locally in the repository's `moon.work`; it has not
-been published. The workspace resolves `mizchi/three@0.1.3` to the root library
-and uses the published `mizchi/luna@0.24.1` / `mizchi/signals@0.6.5`.
+This module uses `mizchi/three@0.1.3`, `mizchi/luna@0.24.1` and
+`mizchi/signals@0.6.5`. Development in this repository's `moon.work` resolves
+the three dependency to the root library.
 There is no additional JavaScript companion or React dependency for this renderer.
 The existing `@mizchi/three-mbt` companion and `three` are required.
 
-## Use in the workspace
+## Installation
+
+Requires MoonBit `0.10.12` or later, with the JavaScript target. In a consuming
+MoonBit module, install the packages and register the bundled JS companion:
+
+```sh
+moon add mizchi/luna_three@0.1.0
+moon add mizchi/three@0.1.3
+moon add mizchi/luna@0.24.1
+moon add mizchi/signals@0.6.5
+pnpm add three@0.185.1 @mizchi/three-mbt@link:./.mooncakes/mizchi/three/js
+```
+
+The companion path is relative to a standalone module. In a workspace, use the
+actual installed `.mooncakes/mizchi/three/js` path. Browser applications need a
+bundler such as Vite; see the [three installation guide](https://github.com/mizchi/three-mbt#installation).
+
+## Usage
 
 Add `"mizchi/luna_three@0.1.0"`, `"mizchi/luna@0.24.1"` and
 `"mizchi/signals@0.6.5"` to the consuming module's imports. Import the packages:
