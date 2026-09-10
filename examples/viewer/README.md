@@ -16,6 +16,13 @@ just build-mouse    # Static site in _build/mouse-site/
 just test-browser   # Build workspace members and run all browser tests
 ```
 
+Open `/luna-three.html` for the declarative Luna sculpture example. Ring count,
+radius, palette and visibility use Luna signals and `mizchi/luna_three`.
+[`src/luna_three/main.mbt`](src/luna_three/main.mbt) contains the model;
+[`web/luna-three.js`](web/luna-three.js) owns the canvas, camera and controls.
+`just test-luna-three-browser` verifies scene updates and GPU resource cleanup.
+The static build includes both the character viewer and this example.
+
 `just mouse` performs an initial MoonBit build, then runs Vite with
 `vite-plugin-moonbit`. MoonBit edits rebuild and
 reload automatically; the browser imports `mbt:mizchi/three-viewer/mouse` through

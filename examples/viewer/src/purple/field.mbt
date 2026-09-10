@@ -21,7 +21,7 @@ fn blob(
   rz : Double,
   angle : Double,
 ) -> Blob {
-  { x, y, z, rx, ry, rz, cosine: @math.cos(angle), sine: @math.sin(angle) }
+  { x, y, z, rx, ry, rz, cosine: @math.cos(angle), sine: @math.sin(angle), }
 }
 
 ///|

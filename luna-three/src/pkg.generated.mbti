@@ -1,0 +1,75 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/luna_three"
+
+import {
+  "mizchi/luna/core",
+  "mizchi/three",
+}
+
+// Values
+pub fn ambient_light(color? : Int, intensity? : Double, props? : Array[@core.Attr[Unit, Property]], key? : String) -> @core.Node[Unit, Property]
+
+pub fn directional_light(color? : Int, intensity? : Double, props? : Array[@core.Attr[Unit, Property]], key? : String) -> @core.Node[Unit, Property]
+
+pub fn dynamic(() -> Property) -> @core.Attr[Unit, Property]
+
+pub fn group(Array[@core.Node[Unit, Property]], props? : Array[@core.Attr[Unit, Property]], key? : String) -> @core.Node[Unit, Property]
+
+pub fn mesh(geometry~ : Geometry, material~ : Material, props? : Array[@core.Attr[Unit, Property]], children? : Array[@core.Node[Unit, Property]], key? : String) -> @core.Node[Unit, Property]
+
+pub fn mount(@three.Object3D, @core.Node[Unit, Property], on_change? : () -> Unit) -> Root
+
+pub fn perspective_camera(fov? : Double, aspect? : Double, near? : Double, far? : Double, props? : Array[@core.Attr[Unit, Property]], key? : String) -> @core.Node[Unit, Property]
+
+pub fn primitive(@three.Object3D, props? : Array[@core.Attr[Unit, Property]], children? : Array[@core.Node[Unit, Property]], key? : String) -> @core.Node[Unit, Property]
+
+pub fn prop(Property) -> @core.Attr[Unit, Property]
+
+// Errors
+
+// Types and methods
+pub(all) enum Geometry {
+  Box(Double, Double, Double)
+  Sphere(Double, Int, Int)
+  Plane(Double, Double)
+  Cylinder(Double, Double, Double, Int)
+  Cone(Double, Double, Int)
+  Torus(Double, Double, Int, Int)
+  Borrowed(@three.BufferGeometry)
+}
+
+pub(all) enum Material {
+  Basic(Int)
+  Standard(Int, Double, Double)
+  Normal
+  Borrowed(@three.Material)
+}
+
+pub(all) enum Property {
+  Key(String)
+  Name(String)
+  Position(Double, Double, Double)
+  Rotation(Double, Double, Double)
+  Scale(Double, Double, Double)
+  Visible(Bool)
+  CastShadow(Bool)
+  ReceiveShadow(Bool)
+  Geometry(Geometry)
+  Material(Material)
+  Light(Int, Double)
+  Perspective(Double, Double, Double, Double)
+  Object(@three.Object3D)
+}
+
+pub struct Root {
+  // private fields
+}
+pub fn Root::error(Self) -> String?
+pub fn Root::unmount(Self) -> Unit
+
+// Type aliases
+pub type Node = @core.Node[Unit, Property]
+
+pub type Prop = @core.Attr[Unit, Property]
+
+// Traits

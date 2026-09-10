@@ -1,0 +1,29 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "mizchi/three-viewer/luna_three"
+
+import {
+  "mizchi/three",
+}
+
+// Values
+pub fn error() -> String
+
+pub fn mount(@three.Scene) -> Unit
+
+pub fn set_radius(Double) -> Unit
+
+pub fn set_ring_count(Int) -> Unit
+
+pub fn toggle_palette() -> Unit
+
+pub fn toggle_visible() -> Unit
+
+pub fn unmount() -> Unit
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

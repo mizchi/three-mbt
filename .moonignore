@@ -6,6 +6,8 @@
 /test-results/
 /playwright-report/
 
-# The viewer is a separate workspace module, outside the published library.
+# Separate workspace modules are outside the published library.
+# Use `just package` to package luna-three outside these inherited ignore rules.
 /examples/
+/luna-three/
 /moon.work

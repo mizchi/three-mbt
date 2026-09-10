@@ -1,0 +1,8 @@
+import {
+  "mizchi/three",
+  "mizchi/luna/core" @luna,
+  "mizchi/luna/js/resource" @reactivity,
+  "mizchi/signals",
+}
+
+supported_targets = "js"

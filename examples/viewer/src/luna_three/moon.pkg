@@ -1,0 +1,28 @@
+import {
+  "mizchi/three",
+  "mizchi/luna_three" @lt,
+  "mizchi/luna/core" @luna,
+  "mizchi/luna/js/resource" @reactivity,
+  "mizchi/signals",
+}
+
+supported_targets = "js"
+
+pkgtype(kind: "executable")
+
+options(
+  link: {
+    "js": {
+      "exports": [
+        "mount",
+        "unmount",
+        "set_ring_count",
+        "set_radius",
+        "toggle_palette",
+        "toggle_visible",
+        "error",
+      ],
+      "format": "esm",
+    },
+  },
+)

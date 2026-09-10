@@ -1,4 +1,5 @@
 members = [
   ".",
+  "luna-three",
   "examples/viewer",
 ]

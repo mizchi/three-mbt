@@ -32,6 +32,12 @@ check:
 test:
     moon test --target js --deny-warn
 
+test-luna-three:
+    moon test luna-three/src --target js --deny-warn
+
+test-luna-three-browser: build
+    pnpm exec playwright test --config examples/viewer/playwright.config.mjs luna-three.spec.mjs
+
 test-scripts:
     node --test tests/scripts/*.test.mjs
 
@@ -41,6 +47,10 @@ test-release:
 build:
     moon build --target js --release --deny-warn
     moon info --target js
+
+# Build and verify both archives without publishing them.
+package:
+    node scripts/package.mjs
 
 example:
     moon run examples/viewer/src/scene_graph --target js

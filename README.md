@@ -136,13 +136,22 @@ Requires MoonBit (tested with `moonc v0.10.10` / `moon 0.1.20260824`), Node.js 2
 Uses three.js `0.185.1`; the API audit is pinned to `@types/three` `0.185.4`.
 
 The repository is a MoonBit workspace defined by [`moon.work`](moon.work).
-The root module is the library `mizchi/three`. The separate
+The root module is the library `mizchi/three`.
+[`luna-three`](luna-three) is the separate `mizchi/luna_three` module: a Luna
+custom renderer for declarative modeling with typed geometry/material specs,
+signals, keyed scene updates, and resource cleanup. Run `just mouse` and open
+`/luna-three.html` for its interactive sculpture example. See its
+[README](luna-three/README.md) for the API and current scope.
+The separate
 [`examples/viewer`](examples/viewer) module, `mizchi/three-viewer`, depends on
 the local library through the workspace. Run the commands below from the
 repository root.
 
-`.moonignore` excludes the viewer module and `moon.work` from the library archive.
-Use `moon package --list` to inspect the archive without publishing it.
+`.moonignore` excludes the viewer, `luna-three`, and `moon.work` from the library archive.
+Use `moon package --list` to inspect the root library archive, or `just package`
+to build and verify both library archives without publishing them. The latter
+stages the nested `luna-three` module outside Git so parent ignore rules cannot
+empty its archive.
 
 ```text
 moon.work
@@ -150,6 +159,7 @@ moon.mod                       # mizchi/three
 src/                           # Library and library tests
 bindings/                      # Binding contracts
 js/                            # JavaScript runtime support
+luna-three/                    # mizchi/luna_three: Luna custom 3D renderer
 examples/viewer/
   moon.mod                     # mizchi/three-viewer
   src/                         # MoonBit example packages, including mouse/ and rabbit/
@@ -2107,13 +2117,21 @@ in this README in sync. Publish from the repository root:
 
 ```sh
 just check
-moon package
+just package
 moon publish
 ```
 
-The archive includes the library, companion JS, its export map, this README, and
-the MIT license. `.moonignore` excludes the viewer workspace, build output, and
-installed dependencies. No separate npm publication is required.
+The three archive includes the library, companion JS, its export map, this README,
+and the MIT license. `.moonignore` excludes the other workspace modules, build
+output, and installed dependencies. No separate npm publication is required.
+
+`just package` writes both `mizchi-three-<version>.zip` and
+`mizchi-luna_three-<version>.zip` to `_build/publish/`. It verifies required files,
+their contents, and module boundaries before replacing the outputs. The nested
+module is copied to a temporary directory with an explicit workspace reference
+to the local three library; source files and Git settings remain untouched.
+To publish luna-three, extract its verified archive outside this Git repository
+and run `moon publish` there after its three dependency has been released.
 
 Verify each release in a fresh directory outside the workspace: install the
 published version with `moon add`, link its installed `js/` directory as shown

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luna Three · Parametric sculpture</title>
+    <style>
+      :root { color-scheme: dark; font: 16px/1.5 system-ui, sans-serif; background: #101721; color: #e5edf7; }
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      main { display: grid; grid-template-columns: minmax(0, 1fr) 300px; min-height: 100dvh; }
+      #viewport { min-height: 65dvh; position: relative; }
+      canvas { display: block; width: 100%; height: 100%; }
+      .caption { position: absolute; bottom: 24px; left: 28px; color: #aab8ca; pointer-events: none; }
+      aside { padding: 40px 28px; background: #192230; border-left: 1px solid #2b3748; }
+      .eyebrow { color: #49c6bb; letter-spacing: .15em; font-size: .75rem; text-transform: uppercase; }
+      h1 { font-size: 2rem; line-height: 1.15; letter-spacing: -.04em; margin: 20px 0; }
+      p { color: #aab8ca; }
+      label { display: block; margin-top: 28px; }
+      output { float: right; font-variant-numeric: tabular-nums; color: #49c6bb; }
+      input { width: 100%; accent-color: #49c6bb; margin: 14px 0; }
+      button { width: 100%; padding: 12px; margin-top: 16px; background: #253448; color: #e5edf7; border: 1px solid #486078; border-radius: 6px; cursor: pointer; font: inherit; }
+      button:hover { background: #30445a; }
+      button:focus-visible, input:focus-visible { outline: 2px solid #49c6bb; outline-offset: 4px; }
+      a { color: #49c6bb; }
+      footer { margin-top: 44px; font-size: .8rem; }
+      @media (max-width: 720px) { main { grid-template-columns: 1fr; } aside { border-left: 0; border-top: 1px solid #2b3748; padding: 28px; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="viewport"><canvas aria-label="Interactive parametric sculpture"></canvas><div class="caption">Drag to orbit · Scroll to zoom</div></div>
+      <aside>
+        <div class="eyebrow">Luna Three / Study 01</div>
+        <h1>Form in<br />motion.</h1>
+        <p>A parametric sculpture built with declarative MoonBit components.</p>
+        <label for="rings">Rings <output id="rings-value" for="rings">5</output></label>
+        <input id="rings" type="range" min="2" max="9" value="5" />
+        <label for="radius">Radius <output id="radius-value" for="radius">1.20</output></label>
+        <input id="radius" type="range" min="0.7" max="1.6" step="0.05" value="1.2" />
+        <button id="palette" type="button">Change palette</button>
+        <button id="visibility" type="button" aria-pressed="false">Hide sculpture</button>
+        <footer>Built with Luna signals + three.js.<br /><a href="./">Character viewer</a></footer>
+      </aside>
+    </main>
+    <script type="module" src="./luna-three.js"></script>
+  </body>
+</html>
