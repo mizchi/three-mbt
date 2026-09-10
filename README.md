@@ -132,7 +132,7 @@ getters copy array containers; elements such as vectors remain live three.js ref
 
 ## Getting started
 
-Requires MoonBit (tested with `moonc v0.10.10` / `moon 0.1.20260824`), Node.js 24 or later, pnpm, and just.
+Requires MoonBit (tested with `moonc v0.10.12` / `moon 0.1.20260904`), Node.js 24 or later, pnpm, and just.
 Uses three.js `0.185.1`; the API audit is pinned to `@types/three` `0.185.4`.
 
 The repository is a MoonBit workspace defined by [`moon.work`](moon.work).
